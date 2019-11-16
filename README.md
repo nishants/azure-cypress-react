@@ -24,6 +24,8 @@ In this step, we will setup cypress tests for the project. As part of this we wi
   ```yaml
     "scripts": {
       "cypress:open": "cypress open",
+      "cy:run": "cypress run",
+      ....
   ```
 
 - now run command
@@ -43,4 +45,53 @@ In this step, we will setup cypress tests for the project. As part of this we wi
 
 ### Write a Cypress test
 
--
+- create a file `cypress/integration/homepage_spec.js`
+
+  ```js
+  describe('Homepage', () => {
+    it('Check if page loads', () => {
+      cy.visit('http://localhost:3000/');
+      cy.url().should('include', '#/portfolio');
+    });
+  });
+  ```
+
+- Run test in **headless mode** (wihout opening a browser UI)
+
+  ```
+  npm run cypress:run
+  ```
+
+
+
+## Preparing run script for ci
+
+- In ci if we run a command the build waits for the command to finish.
+
+- We need to accomplish 
+
+  - run node node server
+  - run cypress tests
+  - after tests have finished, stop node server and exit
+
+- to accomplish this, we will use `npm-run-all` node module
+
+  ```
+  npm install npm-run-all --save
+  ```
+
+  
+
+- we will use following command : 
+
+  ```bash
+  npm-run-all -p --race start cypress:run
+  ```
+
+  this command will : 
+
+  - execute `npm start`
+  - execute `cypress:run`
+  - and stop node server when cypress tests have finished
+
+- so

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
     "start": "NODE_PATH=. react-scripts start",
     "build": "NODE_PATH=. react-scripts build",
     "test": "NODE_PATH=. react-scripts test",

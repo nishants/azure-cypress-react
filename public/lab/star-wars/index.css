@@ -1,0 +1,517 @@
+@import url("https://fonts.googleapis.com/css?family=Aldrich|Orbitron");
+body * {
+  box-sizing: border-box; }
+
+label {
+  cursor: inherit; }
+
+input {
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  box-sizing: border-box;
+  border: none; }
+
+.resize-container:after, .modal-window .content .bar:after, #missions-selected > ul.missions > li:after, #missions-widget .menu .sub-menu > ul > li > div:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+ul.undo-list, ul.deck, #missions-selected > ul.missions, #missions-widget .menu .sub-menu > ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: block; }
+
+[ng-click] {
+  cursor: pointer; }
+
+body {
+  margin: 0px;
+  background: black; }
+
+#main-content {
+  position: relative;
+  overflow: hidden; }
+  #main-content button {
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.95);
+    border: 1px solid transparent;
+    font-size: large;
+    background-color: #3dc743;
+    outline: none;
+    -webkit-transition: all 150ms ease;
+    -moz-transition: all 150ms ease;
+    -o-transition: all 150ms ease;
+    transition: all 150ms ease; }
+  #main-content .caption {
+    font-size: small;
+    font-style: italic;
+    line-height: 15px;
+    opacity: 0.5; }
+  #main-content .thumbnail, #main-content ul.deck > li .card .icon, ul.deck > li .card #main-content .icon {
+    height: 50px;
+    width: 50px; }
+  #main-content .title-text, #main-content button, #main-content #missions-selected > ul.missions > li, #main-content #missions-widget .menu, #missions-widget #main-content .menu {
+    font-family: "Aldrich", sans-serif; }
+
+.modal-window {
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  padding: 10px;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.5);
+  line-height: 100vh;
+  text-align: center;
+  -webkit-transition: opacity 150ms ease;
+  -moz-transition: opacity 150ms ease;
+  -o-transition: opacity 150ms ease;
+  transition: opacity 150ms ease; }
+  .modal-window .content {
+    display: inline-block;
+    line-height: 25px;
+    color: #00FF80;
+    padding: 10px;
+    background: black;
+    border: 1px solid rgba(0, 255, 128, 0.3); }
+    .modal-window .content .bar {
+      padding-bottom: 10px; }
+      .modal-window .content .bar .close-modal {
+        float: right;
+        padding: 10px;
+        border: 1px solid rgba(0, 255, 128, 0.3); }
+
+.modal-window:not(.show) {
+  opacity: 0;
+  pointer-events: none; }
+  .modal-window:not(.show) * {
+    pointer-events: none !important; }
+
+ul.deck {
+  display: block; }
+  ul.deck > li {
+    display: inline-block;
+    margin: 10px; }
+    ul.deck > li .card {
+      padding: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.1); }
+      ul.deck > li .card .name {
+        padding-top: 10px; }
+      ul.deck > li .card .icon {
+        display: block;
+        margin: auto; }
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: black; }
+  #background .star-world {
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    background: url(images/twinkle.gif) repeat fixed center center; }
+  #background .space-station {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: block; }
+
+@keyframes travelerSky {
+  0% {
+    -webkit-transform: scale(1.5) rotate(0deg);
+    -moz-transform: scale(1.5) rotate(0deg);
+    -ms-transform: scale(1.5) rotate(0deg);
+    -o-transform: scale(1.5) rotate(0deg);
+    transform: scale(1.5) rotate(0deg); }
+  50% {
+    -webkit-transform: scale(2) rotate(-360deg);
+    -moz-transform: scale(2) rotate(-360deg);
+    -ms-transform: scale(2) rotate(-360deg);
+    -o-transform: scale(2) rotate(-360deg);
+    transform: scale(2) rotate(-360deg); }
+  100% {
+    -webkit-transform: scale(1.5) rotate(0deg);
+    -moz-transform: scale(1.5) rotate(0deg);
+    -ms-transform: scale(1.5) rotate(0deg);
+    -o-transform: scale(1.5) rotate(0deg);
+    transform: scale(1.5) rotate(0deg); } }
+.traveler-sky {
+  animation: travelerSky 700s infinite;
+  animation-timing-function: linear; }
+
+#game-result .content {
+  padding: 20px;
+  border: 1px solid rgba(0, 255, 128, 0.3); }
+  #game-result .content .message h1 {
+    margin: 0px; }
+  #game-result .content .restart {
+    margin-top: 20px; }
+    #game-result .content .restart button {
+      padding: 10px 50px; }
+  #game-result .content .loader {
+    padding: 20px;
+    font-size: large; }
+
+#game-result.loading .content .restart {
+  display: none; }
+
+#game-result:not(.lost) .content .message.lost {
+  display: none; }
+
+#game-result:not(.loading) .content .loader {
+  display: none; }
+
+#game-result:not(.won) .content .won.message {
+  display: none; }
+
+#help {
+  z-index: 2; }
+  #help .content {
+    padding: 20px;
+    border: 1px solid; }
+    #help .content .message {
+      text-align: left; }
+    #help .content .skip {
+      margin-top: 10px;
+      padding: 10px 50px; }
+
+#missions-home {
+  color: white;
+  text-align: center;
+  margin: auto; }
+  #missions-home #help-button {
+    padding: 10px;
+    font-size: 30px; }
+    #missions-home #help-button > .fa {
+      color: rgba(255, 255, 255, 0.3);
+      text-align: center; }
+  #missions-home #mission-action {
+    width: 100%;
+    margin: 10px auto;
+    padding: 0px 10px;
+    max-width: 500px; }
+    #missions-home #mission-action > button {
+      width: 100%;
+      opacity: 0.95; }
+
+#missions-selected > ul.missions {
+  padding-top: 10px;
+  background: rgba(0, 0, 0, 0.6); }
+  #missions-selected > ul.missions > li {
+    display: block;
+    margin: auto;
+    line-height: 40px;
+    color: #00FF80;
+    text-transform: capitalize;
+    text-align: left;
+    width: 570px;
+    padding: 0px 10px; }
+    #missions-selected > ul.missions > li .planet, #missions-selected > ul.missions > li .vehicle, #missions-selected > ul.missions > li .overview, #missions-selected > ul.missions > li .cancel {
+      float: left; }
+    #missions-selected > ul.missions > li .planet {
+      width: 100px; }
+    #missions-selected > ul.missions > li .vehicle {
+      width: 150px; }
+    #missions-selected > ul.missions > li .overview {
+      width: 250px; }
+    #missions-selected > ul.missions > li .cancel {
+      width: 50px; }
+
+.appear-from-bottom, #missions-selected > ul.missions > li {
+  animation: fromBottom 150ms;
+  animation-timing-function: ease; }
+
+@keyframes fromBottom {
+  0% {
+    opacity: 0; }
+  1% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); } }
+.game-progress {
+  width: calc(100% - 40px);
+  max-width: 500px;
+  margin: 56px auto 10px auto;
+  height: 6px;
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid rgba(61, 199, 67, 0.3);
+  -webkit-transition: opacity 500ms cubic-bezier(0.64, 0.57, 0.67, 1);
+  -moz-transition: opacity 500ms cubic-bezier(0.64, 0.57, 0.67, 1);
+  -o-transition: opacity 500ms cubic-bezier(0.64, 0.57, 0.67, 1);
+  transition: opacity 500ms cubic-bezier(0.64, 0.57, 0.67, 1); }
+
+.game-progress:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: #3dc743;
+  content: " ";
+  border-radius: 3px;
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -o-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transition: all 500ms cubic-bezier(0.64, 0.57, 0.67, 1);
+  -moz-transition: all 500ms cubic-bezier(0.64, 0.57, 0.67, 1);
+  -o-transition: all 500ms cubic-bezier(0.64, 0.57, 0.67, 1);
+  transition: all 500ms cubic-bezier(0.64, 0.57, 0.67, 1); }
+
+.game-progress.two:after {
+  -webkit-transform: scaleX(0.5);
+  -moz-transform: scaleX(0.5);
+  -ms-transform: scaleX(0.5);
+  -o-transform: scaleX(0.5);
+  transform: scaleX(0.5); }
+
+.game-progress.three:after {
+  -webkit-transform: scaleX(0.75);
+  -moz-transform: scaleX(0.75);
+  -ms-transform: scaleX(0.75);
+  -o-transform: scaleX(0.75);
+  transform: scaleX(0.75); }
+
+.game-progress.four {
+  opacity: 0;
+  -webkit-transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -ms-transition-delay: 500ms;
+  -o-transition-delay: 500ms;
+  transition-delay: 500ms; }
+
+.game-progress.four:after {
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -o-transform: scaleX(1);
+  transform: scaleX(1); }
+
+.game-progress.one:after {
+  -webkit-transform: scaleX(0.25);
+  -moz-transform: scaleX(0.25);
+  -ms-transform: scaleX(0.25);
+  -o-transform: scaleX(0.25);
+  transform: scaleX(0.25); }
+
+ul.planets > li.loader {
+  font-size: 20px;
+  border: 1px solid transparent !important; }
+ul.planets > li.assigned {
+  pointer-events: none; }
+  ul.planets > li.assigned > * {
+    opacity: 0.3; }
+
+ul.vehicles > li.none-left, ul.vehicles > li.no-range {
+  position: relative;
+  pointer-events: none; }
+  ul.vehicles > li.none-left .detail, ul.vehicles > li.no-range .detail {
+    text-decoration: line-through; }
+ul.vehicles > li:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  line-height: 46px;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  content: " ";
+  pointer-events: none;
+  font-size: small;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease; }
+ul.vehicles > li.no-range:after, ul.vehicles > li.none-left:after {
+  opacity: 1; }
+ul.vehicles > li.none-left:after {
+  content: "none left"; }
+ul.vehicles > li.no-range:after {
+  content: "can not reach"; }
+
+#missions-widget {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  overflow: visible;
+  height: 40px; }
+  #missions-widget .head-text, #missions-widget .menu .sub-menu > label {
+    color: #3dc743;
+    display: block;
+    font-size: large;
+    width: calc(100% - 2 * 10px);
+    line-height: 40px;
+    padding: 10px; }
+  #missions-widget .backdrop {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.6); }
+  #missions-widget .actions, #missions-widget .menu {
+    max-width: 500px;
+    margin: auto;
+    overflow: hidden; }
+  #missions-widget .actions {
+    height: 100%; }
+    #missions-widget .actions button {
+      display: block;
+      width: 100%;
+      -webkit-transition: transform 250ms ease;
+      -moz-transition: transform 250ms ease;
+      -o-transition: transform 250ms ease;
+      transition: transform 250ms ease; }
+    #missions-widget .actions button.cancel {
+      background: rgba(0, 0, 0, 0.6);
+      color: rgba(255, 255, 255, 0.3); }
+  #missions-widget .menu {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    overflow: auto;
+    border: 1px solid rgba(0, 255, 128, 0.3);
+    background-color: black; }
+    #missions-widget .menu .sub-menu {
+      width: 100%;
+      -webkit-transition: all 250ms ease;
+      -moz-transition: all 250ms ease;
+      -o-transition: all 250ms ease;
+      transition: all 250ms ease; }
+      #missions-widget .menu .sub-menu > ul > li {
+        position: relative;
+        padding: 20px;
+        color: #00FF80;
+        border-top: 1px solid rgba(0, 255, 128, 0.3); }
+        #missions-widget .menu .sub-menu > ul > li > div {
+          display: block;
+          width: 350px;
+          margin: auto; }
+        #missions-widget .menu .sub-menu > ul > li img {
+          height: 25px;
+          width: 25px;
+          float: left; }
+        #missions-widget .menu .sub-menu > ul > li .detail {
+          padding-left: 10px;
+          text-align: left;
+          float: left;
+          line-height: 25px; }
+    #missions-widget .menu .select-planet {
+      position: relative;
+      z-index: 1; }
+    #missions-widget .menu .selected-planet {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      line-height: 40px;
+      font-size: small;
+      color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(0, 0, 0, 0.9);
+      border: 1px solid transparent;
+      padding: 10px; }
+    #missions-widget .menu .select-vehicle {
+      position: absolute;
+      top: 40px; }
+
+.disabled-button, #missions-widget.create .actions button.create, #missions-widget:not(.create) .actions button.cancel {
+  pointer-events: none; }
+
+#missions-widget.create .actions button.create {
+  -webkit-transform: translateY(-40px);
+  -moz-transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  -o-transform: translateY(-40px);
+  transform: translateY(-40px); }
+#missions-widget.create .actions button.cancel {
+  -webkit-transform: translateY(-40px);
+  -moz-transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  -o-transform: translateY(-40px);
+  transform: translateY(-40px); }
+
+#missions-widget:not(.create) .backdrop {
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0); }
+#missions-widget:not(.create) .menu {
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0); }
+  #missions-widget:not(.create) .menu .select-planet {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%); }
+
+#missions-widget.vehicle .menu .select-planet {
+  opacity: 0;
+  pointer-events: none; }
+
+#missions-widget:not(.vehicle) .menu .selected-planet {
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0); }
+#missions-widget:not(.vehicle) .menu .select-vehicle {
+  opacity: 0; }
+
+@media screen and (max-width: 750px) {
+  #missions-selected > ul.missions > li {
+    width: auto;
+    margin: 10px;
+    border: 1px solid rgba(0, 255, 128, 0.3); }
+    #missions-selected > ul.missions > li .planet, #missions-selected > ul.missions > li .vehicle, #missions-selected > ul.missions > li .overview, #missions-selected > ul.missions > li .cancel {
+      width: 100%;
+      text-align: center;
+      float: none;
+      display: block;
+      padding-left: 10px; }
+    #missions-selected > ul.missions > li .cancel .mobile-only {
+      opacity: 0.7;
+      border-top: 1px solid rgba(0, 255, 128, 0.3);
+      padding-right: 10px; }
+
+  .no-mobile {
+    display: none !important; } }
+@media screen and (min-width: 750px) {
+  .mobile-only {
+    display: none !important; } }

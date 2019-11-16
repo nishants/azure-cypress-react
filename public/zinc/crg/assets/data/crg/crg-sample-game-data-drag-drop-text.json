@@ -1,0 +1,196 @@
+{
+  "passage": {
+    "id"    : "drag-drop-text",
+    "from"  : "Self-Reliance, 1841",
+    "by"    : "Ralph Waldo Emerson",
+    "text"  : "Man is timid and apologetic; he is no longer upright; he dares not say 'I think,' 'I am,' but quotes some saint or sage. He is ashamed before the blade of grass or the blowing rose. These roses under my window make no reference to former roses or to better ones; they are for what they are; they exist with God to-day. There is no time to them. There is simply the rose; it is perfect in every moment of its existence. Before a leaf-bud has burst, its whole life acts; in the full-blown flower there is no more; in the leafless root there is no less. Its nature is satisfied, and it satisfies nature, in all moments alike. But man postpones or remembers; he does not live in the present, but with reverted eye laments the past, or, heedless of the riches that surround him, stands on tiptoe to foresee the future. He cannot be happy and strong until he too lives with nature in the present, above time."
+  },
+  "agent": {
+    "smallProfilePicture": "assets/images/agents/emerson.png",
+    "videoPlaceholder": "assets/images/agents/emerson-video-placeholder.png"
+  },
+  "script": {
+    "scenes": [
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"   : "navigators",
+          "subgroup": "pronouns",
+          "sceneId" : "3.13-about-roses",
+
+          "focus"                   : {"indices": [36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118], "text": ""},
+          "highlight"               : {"indices": [36,37, 71,72, 45,46], "text": ""},
+          "dragDropText"  : {
+            "draggables" : [{"indices": [36,37]  , "text": "These roses"}, {"indices": [45,46]  , "text": "former roses"}, {"indices": [71,72]  , "text": "the rose"}],
+            "droppables" : [
+                              {"indices": [51], "text": "they"}, {"indices": [55], "text": "they"},
+                              {"indices": [67], "text": "them"},
+                              {"indices": [73], "text": "it"},{"indices": [112], "text": "it"},
+                              {"indices": [80], "text": "its"},{"indices": [87], "text": "its"}, {"indices": [107], "text": "its"}
+            ],
+            "correct"    : [
+              {
+                "draggable" : {"indices": [36,37] },
+                "droppable" : {"indices": [51]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [36,37] },
+                "droppable" : {"indices": [55]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [36,37] },
+                "droppable" : {"indices": [67]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [36,37] },
+                "droppable" : {"indices": [73]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [36,37] },
+                "droppable" : {"indices": [80]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [36,37] },
+                "droppable" : {"indices": [112]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [36,37] },
+                "droppable" : {"indices": [87]},
+                "removeDroppable" : true
+              },
+
+              {
+                "draggable" : {"indices": [36,37] },
+                "droppable" : {"indices": [107]},
+                "removeDroppable" : true
+              },
+
+
+              {
+                "draggable" : {"indices": [45,46] },
+                "droppable" : {"indices": [51]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [45,46] },
+                "droppable" : {"indices": [55]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [45,46] },
+                "droppable" : {"indices": [67]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [45,46] },
+                "droppable" : {"indices": [73]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [45,46] },
+                "droppable" : {"indices": [80]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [45,46] },
+                "droppable" : {"indices": [112]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [45,46] },
+                "droppable" : {"indices": [87]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [45,46] },
+                "droppable" : {"indices": [107]},
+                "removeDroppable" : true
+              },
+
+              {
+                "draggable" : {"indices": [71,72] },
+                "droppable" : {"indices": [51]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [71,72] },
+                "droppable" : {"indices": [55]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [71,72] },
+                "droppable" : {"indices": [67]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [71,72] },
+                "droppable" : {"indices": [73]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [71,72] },
+                "droppable" : {"indices": [80]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [71,72] },
+                "droppable" : {"indices": [112]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [71,72] },
+                "droppable" : {"indices": [87]},
+                "removeDroppable" : true
+              },
+              {
+                "draggable" : {"indices": [71,72] },
+                "droppable" : {"indices": [107]},
+                "removeDroppable" : true
+              }
+            ],
+            "knownIncorrect": [],
+            "attempts"             : {
+              "correctExpected"    : 3,
+              "incorrectAllowed"   : 2,
+              "onCorrectMessages"  : [
+                {"url": "assets/videos/emerson/3.14-correct-whats-another.mov", "type": "video/mp4", "transcript": "Correct! What’s another pronoun that represents the roses?"}
+              ],
+              "onInCorrectMessages": [
+                {"url": "assets/videos/emerson/naa-try-again.mp4", "type": "video/mp4", "transcript": "Nah. Try again."}
+              ],
+              "onFinishByFailure"  :                 {
+                "url": "assets/videos/emerson/3.13-hmmm-maybe-watch .mov",
+                "type": "video/mp4",
+                "transcript": "Hmmm… Maybe watch the Pronouns video and then give this another shot."
+              },
+              "onFinishBySuccess"  : {
+                "url": "assets/videos/emerson/3.13-great-you-got-all-three.mov",
+                "type": "video/mp4",
+                "transcript": "Great! You got all three!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url"       : "assets/videos/emerson/3.13-about-roses.mov",
+            "type"      : "video/mp4",
+            "transcript": " Cool. Next, Emerson talks about roses. He uses three different pronouns to refer back to “these roses” or “the rose.” Drag “roses/the rose” onto each of the three pronouns that represents them."
+          }
+        }
+      },
+      {
+        "name": "exit",
+        "config": {
+          "group": "exit",
+          "sceneId": "28"
+        }
+      }
+    ]
+  }
+}
+

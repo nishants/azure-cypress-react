@@ -1,0 +1,175 @@
+$search_icon_width: 45px;
+$search_input_offset: 5px;
+
+.search-and-filter {
+  position: relative;
+  background: $theme_dark_color;
+  padding: 10px;
+  @include transition(
+    #{transform $transition_time $transition_function,
+    opacity $transition_time $transition_function}
+  );
+  .search-and-filter-input {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background-color: $light_white;
+    border-radius: $default_border_radius;
+
+    .search-indicator-icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      line-height: $search_and_filter_bar_height;
+      height: $search_and_filter_bar_height;
+      width: $search_icon_width;
+      background: $grey;
+      color: $light_black_text;
+      @include transition($transition);
+
+      .search-icon,
+      .reset-search-icon {
+        display: block;
+        height: 100%;
+        width: 100%;
+        line-height: inherit;
+        @include transition($transition_moves);
+
+        &.hide {
+          @include transform(scale(0));
+        }
+
+        &.show {
+          @include transform(none);
+        }
+      }
+      .reset-search-icon {
+        position: relative;
+        top: -100%;
+        cursor: pointer;
+        @extend .hide;
+      }
+
+      &.can-reset-search {
+        @include transform(scale(0.8));
+        background-color: $danger_red;
+        .search-icon {
+          @extend .hide;
+        }
+        .reset-search-icon {
+          color: $light_white;
+          @extend .show;
+        }
+      }
+    }
+    input {
+      display: block;
+      width: 100%;
+      position: relative;
+      padding-left: $search_icon_width + 10px;
+      border: 1px solid transparent;
+      background-color: transparent;
+      height: $search_and_filter_bar_height;
+      line-height: $search_and_filter_bar_height;
+      font-weight: $font_weight_bold;
+      @include transition($transition);
+    }
+    @include placeholder {
+      color: $light_border_color;
+      font-weight: $font_weight_bold;
+    }
+
+    &.deactivate {
+      display: block;
+      input {
+        color: $light_black_text;
+        @include transform(
+          translateX(-$search_icon_width + $search_input_offset * 2 + 10px)
+        );
+      }
+      .search-indicator-icon {
+        color: $light_border_color;
+        background-color: transparent;
+        @include transform(translateX(-$search_input_offset));
+      }
+    }
+  }
+
+  .search-and-filter-dropdown {
+    position: absolute;
+    z-index: $top_bar_zindex;
+    top: calc(100% - 10px);
+    left: $search_icon_width + 10px;
+    width: calc(100% - #{$search_icon_width + 20px});
+    text-align: left;
+    color: $blue;
+    box-shadow: $drop_down_shadow;
+    border-top: 1px solid $light_grey_border_color;
+    line-height: 20px;
+    overflow: hidden;
+    > div {
+      @include transition($transition);
+      background-color: $grey;
+      padding: 0 10px;
+      padding-bottom: 10px;
+    }
+    .tag-link {
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+    //.clear-search-and-filter {
+    //  cursor: pointer;
+    //  text-align: center;
+    //  border: 1px solid;
+    //  height: 40px;
+    //  line-height: 40px;
+    //}
+  }
+
+  //.search-and-filter-backdrop{
+  //  position: fixed;
+  //  height: 100vh;
+  //  width: 100vw;
+  //  top: 0;
+  //  left: 0;
+  //  background-color: $light_border_color;
+  //}
+
+  &:not(.active) {
+    .search-and-filter-input {
+      @extend .deactivate;
+    }
+    .search-and-filter-dropdown {
+      pointer-events: none;
+      @include transform(scale(0));
+      > div {
+        opacity: 0;
+        @include transform(translateY(-100%));
+      }
+    }
+    .search-and-filter-backdrop {
+      @include transform(scale(0));
+    }
+    .search-indicator-icon.can-reset-search {
+      .reset-search-icon {
+        color: $light_border_color;
+      }
+    }
+  }
+}
+
+.search-and-input-backdrop {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-color: transparent;
+
+  &:not(.show-backdrop) {
+    @include transform(scale(0));
+  }
+}

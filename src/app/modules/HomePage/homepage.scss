@@ -1,0 +1,67 @@
+$splash_height: 500px;
+$splash_stages: 4;
+
+$homepage_side_bar_width: 250px;
+$search_bar_height: 45px;
+$search_and_filter_bar_height: 40px;
+
+#homepage {
+  position: relative;
+  .homepage-splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $splash_height;
+  }
+
+  .homepage-content-container {
+    position: relative;
+
+    .homepage-splash-tint {
+      height: $splash_height;
+      background-color: transparent;
+      ul.splash-scroll-monitor {
+        height: 100%;
+        @extend .undo-list;
+        > li {
+          height: calc(100% / #{$splash_stages});
+        }
+      }
+    }
+
+    .homepage-content {
+      .tab-view-container {
+        background-color: white;
+
+        @extend .resize-container;
+        .side-bar,
+        .route-view-container {
+          float: left;
+        }
+
+        .route-view-container {
+          @include transition(transform $transition_time $transition_function);
+          overflow: hidden;
+          padding-top: 0;
+          padding-bottom: 10px;
+          background-color: $light_white;
+          width: calc(100% - #{$homepage_side_bar_width});
+          //border-left: 1px solid $light_border_color;
+          box-shadow: $inside_card_shodow;
+          min-height: 100vh;
+        }
+      }
+    }
+  }
+}
+
+@import './Splash/splash';
+@import './TopBar/top-bar';
+@import './Portfolio/index';
+@import './Blog/index';
+@import './WorkHistory/index';
+@import './SideBar/sidebar';
+@import './SearchTab/search-tab';
+@import './AboutMe/about-me';
+@import './SocialLinks/socail-links';

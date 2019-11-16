@@ -1,0 +1,105 @@
+@import "vars";
+@import "typography";
+
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+label{
+  cursor: inherit;
+}
+
+input{
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  box-sizing: border-box;
+  border: none;
+}
+
+.resize-container:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+@mixin transform( $property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-transform: $property;
+  -o-transform: $property;
+  transform: $property;
+}
+
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -moz-transform:    $value;
+  -ms-transform:     $value;
+  -o-transform:      $value;
+  transform:         $value;
+}
+
+@mixin transformStyle($value) {
+  -webkit-transform-style:  $value;
+  -moz-transform-style:     $value;
+  transform-style:          $value;
+}
+
+@mixin transformOrigin($value) {
+  -webkit-transform-origin: $value;
+  -moz-transform-origin: $value;
+  transform-origin: $value;
+}
+
+@mixin transitionDelay($time){
+  -webkit-transition-delay: $time;
+  -moz-transition-delay: $time;
+  -ms-transition-delay: $time;
+  -o-transition-delay: $time;
+  transition-delay: $time;
+}
+
+@mixin transition($value){
+  -webkit-transition: $value;
+  -moz-transition:    $value;
+  -o-transition:      $value;
+  transition:         $value;
+}
+
+@mixin gradient($value){
+  background: -moz-linear-gradient($value); /* FF3.6-15 */
+  background: -webkit-linear-gradient($value); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient($value); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+ul.undo-list{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
+ul.inline-list{
+  @extend .resize-container;
+  @extend .undo-list;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: inline-block;
+  > li {
+    float: left;
+  }
+}
+
+//[ng-repeat]{
+//  @include transition(all 500ms $defaultTransitionFunction);
+//}
+//
+//[ng-repeat]:not(.display-element){
+//  opacity: 0;
+//}

@@ -1,0 +1,441 @@
+
+<div id="crgameplay" class="viewport-safari-fix">
+  <div class="crg-player body">
+    <div class="left-pane">
+      <div class="header">
+        <div class="logo"><img src="assets/images/zinc-logo-small.png"/></div>
+      </div>
+      <div class="controls">
+        <div class="points">
+          <label class="fa fa-star-o"></label>
+          <div class="value">987</div>
+        </div>
+        <div class="sound">
+          <button class="fa fa-volume-up"></button>
+        </div>
+        <div ng-click="game.player.exit()" class="exit">
+          <button class="fa fa-sign-out"></button>
+        </div>
+      </div>
+    </div>
+    <div class="central-content">
+      <div class="passage-container">
+        <!--.header-->
+        <!--  .crgame-progress-->
+        <!--    include game-progress/game-progress-->
+        <div ng-init="passage = game.player.passage" ng-if="game.player.passage" class="passage">
+          <div class="title"><span>From:&nbsp;</span><span ng-bind="passage.from" class="from"></span></div>
+          <div class="author"><span>by&nbsp;</span><span ng-bind="passage.by" class="by"></span></div>
+          <div on-text-select="onTextSelect($selection.indices)" on-text-select-touch="onTextSelectTouch($selection.indices)" ng-class="{&quot;focusing&quot; : game.player.state.focusPhrase.indices.length || editor.passageSelector.selection.focus.indices.length}" class="text phrase-selector selection-pointer">
+            <div ng-hide="game.player.state.disableState" class="selection-options">
+              <div ng-show="game.player.state.textSelectedIsClose" class="close-enough-selection">
+                <label>Almost there. You need to select complete phrase</label>
+              </div>
+              <div ng-show="game.player.state.selectingText" class="text-selection">
+                <button ng-click="game.player.submitText($selection)" class="crg select-phrase">Select</button>
+                <div class="pointer"></div>
+              </div>
+              <div ng-show="game.player.state.drag" class="drag-mask">
+                <div ng-drag="true" data-allow-transform="true" draggable="true" class="drag-handle">
+                  <button class="crg drag-phrase"><span class="icon fa fa-arrows"></span><span>Hold Here To Drag</span></button>
+                  <div class="pointer"></div><span ng-bind="game.player.state.drag.text" class="text"></span>
+                </div>
+              </div>
+              <div class="passage-selection">
+                <button ng-click="editor.passageSelector.selection.setFocus($selection.indices)" ng-show="editor.passageSelector.selection.selectingFocus" class="selectFocus">Set Focus</button>
+                <button ng-click="editor.passageSelector.selection.setPhrase($selection.indices)" ng-show="editor.passageSelector.selection.selectingPhrase" class="selectPhrase">Set Phrase</button>
+              </div>
+            </div>
+            <div ng-show="game.player.state.dragRelations.length &amp;&amp; !game.player.state.disableState" class="text-drag-mask">
+              <div ng-drop="true" ng-drop-success="game.player.state.wrongTextDropped(relation)" class="wrong-drop-container"></div>
+              <div ng-repeat="relation in game.player.state.dragRelations" class="relations">
+                <div phrase="relation.draggable" ng-drag="true" data-allow-transform="true" draggable="true" ng-drag-start="game.player.state.draggingText(relation)" class="draggable-text mask-phrase"><span ng-bind="relation.draggable.text" class="word highlight focus"></span></div>
+                <div ng-if="relation.droppable" phrase="relation.droppable" ng-drop="true" ng-drop-success="game.player.state.droppedTextOnRelation(relation)" class="droppable-text mask-phrase"><span ng-bind="relation.droppable.text"></span></div>
+              </div>
+              <div ng-if="game.player.state.droppables" phrase="droppable" ng-drop="true" ng-drop-success="game.player.state.droppedTextOnRelation(droppable, $event)" ng-repeat="droppable in game.player.state.droppables" class="droppable-text mask-phrase"><span ng-bind="droppable.text"></span></div>
+            </div>
+            <div ng-show="!game.player.state.findPhrase.disabled" class="selection-options">
+              <div ng-show="game.player.state.findPhrase.selectionIsClose" class="close-enough-selection">
+                <label><span class="fa fa-lightbulb-o"></span><span>You are close !</span></label>
+              </div>
+              <div ng-class="{&quot;hide-submit&quot; : !game.player.state.findPhrase.showSubmit}" class="text-selection">
+                <button ng-click="game.player.state.findPhrase.submitText($selection)" class="crg select-phrase">{{game.player.state.findPhrase.submitButtonLabel}}</button>
+                <div class="pointer"></div>
+              </div>
+            </div>
+            <div ng-if="game.player.state.dragDropText" ng-init="dragDropText = game.player.state.dragDropText" class="text-drag-mask">
+              <div ng-drop="true" ng-drop-success="dragDropText.wrongDrop(dragDropText.draggingNow)" class="wrong-drop-container"></div>
+              <div ng-repeat="draggable in dragDropText.draggables" class="droppable-phrase">
+                <div ng-repeat="wordIndex in draggable.indices" phrase="{indices: [wordIndex]}" ng-drag="true" data-allow-transform="true" draggable="true" ng-drag-start="dragDropText.dragging(draggable)" class="draggable-text mask-phrase"><span ng-bind="draggable.text" class="word highlight focus"></span></div>
+              </div>
+              <div ng-repeat="droppable in dragDropText.droppables" class="droppable-phrase">
+                <div ng-repeat="wordIndex in droppable.indices" ng-hide="droppable.disable" phrase="{indices: [wordIndex]}" ng-drop="true" ng-drop-success="dragDropText.dropped(dragDropText.draggingNow, droppable)" class="droppable-text mask-phrase"></div>
+              </div>
+            </div><span ng-repeat="word in passage.words" ng-class="{&quot;line-break&quot; : word.linebreak, &quot;highlight&quot;: word.highlight, &quot;focus&quot;: word.focus, &quot;flash&quot;: word.flash}" data-word-number="{{$index}}" ng-show="word.text.length || word.linebreak" class="word">{{word.text}}</span>
+          </div>
+        </div>
+        <div ng-init="passage = game.player.passage" ng-if="game.player.state.slide" class="state-slide passage">
+          <div class="slide-title">{{game.player.state.slide.title}}</div>
+          <div class="slide-body">
+            <div on-text-select="onTextSelect($selection.indices)" on-text-select-touch="onTextSelectTouch($selection.indices)" ng-class="{&quot;focusing&quot; : game.player.state.focusPhrase.indices.length || editor.passageSelector.selection.focus.indices.length}" class="text phrase-selector selection-pointer">
+              <div ng-show="!game.player.state.findPhrase.disabled" class="selection-options">
+                <div ng-show="game.player.state.findPhrase.selectionIsClose" class="close-enough-selection">
+                  <label><span class="fa fa-lightbulb-o"></span><span>You are close !</span></label>
+                </div>
+                <div ng-class="{&quot;hide-submit&quot; : !game.player.state.findPhrase.showSubmit}" class="text-selection">
+                  <button ng-click="game.player.state.findPhrase.submitText($selection)" class="crg select-phrase">{{game.player.state.findPhrase.submitButtonLabel}}</button>
+                  <div class="pointer"></div>
+                </div>
+              </div>
+              <div ng-if="game.player.state.dragDropText" ng-init="dragDropText = game.player.state.dragDropText" class="text-drag-mask">
+                <div ng-drop="true" ng-drop-success="dragDropText.wrongDrop(dragDropText.draggingNow)" class="wrong-drop-container"></div>
+                <div ng-repeat="draggable in dragDropText.draggables" class="droppable-phrase">
+                  <div ng-repeat="wordIndex in draggable.indices" phrase="{indices: [wordIndex]}" ng-drag="true" data-allow-transform="true" draggable="true" ng-drag-start="dragDropText.dragging(draggable)" class="draggable-text mask-phrase"><span ng-bind="draggable.text" class="word highlight focus"></span></div>
+                </div>
+                <div ng-repeat="droppable in dragDropText.droppables" class="droppable-phrase">
+                  <div ng-repeat="wordIndex in droppable.indices" ng-hide="droppable.disable" phrase="{indices: [wordIndex]}" ng-drop="true" ng-drop-success="dragDropText.dropped(dragDropText.draggingNow, droppable)" class="droppable-text mask-phrase"></div>
+                </div>
+              </div>
+              <ul ng-if="game.player.state.slide.bullets" class="bullets">
+                <li ng-repeat="bullet in game.player.state.slide.bullets"><span ng-repeat="word in bullet.words track by word.index" data-word-number="{{word.index}}" ng-class="{&quot;line-break&quot; : word.linebreak, &quot;highlight&quot;: word.highlight, &quot;focus&quot;: word.focus, &quot;flash&quot;: word.flash}" class="word">{{word.text}}</span></li>
+              </ul>
+              <ul ng-if="game.player.state.slide.sections" class="slide-sections undo-list">
+                <li ng-repeat="section in game.player.state.slide.sections">
+                  <div ng-show="section.title.length &gt; 1" class="section-title"><span ng-repeat="word in section.title" data-word-number="{{word.index}}" class="word focus">{{word.text}}</span></div>
+                  <div class="section-body"><span ng-repeat="word in section.text" data-word-number="{{word.index}}" ng-class="{&quot;line-break&quot; : word.linebreak, &quot;highlight&quot;: word.highlight, &quot;focus&quot;: word.focus, &quot;flash&quot;: word.flash}" class="word">{{word.text}}</span></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div ng-if="game.player.passage" ng-class="{&quot;no-show&quot; : !(game.player.state.group &amp;&amp; game.player.state.subgroup)}" class="skill-indicator-container passage-help">
+          <!--.skill-indicator-->
+          <!--  .skill {{game.player.state.group}}-->
+          <!--  .subskill(ng-click="game.player.playSkillVideo(game.player.state.group,  game.player.state.subgroup)")-->
+          <!--    label {{game.player.state.subgroup}}-->
+          <!--    span.fa.fa-play-->
+          <ul class="progress-indicator">
+            <li class="finished">
+              <label>{{game.player.state.group}}</label><span class="bg">
+                <svg width="100%" height="100%" viewbox="0 0 229 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch-->
+                  <desc>Created with Sketch.</desc>
+                  <defs>
+                    <path id="path-1" d="M0,0 L215,0 L225,25 L215,50 L1,50 L1,50 C0.44771525,50 -4.33869274e-17,49.5522847 -1.11022302e-16,49 L0,0 Z"></path>
+                    <filter id="filter-2" x="-1.6%" y="-5.0%" width="103.1%" height="114.0%" filterunits="objectBoundingBox">
+                      <feoffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feoffset>
+                      <fegaussianblur stddeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></fegaussianblur>
+                      <fecolormatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></fecolormatrix>
+                    </filter>
+                  </defs>
+                  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="fillable">
+                    <g id="export-icons" transform="translate(-11.000000, -4.000000)">
+                      <g id="Group-4" transform="translate(13.000000, 5.000000)">
+                        <g id="begin">
+                          <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                          <use fill="#FBFBFB" fill-rule="evenodd" xlink:href="#path-1" class="fillable"></use>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg></span>
+            </li>
+            <li ng-click="game.player.playSkillVideo(game.player.state.group,  game.player.state.subgroup)" class="current">
+              <label><span>{{game.player.state.subgroup}}</span><span class="fa fa-play"></span></label><span class="bg">
+                <svg width="100%" height="100%" viewbox="0 0 225 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch-->
+                  <title>Rectangle</title>
+                  <desc>Created with Sketch.</desc>
+                  <defs>
+                    <polygon id="path-1" points="225 0 450 0 450 25 450 50 225 50 235.895884 25"></polygon>
+                  </defs>
+                  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="fillable">
+                    <g id="export-icons" transform="translate(-238.000000, -5.000000)">
+                      <g id="Group-4" transform="translate(13.000000, 5.000000)">
+                        <g id="Rectangle">
+                          <use fill="#FBFBFB" fill-rule="evenodd" xlink:href="#path-1"></use>
+                          <path stroke-opacity="0.1" stroke="#000000" stroke-width="1" d="M225.763342,0.5 L236.441308,25 L225.763342,49.5 L449.5,49.5 L449.5,0.5 L225.763342,0.5 Z"></path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg></span>
+            </li>
+          </ul>
+        </div>
+        <div ng-if="game.player.skillGroups.length" class="skill-indicator-container">
+          <ul class="undo-list">
+            <li ng-repeat="skillGroup in game.player.skillGroups">
+              <ul class="progress-indicator">
+                <li ng-repeat="skill in skillGroup" ng-class="{&quot;finished&quot;: skill.finished, &quot;current&quot;: skill.current, &quot;current-parent-skill&quot; : skill.currentParent}">
+                  <label><span>{{skill.label}}</span></label><span ng-if="$index == 0" class="bg">
+                    <svg width="100%" height="100%" viewbox="0 0 229 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch-->
+                      <desc>Created with Sketch.</desc>
+                      <defs>
+                        <path id="path-1" d="M0,0 L215,0 L225,25 L215,50 L1,50 L1,50 C0.44771525,50 -4.33869274e-17,49.5522847 -1.11022302e-16,49 L0,0 Z"></path>
+                        <filter id="filter-2" x="-1.6%" y="-5.0%" width="103.1%" height="114.0%" filterunits="objectBoundingBox">
+                          <feoffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feoffset>
+                          <fegaussianblur stddeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></fegaussianblur>
+                          <fecolormatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></fecolormatrix>
+                        </filter>
+                      </defs>
+                      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="fillable">
+                        <g id="export-icons" transform="translate(-11.000000, -4.000000)">
+                          <g id="Group-4" transform="translate(13.000000, 5.000000)">
+                            <g id="begin">
+                              <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                              <use fill="#FBFBFB" fill-rule="evenodd" xlink:href="#path-1" class="fillable"></use>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </svg></span><span ng-if="$index &gt; 0 &amp;&amp; $index &lt; skillGroup.length -1" class="bg">
+                    <svg width="100%" height="100%" viewbox="0 0 225 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch-->
+                      <title>middle</title>
+                      <desc>Created with Sketch.</desc>
+                      <defs>
+                        <polygon id="path-1" points="225 0 440.425532 0 450 25 440.425532 50 225 50 235.432229 25"></polygon>
+                      </defs>
+                      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="fillable">
+                        <g id="export-icons" transform="translate(-238.000000, -5.000000)">
+                          <g id="Group-4" transform="translate(13.000000, 5.000000)">
+                            <g id="middle">
+                              <use fill="#FBFBFB" fill-rule="evenodd" xlink:href="#path-1"></use>
+                              <path stroke-opacity="0.1" stroke="#000000" stroke-width="1" d="M225.750431,0.5 L235.974016,25 L225.750431,49.5 L440.081607,49.5 L449.464586,25 L440.081607,0.5 L225.750431,0.5 Z"></path>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </svg></span><span ng-if="$index == skillGroup.length -1 &amp;&amp; $index &gt; 0" class="bg">
+                    <svg width="100%" height="100%" viewbox="0 0 225 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch-->
+                      <title>Rectangle</title>
+                      <desc>Created with Sketch.</desc>
+                      <defs>
+                        <polygon id="path-1" points="225 0 450 0 450 25 450 50 225 50 235.895884 25"></polygon>
+                      </defs>
+                      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="fillable">
+                        <g id="export-icons" transform="translate(-238.000000, -5.000000)">
+                          <g id="Group-4" transform="translate(13.000000, 5.000000)">
+                            <g id="Rectangle">
+                              <use fill="#FBFBFB" fill-rule="evenodd" xlink:href="#path-1"></use>
+                              <path stroke-opacity="0.1" stroke="#000000" stroke-width="1" d="M225.763342,0.5 L236.441308,25 L225.763342,49.5 L449.5,49.5 L449.5,0.5 L225.763342,0.5 Z"></path>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </svg></span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="right-pane">
+      <div ng-class="{&quot;show-chat&quot; : game.player.mode.chat, &quot;show-full-screen-video&quot; : game.player.video.fullscreen}" class="player-console">
+        <!--.subgroup-indicator(ng-class='{"no-display" : !game.player.subgroups.length || game.player.state.hideSubgroupIndicator}')-->
+        <!--  include console/subgroup-indicator/subgroup-indicator-->
+        <div class="video-player-container">
+          <div id="crg-video-player" ng-class="{&quot;video-ended&quot; : game.player.video.finished}">
+            <div ng-show="game.player.video.finished &amp;&amp; game.player.video.fullscreen" class="video-end-menu">
+              <button ng-click="game.player.state.skip.onClick()" class="crg">{{game.player.state.nextButtonLabel || "Proceed"}}</button>
+            </div>
+            <div class="player-bar">
+              <label>{{game.player.video.label}}</label>
+            </div>
+            <ul class="player-controls">
+              <li ng-click="game.player.video.replay()" class="replay toot-tip-container"><span class="fa fa-undo"></span>
+                <div class="tool-top-popover">
+                  <label>Replay</label>
+                </div>
+              </li>
+              <li ng-hide="game.player.video.paused" ng-click="game.player.video.pause()" class="pause toot-tip-container"><span class="fa fa-pause"></span>
+                <div class="tool-top-popover">
+                  <label>Pause</label>
+                </div>
+              </li>
+              <li ng-show="game.player.video.paused" ng-click="game.player.video.resume()" class="resume toot-tip-container"><span class="fa fa-play"></span>
+                <div class="tool-top-popover">
+                  <label>Play</label>
+                </div>
+              </li>
+              <li ng-class="{&quot;disabled-player-control&quot; : !game.player.video.canSkip}" ng-click="game.player.skipVideo()" class="skip toot-tip-container"><span class="fa fa-reply-all"></span>
+                <div class="tool-top-popover">
+                  <label>Skip</label>
+                </div>
+              </li>
+            </ul>
+            <div style="display: none" class="no-video-place-holder"><img ng-src="{{game.player.chat.agent.videoThumbnail}}"/></div>
+            <div video-player="video-player" video-url="game.player.video.url" video-type="game.player.video.type" after-video="game.player.video.ended()" resize-video="game.player.video.fullscreen" class="video-player"></div>
+            <div class="video-loader-container">
+              <div ng-class="{&quot;loading&quot; : game.player.video.loading}" class="state-loader"></div>
+            </div>
+          </div>
+          <div ng-hide="mobileUserActionReceived" ng-click="game.player.video.replay(); mobileUserActionReceived = true;" class="mobile-user-action touch-screen-only">
+            <button class="receive-user-action">Start</button>
+          </div>
+        </div>
+        <div class="chat-window">
+          <div class="slider">
+            <!--.toggle-chat-mode(ng-click='game.player.mode.chat = !game.player.mode.chat')-->
+            <!--  include console/chat-toggle-button/chat-toggle-button-->
+            <div scroll-to-bottom-on-resize="scroll-to-bottom-on-resize" class="chat-history">
+              <ul class="dialogues">
+                <!--li.dialogue(ng-repeat='dialogue in game.player.chat.dialogues',ng-class='dialogue.sender.type', ng-if='dialogue.text.length')-->
+                <!--  img.sender(ng-src='{{dialogue.sender.image}}')-->
+                <!--  .message-->
+                <!--    .message-text(ng-bind='dialogue.text')-->
+                <li ng-show="game.player.video.transcript.text &amp;&amp; game.player.video.transcript.text.length" class="agent dialogue"><img ng-src="{{game.player.chat.agent.image}}" class="sender"/>
+                  <div class="message">
+                    <div text="game.player.video.transcript.text" typing-speed="{{game.player.video.transcript.speed}}" class="hard-typewriter message-text"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div ng-class="{&quot;ready&quot; :(game.player.chat.input.ready || game.player.state.inputFixed) &amp;&amp; !game.player.state.exiting}" class="console-user-input">
+          <div class="chat-input-form">
+            <div class="video-transcript">
+              <div text="game.player.state.transcript.text" typing-speed="25" class="hard-typewriter message-text"></div>
+            </div>
+            <div ng-if="game.player.state.showPoll" ng-init="state = game.player.state" class="poll-result">
+              <ul class="undo-list">
+                <li ng-repeat="result in state.pollResult track by $index" class="poll-score">
+                  <label>{{result.label}} ({{result.score}}%)</label>
+                  <div class="poll-indicator">
+                    <div style="transform: scaleX({{result.score/100}})" class="votes"></div>
+                  </div>
+                </li>
+              </ul>
+              <!--.poll-input-->
+              <!--  ul.poll-attempts(ng-show='state.pollAttempts.length > 1')-->
+              <!--    li(ng-repeat='attempt in state.pollAttempts track by $index', ng-class='{"failed" : attempt.failed, "success" : attempt.success}')-->
+              <!--      span.failed-icon.fa.fa-times-->
+              <!--      span.correct-icon.fa.fa-check
+              //div(ng-show='!state.closePolling')
+              //  textarea(ng-model='state.pollInputValue', placeholder='Type here')
+              //  button.crg.button-outline.submit(ng-click='state.submitPollInput(state.pollInputValue)', ng-class='{"disabled-input": !state.pollInputValue.length}') Submit
+              -->
+            </div>
+            <div ng-if="game.player.state.pollResult" class="poll-result">
+              <ul class="undo-list">
+                <li ng-repeat="result in game.player.state.pollResult.scores track by $index" class="poll-score">
+                  <label>{{result.label}} ({{result.score}}%)</label>
+                  <div class="poll-indicator">
+                    <div style="transform: scaleX({{result.score/100}})" class="votes"></div>
+                  </div>
+                </li>
+              </ul>
+              <div class="poll-input">
+                <ul ng-show="game.player.state.pollResult.attempts.length &gt; 1" class="poll-attempts">
+                  <li ng-repeat="attempt in game.player.state.pollResult.attempts track by $index" ng-class="{&quot;failed&quot; : attempt.failed, &quot;success&quot; : attempt.success}"><span class="failed-icon fa fa-times"></span><span class="correct-icon fa fa-check"></span></li>
+                </ul>
+              </div>
+            </div>
+            <ul ng-if="game.player.state.multiInput.length" class="multi-input">
+              <li ng-repeat="inputBox in game.player.state.multiInput" ng-class="{&quot;disable-input&quot; : inputBox.disabled, &quot;focused&quot; : inputBox.__focus}" class="inline-input-button">
+                <input ng-model="inputBox.inputValue" placeholder="{{inputBox.label}}" ng-focus="inputBox.__focus = true" ng-blur="inputBox.__focus = false"/>
+                <button ng-click="inputBox.submit(inputBox.inputValue)" ng-disabled="!inputBox.inputValue" class="crg submit-input-box">
+                  <div ng-hide="inputBox.buttonLabel" class="fa fa-chevron-right"></div><span>{{inputBox.buttonLabel}}</span>
+                </button>
+              </li>
+            </ul>
+            <ul ng-if="game.player.state.showQuotes.length" class="show-quotes">
+              <li ng-repeat="quote in game.player.state.showQuotes"><span class="fa fa-quote-left"></span><span ng-bind="quote.text"></span><span class="fa fa-quote-right"></span>
+                <label ng-show="quote.by" class="quote-by">- {{quote.by}}</label>
+              </li>
+            </ul>
+            <ul ng-if="game.player.state.options.length" ng-class="{'selected-option' : option.selected}" class="select-options">
+              <li ng-class="{'selected-option' : option.selected}" ng-repeat="option in game.player.state.options" ng-init="option.input=false" ng-click="game.player.state.setOption(option)">
+                <div class="check-box">
+                  <div class="selected fa fa-check"></div>
+                </div>
+                <label>{{option.label}}</label>
+              </li>
+            </ul>
+            <ul ng-if="game.player.state.multiChoice" ng-class="{'closed' : game.player.state.multiChoice.closed}" class="multi-choice select-options">
+              <li ng-class="{'selected-option' : option.selected, 'wrong-selection' : option.wrongSelection, 'correct-selection' : option.correctSelection, 'correct-option' : option.correct}" ng-repeat="option in game.player.state.multiChoice.options" ng-click="game.player.state.multiChoice.setOption(option)">
+                <div class="check-box">
+                  <div class="selected fa fa-check"></div>
+                  <div class="wrong-mark fa fa-times"></div>
+                  <div class="correct-mark fa fa-check"></div>
+                </div>
+                <label>{{option.label}}</label>
+              </li>
+            </ul>
+            <ul ng-show="game.player.state.buttons.length" class="buttons">
+              <li ng-repeat="button in game.player.state.buttons">
+                <button ng-class="{'disable-button' : button.disabled}" ng-click="button.onClick()" class="crg">{{button.label}}</button>
+              </li>
+            </ul>
+            <ul ng-show="game.player.state.dropBoxes.length" class="drop-area">
+              <li ng-repeat="dropBox in game.player.state.dropBoxes" ng-drop="true" ng-drop-success="dropBox.onDrop()">
+                <label ng-bind="dropBox.label"></label>
+              </li>
+            </ul>
+            <div ng-if="game.player.state.showInput" class="user-input">
+              <textarea ng-model="game.player.input" placeholder="Type here"></textarea>
+              <button ng-click="game.player.state.submitInput(game.player.input)" ng-class="{&quot;disabled-input&quot;: !game.player.input.length}" class="crg button-outline submit">Save</button>
+            </div>
+            <div ng-if="game.player.state.message" class="text-message">
+              <textarea disabled="disabled" ,="," ng-bind="game.player.state.message.text"></textarea>
+              <button ng-click="game.player.state.message.button.onClick()" class="crg button-outline submit">{{game.player.state.message.button.label}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-show="game.player.state.showTextSelectionHelp" class="text-selection-help">
+        <div class="help-container">
+          <div class="help-image"><img src="assets/images/text-selection-help.gif"/></div>
+          <div class="close-help">
+            <button ng-click="game.player.state.showTextSelectionHelp = false" class="crg help-button">Got It</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="full-screen-video-backdrop"></div>
+  </div>
+</div>
+<div class="video-preloader">
+  <!--video(controls, muted, autoplay,onloadedmetadata="this.muted = true", ng-repeat='video in preloader.buffer track by $index')-->
+  <!--  source(src='{{video.url}}', type='{{video.type}}')-->
+  <!---->
+</div>
+<div ng-controller="FeedbackController">
+  <div id="feedback-menu" ng-class="{&quot;show-feeling&quot; : feedback.showFeelingMenu, &quot;show-feedback-form&quot; : feedback.feeling}">
+    <div ng-click="feedback.cancel()" class="feedback-backdrop"></div>
+    <div class="feedback-form">
+      <div class="feeling-menu">
+        <div class="rate-experience">How do rate your experience ?</div>
+        <ul class="feelings">
+          <li ng-click="feedback.love()" ng-class="{&quot;selected-feeling&quot; : feedback.feeling == &quot;love&quot;}"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGNpcmNsZSBzdHlsZT0iZmlsbDojRkNEMDYzOyIgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjU2Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiNGN0I4NEU7IiBkPSJNNDIwLjI1Niw1OS43NDRDNDU3LjUwNCwxMDQuMjA4LDQ4MCwxNjEuNDU2LDQ4MCwyMjRjMCwxNDEuMzc2LTExNC42MjQsMjU2LTI1NiwyNTYgIGMtNjIuNTQ0LDAtMTE5Ljc5Mi0yMi40OTYtMTY0LjI1Ni01OS43NDRDMTA2LjcwNCw0NzYuMzIsMTc3LjE1Miw1MTIsMjU2LDUxMmMxNDEuMzc2LDAsMjU2LTExNC42MjQsMjU2LTI1NiAgQzUxMiwxNzcuMTUyLDQ3Ni4zMiwxMDYuNzA0LDQyMC4yNTYsNTkuNzQ0eiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojQzk4RTNGOyIgZD0iTTM0My4yOCwzMDRIMTY4LjcyYy00LjgxNiwwLTguNzIsMy41ODQtOC43Miw4YzAsNDguNTI4LDQzLjA1Niw4OCw5Niw4OHM5Ni0zOS40NzIsOTYtODggIEMzNTIsMzA3LjU4NCwzNDguMDk2LDMwNCwzNDMuMjgsMzA0eiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojQUI3OTM0OyIgZD0iTTM1MS4zNiwzMjBjMC4yODgtMi42NTYsMC42NC01LjI4LDAuNjQtOGMwLTQuNDE2LTMuOTA0LTgtOC43Mi04SDE2OC43MmMtNC44MTYsMC04LjcyLDMuNTg0LTguNzIsOCAgYzAsMi43MiwwLjM1Miw1LjM0NCwwLjY0LDhIMzUxLjM2eiIvPgo8Zz4KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0Y3Qjg0RTsiIGN4PSI0MDgiIGN5PSIyODAiIHI9IjI0Ii8+Cgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNGN0I4NEU7IiBjeD0iMTA0IiBjeT0iMjgwIiByPSIyNCIvPgo8L2c+CjxwYXRoIHN0eWxlPSJmaWxsOiNGMTU2NDI7IiBkPSJNMTYwLDI1NmMtMi41NiwwLTUuMTA0LTAuOTYtNy4wNTYtMi44NjRsLTQ1LjcyOC00NC45MjhDOTkuOTg0LDIwMS4xMDQsOTYsMTkxLjY2NCw5NiwxODEuNjE2ICBzMy45ODQtMTkuNTA0LDExLjIxNi0yNi42MjRDMTE0LjQ0OCwxNDcuOTIsMTI0LjA2NCwxNDQsMTM0LjMwNCwxNDRjOS41ODQsMCwxOC42NCw4LjQsMjUuNjk2LDE0LjcwNCAgQzE2Ny4wNTYsMTUyLjQsMTc2LjEyOCwxNDQsMTg1LjcyOCwxNDRjMTAuMjQsMCwxOS44NCwzLjkyLDI3LjA3MiwxMS4wMDhjNy4yNDgsNy4xMiwxMS4yLDE2LjU2LDExLjIsMjYuNjI0ICBjMCwxMC4wNDgtMy45NjgsMTkuNDg4LTExLjIsMjYuNTkybC00NS43MjgsNDQuOTI4QzE2NS4xMiwyNTUuMDQsMTYyLjU3NiwyNTYsMTYwLDI1NnoiLz4KPHBhdGggc3R5bGU9ImZpbGw6I0RBNEUzQzsiIGQ9Ik0xMDcuMjE2LDE3MS4wMDhDMTE0LjQ0OCwxNjMuOTIsMTI0LjA2NCwxNjAsMTM0LjMwNCwxNjBjOS41ODQsMCwxOC42NTYsOC40LDI1LjcxMiwxNC43MDQgIEMxNjcuMDU2LDE2OC40LDE3Ni4xMjgsMTYwLDE4NS43MjgsMTYwYzEwLjI0LDAsMTkuODQsMy45MiwyNy4wNzIsMTEuMDA4YzUuMjgsNS4xODQsOC43NTIsMTEuNjMyLDEwLjI4OCwxOC42MDggIGMwLjU3Ni0yLjYwOCwwLjkyOC01LjI2NCwwLjkyOC04YzAtMTAuMDQ4LTMuOTY4LTE5LjUwNC0xMS4yLTI2LjYyNEMyMDUuNTY4LDE0Ny45MiwxOTUuOTY4LDE0NCwxODUuNzI4LDE0NCAgYy05LjYsMC0xOC42NzIsOC40LTI1LjcxMiwxNC43MDRDMTUyLjk0NCwxNTIuNCwxNDMuODg4LDE0NCwxMzQuMzA0LDE0NGMtMTAuMjQsMC0xOS44NTYsMy45Mi0yNy4wODgsMTEuMDA4ICBDOTkuOTg0LDE2Mi4xMTIsOTYsMTcxLjU2OCw5NiwxODEuNjE2YzAsMi43MiwwLjM1Miw1LjM5MiwwLjkyOCw4Qzk4LjQ0OCwxODIuNjI0LDEwMS45NTIsMTc2LjE5MiwxMDcuMjE2LDE3MS4wMDh6Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiNGMTU2NDI7IiBkPSJNMzUyLDI1NmMtMi41NiwwLTUuMDg4LTAuOTYtNy4wNTYtMi44NjRsLTQ1LjcxMi00NC45MjhDMjkxLjk4NCwyMDEuMTA0LDI4OCwxOTEuNjY0LDI4OCwxODEuNjE2ICBzMy45ODQtMTkuNTA0LDExLjIxNi0yNi42MjRDMzA2LjQzMiwxNDcuOTIsMzE2LjA2NCwxNDQsMzI2LjMwNCwxNDRjOS41NjgsMCwxOC42NCw4LjQsMjUuNjk2LDE0LjcwNCAgQzM1OS4wNTYsMTUyLjQsMzY4LjEyOCwxNDQsMzc3LjcxMiwxNDRjMTAuMjU2LDAsMTkuODQsMy45MiwyNy4wNzIsMTEuMDA4YzcuMjMyLDcuMTIsMTEuMiwxNi41NiwxMS4yLDI2LjYyNCAgYzAsMTAuMDQ4LTMuOTY4LDE5LjQ4OC0xMS4yLDI2LjU5MmwtNDUuNzI4LDQ0LjkyOEMzNTcuMTIsMjU1LjA0LDM1NC41NiwyNTYsMzUyLDI1NnoiLz4KPHBhdGggc3R5bGU9ImZpbGw6I0RBNEUzQzsiIGQ9Ik0yOTkuMjE2LDE3MS4wMDhDMzA2LjQzMiwxNjMuOTIsMzE2LjA2NCwxNjAsMzI2LjMwNCwxNjBjOS41ODQsMCwxOC42NCw4LjQsMjUuNjk2LDE0LjcwNCAgQzM1OS4wNTYsMTY4LjQsMzY4LjEyOCwxNjAsMzc3LjcxMiwxNjBjMTAuMjU2LDAsMTkuODQsMy45MiwyNy4wNzIsMTEuMDA4YzUuMjY0LDUuMTg0LDguNzY4LDExLjYzMiwxMC4yODgsMTguNjA4ICBjMC41NzYtMi42MDgsMC45MjgtNS4yNjQsMC45MjgtOGMwLTEwLjA0OC0zLjk2OC0xOS41MDQtMTEuMi0yNi42MjRDMzk3LjU2OCwxNDcuOTIsMzg3Ljk2OCwxNDQsMzc3LjcxMiwxNDQgIGMtOS42LDAtMTguNjU2LDguNC0yNS43MTIsMTQuNzA0QzM0NC45NDQsMTUyLjQsMzM1Ljg3MiwxNDQsMzI2LjMwNCwxNDRjLTEwLjI0LDAtMTkuODU2LDMuOTItMjcuMDcyLDExLjAwOCAgYy03LjI0OCw3LjEwNC0xMS4yMzIsMTYuNTYtMTEuMjMyLDI2LjYwOGMwLDIuNzIsMC4zMzYsNS4zOTIsMC45MjgsOEMyOTAuNDQ4LDE4Mi42MjQsMjkzLjkzNiwxNzYuMTkyLDI5OS4yMTYsMTcxLjAwOHoiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" class="emoticon love"/>
+            <label>Love</label>
+          </li>
+          <li ng-click="feedback.like()" ng-class="{&quot;selected-feeling&quot; : feedback.feeling == &quot;like&quot;}"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGNpcmNsZSBzdHlsZT0iZmlsbDojRkNEMDYzOyIgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjU2Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiNGN0I4NEU7IiBkPSJNNDIwLjI1Niw1OS43NDRDNDU3LjUwNCwxMDQuMjA4LDQ4MCwxNjEuNDU2LDQ4MCwyMjRjMCwxNDEuMzc2LTExNC42MjQsMjU2LTI1NiwyNTYgIGMtNjIuNTQ0LDAtMTE5Ljc5Mi0yMi40OTYtMTY0LjI1Ni01OS43NDRDMTA2LjcwNCw0NzYuMzIsMTc3LjE1Miw1MTIsMjU2LDUxMmMxNDEuMzc2LDAsMjU2LTExNC42MjQsMjU2LTI1NiAgQzUxMiwxNzcuMTUyLDQ3Ni4zMiwxMDYuNzA0LDQyMC4yNTYsNTkuNzQ0eiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojQzk4RTNGOyIgZD0iTTM0My4yOCwzMDRIMTY4LjcyYy00LjgxNiwwLTguNzIsMy41ODQtOC43Miw4YzAsNDguNTI4LDQzLjA1Niw4OCw5Niw4OHM5Ni0zOS40NzIsOTYtODggIEMzNTIsMzA3LjU4NCwzNDguMDk2LDMwNCwzNDMuMjgsMzA0eiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojQUI3OTM0OyIgZD0iTTM1MS4zNiwzMjBjMC4yODgtMi42NTYsMC42NC01LjI4LDAuNjQtOGMwLTQuNDE2LTMuOTA0LTgtOC43Mi04SDE2OC43MmMtNC44MTYsMC04LjcyLDMuNTg0LTguNzIsOCAgYzAsMi43MiwwLjM1Miw1LjM0NCwwLjY0LDhIMzUxLjM2eiIvPgo8Y2lyY2xlIHN0eWxlPSJmaWxsOiNDOThFM0Y7IiBjeD0iMTYwIiBjeT0iMjI0IiByPSIzMiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojQUI3OTM0OyIgZD0iTTE2MCwyMDhjMTQuODk2LDAsMjcuMjk2LDEwLjIyNCwzMC44NjQsMjRjMC42NzItMi41NzYsMS4xMzYtNS4yMTYsMS4xMzYtOCAgYzAtMTcuNjY0LTE0LjMzNi0zMi0zMi0zMnMtMzIsMTQuMzM2LTMyLDMyYzAsMi43ODQsMC40NjQsNS40MjQsMS4xMzYsOEMxMzIuNzA0LDIxOC4yMjQsMTQ1LjEwNCwyMDgsMTYwLDIwOHoiLz4KPGNpcmNsZSBzdHlsZT0iZmlsbDojQzk4RTNGOyIgY3g9IjM1MiIgY3k9IjIyNCIgcj0iMzIiLz4KPGc+Cgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNGN0I4NEU7IiBjeD0iNDA4IiBjeT0iMjgwIiByPSIyNCIvPgoJPGNpcmNsZSBzdHlsZT0iZmlsbDojRjdCODRFOyIgY3g9IjEwNCIgY3k9IjI4MCIgcj0iMjQiLz4KPC9nPgo8cGF0aCBzdHlsZT0iZmlsbDojQUI3OTM0OyIgZD0iTTM1MiwyMDhjMTQuODk2LDAsMjcuMjk2LDEwLjIyNCwzMC44OCwyNGMwLjY1Ni0yLjU3NiwxLjEyLTUuMjE2LDEuMTItOGMwLTE3LjY2NC0xNC4zMzYtMzItMzItMzIgIHMtMzIsMTQuMzM2LTMyLDMyYzAsMi43ODQsMC40NjQsNS40MjQsMS4xMiw4QzMyNC43MDQsMjE4LjIyNCwzMzcuMTA0LDIwOCwzNTIsMjA4eiIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" class="emoticon happy"/>
+            <label>Like</label>
+          </li>
+          <li ng-click="feedback.unsure()" ng-class="{&quot;selected-feeling&quot; : feedback.feeling == &quot;unsure&quot;}"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGNpcmNsZSBzdHlsZT0iZmlsbDojRkNEMDYzOyIgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjU2Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiNGN0I4NEU7IiBkPSJNNDIwLjI1Niw1OS43NDRDNDU3LjUwNCwxMDQuMjA4LDQ4MCwxNjEuNDU2LDQ4MCwyMjRjMCwxNDEuMzc2LTExNC42MjQsMjU2LTI1NiwyNTYgIGMtNjIuNTQ0LDAtMTE5Ljc5Mi0yMi40OTYtMTY0LjI1Ni01OS43NDRDMTA2LjcwNCw0NzYuMzIsMTc3LjE1Miw1MTIsMjU2LDUxMmMxNDEuMzc2LDAsMjU2LTExNC42MjQsMjU2LTI1NiAgQzUxMiwxNzcuMTUyLDQ3Ni4zMiwxMDYuNzA0LDQyMC4yNTYsNTkuNzQ0eiIvPgo8Y2lyY2xlIHN0eWxlPSJmaWxsOiNDOThFM0Y7IiBjeD0iMTEyIiBjeT0iMjI0IiByPSIzMiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojQUI3OTM0OyIgZD0iTTExMiwyMDhjMTQuODk2LDAsMjcuMjk2LDEwLjIyNCwzMC44NjQsMjRjMC42NzItMi41NzYsMS4xMzYtNS4yMTYsMS4xMzYtOCAgYzAtMTcuNjY0LTE0LjMzNi0zMi0zMi0zMnMtMzIsMTQuMzM2LTMyLDMyYzAsMi43ODQsMC40NjQsNS40MjQsMS4xMzYsOEM4NC43MDQsMjE4LjIyNCw5Ny4xMDQsMjA4LDExMiwyMDh6Ii8+CjxjaXJjbGUgc3R5bGU9ImZpbGw6I0M5OEUzRjsiIGN4PSI0MDAiIGN5PSIyMjQiIHI9IjMyIi8+CjxwYXRoIHN0eWxlPSJmaWxsOiNBQjc5MzQ7IiBkPSJNNDAwLDIwOGMxNC44OTYsMCwyNy4yOTYsMTAuMjI0LDMwLjg4LDI0YzAuNjU2LTIuNTc2LDEuMTItNS4yMTYsMS4xMi04YzAtMTcuNjY0LTE0LjMzNi0zMi0zMi0zMiAgcy0zMiwxNC4zMzYtMzIsMzJjMCwyLjc4NCwwLjQ2NCw1LjQyNCwxLjEyLDhDMzcyLjcwNCwyMTguMjI0LDM4NS4xMDQsMjA4LDQwMCwyMDh6Ii8+CjxnPgoJPGNpcmNsZSBzdHlsZT0iZmlsbDojRjdCODRFOyIgY3g9IjQwOCIgY3k9IjI5NiIgcj0iMjQiLz4KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0Y3Qjg0RTsiIGN4PSIxMDQiIGN5PSIyOTYiIHI9IjI0Ii8+CjwvZz4KPHBhdGggc3R5bGU9ImZpbGw6I0M5OEUzRjsiIGQ9Ik0zMzYsMzEyYzAsMTMuMi0xMC44LDI0LTI0LDI0SDIwMGMtMTMuMiwwLTI0LTEwLjgtMjQtMjRsMCwwYzAtMTMuMiwxMC44LTI0LDI0LTI0aDExMiAgQzMyNS4yLDI4OCwzMzYsMjk4LjgsMzM2LDMxMkwzMzYsMzEyeiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojQUI3OTM0OyIgZD0iTTE3Ny40ODgsMzA0aDE1Ny4wMjRjLTMuMzI4LTkuMjgtMTIuMTI4LTE2LTIyLjUxMi0xNkgyMDBDMTg5LjYxNiwyODgsMTgwLjgsMjk0LjcyLDE3Ny40ODgsMzA0eiIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" class="emoticon confused"/>
+            <label>Unsure</label>
+          </li>
+          <li ng-click="feedback.dislike()" ng-class="{&quot;selected-feeling&quot; : feedback.feeling == &quot;dislike&quot;}"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGNpcmNsZSBzdHlsZT0iZmlsbDojRkNEMDYzOyIgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjU2Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiNGN0I4NEU7IiBkPSJNNDIwLjI1Niw1OS43NDRDNDU3LjUwNCwxMDQuMjA4LDQ4MCwxNjEuNDU2LDQ4MCwyMjRjMCwxNDEuMzc2LTExNC42MjQsMjU2LTI1NiwyNTYgIGMtNjIuNTQ0LDAtMTE5Ljc5Mi0yMi40OTYtMTY0LjI1Ni01OS43NDRDMTA2LjcwNCw0NzYuMzIsMTc3LjE1Miw1MTIsMjU2LDUxMmMxNDEuMzc2LDAsMjU2LTExNC42MjQsMjU2LTI1NiAgQzUxMiwxNzcuMTUyLDQ3Ni4zMiwxMDYuNzA0LDQyMC4yNTYsNTkuNzQ0eiIvPgo8Zz4KCTxwYXRoIHN0eWxlPSJmaWxsOiNDOThFM0Y7IiBkPSJNMzI1Ljc3NiwzNjhjLTQuNjA4LDAtOS4yNjQtMS4xMi0xMy41MDQtMy40NzJjLTI5Ljk4NC0xNi41OTItODIuNTkyLTE2LjU5Mi0xMTIuNTc2LDAgICBjLTEyLjM2OCw2Ljg2NC0yOC40OCwzLjIxNi0zNS45NTItOC4xNDRzLTMuNDg4LTI2LjEyOCw4Ljg4LTMyLjk5MmM0Ni43MzYtMjUuODcyLDExOS45NjgtMjUuODcyLDE2Ni43MDQsMCAgIGMxMi4zNjgsNi44NjQsMTYuMzUyLDIxLjYzMiw4Ljg4LDMyLjk5MkMzNDMuMzEyLDM2My44NTYsMzM0LjY1NiwzNjgsMzI1Ljc3NiwzNjh6Ii8+Cgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNDOThFM0Y7IiBjeD0iMTYwIiBjeT0iMjQwIiByPSIzMiIvPgoJPGNpcmNsZSBzdHlsZT0iZmlsbDojQzk4RTNGOyIgY3g9IjM1MiIgY3k9IjI0MCIgcj0iMzIiLz4KPC9nPgo8Zz4KCTxwYXRoIHN0eWxlPSJmaWxsOiNBQjc5MzQ7IiBkPSJNMTcyLjY0LDMzOS40MDhjNDYuNzM2LTI1Ljg3MiwxMTkuOTY4LTI1Ljg3MiwxNjYuNzA0LDBjNS40NCwzLjAyNCw5LjE1Miw3LjYsMTEuMDg4LDEyLjcyICAgYzQuMTYtMTAuNTYtMC4yMjQtMjIuNjg4LTExLjA4OC0yOC43MmMtNDYuNzM2LTI1Ljg3Mi0xMTkuOTY4LTI1Ljg3Mi0xNjYuNzA0LDBjLTEwLjg4LDYuMDMyLTE1LjI0OCwxOC4xNi0xMS4wODgsMjguNzIgICBDMTYzLjQ4OCwzNDcuMDA4LDE2Ny4yLDM0Mi40MzIsMTcyLjY0LDMzOS40MDh6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojQUI3OTM0OyIgZD0iTTE2MCwyMjRjMTQuODk2LDAsMjcuMjk2LDEwLjIyNCwzMC44NjQsMjRjMC42NzItMi41NzYsMS4xMzYtNS4yMTYsMS4xMzYtOCAgIGMwLTE3LjY2NC0xNC4zMzYtMzItMzItMzJzLTMyLDE0LjMzNi0zMiwzMmMwLDIuNzg0LDAuNDY0LDUuNDI0LDEuMTM2LDhDMTMyLjcwNCwyMzQuMjI0LDE0NS4xMDQsMjI0LDE2MCwyMjR6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojQUI3OTM0OyIgZD0iTTM1MiwyMjRjMTQuODk2LDAsMjcuMjk2LDEwLjIyNCwzMC44OCwyNGMwLjY1Ni0yLjU3NiwxLjEyLTUuMjE2LDEuMTItOGMwLTE3LjY2NC0xNC4zMzYtMzItMzItMzIgICBzLTMyLDE0LjMzNi0zMiwzMmMwLDIuNzg0LDAuNDY0LDUuNDI0LDEuMTIsOEMzMjQuNzA0LDIzNC4yMjQsMzM3LjEwNCwyMjQsMzUyLDIyNHoiLz4KPC9nPgo8Zz4KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0Y3Qjg0RTsiIGN4PSI0MDgiIGN5PSIyOTYiIHI9IjI0Ii8+Cgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNGN0I4NEU7IiBjeD0iMTA0IiBjeT0iMjk2IiByPSIyNCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" class="emoticon sad"/>
+            <label>Dislike</label>
+          </li>
+          <li ng-click="feedback.hate()" ng-class="{&quot;selected-feeling&quot; : feedback.feeling == &quot;hate&quot;}"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGNpcmNsZSBzdHlsZT0iZmlsbDojRjE1NjQyOyIgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjU2Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiNEQTRFM0M7IiBkPSJNNDIwLjI1Niw1OS43NDRDNDU3LjUwNCwxMDQuMjA4LDQ4MCwxNjEuNDU2LDQ4MCwyMjRjMCwxNDEuMzc2LTExNC42MjQsMjU2LTI1NiwyNTYgIGMtNjIuNTQ0LDAtMTE5Ljc5Mi0yMi40OTYtMTY0LjI1Ni01OS43NDRDMTA2LjcwNCw0NzYuMzIsMTc3LjE1Miw1MTIsMjU2LDUxMmMxNDEuMzc2LDAsMjU2LTExNC42MjQsMjU2LTI1NiAgQzUxMiwxNzcuMTUyLDQ3Ni4zMiwxMDYuNzA0LDQyMC4yNTYsNTkuNzQ0eiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojQjMzQjMyOyIgZD0iTTMyNS43OTIsMzUyYy00LjYwOCwwLTkuMjY0LTEuMTItMTMuNTItMy40NzJjLTI5Ljk2OC0xNi41OTItODIuNTc2LTE2LjU5Mi0xMTIuNTYsMCAgYy0xMi4zNjgsNi44NjQtMjguNDgsMy4yMTYtMzUuOTUyLTguMTQ0cy0zLjQ4OC0yNi4xMjgsOC44OC0zMi45OTJjNDYuNzM2LTI1Ljg3MiwxMTkuOTY4LTI1Ljg3MiwxNjYuNzA0LDAgIGMxMi4zNjgsNi44NjQsMTYuMzUyLDIxLjYzMiw4Ljg5NiwzMi45OTJDMzQzLjMxMiwzNDcuODU2LDMzNC42NzIsMzUyLDMyNS43OTIsMzUyeiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojOEYzMDI4OyIgZD0iTTE3Mi42NTYsMzIzLjQwOGM0Ni43MzYtMjUuODcyLDExOS45NjgtMjUuODcyLDE2Ni43MDQsMGM1LjQ1NiwzLjAyNCw5LjE1Miw3LjYsMTEuMDcyLDEyLjcyICBjNC4xNzYtMTAuNTYtMC4yMDgtMjIuNjg4LTExLjA3Mi0yOC43MmMtNDYuNzM2LTI1Ljg3Mi0xMTkuOTY4LTI1Ljg3Mi0xNjYuNzA0LDBjLTEwLjg4LDYuMDMyLTE1LjI0OCwxOC4xNi0xMS4wODgsMjguNzIgIEMxNjMuNTA0LDMzMS4wMDgsMTY3LjIxNiwzMjYuNDMyLDE3Mi42NTYsMzIzLjQwOHoiLz4KPHBhdGggc3R5bGU9ImZpbGw6I0IzM0IzMjsiIGQ9Ik0xOTkuOTg0LDI0OGMtNC41NzYsMC05LjItMS4zMTItMTMuMjk2LTQuMDMybC00OC0zMmMtMTEuMDI0LTcuMzQ0LTE0LTIyLjI1Ni02LjY1Ni0zMy4yOCAgczIyLjI0LTE0LjAxNiwzMy4yOC02LjY1Nmw0OCwzMmMxMS4wMjQsNy4zNDQsMTQsMjIuMjU2LDYuNjU2LDMzLjI4QzIxNS4zNDQsMjQ0LjI1NiwyMDcuNzI4LDI0OCwxOTkuOTg0LDI0OHoiLz4KPHBhdGggc3R5bGU9ImZpbGw6IzhGMzAyODsiIGQ9Ik0xMzIuMDMyLDIwMi42ODhjNy4zNDQtMTEuMDI0LDIyLjI0LTE0LjAxNiwzMy4yOC02LjY1Nmw0OCwzMmMzLjE2OCwyLjExMiw1LjU4NCw0Ljg4LDcuMzYsNy45NTIgIGM2LjMwNC0xMC44OCwzLjI0OC0yNC44OC03LjM2LTMxLjk1MmwtNDgtMzJjLTExLjA0LTcuMzYtMjUuOTM2LTQuMzY4LTMzLjI4LDYuNjU2Yy01LjI0OCw3Ljg3Mi01LjE1MiwxNy42NjQtMC43MDQsMjUuMzI4ICBDMTMxLjU4NCwyMDMuNTg0LDEzMS43NDQsMjAzLjEyLDEzMi4wMzIsMjAyLjY4OHoiLz4KPHBhdGggc3R5bGU9ImZpbGw6I0IzM0IzMjsiIGQ9Ik0zMTIuMDMyLDI0OGMtNy43NiwwLTE1LjM3Ni0zLjc0NC0yMC0xMC42ODhjLTcuMzQ0LTExLjAyNC00LjM2OC0yNS45MzYsNi42NTYtMzMuMjhsNDgtMzIgIGMxMS4wMjQtNy4zNiwyNS45MzYtNC4zNjgsMzMuMjgsNi42NTZzNC4zNjgsMjUuOTM2LTYuNjU2LDMzLjI4bC00OCwzMkMzMjEuMjE2LDI0Ni42ODgsMzE2LjU5MiwyNDgsMzEyLjAzMiwyNDh6Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiM4RjMwMjg7IiBkPSJNMzc5Ljk2OCwyMDIuNjg4Yy03LjM0NC0xMS4wMjQtMjIuMjQtMTQuMDE2LTMzLjI4LTYuNjU2bC00OCwzMmMtMy4xNTIsMi4xMTItNS41ODQsNC44OC03LjM2LDcuOTUyICBjLTYuMzA0LTEwLjg4LTMuMjMyLTI0Ljg4LDcuMzYtMzEuOTUybDQ4LTMyYzExLjA0LTcuMzYsMjUuOTM2LTQuMzY4LDMzLjI4LDYuNjU2YzUuMjQ4LDcuODcyLDUuMTUyLDE3LjY2NCwwLjcwNCwyNS4zMjggIEMzODAuNDE2LDIwMy41ODQsMzgwLjI1NiwyMDMuMTIsMzc5Ljk2OCwyMDIuNjg4eiIvPgo8Zz4KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0RBNEUzQzsiIGN4PSI0MDgiIGN5PSIyNjQiIHI9IjI0Ii8+Cgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNEQTRFM0M7IiBjeD0iMTA0IiBjeT0iMjY0IiByPSIyNCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" class="emoticon angry"/>
+            <label>Hate</label>
+          </li>
+        </ul>
+      </div>
+      <div class="feedback-input">
+        <textarea ng-model="feedback.userInput" placeholder="Can you describe your experience ?"></textarea>
+        <button ng-click="feedback.submit()">Submit Feedback</button>
+      </div>
+    </div>
+    <div ng-click="feedback.show()" class="feedback-button">
+      <button>Feedback</button>
+    </div>
+  </div>
+</div>

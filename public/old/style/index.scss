@@ -1,0 +1,57 @@
+@import "base";
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,600,500,700');
+
+.app-layer{
+  max-width: $screen_max_width;
+  margin: 0px auto;
+  width: 100%;
+}
+
+body{
+  font-family: 'Raleway', sans-serif;
+  background: black;
+  @extend .app-layer;
+}
+
+.ruby-gem{
+  color: rgba(255, 255, 255, 0.8);
+  background: #e9573f;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.39);
+}
+
+.top-bar-transition {
+  @include transition(all $top_bar_duration  ease);
+}
+
+.bold-text{
+  font-weight: $super_bold_text;
+  color: $dark_text;
+}
+
+.small-light-text{
+  font-size: small;
+  color: $light_text;
+  font-weight: $medium_light_text;
+}
+
+.small-bold-text{ 
+  font-size: small;
+  font-weight: $medium_bold_text;
+}
+
+.under-lined{
+  border-bottom: 1px solid $border_light;
+  margin-bottom: $padding;
+  padding-bottom: $padding;
+}
+
+@import "homepage/page";
+@import "homepage/intro";
+@import "homepage/top_bar";
+@import "homepage/cover";
+@import "homepage/profile/title";
+@import "homepage/footer";
+@import "homepage/contacts";
+@import "homepage/profile/work-history";
+@import "mobile";

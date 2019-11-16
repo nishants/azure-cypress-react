@@ -1,0 +1,27 @@
+#top-bar {
+  .profile {
+    img {
+      margin: auto;
+    }
+  }
+
+  .profile-bar.fixed-to-page {
+    //display: none;
+  }
+
+  .fixed-to-window {
+  }
+  @import './navigation.mobile';
+}
+
+#homepage.profile-reached {
+  #top-bar {
+    .profile {
+      .slope-bg {
+        @include transform(rotate(2deg));
+        background-color: $theme_light_bg;
+      }
+    }
+    @import './navigation.profile-reached.mobile';
+  }
+}

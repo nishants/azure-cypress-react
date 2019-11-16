@@ -1,0 +1,47 @@
+# This sets trigger to any update in master  
+# trigger:
+# - master
+
+#  Defines the host for agent (MS hosted)
+pool:
+  vmImage: 'ubuntu-latest'
+
+#  Build steps for the pipeline
+jobs: 
+  - job: buildAssets
+    steps:
+    - script: yarn 
+      workingDirectory: $(Agent.BuildDirectory)/s/projects/react-static-website
+      displayName: 'Installing node modules'
+
+    - script: yarn lint
+      workingDirectory: $(Agent.BuildDirectory)/s/projects/react-static-website
+      displayName: 'Checking for lint errors'
+
+    - script: |
+        yarn build
+      workingDirectory: $(Agent.BuildDirectory)/s/projects/react-static-website
+      displayName: 'Running webpack build'
+
+    - task: PublishPipelineArtifact@1
+      inputs:
+        path: $(Agent.BuildDirectory)/s/projects/react-static-website/build
+        artifact: react-static-website-build-artifacts
+
+    # - task: AzureFileCopy@3
+    #   inputs:
+    #     SourcePath: '$(Agent.BuildDirectory)/s/projects/react-static-website/build'
+    #     azureSubscription: 'Free Trial (4f955537-4a7d-40db-b2f1-97400c3d177a)'
+    #     Destination: 'AzureBlob'
+    #     storage: 'staticwebsiteazure'
+    #     ContainerName: '$web'
+    # - task: AzureFileCopy@3
+    #   inputs:
+    #     SourcePath: '$(Agent.BuildDirectory)/s/projects/react-static-website/build'
+    #     azureSubscription: 'Free Trial (4f955537-4a7d-40db-b2f1-97400c3d177a)'
+    #     Destination: 'AzureBlob'
+    #     storage: 'staticwebsiteazure'
+    #     ContainerName: '$web'
+    #     outputStorageUri: 'https://staticwebsiteazure.z10.web.core.windows.net/'
+
+    

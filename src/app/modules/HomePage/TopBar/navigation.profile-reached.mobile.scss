@@ -1,0 +1,16 @@
+.navigation {
+  .profile-info {
+    .profile-labels {
+      @include transform(none);
+    }
+  }
+}
+.profile-image-container {
+  img {
+    @include transform(none);
+  }
+}
+
+.work-credits {
+  opacity: 0;
+}

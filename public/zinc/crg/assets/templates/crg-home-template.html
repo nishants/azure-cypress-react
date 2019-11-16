@@ -1,0 +1,15 @@
+
+<div class="crg-home">
+  <div class="logo"><img src="assets/images/zinc-logo.png"/></div>
+  <div class="heading">
+    <div>Close Reading Game</div>
+    <div>Prototype</div>
+  </div>
+  <button><a ui-sref="crg.gameplay({id: 1})">Try Now</a></button>
+  <button><a ui-sref="crg-demo()">View Demo</a></button>
+  <!--a#mac-download(href='http://nishants.site/downloads/Zinc.app.zip') Download-->
+  <script>
+    var isMacos = window.navigator.platform == "MacIntel";
+    !isMacos && document.getElementById("mac-download").remove()
+  </script>
+</div>

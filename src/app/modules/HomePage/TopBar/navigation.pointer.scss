@@ -1,0 +1,52 @@
+$navigation_pointer_radius: 5px;
+$navigation_pointer_color: $dark_black_text;
+$navigation_pointer_heght: 3px;
+
+.navigation {
+  //.navigation-indicator {
+  //  position: absolute;
+  //  z-index: 1;
+  //  top: $navigation_links_height - 10px;
+  //  left: 0;
+  //  height: $navigation_pointer_heght;
+  //  background: $navigation_pointer_color;
+  //  border-radius: $navigation_pointer_radius;
+  //  width: 150px;
+  //
+  //  @include transition($transition);
+  //  @include transformOrigin(50% 50%);
+  //}
+}
+
+.navigation.portfolio {
+  .portfolio-link {
+    @extend .selected-link;
+  }
+}
+
+.navigation.blog {
+  .blog-link {
+    @extend .selected-link;
+  }
+  //.navigation-indicator {
+  //  @include transform(translateX(100%));
+  //}
+}
+
+.navigation.work-history {
+  .work-history-link {
+    @extend .selected-link;
+  }
+  //.navigation-indicator {
+  //  @include transform(translateX(200%));
+  //}
+}
+
+.navigation.about-me {
+  .about-me-link {
+    @extend .selected-link;
+  }
+  //.navigation-indicator {
+  //  @include transform(translateX(300%));
+  //}
+}

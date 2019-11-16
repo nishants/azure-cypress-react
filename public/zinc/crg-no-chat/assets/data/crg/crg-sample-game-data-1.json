@@ -1,0 +1,89 @@
+{
+  "passage": {
+    "from"  : "Their Eyes Were Watching God",
+    "by"    : "Zora Neal Hurston",
+    "text"  : "Ships at a distance have every man's wish on board. For some they come in with the tide. For others they sail forever on the horizon, never out of sight, never landing until the watcher turn his eyes away in resignation, his dreams mocked to death by time. That is the life of men. \n Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget. The dream is the truth. Then they act and do things accordingly."
+  },
+  "script": {
+    "scenes": [
+      {
+        "name"  : "intro",
+        "config": {}
+      },
+      {
+        "group"       : "zincing",
+        "name"        : "text-input",
+        "config"      :       {
+          "phrase"    : {"indices": [0, 1,2,3,4], "text": "Ships at a distance"},
+          "focus"     : {"indices": [0, 1,2,3,4,5,6,7,8,9], "text": "Ships at a distance have every man's wish on board"},
+          "transcript": {"text": "What do you imagine when you read \"Ships at a distance\"  in first sentence ?"}
+        }
+      },
+      {
+        "group"        : "zincing",
+        "name"        : "text-input",
+        "config"      :   {"phrase": {"indices": [34,35,36,37,38,39], "text": "looks aways in resignation"} ,
+          "focus"     :  {"indices": [34,35,36,37,38,39,40,41,42,43], "text": "For others they sail forever on the horizon, never out of sight, never landing until the watcher turn his eyes away in resignation, his dreams mocked to death by time."},
+          "transcript": {"text": "What do you imagine when you read \"looks aways in resignation\"  in first sentence ?"}
+        }
+      },
+      {
+        "group"       : "zincing",
+        "name"        : "yes-no",
+        "config"      : {
+          "phrase"    : {
+            "indices" : [57, 58, 59, 60, 61, 62, 63, 64, 65],
+            "text"    : "all those things they don't want to remember"
+          },
+          "focus": {
+            "indices" : [57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76],
+            "text"    : "Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget."
+          },
+          "question"  : "Does the author give any specific examples of highlighted phrase",
+          "expectedYes"  : false,
+          "wrongAnswerMessage": "Stop trying too hard. There was no example."
+        }
+      },
+      {
+        "group"       : "zincing",
+        "name"        : "multi-choice",
+        "config"      : {
+          "phrase"    : {
+            "indices" : [57, 58, 59, 60, 61, 62, 63, 64, 65],
+            "text"    : "all those things they don't want to remember"
+          },
+          "focus": {
+            "indices" : [57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76],
+            "text"    : "Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget."
+          },
+          "answerExplanation" : "A cow eating grass has nothing terrible about it.",
+          "transcript": {
+            "text"    : "Which one of following is not a good example of \"all those things they don't want to remember\" ?"
+          },
+          "options": [
+            {
+              "label"   : "A cow eating grass.",
+              "correct" : false
+            },
+            {
+              "label"   : "A baby being dropped.",
+              "correct" : true
+            },
+            {
+              "label"   : "Getting fired from job.",
+              "correct" : true
+            },
+            {
+              "label": "A scary nightmare.",
+              "correct": true
+            }
+          ]
+        }
+      },
+      {
+        "name"  : "exit",
+        "config": {}
+      }
+    ]
+  }
+}

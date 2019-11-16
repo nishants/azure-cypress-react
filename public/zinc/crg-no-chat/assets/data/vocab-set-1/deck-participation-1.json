@@ -1,0 +1,285 @@
+{
+  "deck_participation": {
+    "id": 148667,
+    "status": "active",
+    "word_bank_intro_complete": null,
+    "exposure_count": 6,
+    "attempting_to_complete_set": false,
+    "is_next_deck_participation_locked": null,
+    "next_deck_participation_id": null,
+    "next_deck_number": null,
+    "is_fast_vocab": false,
+    "is_timed": true,
+    "deck": {
+      "id": 5205,
+      "set_image_url": "assets/images/article-cover.jpg",
+      "set_id": 818,
+      "set_title": "A very long title for the vocab set",
+      "number": 1,
+      "title": "testing again - Deck 1",
+      "quiz_id": null,
+      "quiz_title": null,
+      "words": [
+        {
+          "example_sentence": "Critics universally considered the new play to be a ____ and thoughtless comment on poverty in America.",
+          "id": 34,
+          "priority": 1,
+          "meaning": "commonplace, boring",
+          "part_of_speech_names": "adjective",
+          "pronunciation": "buh-NAL",
+          "sentence_form": "banal",
+          "word": "banal",
+          "all_synonyms": "conventional, trite, trivial",
+          "correct_synonym": "commonplace",
+          "synonym_option_names": [
+            "commonplace",
+            "exorbitant",
+            "secretive",
+            "exciting"
+          ],
+          "image_options": [
+            {
+              "word": "forgery",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--y_wZWZoZ--/c_limit,f_auto,h_400,w_600/v1486982228/uploads/word/image/1977/72f780ae90abc15a49d86612c6e93d94.jpg"
+            },
+            {
+              "word": "stevedore",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--oDENj9S5--/c_limit,f_auto,h_400,w_600/v1486981880/uploads/word/image/1921/b3ae4f0bcbc5725463c2cf4f7b353b1e.jpg"
+            },
+            {
+              "word": "banal",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--dOybcdcE--/c_limit,f_auto,h_400,w_600/v1486981971/uploads/word/image/34/3f91772ac33fb12cf5bed22b48d27f12.jpg"
+            },
+            {
+              "word": "apocryphal",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--J4KJMyIZ--/c_limit,f_auto,h_400,w_600/v1486981397/uploads/word/image/56/92b343b6ba89bcdf9910ff86a22e7a24.jpg"
+            }
+          ],
+          "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--dOybcdcE--/c_limit,f_auto,h_400,w_600/v1486981971/uploads/word/image/34/3f91772ac33fb12cf5bed22b48d27f12.jpg",
+          "pronunciation_audio": {
+            "url": "//d275xfx9m0lf02.cloudfront.net/uploads/word/pronunciation_audio/34/banal.mp3"
+          },
+          "valid_word_forms": []
+        },
+        {
+          "example_sentence": "The ____ of talent made it hard to find a drummer good enough for the band",
+          "id": 193,
+          "priority": 1,
+          "meaning": "lack, scarcity, shortage",
+          "part_of_speech_names": "noun",
+          "pronunciation": "DURTH",
+          "sentence_form": "dearth",
+          "word": "dearth",
+          "all_synonyms": "absence, deficiency, paucity",
+          "correct_synonym": "shortage",
+          "synonym_option_names": [
+            "bed on a ship or train",
+            "shortage",
+            "end",
+            "distance around"
+          ],
+          "image_options": [
+            {
+              "word": "wile",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--HBCbjAl6--/c_limit,f_auto,h_400,w_600/v1486981984/uploads/word/image/1707/e43328de61994c60ba23c580bedfcbe2.jpg"
+            },
+            {
+              "word": "dearth",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--7vFVcBD7--/c_limit,f_auto,h_400,w_600/v1486981621/uploads/word/image/193/1294b6fea119c97d8b90885aa18070cd.jpg"
+            },
+            {
+              "word": "nourishment",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--7BMZLFGZ--/c_limit,f_auto,h_400,w_600/v1486982250/uploads/word/image/962/25c18b4a695b9d8b018b28fd0e70e281.jpg"
+            },
+            {
+              "word": "harlot",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s---bJGRWxI--/c_limit,f_auto,h_400,w_600/v1486982397/uploads/word/image/1893/af446f09a8f0aaad22439c00ab1992b6.jpg"
+            }
+          ],
+          "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--7vFVcBD7--/c_limit,f_auto,h_400,w_600/v1486981621/uploads/word/image/193/1294b6fea119c97d8b90885aa18070cd.jpg",
+          "pronunciation_audio": {
+            "url": "//d275xfx9m0lf02.cloudfront.net/uploads/word/pronunciation_audio/193/dearth.mp3"
+          },
+          "valid_word_forms": []
+        },
+        {
+          "example_sentence": "Since he was speaking at the National Convention for Persons with Hearing Problems, Julio had to ____ and speak loudly.",
+          "id": 1410,
+          "priority": 6,
+          "meaning": "to speak clearly",
+          "part_of_speech_names": "verb",
+          "pronunciation": "ih-NUN-see-ate",
+          "sentence_form": "enunciate",
+          "word": "enunciate",
+          "all_synonyms": "articulate, pronounce, vocalize",
+          "correct_synonym": "pronounce",
+          "synonym_option_names": [
+            "frighten",
+            "pronounce",
+            "deliquesce",
+            "abridge"
+          ],
+          "image_options": [
+            {
+              "word": "enunciate",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--_wD1NDDd--/c_limit,f_auto,h_400,w_600/v1486981949/uploads/word/image/1410/2a756f71dc0a9a0660018579d7df1c31.jpg"
+            },
+            {
+              "word": "fallow",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--koWwWHUj--/c_limit,f_auto,h_400,w_600/v1486982220/uploads/word/image/1235/54609386d526bb208ee3cdf4b3299833.jpg"
+            },
+            {
+              "word": "formidable",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--NiZBKIPx--/c_limit,f_auto,h_400,w_600/v1486981888/uploads/word/image/1008/ce95fb2eb916505de959061e5e5984d9.jpg"
+            },
+            {
+              "word": "cajole",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--j9W31kfc--/c_limit,f_auto,h_400,w_600/v1486981783/uploads/word/image/162/056e75c55a03f66b07ce76bda5fbe990.jpg"
+            }
+          ],
+          "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--_wD1NDDd--/c_limit,f_auto,h_400,w_600/v1486981949/uploads/word/image/1410/2a756f71dc0a9a0660018579d7df1c31.jpg",
+          "pronunciation_audio": {
+            "url": "//d275xfx9m0lf02.cloudfront.net/uploads/word/pronunciation_audio/1410/enunciate.mp3"
+          },
+          "valid_word_forms": []
+        },
+        {
+          "example_sentence": "Jori had to ____ that, no matter how much she offered to clean the cats' litter box, her parents would never let her go to Tran's party.",
+          "id": 2007,
+          "priority": 1,
+          "meaning": "to receive something, to agree to stop worrying and let something be",
+          "part_of_speech_names": "verb",
+          "pronunciation": "",
+          "sentence_form": "accept",
+          "word": "accept",
+          "all_synonyms": "agree to, put up with, receive",
+          "correct_synonym": "receive",
+          "synonym_option_names": [
+            "dive",
+            "receive",
+            "solidify",
+            "block"
+          ],
+          "image_options": [
+            {
+              "word": "ashen",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--K5SXsVjy--/c_limit,f_auto,h_400,w_600/v1486981439/uploads/word/image/2082/30947e1f230f9f589606cef0730bf965.jpg"
+            },
+            {
+              "word": "hovel",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--AP9cocFV--/c_limit,f_auto,h_400,w_600/v1486982031/uploads/word/image/2536/1cf3044b50040ef2082a021dcc4e2e31.jpg"
+            },
+            {
+              "word": "accept",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--xpujuP7f--/c_limit,f_auto,h_400,w_600/v1486981750/uploads/word/image/2007/e345e126a4c07ddaa0032d70f219e1cb.jpg"
+            },
+            {
+              "word": "glaze",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--XJuq-xR1--/c_limit,f_auto,h_400,w_600/v1486982215/uploads/word/image/2500/330d2eb990539afadf725563bfab9ad3.jpg"
+            }
+          ],
+          "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--xpujuP7f--/c_limit,f_auto,h_400,w_600/v1486981750/uploads/word/image/2007/e345e126a4c07ddaa0032d70f219e1cb.jpg",
+          "pronunciation_audio": {
+            "url": "//d275xfx9m0lf02.cloudfront.net/uploads/word/pronunciation_audio/2007/accept.mp3"
+          },
+          "valid_word_forms": [
+            "àccept",
+            "accèpt",
+            "áccépt"
+          ]
+        },
+        {
+          "example_sentence": "For weeks the school was ____ in a terrible cheating scandal, and no one could talk about anything else.",
+          "id": 2390,
+          "priority": 4,
+          "meaning": "to surround completely, to flow over and trap, to overwhelm",
+          "part_of_speech_names": "verb",
+          "pronunciation": null,
+          "sentence_form": "engulfed",
+          "word": "engulf",
+          "all_synonyms": "envelop, flood, swamp",
+          "correct_synonym": "swamp",
+          "synonym_option_names": [
+            "sicken",
+            "toss",
+            "swamp",
+            "discharge"
+          ],
+          "image_options": [
+            {
+              "word": "advent",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--FVTe8sl1--/c_limit,f_auto,h_400,w_600/v1486981748/uploads/word/image/2023/cf659763b96fa53647a8d943fbe43c81.jpg"
+            },
+            {
+              "word": "rudimentary",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--okREeSue--/c_limit,f_auto,h_400,w_600/v1486981666/uploads/word/image/2846/5f7090ef74c76fbab6f6d27d335fc6de.jpg"
+            },
+            {
+              "word": "physiological",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--vNsI2aqN--/c_limit,f_auto,h_400,w_600/v1486981433/uploads/word/image/2736/ec717f3cf7e7f99c3ead28050416e56c.jpg"
+            },
+            {
+              "word": "engulf",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--1qHcmrn3--/c_limit,f_auto,h_400,w_600/v1486981621/uploads/word/image/2390/65d6338a685bee20239637f7e79c014a.jpg"
+            }
+          ],
+          "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--1qHcmrn3--/c_limit,f_auto,h_400,w_600/v1486981621/uploads/word/image/2390/65d6338a685bee20239637f7e79c014a.jpg",
+          "pronunciation_audio": {
+            "url": "//d275xfx9m0lf02.cloudfront.net/uploads/word/pronunciation_audio/2390/engulf.mp3"
+          },
+          "valid_word_forms": []
+        }
+      ]
+    },
+    "current_exposure": {
+      "id": 657356,
+      "status": "current",
+      "number": 3,
+      "restartOnError": true,
+      "requireCorrectAnswerStreak": false,
+      "replayWrongAnswers": false,
+      "games": [
+        {
+          "id": 1353603,
+          "locked": false,
+          "bonus_multiplier": 3,
+          "disable_next_stage_for": 168,
+          "game_plan_name": "Obstacle Course",
+          "correctly_answered_word_ids": [
+            34,
+            193,
+            1410,
+            2007,
+            2390
+          ],
+          "game_modes": [
+            {
+              "name": "sentence",
+              "display_name": "Sentence",
+              "time_limit_in_seconds": 30,
+              "points_per_word": 5
+            },
+            {
+              "name": "synonym",
+              "display_name": "Synonym",
+              "points_per_word": 3,
+              "time_limit_in_seconds": 20
+            },
+            {
+              "name": "image",
+              "display_name": "Image",
+              "points_per_word": 2,
+              "time_limit_in_seconds": 20
+            },
+            {
+              "name": "definition",
+              "display_name": "Definition",
+              "points_per_word": 5,
+              "time_limit_in_seconds": 30
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

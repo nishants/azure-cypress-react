@@ -1,0 +1,28 @@
+@import 'styles/_base.scss';
+
+@import './modules/HomePage/homepage';
+@import './shared/Loader/dual-ring-loader';
+$mobile_width: 800px;
+
+body {
+  //background: $theme_dark_color; TODO remove
+  margin: 0 !important;
+  width: 100%;
+  height: 100%;
+  //overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+input {
+  height: $default_line_height;
+  line-height: $default_line_height;
+  border: 1px solid $light_border_color;
+  display: block;
+  width: 100%;
+  padding: 0 10px;
+}
+
+@media only screen and (max-width: $mobile_width) {
+  @import './app.mobile';
+}

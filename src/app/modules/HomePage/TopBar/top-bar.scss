@@ -1,0 +1,121 @@
+$profile_full_image_height: 120px;
+$slope_top_offset: 40px;
+$side_padding: 20px;
+
+$small_profile_img_height: 36px;
+$small_profile_img_width: 36px;
+$small_profile_scale: 0.8;
+
+$navigation_links_height: 46px;
+
+#top-bar {
+  position: relative;
+  background-color: $theme_light_bg;
+  .profile {
+    padding: 0 $side_padding;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    img {
+      position: relative;
+      display: block;
+      height: $profile_full_image_height;
+      border: 3px solid $grey;
+      border-radius: 1px;
+      box-shadow: $bar_shadow;
+      @include transition($transition);
+    }
+    .slope-bg {
+      position: absolute;
+      top: $slope_top_offset;
+      left: -10px;
+      height: $profile_full_image_height;
+      width: 150%;
+      background-color: white;
+      box-shadow: $slope_inside_shadow;
+      @include transformOrigin(0 0);
+      @include transform(rotate(2deg));
+      @include transition($transition);
+    }
+  }
+
+  @import './navigation';
+
+  .profile-bar.fixed-to-page {
+    .profile {
+      top: -$profile_full_image_height;
+      left: 0;
+    }
+  }
+
+  .fixed-to-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    background-color: transparent;
+    z-index: $top_bar_zindex;
+
+    .search-and-filter {
+      box-shadow: $bar_shadow;
+    }
+  }
+
+  .work-credits {
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    position: fixed;
+    padding: 10px;
+    font-weight: $font_weight_bold;
+    color: $light_black_text;
+    opacity: 0;
+    pointer-events: none;
+    @include transition(opacity $transition_time $transition_function);
+  }
+}
+
+#homepage.profile-reached {
+  #top-bar {
+    .profile {
+      //img {
+      //  opacity: 0;
+      //  @include transform(translateY(-100%));
+      //}
+      .slope-bg {
+        @include transform(translateY(-40px));
+        background-color: $grey;
+      }
+    }
+    @import './navigation.profile-reached';
+  }
+}
+
+#homepage.stick-navigation {
+  #top-bar {
+    .fixed-to-window {
+      opacity: 1;
+      pointer-events: initial;
+    }
+  }
+
+  .fixed-to-page {
+    opacity: 0;
+  }
+
+  .route-view-container {
+    @include transform(translateY(-$search_bar_height));
+  }
+}
+
+#homepage.stick-navigation:not(.scrolling-up) {
+  .fixed-to-window {
+    .search-and-filter {
+      pointer-events: none;
+      @include transform(translateY(calc(-100% + 5px)));
+    }
+  }
+}

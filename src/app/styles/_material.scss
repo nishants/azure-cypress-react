@@ -1,0 +1,23 @@
+$slow_time: 500ms;
+$transition_time: 300ms;
+$transition_function: ease;
+//$transition_function: cubic-bezier(0.25, 0.8, 0.25, 1);
+
+$transition: all $transition_time $transition_function;
+$transition_moves: transform $transition_time $transition_function;
+$transition_move_and_fade: #{transform $transition_time $transition_function,
+  opacity $transition_time $transition_function};
+
+$slope_inside_shadow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.3);
+$tab_button_shadow: 2px 0px 10px 2px rgba(0, 0, 0, 0.2);
+$inside_card_shodow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.1);
+$input_inset_shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+$elevated_card_shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.2);
+$elevated_card_inset_shadow: inset 1px 1px 20px 0px rgba(0, 0, 0, 0.2);
+$bar_shadow: 6px 5px 5px 0 rgba(0, 0, 0, 0.16),
+  6px 5px 10px 0 rgba(0, 0, 0, 0.12);
+$drop_down_shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
+
+$block_screen_zindex: 99999;
+
+$top_bar_zindex: 2;

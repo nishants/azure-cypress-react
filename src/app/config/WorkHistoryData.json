@@ -1,0 +1,137 @@
+[
+  {
+    "position": "Team Lead",
+    "company": "Birdeye",
+    "fromDate": "May 2018",
+    "toDate": "April 2019",
+    "location": "Gurugram, India",
+    "description": "<p>Lead a team of 10 engineers to rewrite the platform in ReactJS and building content management server using NodeJS, ExpressJS, AWS, Postgres.<p/><ul><li>Design and Architecture of in-house CMS</li><li>Leading team of frontend and backend developers</li><li>Introduction of test automation with ruby</li><li>Setup and maintenance of CI builds with Jenkins and EC2</li></ul>",
+    "image": "images/work-history-items/birdeye.png",
+    "tags": [
+      { "name": "nodejs" },
+      { "name": "reactjs" },
+      { "name": "aws" },
+      { "name": "jenkins" },
+      { "name": "javascript" }
+    ]
+  },
+  {
+    "position": "Design and Quality Consultant",
+    "company": "Zinc Learning Labs",
+    "fromDate": "Mar 2017",
+    "toDate": "Mar 2018",
+    "location": "Bengaluru Area, India",
+    "description": "<p>Introduced the concept of prototyping for new features. Leading the design sprints, worked with founder and content writers to deliver prototype every week. Delivered CRE, soon to be the flagship offering of the company.</p> <p>This is the product that was developed out of my personal project : <a href='https://www.youtube.com/watch?v=FKJoxD91f1s&feature=youtu.be' target='_blank' rel='noopener noreferrer'>link</a></p><p>Designed the architecture for end to end tests, conducted training sessions and integrated with build pipeline.</p><p>Designed frontend architecture to convert the platform into a single page application. This was challenging because different pages in UI were being rendered by three different technologies Rails, AngularJS and React+Redux. Had to make all three work together without needing a page reload.</p>",
+    "image": "images/work-history-items/zinc.png",
+    "tags": [
+      { "name": "reactjs" },
+      { "name": "angularjs" },
+      { "name": "ruby" },
+      { "name": "javascript" },
+      { "name": "rails" },
+      { "name": "redis" },
+      { "name": "aws" },
+      { "name": "teamcity" },
+      { "name": "semaphoreci" },
+      { "name": "test-automation" },
+      { "name": "agile" }
+    ]
+  },
+  {
+    "position": "Coach/Consulting Partner",
+    "company": "Agility Roots Pvt Ltd",
+    "fromDate": "Feb 2016",
+    "toDate": "March 2018",
+    "location": "Bengaluru Area, India",
+    "description": "<ul><li>Coached client's teams on Acceptance Test Driven Development.</li>Worked independently with client, aligning the onsite/offsite stakeholders and evangelizing ATDD.</li><li>Created transition backlogs for team, facilitated incremental transformation to workflows , helped establish testing strategy, prepared architecture for test automation, mentored BA's on writing story intent in gherkin language, paired up with automation engineers to teach test automation with ruby. See less</li></ul>",
+    "image": "images/work-history-items/agility.png",
+    "tags": [
+      { "name": "java" },
+      { "name": "ruby" },
+      { "name": "spring" },
+      { "name": "hibernate" },
+      { "name": "angularjs" },
+      { "name": "test-automation" },
+      { "name": "coaching" },
+      { "name": "consulting" },
+      { "name": "tdd" },
+      { "name": "agile" }
+    ]
+  },
+  {
+    "position": "Technical Coach",
+    "company": "Xebia Agile Transformation Team (XACT)",
+    "fromDate": "Nov 2014",
+    "toDate": "Jun 2015",
+    "location": "Bengaluru Area, India",
+    "description": "Trained client teams on test driven development, unit testing, code pairing, clean code.",
+    "image": "images/work-history-items/xebia.png",
+    "tags": [
+      { "name": "java" },
+      { "name": "spring" },
+      { "name": "hibernate" },
+      { "name": "javascript" },
+      { "name": "angularjs" },
+      { "name": "test-automation" },
+      { "name": "coaching" },
+      { "name": "consulting" },
+      { "name": "tdd" },
+      { "name": "agile" },
+      { "name": "jenkins" }
+    ]
+  },
+  {
+    "position": "Technical Consultant",
+    "company": "ThoughtWorks",
+    "fromDate": "Nov 2012",
+    "toDate": "Oct 2014",
+    "location": "Gurgaon, India",
+    "description": "<ul><li>Worked as a full stack engineer, alongside some truly cross functional teams.</li><li> Performed tasks, across roles </li><li> frontend, backend, QA.</li><li> Worked on various technologies </li><li> ruby, python, java, angularjs,</li><li> Learned best of development practices </li><li>iterative development, test driven development, continuous integration, refactoring, functional testing and automation, feature toggling</li><li> Learned design principles </li><li> evolutionary design, domain driven design, testability, micro</li><li>services, single page apps</li><li> Worked for clients like UNICEF, Caterpillar, and an Indian startup.",
+    "image": "images/work-history-items/tw.png",
+    "tags": [
+      { "name": "java" },
+      { "name": "ruby" },
+      { "name": "javascript" },
+      { "name": "spring" },
+      { "name": "hibernate" },
+      { "name": "angularjs" },
+      { "name": "test-automation" },
+      { "name": "tdd" },
+      { "name": "agile" }
+    ]
+  },
+  {
+    "position": "Application Developer",
+    "company": "Oracle",
+    "fromDate": "Jun 2012",
+    "toDate": "Nov 2012",
+    "location": "Mumbai Area, India",
+    "description": "<p>Worked in the core development team of Oracle's banking platform - Flexcube.</p>",
+    "image": "images/work-history-items/oracle.png",
+    "tags": [
+      { "name": "java" },
+      { "name": "oracle" },
+      { "name": "servlets" },
+      { "name": "html" },
+      { "name": "jsp" }
+    ]
+  },
+  {
+    "position": "System Engineer",
+    "company": "Infosys",
+    "fromDate": "Aug 2010",
+    "toDate": "Jun 2012",
+    "location": "Chandigarh Area, India",
+    "description": "<p>Worked in support team.</p> <p>Automated my teams workflow (archiving, purging, optimizing table indexes) with a PLSQL based tool. The tool became team's official tool later.</p>",
+    "image": "images/work-history-items/infosys.gif",
+    "tags": [
+      { "name": "pl/sql" },
+      { "name": "java" },
+      { "name": "automation" },
+      { "name": "oracle" },
+      { "name": "servlets" },
+      { "name": "html" },
+      { "name": "jsp" }
+    ]
+  }
+]

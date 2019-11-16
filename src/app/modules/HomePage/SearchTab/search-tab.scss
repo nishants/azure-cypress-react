@@ -1,0 +1,24 @@
+ul.search-tab-items {
+  @extend .undo-list;
+  > li {
+    width: 270px;
+  }
+  li:nth-child(3n) {
+    @include transition(
+                    #{transform 550ms $transition_function,
+                    opacity 550ms $transition_function}
+    );
+  }
+  li:nth-child(3n + 1) {
+    @include transition(
+                    #{transform 650ms $transition_function,
+                    opacity 650ms $transition_function}
+    );
+  }
+  li:nth-child(3n + 2) {
+    @include transition(
+                    #{transform 750ms $transition_function,
+                    opacity 750ms $transition_function}
+    );
+  }
+}

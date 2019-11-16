@@ -1,0 +1,59 @@
+$item_height : 60px;
+
+.page{
+
+  ul.work-history{
+    @extend .undo-list;
+    margin-left: $side_padding * 2;
+    margin-right: $side_padding * 2;
+
+    > li{
+      display: block;
+      padding: $padding;
+      border : 1px solid $border_light;
+      margin-bottom: $padding;
+      line-height: $item_height;
+
+      @extend .resize-container;
+      .logo{
+        float: left;
+        width : $item_height;
+        height: $item_height;
+        overflow: hidden;
+        img, .img{
+          display: inline-block;
+          max-height: 100%;
+          max-width: 100%;
+        }
+        .img{
+          font-size: $item_height/2;
+          line-height: $item_height;
+          display: block;
+          text-align: center;
+        }
+      }
+
+      .detail{
+        float: left;
+        max-width: calc(100% - #{$item_height + 2 * $padding});
+        > label{
+          line-height: $item_height/3;
+          text-align: left;
+          display: block;
+          padding: 0px $padding 0px 1.5*$padding;
+          @extend .bold-text;
+          font-size: small;
+          margin: 0px;
+        }
+        > label:not(.title){
+          font-size: small;
+          color: $light_text;
+        }
+        .link{
+          color: $link_color;
+        }
+      }
+
+    }
+  }
+}

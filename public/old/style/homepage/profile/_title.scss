@@ -1,0 +1,23 @@
+.title{
+  margin: auto;
+  text-align: center;
+  line-height: $rowHeight;
+  ul.designation{
+    @extend .resize-container;
+    @extend .undo-list;
+    display: inline-block !important;
+    font-weight: $bold_text;
+    color: $light_text;
+
+    > li{
+      float: left;
+    }
+    > li:not(:last-child):after{
+      display   : inline-block;
+      content   : "|";
+      width     : $half-space;
+      text-align: center;
+      font-size : larger;
+    }
+  }
+}

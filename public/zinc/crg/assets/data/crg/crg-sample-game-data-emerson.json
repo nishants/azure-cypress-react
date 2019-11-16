@@ -1,0 +1,1235 @@
+{
+  "passage": {
+    "id"    : "emerson",
+    "from"  : "Self-Reliance, 1841",
+    "by"    : "Ralph Waldo Emerson",
+    "text"  : "Man is timid and apologetic; he is no longer upright; he dares not say 'I think,' 'I am,' but quotes some saint or sage. He is ashamed before the blade of grass or the blowing rose. These roses under my window make no reference to former roses or to better ones; they are for what they are; they exist with God to-day. There is no time to them. There is simply the rose; it is perfect in every moment of its existence. Before a leaf-bud has burst, its whole life acts; in the full-blown flower there is no more; in the leafless root there is no less. Its nature is satisfied, and it satisfies nature, in all moments alike. But man postpones or remembers; he does not live in the present, but with reverted eye laments the past, or, heedless of the riches that surround him, stands on tiptoe to foresee the future. He cannot be happy and strong until he too lives with nature in the present, above time."
+  },
+  "agent": {
+    "smallProfilePicture": "assets/images/agents/emerson.png",
+    "videoPlaceholder": "assets/images/agents/emerson-video-placeholder.png"
+  },
+  "script": {
+    "scenes": [
+      {
+        "name": "play-video",
+        "config": {
+          "sceneId": "0.1-zibia-intro",
+          "group"  : "intro",
+          "sceneLoadVideo": {
+            "fullscreen": true,
+            "canSkip": true,
+            "label": "Main Idea",
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/1.1-intro.mov",
+            "type": "video/mp4",
+            "transcript": " Hi, my name is Zibia. I go to high school in New York City and right now I’m reading “The Man in the High Castle.” Let’s get reading!"
+          }
+        }
+      },
+      {
+        "name": "pause-and-read",
+        "config": {
+          "group": "intro",
+          "sceneId": "1.3-pause-and-read",
+          "nextButtonLabel": "I am done!",
+          "waitForAction": {
+            "timeToWait": 3,
+            "beforeTimeVideo": {
+              "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/1.3-pre-zincing.mov",
+              "type": "video/mp4",
+              "transcript": "Uh… Not possible. Try again. Even if it’s hard, just read through it."
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/1.2-pre-zincing.mov",
+            "type": "video/mp4",
+            "transcript": "First off, read the passage. Then we’ll talk."
+          }
+        }
+      },
+
+      {
+        "name": "multi-choice",
+        "config": {
+          "group": "intro",
+          "sceneId": "1.4-understood",
+          "question": "Before we move on, tell us: did Zincing help you understand this paragraph better?",
+          "options": [
+            {
+              "label": "Totally"
+            },
+            {
+              "label": "More or less"
+            },
+            {
+              "label": "Sort of...maybe?"
+            },
+            {
+              "label": "No"
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/1.4-understood.mov",
+            "type": "video/mp4",
+            "transcript": " So...how well do you think you understood that?"
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId"   : "1.5-main-idea",
+          "group"     : "intro",
+          "showInput" : true,
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/1.5-main-idea.mov",
+            "type": "video/mp4",
+            "transcript": "Let’s try this. In 20 words or fewer, what’s the main idea here? Write your answer in the chat. You’ll be seeing it again later."
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId"   : "1.6-lets-do-zincing",
+          "group"     : "intro",
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/1.6-lets-do-zincing.mov",
+            "type": "video/mp4",
+            "exitOnEnd" : true,
+            "transcript": "Okay, cool. We’ll go back to that later. For now, let’s do some Zincing."
+          }
+        }
+      },
+
+       {
+        "name": "generic-scene",
+        "config": {
+          "sceneId"   : "2.0-about-zincing",
+          "group"     : "zincing",
+          "sceneLoadVideo": {
+            "fullscreen": true,
+            "canSkip": true,
+            "label": "Zincing",
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.0-about-zincing.mov",
+            "type": "video/mp4",
+            "transcript": "Reading is different from other medias. With video, it puts images directly into your brain, but when you read, there’s an extra step. You have to turn sentences and words into images in your mind. This is what we call Zincing. Not Zincing is like playing a video game with your eyes closed. The text may as well be a solid rock wall. Picture words are handholds that help you climb the rock wall. Zincing is the only way to understand and appreciate good writing."
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId"   : "2.01-about-visualize",
+          "group"     : "zincing",
+          "subgroup"  : "visualize",
+          "sceneLoadVideo": {
+            "fullscreen": true,
+            "canSkip": true,
+            "label": "Visualize",
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.01-about-visualize.mov",
+            "type": "video/mp4",
+            "transcript": "Your first Zincing move is always to look for words or phrases that you can easily picture. Good writers will give you that, so you can always find those."
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"     : "zincing",
+          "subgroup"  : "visualize",
+          "sceneId"   : "2.1-first-key-images",
+          "focus"     : {"indices": [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23], "text": ""},
+          "findPhrase" : {
+            "correct": [
+              {"phrase"  : {"indices": [0,1,2,3,4], "text": "Man is timid and apologetic"}, "video"   : {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.1-first-image-found.mov", "type": "video/mp4", "transcript": "Yeah, that works. Good job picturing the whole phrase - not just some guy, but also how he’s acting."}},
+              {"phrase"  : {"indices": [5, 6,7,8,9], "text": "he is no longer upright"}},
+              {"phrase"  : {"indices": [21, 22, 23], "text": "saint or sage"}}
+            ],
+            "knownIncorrect": [
+              {"phrase": {"indices": [0], "text": "Man"}, "video": {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.1-i-can-picuture-a-guy.mov", "type": "video/mp4", "transcript": "Yeah. I can picture a guy here, but what about him? Highlight the whole phrase."}},
+              {"phrase": {"indices": [5], "text": "he"}, "video": {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.1-i-can-picuture-a-guy.mov", "type": "video/mp4", "transcript": "Yeah. I can picture a guy here, but what about him? Highlight the whole phrase."}}
+            ],
+            "attempts"             : {
+              "correctExpected"    : 3,
+              "incorrectAllowed"   : 4,
+              "onCorrectMessages"  : [
+                {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.1-two-more-images.mov", "type": "video/mp4", "transcript": "Cool. Now highlight two more things you can easily picture."},
+                { "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.1-yeah-that-works.mov", "type": "video/mp4", "transcript": "Yup - that works!"},
+                { "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.1-yeah-that-works.mov", "type": "video/mp4", "transcript": "Yup - that works!"}
+              ],
+              "onInCorrectMessages": [
+                {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.1-we-didnt-think.mov", "type": "video/mp4", "transcript": "Hm...we didn’t think that was easy to picture. Try again."}
+              ],
+              "onFinishByFailure"  :                 {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.1-great-everything-we-pictured.mov",
+                "type": "video/mp4",
+                "transcript": "Great. Here’s everything we pictured."
+              },
+              "onFinishBySuccess"  : {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.13-great-you-got-all-three.mov",
+                "type": "video/mp4",
+                "transcript": "Great! You got all three!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.1-zincing.visualize.mov",
+            "type": "video/mp4",
+            "transcript": "Plenty to visualize here! Highlight something in the first sentence you can easily picture. Remember to picture the whole phrase. "
+          },
+          "skipAllSelectionOnSuccess" : true,
+          "showAllSelectionsVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.1-great-everything-we-pictured.mov",
+            "type": "video/mp4",
+            "transcript": "Great. Here’s everything we pictured."
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId"   : "2.10-about-key-images",
+          "group"     : "zincing",
+          "subgroup"  : "key-images",
+          "sceneLoadVideo": {
+            "fullscreen": true,
+            "canSkip": true,
+            "label": "Key Images",
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.10-about-key-images.mov",
+            "type": "video/mp4",
+            "transcript": "Some image words just describe stuff the writer wants you to picture. For example, “the beetle crossed the road.” You see a beetle, you see a road. Done. But great writers can also use words to describe much more. “The beetle skittered across the road like a child on her way to the first day of school.” When I get an image like that, the first thing I have to do is picture it. For me, I see maybe skittering legs on the pavement or maybe I think of my first day of school...or, I mean, anything really that you associate with the first day of school and the verb skittering. To fully understand an image, you have to picture it, but also understand where it takes your mind."
+          }
+        }
+      },
+
+      {
+        "name"        : "poll-result",
+        "config"      :   {
+          "group"     : "zincing",
+          "subgroup"  : "key-images",
+          "sceneId"   : "2.10-poll-strongest-image",
+          "attemptsAllowed": 1,
+          "topPollResultCount" : 5,
+          "showInput" : true,
+          "pollResult" : [
+            {
+              "value":  "\"Man is timid and apologetic\"",
+              "score" : 32
+            },
+            {
+              "value":  "\"stands on tiptoe to foresee the future\"",
+              "score" : 19
+            },{
+              "value":  "\"with reverted eye laments the past\"",
+              "score" : 24
+            },
+            {
+              "value":  "\"roses under my window\"",
+              "score" : 28
+            },
+            {
+              "value":  "\"he is no longer upright\"",
+              "score" : 17
+            }
+          ],
+          "wrongAttemptMessages" : [
+            {
+              "url"          : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/empty-video.mp4",
+              "type"         : "video/mp4",
+              "transcript"   : "Interesting. No one else has thought of that before."
+            }
+          ],
+          "correctAttemptMessages" : [
+            {
+              "url"          : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/empty-video.mp4",
+              "type"         : "video/mp4",
+              "transcript"   : "Interesting. No one else has thought of that before."
+            }
+          ],
+          "sceneFinishVideo" : {
+            "url"          : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.10-what-others-chose.mov",
+            "type"         : "video/mp4",
+            "transcript"   : "Here’s what other students chose."
+          },
+          "sceneLoadVideo" : {
+            "url"          : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.10-poll-strongest-image.mov",
+            "type"         : "video/mp4",
+            "transcript"   : "What’s the strongest image for you? Which one jumps out at you or tells you something important? Remember there’s no one right answer."
+          }
+        }
+      },
+      {
+        "name": "text-input",
+        "config": {
+          "group": "zincing",
+          "subgroup": "key-images",
+          "sceneId": "2.12-man-tip-toe",
+          "focus": {
+            "indices": [119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169],
+            "text": ""
+          },
+          "highlight": {
+            "indices": [146,147,148,149,150,151,152],
+            "text": "stands on tiptoe to foresee the future"
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.12-man-tip-toe.mov",
+            "type": "video/mp4",
+            "transcript": "Why is man on tiptoe? Emerson could have just said, “He’s always trying to see the future” or “He’s worried about the future.” How does saying that man “stands on tiptoe” change the meaning? What feeling does “stands on tiptoe” convey?"
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"     : "zincing",
+          "subgroup"  : "imagine",
+          "sceneId"   : "2.14-about-key-images",
+          "sceneLoadVideo": {
+            "fullscreen": true,
+            "canSkip": true,
+            "label": "Imagine",
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.14-about-key-images.mov",
+            "type": "video/mp4",
+            "transcript": "Sometimes a writer can say something without giving a specific visual. “She was competitive and clever.” What does that mean? For me, the first thing that came to mind was maybe someone in a debate or spelling bee. Come up with something that makes sense to you and keep reading to find out more."
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId"   : "2.13-man-ashamed",
+          "group"     : "zincing",
+          "subgroup"  : "imagine",
+          "showInput" : true,
+          "buttons": [
+            {
+              "label": "I don't know"
+            }
+          ],
+          "highlight": {
+            "indices": [24,25, 26, 27,28,29,30,31,32,33,34, 35],
+            "text": "He is ashamed before the blade of grass or the blowing rose."
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.13-man-ashamed.mov",
+            "type": "video/mp4",
+            "transcript": " Just to be clear, “before” used to mean “in front of, “ so, “He is ashamed before the blade of grass or the blowing rose,” means the man feels ashamed in front of the blade of grass or the blowing rose. What??? What could Emerson mean here? More on this later, but why would a person feel ashamed in front of a plant? If you have an idea, type it in the chat. Otherwise, click “I don’t know,” and see if Emerson explains."
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group": "zincing",
+          "sceneId": "2.14-zincing-feedback",
+          "question": "Before we move on, tell us: did Zincing help you understand this paragraph better?",
+          "options": [
+            {
+              "label": "Yes!"
+            },
+            {
+              "label": "Sorta"
+            },
+            {
+              "label": "Not really"
+            },
+            {
+              "label": "No"
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/2.14-zincing-feedback.mov",
+            "type": "video/mp4",
+            "transcript": "Before we move on, tell us: did Zincing help you understand this paragraph better?"
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"     : "navigators",
+          "sceneId"   : "3.1-about-navigators",
+          "sceneLoadVideo": {
+            "fullscreen": true,
+            "canSkip": true,
+            "label": "Navigators",
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.1-about-navigators.mov",
+            "type": "video/mp4",
+            "transcript": "When you’re driving, everything from stop lights to brake lights to the paint on the street tells you how to navigate. Ignoring these could cause a dangerous crash. No one gets physically hurt when you ignore navigation signals in a text, but your comprehension gets run over."
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"     : "navigators",
+          "subgroup"  : "road-signs",
+          "sceneId"   : "3.1-about-roadsigns",
+          "sceneLoadVideo": {
+            "fullscreen": true,
+            "canSkip": true,
+            "label": "Road Signs",
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.1-about-roadsigns.mov",
+            "type": "video/mp4",
+            "transcript": "When you read, basic road signs include punctuation or transition words. For example, commas, dashes, periods, semicolons -- any punctuation that you can think of. Or transition words like because, although, also, in addition. They direct your reading. They say things like, keep going, go in a new direction, or here’s an explanation."
+          }
+        }
+      },
+
+      {
+        "name": "multi-choice",
+        "config": {
+          "group": "navigators",
+          "subgroup": "road-signs",
+          "sceneId": "3.1-which-punctuation",
+          "question": "Which punctuation mark does Emerson use over and over to introduce explanations?",
+          "options": [
+            {
+              "label": "Semicolons",
+              "correct" : true
+            },
+            {
+              "label": "Colons"
+            },
+            {
+              "label": "Dashes"
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.1-which-punctuation.mov",
+            "type": "video/mp4",
+            "transcript": "Which punctuation mark does Emerson use over and over to introduce explanations?"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "sceneId": "3.1-wrong-answer",
+          "group": "navigators",
+          "subgroup": "road-signs",
+          "condition": {
+            "expected": false,
+            "sceneId" : "3.1-which-punctuation",
+            "action"  : "multi-choice-result"
+          },
+          "highlight": {
+            "indices": [4, 9, 50, 56, 72, 90, 98, 123], "text": ""
+          },
+          "nextButtonLabel": "Got it !",
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.1-wrong-answer.mov",
+            "type": "video/mp4",
+            "transcript": " Nah. These are semi-colons. See?"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "sceneId": "3.1-correct-answer",
+          "group": "navigators",
+          "subgroup": "road-signs",
+          "condition": {
+            "expected": true,
+            "sceneId" : "3.1-which-punctuation",
+            "action"  : "multi-choice-result"
+          },
+          "highlight": {
+            "indices": [4, 9, 50, 56, 72, 90, 98, 123], "text": ""
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.1-correct-answer.mov",
+            "type": "video/mp4",
+            "transcript": "Great Job !"
+          }
+        }
+      },
+
+      {
+        "name": "find-phrase",
+        "config": {
+          "group"   : "navigators",
+          "subgroup": "road-signs",
+          "sceneId": "3.4-key-transition-word",
+          "expectedCorrectAnswers": 1,
+          "wrongAttemptsAllowed": 1,
+          "correctOptions": [
+            {
+              "phrase": {
+                "indices": [119],
+                "text": "But"
+              },
+              "successVideo": {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov",
+                "type": "video/mp4",
+                "transcript": "Nice"
+              }
+            }
+          ],
+          "partialCorrectOptions": [
+            {
+              "phrase": {"indices": [27], "text": "before"},
+              "successVideo": {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-nice-thats-a-transition-word.mov",
+                "type": "video/mp4",
+                "transcript": "Nice. That’s a transition word. But there’s another one that’s way more important. Try again."
+              }
+            },
+            {
+              "phrase": {"indices": [82], "text": "Before"},
+              "successVideo": {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-nice-thats-a-transition-word.mov",
+                "type": "video/mp4",
+                "transcript": "Nice. That’s a transition word. But there’s another one that’s way more important. Try again."
+              }
+            },
+            {
+              "phrase": {"indices": [159], "text": "until"},
+              "successVideo": {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-nice-thats-a-transition-word.mov",
+                "type": "video/mp4",
+                "transcript": "Nice. That’s a transition word. But there’s another one that’s way more important. Try again."
+              }
+            },{
+              "phrase": {"indices": [18], "text": "but"},
+              "successVideo": {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-nice-thats-a-transition-word.mov",
+                "type": "video/mp4",
+                "transcript": "Nice. That’s a transition word. But there’s another one that’s way more important. Try again."
+              }
+            },
+            {
+              "phrase": {"indices": [131], "text": "but"},
+              "successVideo": {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-nice-thats-a-transition-word.mov",
+                "type": "video/mp4",
+                "transcript": "Nice. That’s a transition word. But there’s another one that’s way more important. Try again."
+              }
+            },
+            {
+              "phrase": {"indices": [22], "text": "or"},
+              "successVideo": {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-nice-thats-a-transition-word.mov",
+                "type": "video/mp4",
+                "transcript": "Nice. That’s a transition word. But there’s another one that’s way more important. Try again."
+              }
+            },
+            {
+              "phrase": {"indices": [32], "text": "or"},
+              "successVideo": {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-nice-thats-a-transition-word.mov",
+                "type": "video/mp4",
+                "transcript": "Nice. That’s a transition word. But there’s another one that’s way more important. Try again."
+              }
+            },
+            {
+              "phrase": {"indices": [47], "text": "or"},
+              "successVideo": {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-nice-thats-a-transition-word.mov",
+                "type": "video/mp4",
+                "transcript": "Nice. That’s a transition word. But there’s another one that’s way more important. Try again."
+              }
+            },
+            {
+              "phrase": {"indices": [122], "text": "or"},
+              "successVideo": {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-nice-thats-a-transition-word.mov",
+                "type": "video/mp4",
+                "transcript": "Nice. That’s a transition word. But there’s another one that’s way more important. Try again."
+              }
+            },
+            {
+              "phrase": {"indices": [138], "text": "or"},
+              "successVideo": {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-nice-thats-a-transition-word.mov",
+                "type": "video/mp4",
+                "transcript": "Nice. That’s a transition word. But there’s another one that’s way more important. Try again."
+              }
+            }
+          ],
+          "wrongAttemptMessages": [
+            {
+              "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-attempt-one.mov",
+              "type": "video/mp4",
+              "transcript": "Transition words are words like, “next,” “however,” and “also.” Try it again"
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-key-transition-word.mov",
+            "type": "video/mp4",
+            "transcript": "The really key Road Sign in this passage is a transition word. Click it."
+          },
+          "skipAllSelectionOnSuccess" : true,
+          "showAllSelectionsVideo":             {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-attempt-two.mov",
+            "type": "video/mp4",
+            "transcript": "Hmmm… You should probably review the video on Transition Words. For now though, here’s the right answer."
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"     : "navigators",
+          "subgroup"  : "road-signs",
+          "sceneId"   : "3.8-whats-role-of-but",
+          "showInput" : true,
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.8-whats-role-of-but.mov",
+            "type": "video/mp4",
+            "transcript": "What’s the role of “but” here?"
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"     : "navigators",
+          "subgroup"  : "pronouns",
+          "sceneId"   : "3.9-about-pronouns",
+          "showInput" : true,
+          "sceneLoadVideo": {
+            "fullscreen": true,
+            "canSkip": true,
+            "label": "Pronouns",
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.9-about-pronouns.mov",
+            "type": "video/mp4",
+            "transcript": "Pronouns are words like he, she, it, those, which, that, these. When you see them in a text, they always refer to something. They usually refer to something that’s been mentioned or something that’s going to be mentioned. That is the first thing you have to do when you see a pronoun: find what it refers to."
+          }
+        }
+      },
+
+      {
+        "name": "drag-drop-text",
+        "config": {
+          "group"   : "navigators",
+          "subgroup": "pronouns",
+          "sceneId" : "3.9-who-is-he",
+          "focus": {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23], "text": ""},
+          "highlight": {"indices": [5,10], "text": "he"},
+          "relations": [
+            {
+              "draggable": {"indices": [5]  , "text": "he"},
+              "droppable": {"indices": [0]  , "text": "Man"}
+            },
+            {
+              "draggable": {"indices": [10] , "text": "he"},
+              "droppable": {"indices": [0]  , "text": "Man"}
+            }
+          ],
+          "highlightAtEnd": [],
+          "expectedCorrectAnswers": 1,
+          "wrongAttemptsAllowed" : 1,
+          "wrongAttemptMessages": [
+            {
+              "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.9-na-try-again.mov",
+              "type": "video/mp4",
+              "transcript": "Nah. Try again. Who does the “he” refer to?"
+            }
+          ],
+          "onFailure" : {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.9-he-is-man.mov",
+            "type": "video/mp4",
+            "transcript": "Nah. “He” refers to “Man” - see?"
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.9-who-is-he.mov",
+            "type": "video/mp4",
+            "transcript": "Who is the “he” in the first two sentences? Drag “he” to the word it replaces."
+          },
+          "onFinish": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.9-you-may-know-this.mov",
+            "type": "video/mp4",
+            "transcript": "Nice. You may already know this, but back in the 1800s, when Emerson wrote this, they referred to humans or a person as “man” or “mankind."
+          }
+        }
+      },
+      {
+        "name": "drag-drop-text",
+        "config": {
+          "group"   : "navigators",
+          "subgroup": "pronouns",
+          "sceneId" : "3.13-about-roses",
+          "focus": {"indices": [36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118], "text": ""},
+          "highlight": {"indices": [36,37, 71,72, 45,46], "text": ""},
+          "multiDropTargets" : true,
+          "relations": [
+            {
+              "draggable": {"indices": [36,37]  , "text": "These roses"},
+              "droppables": [
+                {
+                  "indices": [51],
+                  "text": "they",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                },
+                {
+                  "indices": [55],
+                  "text": "they",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                },
+                {
+                  "indices": [57],
+                  "text": "they",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                },
+                {
+                  "indices": [73],
+                  "text": "it",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                },
+                {
+                  "indices": [80],
+                  "text": "its",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                },
+                {
+                  "indices": [112],
+                  "text": "its",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                }
+              ]
+            },
+            {
+              "draggable": {"indices": [71,72]  , "text": "the rose"},
+              "droppables": [
+                {
+                  "indices": [51],
+                  "text": "they",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                },
+                {
+                  "indices": [55],
+                  "text": "they",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                },
+                {
+                  "indices": [57],
+                  "text": "they",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                },
+                {
+                  "indices": [73],
+                  "text": "it",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                },
+                {
+                  "indices": [80],
+                  "text": "its",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                },
+                {
+                  "indices": [112],
+                  "text": "its",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                }
+              ]
+
+            },
+            {
+              "draggable": {"indices": [45,46]  , "text": "former roses"},
+              "droppables": [
+                {
+                  "indices": [51],
+                  "text": "they",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                },
+                {
+                  "indices": [55],
+                  "text": "they",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                },
+                {
+                  "indices": [57],
+                  "text": "they",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                },
+                {
+                  "indices": [73],
+                  "text": "it",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                },
+                {
+                  "indices": [80],
+                  "text": "its",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                },
+                {
+                  "indices": [112],
+                  "text": "its",
+                  "onSuccess" :  {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.4-Nice.mov", "type": "video/mp4", "transcript": "Nice"}
+                }
+              ]
+
+            }
+
+          ],
+          "highlightAtEnd": [],
+          "expectedCorrectAnswers": 3,
+          "wrongAttemptsAllowed" : 3,
+          "wrongAttemptMessages": [
+            {
+              "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/naa-try-again.mp4",
+              "type": "video/mp4",
+              "transcript": "Nah. Try again."
+            }
+          ],
+          "onFailure" : {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.13-hmmm-maybe-watch .mov",
+            "type": "video/mp4",
+            "transcript": "Hmmm… Maybe watch the Pronouns video and then give this another shot."
+          },
+          "sceneLoadVideo": {
+            "url"       : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.13-about-roses.mov",
+            "type"      : "video/mp4",
+            "transcript": " Cool. Next, Emerson talks about roses. He uses three different pronouns to refer back to “these roses” or “the rose.” Drag “roses/the rose” onto each of the three pronouns that represents them."
+          },
+          "onFinish": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.13-great-you-got-all-three.mov",
+            "type": "video/mp4",
+            "transcript": "Great! You got all three!"
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"     : "navigators",
+          "subgroup"  : "explainers",
+          "sceneId"   : "3.19-about-explainers",
+          "showInput" : true,
+          "sceneLoadVideo": {
+            "fullscreen": true,
+            "canSkip": true,
+            "label": "Explainers",
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.19-about-explainers.mov",
+            "type": "video/mp4",
+            "transcript": "A big part of what writers do is explain. They say something, often something that you don’t fully understand, and explain it by giving details, an explanation, etc, a lot of things that will help you get what they mean. Punctuation often acts as a road sign to let you know when an explanation is coming. Keep an eye out for an explanation and make sure to connect it back to the phrases that it explains."
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"         : "navigators",
+          "subgroup"      : "explainers",
+          "sceneId"       : "3.19-drag-man-is-timid",
+          "focus"         : {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35], "text": ""},
+          "highlight"     : {"indices": [], "text": ""},
+          "dragDropText"  : {
+            "draggables"  : [{"indices": [0,1,2,3,4]  , "text": "Man is timid and apologetic"}],
+            "droppables"  : [
+              {
+                "indices": [5,6,7,8,9],
+                "text": "he is no longer upright"
+              },
+              {
+                "indices": [10,11,12,13,14,15],
+                "text"   : "He dares not say ‘I think,’ ‘I am’"
+              },
+              {
+                "indices": [19,20,21,22,23],
+                "text": "Quotes some saint or sage"
+              },
+              {
+                "indices": [24,25,26,27,28,29,30,31,32,33,34,35],
+                "text": "He is ashamed before .."
+              }
+            ],
+            "correct"    : [
+              {
+                "draggable" : {"indices": [0,1,2,3,4]},
+                "droppable" : {"indices": [5,6,7,8,9]}
+              },
+              {
+                "draggable" : {"indices": [0,1,2,3,4]},
+                "droppable" : {"indices": [10,11,12,13,14,15]}
+              },
+              {
+                "draggable" : {"indices": [0,1,2,3,4]},
+                "droppable" : {"indices": [19,20,21,22,23]}
+              },
+              {
+                "draggable" : {"indices": [0,1,2,3,4]},
+                "droppable" : {"indices": [24,25,26,27,28,29,30,31,32,33,34,35]}
+              }
+            ],
+            "knownIncorrect": [],
+            "attempts"             : {
+              "correctExpected"    : 4,
+              "incorrectAllowed"   : 3,
+              "onCorrectMessages"  : [
+                {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.19-yeap-what-else.mov", "type": "video/mp4", "transcript": "Yup. What else?"},
+                {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.19-yeap-what-else.mov", "type": "video/mp4", "transcript": "Yup. What else?"},
+                {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.19-yeap-what-else.mov", "type": "video/mp4", "transcript": "Yup. What else?"},
+                {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.19-yeap-what-else.mov", "type": "video/mp4", "transcript": "Yup. What else?"}
+              ],
+              "onInCorrectMessages": [
+                {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.19-not-quite.mov", "type": "video/mp4", "transcript": "Hm. Not quite. Try again."},
+                {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.19-not-quite.mov", "type": "video/mp4", "transcript": "Hm. Not quite. Try again."},
+                {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.19-not-quite.mov", "type": "video/mp4", "transcript": "Hm. Not quite. Try again."}
+              ],
+              "onFinishByFailure"  :             {
+                "url"          : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/empty-video.mp4",
+                "type"         : "video/mp4",
+                "transcript"   : ""
+              }
+            ,
+              "onFinishBySuccess"  : {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.19-good-work-you-got-all.mp4",
+                "type": "video/mp4",
+                "transcript": "Good work! You got all of them!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url"       : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.19-emerson-says-main-is-timid.mov",
+            "type"      : "video/mp4",
+            "transcript": "Emerson says that “Man is timid and apologetic”? What does he mean? Keep reading. He explains. Drag the highlighted phrase onto each word or phrase that explains it."
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group": "navigators",
+          "sceneId": "3.23-whats-he-trying-to-explain",
+          "subgroup": "explainers",
+          "question": "What’s he trying to explain about them?",
+          "focus" : {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117],
+            "text": ""},
+          "options": [
+            {
+              "label": "Something about roses and time",
+              "correct": true
+            },
+            {
+              "label": "Something about how roses smell better than people."
+            },
+            {
+              "label": "Something about other flowers being just as nice as roses."
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.23-but-now-we-are-back-to-quest.mp4",
+            "type": "video/mp4",
+            "transcript": "But now we’re back to that question: what does he mean about man being ashamed? Are you ashamed in front of grass or flowers? I’m not. Should we be? Please explain, Mr. Emerson! So, next, he has a lot to say about roses: What’s he trying to explain about them?"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "sceneId": "3.23-wrong-answer",
+          "group": "navigators",
+          "subgroup": "explainers",
+          "condition": {
+            "expected": false,
+            "sceneId" : "3.23-whats-he-trying-to-explain",
+            "action"  : "multi-choice-result"
+          },
+          "nextButtonLabel": "Proceed",
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.23-wrong-answer.mov",
+            "type": "video/mp4",
+            "transcript": "Huh? Where did he say that? "
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "sceneId": "3.23-correct-answer",
+          "group": "navigators",
+          "subgroup": "explainers",
+          "condition": {
+            "expected": true,
+            "sceneId" : "3.23-whats-he-trying-to-explain",
+            "action"  : "multi-choice-result"
+          },
+          "nextButtonLabel": "Proceed",
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.23-correct-answer.mov",
+            "type": "video/mp4",
+            "transcript": "Yep, you got it."
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group": "navigators",
+          "sceneId": "3.27-back-to-transition-word",
+          "subgroup": "explainers",
+          "question": " So now we’re back to that transition word, “but.” It’s an important road sign, cause it brings us back from the roses to…?",
+          "highlight" : {"indices": [119],
+            "text": ""},
+          "options": [
+            {
+              "label": "The blade of grass"
+            },
+            {
+              "label": "The window box"
+            },
+            {
+              "label": "Man",
+              "correct": true
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.27-back-to-transition-word.mov",
+            "type": "video/mp4",
+            "transcript": " So now we’re back to that transition word, “but.” It’s an important road sign, cause it brings us back from the roses to…?"
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group": "navigators",
+          "sceneId": "3.27-wrong-answer",
+          "subgroup": "explainers",
+          "question": "Did you click wrong? Read what it says after “but” and try again. ",
+          "highlight" : {"indices": [119], "text": ""},
+          "condition": {
+            "expected": false,
+            "sceneId" : "3.27-back-to-transition-word",
+            "action"  : "multi-choice-result"
+          },
+          "options": [
+            {
+              "label": "The blade of grass"
+            },
+            {
+              "label": "The window box"
+            },
+            {
+              "label": "Man",
+              "correct": true
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.27-wrong-answer.mov",
+            "type": "video/mp4",
+            "transcript": "Did you click wrong? Read what it says after “but” and try again. "
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "sceneId": "3.27-wrong-answer-again",
+          "group": "navigators",
+          "subgroup": "explainers",
+          "highlight" : {"indices": [119], "text": ""},
+          "condition": {
+            "expected": false,
+            "sceneId" : "3.27-wrong-answer",
+            "action"  : "multi-choice-result"
+          },
+          "nextButtonLabel": "Proceed",
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.23-wrong-answer.mov",
+            "type": "video/mp4",
+            "transcript": "Huh? Where did he say that? "
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group": "navigators",
+          "sceneId": "3.29-unlike-roses",
+          "subgroup": "explainers",
+          "question": "Yeah. And Emerson’s point about man is that, unlike roses…?",
+          "options": [
+            {
+              "label": "Man feels happiest out in nature."
+            },
+            {
+              "label": "Man appreciates the finer things in life, like good food and drink."
+            },
+            {
+              "label": "Man worries about the past and the future instead of experiencing the present moment.",
+              "correct": true
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.29-unlike-roses.mov",
+            "type": "video/mp4",
+            "transcript": "Yeah. And Emerson’s point about man is that, unlike roses…?"
+          }
+        }
+      },
+      {
+        "name": "text-input",
+        "config": {
+          "sceneId": "3.29-unlike-roses-wrong-answer",
+          "group": "navigators",
+          "subgroup": "explainers",
+          "condition": {
+            "expected": false,
+            "sceneId" : "3.29-unlike-roses",
+            "action"  : "multi-choice-result"
+          },
+          "nextButtonLabel": "Proceed",
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.29-wrong-anwser.mov",
+            "type": "video/mp4",
+            "transcript": "Huh? I don’t see that. Emerson is really trying to say that humans are the only species that are so concerned with time. Flowers just live in the present. Humans are concerned about the past and the future. What do you think of this? Type your answer in the chat."
+          }
+        }
+      },
+      {
+        "name": "text-input",
+        "config": {
+          "sceneId": "3.29-unlike-roses-correct-answer",
+          "group": "navigators",
+          "subgroup": "explainers",
+          "condition": {
+            "expected": true,
+            "sceneId" : "3.29-unlike-roses",
+            "action"  : "multi-choice-result"
+          },
+          "nextButtonLabel": "Proceed",
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.29-unlike-roses-correct-answer.mov",
+            "type": "video/mp4",
+            "transcript": "That’s right! So, what do you think about what Emerson is saying about time? Type your answer in the chat."
+          }
+        }
+      },
+
+      {
+        "name": "multi-choice",
+        "config": {
+          "group"     : "navigators",
+          "sceneId"   : "3.32-did-navigators-help",
+          "options": [
+            {
+              "label": "Totally!"
+            },
+            {
+              "label": "Some"
+            },
+            {
+              "label": "Not sure"
+            },
+            {
+              "label": "No way."
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/3.32-did-navigators-help.mov",
+            "type": "video/mp4",
+            "transcript": "Did Navigators help you understand this paragraph better?"
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId": "4.1-time-for-main-idea-again",
+          "fetchData": [
+            {
+              "$previous-main-idea-input" : {
+                "sceneId" : "1.5-main-idea",
+                "action"  : "text-input"
+              }
+            }
+          ],
+          "group": "exit",
+          "message": {
+            "text": "$previous-main-idea-input",
+            "button": {
+              "label": "Proceed"
+            }
+          },
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/4.1-time-for-main-idea-again.mov",
+            "type": "video/mp4",
+            "transcript": "Time for the main idea again! What’s the main idea of the paragraph? The last time you said:"
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId": "4.2-time-for-main-idea-second-time",
+          "group": "exit",
+          "showInput": true,
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/4.2-time-for-main-idea-second-time.mov",
+            "type": "video/mp4",
+            "transcript": "What do you think it is now? Write your answer."
+          }
+        }
+      },
+
+      {
+        "name": "multi-choice",
+        "config": {
+          "sceneId": "4.3-summary-of-main-idea",
+          "group": "exit",
+          "options": [
+            {
+              "label": "Like roses, people experience different stages of life, but roses need water and sunlight to thrive"
+            },
+            {
+              "label": "To live a good life, people need to stop worrying about the past and the future and appreciate the present",
+              "correct" : true
+            },
+            {
+              "label": "People need to work and make money, whereas roses get by with a little sunshine"
+            },
+            {
+              "label": "Since time has no beginning and no end, we need to concern ourselves with only the small piece of time we experience"
+            },
+            {
+              "label": "Small things in life, like roses or a delicious meal, are what matter most - not fame or wealth"
+            }
+          ],
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/emerson/4.3-summary-of-main-idea.mov",
+            "type": "video/mp4",
+            "transcript": "Okay, good. So which of these do you think best sums up the main idea?"
+          }
+        }
+      },
+
+      {
+        "name": "exit",
+        "config": {
+          "group": "exit",
+          "sceneId": "exit"
+        }
+      }
+    ]
+  }
+}

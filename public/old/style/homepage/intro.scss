@@ -1,0 +1,84 @@
+
+$image_height  : 195px;
+$background    : #000000;
+$gradience_from: 10%;
+$gradience_to  : 90%;
+
+$profile_pic_size: 200px;
+$from_color: $background;
+$to_color  : rgba(255,255,255,0);
+
+$top_bar_index: 99;
+
+.invert-gradience{
+  @include gradient(#{bottom, rgba(0, 0, 0, 1) 0%, transparent 100%});
+
+}
+.gradience{
+  @include gradient(#{top, $from_color $gradience_from, $to_color $gradience_to});
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+.overview{
+  margin: 0px $side_padding;
+  padding-top: $image_height + 2 * $padding;
+
+  .profile-image{
+    position  : relative;
+    top       : $profile_pic_size/2;
+
+    img{
+      display      : block;
+      margin       : auto;
+      height       : $profile_pic_size;
+      border       : $padding solid white;
+      border-radius: $picture_radius;
+    }
+  }
+}
+
+.page{
+  margin: $padding/2 auto;
+  background: white;
+  padding: $profile_pic_size/2 $side_padding  $profile_pic_size/2 $side_padding;
+  color: rgba(0, 0, 0, 0.91);
+  border-radius: $border_radius;
+}
+
+.introduction{
+  margin: 0px auto;
+  border-top-left-radius: $picture_radius;
+  border-top-right-radius: $picture_radius;
+  padding-bottom: $padding;
+
+  .name{
+    text-align: center;
+    @extend .bold-text;
+  }
+  .contact{
+    padding: $padding;
+    text-align: center;
+    a{
+      display: inline-block;
+      margin: $padding $padding/4;
+      //min-width: 100px;
+      font-size: large;
+      border-radius: $border_radius;
+      padding: $padding $padding*5;
+      border: 1px solid $border_light;
+
+      @extend .top-bar-transition;
+    }
+  }
+}
+
+.about-me{
+  display: none;
+  padding-top: $padding;
+  .text{
+    padding: $padding;
+    text-align: center;
+    color: $light_text;
+    font-weight: $medium_light_text;
+  }
+}

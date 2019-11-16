@@ -1,0 +1,298 @@
+
+<div id="crg">
+  <div ng-class="{&quot;selecting-from-passage&quot;: editor.passageSelector.selecting}" class="crg-editor">
+    <div class="editor-bar crg-bar">
+      <div class="actions">
+        <button ng-click="editor.publish()" class="primary">Publish</button>
+        <button><a ui-sref="crg.editor.preview">Preview</a></button>
+      </div>
+      <div class="selection-heading">
+        <div ng-bind="editor.passageSelector.heading.label" class="heading"></div>
+        <div class="help">
+          <div ng-bind="editor.passageSelector.heading.description" class="tooltip"></div>
+        </div>
+      </div>
+    </div>
+    <div class="crg-passage">
+      <div ng-init="passage = editor.passageSelector.passage" class="passage">
+        <div class="title"><span>From:&nbsp;</span><span ng-bind="passage.from" class="from"></span></div>
+        <div class="author"><span>by&nbsp;</span><span ng-bind="passage.by" class="by"></span></div>
+        <div on-text-select="onTextSelect($selection.indices)" on-text-select-touch="onTextSelectTouch($selection.indices)" ng-class="{&quot;focusing&quot; : game.player.state.focusPhrase.indices.length || editor.passageSelector.selection.focus.indices.length}" class="text phrase-selector selection-pointer">
+          <div ng-hide="game.player.state.disableState" class="selection-options">
+            <div ng-show="game.player.state.textSelectedIsClose" class="close-enough-selection">
+              <label>Almost there. You need to select complete phrase</label>
+            </div>
+            <div ng-show="game.player.state.selectingText" class="text-selection">
+              <button ng-click="game.player.submitText($selection)" class="crg select-phrase">Select</button>
+              <div class="pointer"></div>
+            </div>
+            <div ng-show="game.player.state.drag" class="drag-mask">
+              <div ng-drag="true" data-allow-transform="true" draggable="true" class="drag-handle">
+                <button class="crg drag-phrase"><span class="icon fa fa-arrows"></span><span>Hold Here To Drag</span></button>
+                <div class="pointer"></div><span ng-bind="game.player.state.drag.text" class="text"></span>
+              </div>
+            </div>
+            <div class="passage-selection">
+              <button ng-click="editor.passageSelector.selection.setFocus($selection.indices)" ng-show="editor.passageSelector.selection.selectingFocus" class="selectFocus">Set Focus</button>
+              <button ng-click="editor.passageSelector.selection.setPhrase($selection.indices)" ng-show="editor.passageSelector.selection.selectingPhrase" class="selectPhrase">Set Phrase</button>
+            </div>
+          </div>
+          <div ng-show="game.player.state.dragRelations.length &amp;&amp; !game.player.state.disableState" class="text-drag-mask">
+            <div ng-drop="true" ng-drop-success="game.player.state.wrongTextDropped(relation)" class="wrong-drop-container"></div>
+            <div ng-repeat="relation in game.player.state.dragRelations" class="relations">
+              <div phrase="relation.draggable" ng-drag="true" data-allow-transform="true" draggable="true" ng-drag-start="game.player.state.draggingText(relation)" class="draggable-text mask-phrase"><span ng-bind="relation.draggable.text" class="word highlight focus"></span></div>
+              <div ng-if="relation.droppable" phrase="relation.droppable" ng-drop="true" ng-drop-success="game.player.state.droppedTextOnRelation(relation)" class="droppable-text mask-phrase"><span ng-bind="relation.droppable.text"></span></div>
+            </div>
+            <div ng-if="game.player.state.droppables" phrase="droppable" ng-drop="true" ng-drop-success="game.player.state.droppedTextOnRelation(droppable, $event)" ng-repeat="droppable in game.player.state.droppables" class="droppable-text mask-phrase"><span ng-bind="droppable.text"></span></div>
+          </div>
+          <div ng-show="!game.player.state.findPhrase.disabled" class="selection-options">
+            <div ng-show="game.player.state.findPhrase.selectionIsClose" class="close-enough-selection">
+              <label><span class="fa fa-lightbulb-o"></span><span>You are close !</span></label>
+            </div>
+            <div ng-class="{&quot;hide-submit&quot; : !game.player.state.findPhrase.showSubmit}" class="text-selection">
+              <button ng-click="game.player.state.findPhrase.submitText($selection)" class="crg select-phrase">{{game.player.state.findPhrase.submitButtonLabel}}</button>
+              <div class="pointer"></div>
+            </div>
+          </div>
+          <div ng-if="game.player.state.dragDropText" ng-init="dragDropText = game.player.state.dragDropText" class="text-drag-mask">
+            <div ng-drop="true" ng-drop-success="dragDropText.wrongDrop(dragDropText.draggingNow)" class="wrong-drop-container"></div>
+            <div ng-repeat="draggable in dragDropText.draggables" class="droppable-phrase">
+              <div ng-repeat="wordIndex in draggable.indices" phrase="{indices: [wordIndex]}" ng-drag="true" data-allow-transform="true" draggable="true" ng-drag-start="dragDropText.dragging(draggable)" class="draggable-text mask-phrase"><span ng-bind="draggable.text" class="word highlight focus"></span></div>
+            </div>
+            <div ng-repeat="droppable in dragDropText.droppables" class="droppable-phrase">
+              <div ng-repeat="wordIndex in droppable.indices" ng-hide="droppable.disable" phrase="{indices: [wordIndex]}" ng-drop="true" ng-drop-success="dragDropText.dropped(dragDropText.draggingNow, droppable)" class="droppable-text mask-phrase"></div>
+            </div>
+          </div><span ng-repeat="word in passage.words" ng-class="{&quot;line-break&quot; : word.linebreak, &quot;highlight&quot;: word.highlight, &quot;focus&quot;: word.focus, &quot;flash&quot;: word.flash}" data-word-number="{{$index}}" ng-show="word.text.length || word.linebreak" class="word">{{word.text}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="crg-editor-form">
+      <div ng-class="{&quot;expand&quot; : _expand}" ng-repeat="group in editor.sceneGroups" class="scene-group">
+        <div ng-click="_expand = !_expand" class="accordion-bar">
+          <label><span class="expand-icon fa fa-caret-down"></span><span>{{group.label}}</span></label>
+        </div>
+        <ul ng-controller="SceneEditorController" class="scenes">
+          <li ng-repeat="scene in editor.script.scenes" ng-init="sceneIndex = $index;" ng-if="scene.config.group == group.name" class="scene-editor card">
+            <div class="scene-title">
+              <label><span>{{scene.config.sceneId}}.&nbsp;</span><span>{{scene.config.group}}/</span><span>{{scene.config.subgroup}}</span><span>({{scene.label}})</span></label>
+            </div>
+            <div class="scene-config-form">
+              <div ng-if="scene.name == &quot;play-video&quot;" class="play-video">
+                <div class="scene-param">
+                  <label class="param-label">Focus</label>
+                  <div class="param-input">
+                    <input type="text" disbaled="true" ng-model="scene.config.focus.text"/><span set-focus="set-focus" class="param-action fa fa-pencil"></span><span ng-click="scene.config.focus = {indices: [], text: []}" class="param-action fa fa-trash-o"></span>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Highlight</label>
+                  <div class="param-input">
+                    <input type="text" disbaled="true" ng-model="scene.config.phrase.text"/><span set-highlight="set-highlight" class="param-action fa fa-pencil"></span><span ng-click="scene.config.phrase = {indices: [], text: []}" class="param-action fa fa-trash-o"></span>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Transcript</label>
+                  <textarea ng-model="scene.config.sceneLoadVideo.transcript" class="param-input"></textarea>
+                </div>
+              </div>
+              <div ng-if="scene.name == &quot;text-input&quot;" class="text-input">
+                <div class="scene-param">
+                  <label class="param-label">Focus</label>
+                  <div class="param-input">
+                    <input type="text" disbaled="true" ng-model="scene.config.focus.text"/><span set-focus="set-focus" class="param-action fa fa-pencil"></span><span ng-click="scene.config.focus = {indices: [], text: []}" class="param-action fa fa-trash-o"></span>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Highlight</label>
+                  <div class="param-input">
+                    <input type="text" disbaled="true" ng-model="scene.config.phrase.text"/><span set-highlight="set-highlight" class="param-action fa fa-pencil"></span><span ng-click="scene.config.phrase = {indices: [], text: []}" class="param-action fa fa-trash-o"></span>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Transcript</label>
+                  <textarea ng-model="scene.config.transcript.text" class="param-input"></textarea>
+                </div>
+              </div>
+              <div ng-if="scene.name == &quot;drag-drop&quot;" class="drag-and-drop">
+                <div class="scene-param">
+                  <label class="param-label">Focus</label>
+                  <div class="param-input">
+                    <input type="text" disbaled="true" ng-model="scene.config.focus.text"/><span set-focus="set-focus" class="param-action fa fa-pencil"></span><span ng-click="scene.config.focus = {indices: [], text: []}" class="param-action fa fa-trash-o"></span>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Highlight</label>
+                  <div class="param-input">
+                    <input type="text" disbaled="true" ng-model="scene.config.phrase.text"/><span set-highlight="set-highlight" class="param-action fa fa-pencil"></span><span ng-click="scene.config.phrase = {indices: [], text: []}" class="param-action fa fa-trash-o"></span>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Transcript</label>
+                  <textarea ng-model="scene.config.transcript.text" class="param-input"></textarea>
+                </div>
+              </div>
+              <div ng-if="scene.name == &quot;drag-drop-text&quot;" class="drag-and-drop-text">
+                <div class="scene-param">
+                  <label class="param-label">Focus</label>
+                  <div class="param-input">
+                    <input type="text" disbaled="true" ng-model="scene.config.focus.text"/><span set-focus="set-focus" class="param-action fa fa-pencil"></span><span ng-click="scene.config.focus = {indices: [], text: []}" class="param-action fa fa-trash-o"></span>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Highlight</label>
+                  <div class="param-input">
+                    <input type="text" disbaled="true" ng-model="scene.config.phrase.text"/><span set-highlight="set-highlight" class="param-action fa fa-pencil"></span><span ng-click="scene.config.phrase = {indices: [], text: []}" class="param-action fa fa-trash-o"></span>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Transcript</label>
+                  <textarea ng-model="scene.config.transcript.text" class="param-input"></textarea>
+                </div>
+              </div>
+              <div ng-if="scene.name == &quot;multi-choice&quot;" ng-init="sceneEditor = sceneEditors.multiChoice" class="multi-choice">
+                <div class="scene-param">
+                  <label class="param-label">Focus</label>
+                  <div class="param-input">
+                    <input type="text" disbaled="true" ng-model="scene.config.focus.text"/><span set-focus="set-focus" class="param-action fa fa-pencil"></span><span ng-click="scene.config.focus = {indices: [], text: []}" class="param-action fa fa-trash-o"></span>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Highlight</label>
+                  <div class="param-input">
+                    <input type="text" disbaled="true" ng-model="scene.config.phrase.text"/><span set-highlight="set-highlight" class="param-action fa fa-pencil"></span><span ng-click="scene.config.phrase = {indices: [], text: []}" class="param-action fa fa-trash-o"></span>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Question</label>
+                  <div class="param-input">
+                    <textarea ng-model="scene.config.question"></textarea>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Correct Message</label>
+                  <div class="param-input">
+                    <textarea ng-model="scene.config.correctMessage"></textarea>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Options</label>
+                  <div class="param-input no-edit">
+                    <div ng-repeat="option in scene.config.options" class="input-options">
+                      <input type="checkbox" ng-model="option.correct" class="check"/>
+                      <input ng-model="option.label" class="checked"/><span ng-click="scene.config.options.splice($index, 1)" class="param-action fa fa-times"></span>
+                    </div>
+                    <button ng-click="scene.config.options.push({label: &quot;&quot;, correct: false})">Add</button>
+                  </div>
+                </div>
+              </div>
+              <div ng-if="scene.name == &quot;find-phrase&quot;" class="find-phrase">
+                <div class="scene-param">
+                  <label class="param-label">Transcript</label>
+                  <textarea ng-model="scene.config.sceneLoadVideo.transcript" class="param-input"></textarea>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Focus</label>
+                  <div class="param-input">
+                    <input type="text" disbaled="true" ng-model="scene.config.focusPhrase.text"/><span set-focus="set-focus" class="param-action fa fa-pencil"></span><span ng-click="scene.config.focus = {indices: [], text: []}" class="param-action fa fa-trash-o"></span>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Correct</label>
+                  <div class="param-input">
+                    <div ng-repeat="option in scene.config.correctOptions" class="input-options">
+                      <input type="text" disabled="disabled" ng-model="option.phrase.text"/><span add-key-image="add-key-image" class="param-action edit fa fa-pencil"></span><span ng-click="scene.config.keyImages.splice($index, 1)" class="param-action remove fa fa-trash-o"></span>
+                    </div>
+                    <button ng-click="scene.config.keyImages.push({indices: [], text: &quot;&quot;})">Add</button>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Partial</label>
+                  <div class="param-input">
+                    <div ng-repeat="option in scene.config.partialCorrectOptions" class="input-options">
+                      <input type="text" disabled="disabled" ng-model="option.phrase.text"/><span add-key-image="add-key-image" class="param-action edit fa fa-pencil"></span><span ng-click="scene.config.keyImages.splice($index, 1)" class="param-action remove fa fa-trash-o"></span>
+                    </div>
+                    <button ng-click="scene.config.keyImages.push({indices: [], text: &quot;&quot;})">Add</button>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Minimum Selections</label>
+                  <div class="param-input">
+                    <input type="number" ng-model="scene.config.expectedCorrectAnswers"/>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Message</label>
+                  <div class="param-input">
+                    <textarea ng-model="scene.config.transcript.text"></textarea>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Find More Message</label>
+                  <div class="param-input">
+                    <textarea ng-model="scene.config.findMoreMessage"></textarea>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Success Message</label>
+                  <div class="param-input">
+                    <textarea ng-model="scene.config.minimumSelectedMessage"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div ng-if="scene.name == &quot;yes-no&quot;" class="yes-no">
+                <div class="scene-param">
+                  <label class="param-label">Focus</label>
+                  <div class="param-input">
+                    <input type="text" disbaled="true" ng-model="scene.config.focus.text"/><span set-focus="set-focus" class="param-action fa fa-pencil"></span><span ng-click="scene.config.focus = {indices: [], text: []}" class="param-action fa fa-trash-o"></span>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Highlight</label>
+                  <div class="param-input">
+                    <input type="text" disbaled="true" ng-model="scene.config.phrase.text"/><span set-highlight="set-highlight" class="param-action fa fa-pencil"></span><span ng-click="scene.config.phrase = {indices: [], text: []}" class="param-action fa fa-trash-o"></span>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Question</label>
+                  <textarea ng-model="scene.config.question" class="param-input"></textarea>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Correct Answer</label>
+                  <input type="checkbox" ng-model="scene.config.expectedYes" class="param-input"/>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Message on Wrong Answer</label>
+                  <textarea ng-model="scene.config.wrongAnswerMessage" class="param-input"></textarea>
+                </div>
+              </div>
+              <div ng-if="scene.name == &quot;poll-result&quot;" class="poll-result">
+                <div class="scene-param">
+                  <label class="param-label">Focus</label>
+                  <div class="param-input">
+                    <input type="text" disbaled="true" ng-model="scene.config.focus.text"/><span set-focus="set-focus" class="param-action fa fa-pencil"></span><span ng-click="scene.config.focus = {indices: [], text: []}" class="param-action fa fa-trash-o"></span>
+                  </div>
+                </div>
+                <div class="scene-param">
+                  <label class="param-label">Highlight</label>
+                  <div class="param-input">
+                    <input type="text" disbaled="true" ng-model="scene.config.phrase.text"/><span set-highlight="set-highlight" class="param-action fa fa-pencil"></span><span ng-click="scene.config.phrase = {indices: [], text: []}" class="param-action fa fa-trash-o"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="scene-actions">
+                <button ng-click="editor.previewScene(scene)" class="remove">Preview</button>
+                <button ng-click="editor.removeScene(scene)" class="remove">Remove</button>
+              </div>
+            </div>
+          </li>
+          <ul class="add-scenes undo-list">
+            <li ng-repeat="config in sceneConfigs">
+              <button ng-click="editor.addScene(config.editor.createFor(group.name))" class="outline"><span ng-bind="config.label"></span><span>&nbsp; Scene</span></button>
+            </li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <ui-view></ui-view>
+</div>

@@ -1,0 +1,46 @@
+
+<div ng-class="{'single-deck' : vocabset.decks.length==1}" class="vocabset card">
+  <div ng-if="vocabset.assigned" class="assigned">
+    <div class="assigned-date">Assigned on {{vocabset.assigned.date}}</div>
+    <div class="assigned-by">
+      <div class="picture"><img ng-src="{{vocabset.assigned.by.picture}}"/></div>
+      <div ng-bind="vocabset.assigned.by.name" class="name"></div>
+    </div>
+    <div class="assigned-message"><span ng-bind="vocabset.assigned.message"></span>
+      <div class="speak"></div>
+    </div>
+  </div>
+  <div class="cover-image"><img ng-src="{{vocabset.image}}"/></div>
+  <div class="author">
+    <div ng-bind="vocabset.title" class="title"></div>
+    <div class="by">By {{vocabset.by}}</div>
+    <div ng-bind="vocabset.description" class="description"></div>
+  </div>
+  <!--.reader(ng-if='vocabset.reader')-->
+  <!--  .headline.title(ng-bind='vocabset.reader.headline')-->
+  <!--  .text(ng-bind='vocabset.reader.text')-->
+  <div ng-repeat="deck in vocabset.decks" ng-class="{&quot;locked&quot; : deck.locked, &quot;bonus&quot; : deck.bonus}" class="deck">
+    <div ng-if="deck.bonus" class="bonus-message">
+      <label>Bonus expires in 22:01 hours</label>
+      <div class="speak"></div>
+    </div>
+    <div class="words-and-progress">
+      <div ng-bind="deck.words" class="words"></div>
+      <ul class="exposures">
+        <li ng-repeat="exposure in deck.exposures">
+          <div ng-if="exposure.pending" class="state pending"></div>
+          <div ng-if="exposure.completed" class="state completed"></div>
+          <div ng-if="exposure.playable" class="state current playable"></div>
+          <div ng-if="exposure.waiting" class="state current waiting"></div>
+        </li>
+      </ul>
+    </div>
+    <div class="deck-actions">
+      <button class="outline study">Study</button>
+      <button ng-if="!deck.locked" class="outline play cta"><a ui-sref="vocab.play({vocabId: 1, deckId: 1})">Play</a></button>
+      <label ng-if="deck.locked" class="locked fa fa-lock">
+        <div class="timer">24:21</div>
+      </label>
+    </div>
+  </div>
+</div>

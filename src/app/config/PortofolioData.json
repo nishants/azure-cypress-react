@@ -1,0 +1,824 @@
+[
+  {
+    "type": "ui",
+    "name": "Jeyson Template Engine",
+    "src": "public/pages/jeyson",
+    "tags": [
+      {
+        "name": "development"
+      },
+      {
+        "name": "open-source"
+      },
+      {
+        "name": "javascript"
+      },
+      {
+        "name": "tdd"
+      }
+    ],
+    "description": {
+      "lead": "Templating language for generating test data with bare json files.",
+      "follow": "Allows executing expressions in json, include another json, render a list element ,render values conditionally, inbuilt and custom directives. Any JSON is a syntatically valid template, and any template is syntatically valid JSON file."
+    }
+  },
+  {
+    "name": "LookLike Matchers",
+    "no-mobile": "true",
+    "src": "public/pages/look_like",
+    "image": "images/portfolio-items/look_like_git.png",
+    "tags": [
+      {
+        "name": "development"
+      },
+      {
+        "name": "open-source"
+      },
+      {
+        "name": "ruby"
+      },
+      {
+        "name": "tdd"
+      }
+    ],
+    "description": {
+      "lead": "A ruby gem for integration/wireframe testing. ",
+      "follow": "Collection of RSpec matchers for testing based on visual pattern matching. Designed to work well with Cucumber and Selenium"
+    }
+  },
+  {
+    "name": "Authenticating Users on Blockchains",
+    "image": "images/portfolio-items/scatterjs.jpeg",
+    "src": "https://github.com/nishants/scatterjs-react",
+    "tags": [
+      {
+        "name": "development"
+      },
+      {
+        "name": "blockchain"
+      },
+      {
+        "name": "coaching"
+      },
+      {
+        "name": "frontend"
+      },
+      {
+        "name": "javascript"
+      }
+    ],
+    "description": {
+      "lead": "Comparing ScatterJS with OAuth flow and ",
+      "follow": "impletmenting auth for EOS blockchain with React, Redux and Saga"
+    }
+  },
+  {
+    "name": "State Functions as Redux Models",
+    "src": "https://medium.com/nishantsblog/state-functions-for-modeling-with-redux-a9b9d452a631",
+    "image": "images/portfolio-items/state_functions.png",
+    "tags": [
+      {
+        "name": "development"
+      },
+      {
+        "name": "react"
+      },
+      {
+        "name": "redux"
+      },
+      {
+        "name": "design-patterns"
+      }
+    ],
+    "description": {
+      "lead": "Models are the vocabulary of a system. Models bring sanity to the codebase. Without them a codebase looks like a series of insane distorted thoughts.",
+      "follow": "Just like models hold data and state, State functions abstracts the business logic from reducers and components"
+    }
+  },
+  {
+    "name": "Guide for Test Automation with Ruby and Selenium",
+    "src": "https://github.com/nishants/e2e-ruby-lessons",
+    "image": "images/portfolio-items/test-automation-guid.png",
+    "tags": [
+      {
+        "name": "coaching"
+      },
+      {
+        "name": "development"
+      },
+      {
+        "name": "testing"
+      },
+      {
+        "name": "selenium"
+      },
+      {
+        "name": "ruby"
+      }
+    ],
+    "description": {
+      "lead": "7 step guide",
+      "follow": " that takes you from absolute beginner to the stage of being capable of writing you own end to end and setting up your test infrastructure in the process. It is based on an opinionated architecture"
+    }
+  },
+  {
+    "name": "LookLike Online Runner for Ruby",
+    "no-mobile": "true",
+    "src": "http://amoeba.social/lab/look-like/",
+    "image": "images/portfolio-items/look_like.png",
+    "tags": [
+      {
+        "name": "frontend"
+      },
+      {
+        "name": "development"
+      },
+      {
+        "name": "testing"
+      },
+      {
+        "name": "selenium"
+      },
+      {
+        "name": "ruby"
+      }
+    ],
+    "description": {
+      "lead": "Test look_like library by running snippets of ruby in browser.",
+      "follow": "Also includes example with Selenium and Cucumber"
+    }
+  },
+  {
+    "name": "TrafficInterpreter : Intermediate Java TDD Workshop",
+    "src": "https://github.com/nishants/TrafficInterpreter",
+    "tags": [
+      {
+        "name": "coaching"
+      },
+      {
+        "name": "tdd"
+      },
+      {
+        "name": "java"
+      },
+      {
+        "name": "agile"
+      },
+      {
+        "name": "backend"
+      },
+      {
+        "name": "development"
+      }
+    ],
+    "description": {
+      "lead": "Learning TDD by developing an interpreter.",
+      "follow": ""
+    }
+  },
+  {
+    "name": "JHashTable: Java TDD Workshop for Beginners",
+    "src": "https://github.com/nishants/JHashTable",
+    "image": "images/portfolio-items/jhashtable.png",
+    "tags": [
+      {
+        "name": "coaching"
+      },
+      {
+        "name": "tdd"
+      },
+      {
+        "name": "java"
+      },
+      {
+        "name": "agile"
+      },
+      {
+        "name": "backend"
+      },
+      {
+        "name": "development"
+      }
+    ],
+    "description": {
+      "lead": "Learning TDD ",
+      "follow": "by implementing a hash table in Java."
+    }
+  },
+  {
+    "name": "Extab : Advanced Java TDD Workshop",
+    "src": "https://github.com/nishants/extab",
+    "image": "images/portfolio-items/extab.png",
+    "tags": [
+      {
+        "name": "coaching"
+      },
+      {
+        "name": "tdd"
+      },
+      {
+        "name": "java"
+      },
+      {
+        "name": "agile"
+      },
+      {
+        "name": "backend"
+      },
+      {
+        "name": "development"
+      }
+    ],
+    "description": {
+      "lead": "Learning TDD by building an experimental API design to map tables in spreadsheets to java objects like JPA.",
+      "follow": "It uses Apache POI to parse the excel files and provide a JPA styled annotation based mapping of objects to table rows."
+    }
+  },
+  {
+    "name": "Spring VCR : Advanced Java TDD Workshop",
+    "src": "https://github.com/nishants/jrec",
+    "image": "images/portfolio-items/jrec.png",
+    "tags": [
+      {
+        "name": "coaching"
+      },
+      {
+        "name": "tdd"
+      },
+      {
+        "name": "java"
+      },
+      {
+        "name": "agile"
+      },
+      {
+        "name": "backend"
+      },
+      {
+        "name": "micro-services"
+      },
+      {
+        "name": "development"
+      }
+    ],
+    "description": {
+      "lead": "Learning TDD by creating a JUNIT Plugin that records and playbacks http interactions.",
+      "follow": "Works like a vcr.py (for python) for testing micro-services."
+    }
+  },
+  {
+    "name": "Family Tree : NodeJS TDD Workshop",
+    "src": "https://github.com/nishants/family-tree",
+    "image": "images/portfolio-items/nodejs.png",
+    "tags": [
+      {
+        "name": "coaching"
+      },
+      {
+        "name": "tdd"
+      },
+      {
+        "name": "javascript"
+      },
+      {
+        "name": "agile"
+      },
+      {
+        "name": "backend"
+      },
+      {
+        "name": "development"
+      }
+    ],
+    "description": {
+      "lead": "Learning TDD with NodeJS by creating a tree data structure",
+      "follow": " and a command line interpreter to update and query the tree."
+    }
+  },
+  {
+    "name": "Webpack-4 Workshop",
+    "src": "https://github.com/nishants/webpack-lessons",
+    "image": "images/portfolio-items/webpack.jpeg",
+    "tags": [
+      {
+        "name": "javascript"
+      },
+      {
+        "name": "frontend"
+      },
+      {
+        "name": "coaching"
+      }
+    ],
+    "description": {
+      "lead": "Learnign webpack by creating a project from scratch.",
+      "follow": ""
+    }
+  },
+  {
+    "name": "Mango Editor",
+    "no-mobile": "true",
+    "src": "https://github.com/nishants/mango",
+    "image": "images/portfolio-items/mango.png",
+    "tags": [
+      {
+        "name": "development"
+      },
+      {
+        "name": "open-source"
+      },
+      {
+        "name": "ruby"
+      }
+    ],
+    "description": {
+      "lead": "Refactor Schema stored in JSON files.",
+      "follow": "This app allows updating schema of JSON files spread across filestystem. This was originally built to manage test data used with wiremock."
+    }
+  },
+  {
+    "name": "Gaming Experience with Alien Theme : AngularJS Workshop",
+    "image": "images/portfolio-items/start-wars.gif",
+    "src": "http://nishants.site/lab/star-wars/",
+    "tags": [
+      {
+        "name": "design"
+      },
+      {
+        "name": "agile"
+      },
+      {
+        "name": "angularjs"
+      },
+      {
+        "name": "frontend"
+      },
+      {
+        "name": "coaching"
+      },
+      {
+        "name": "scss"
+      }
+    ],
+    "desktop-first": true,
+    "description": {
+      "lead": "Worksop to teach creating highly modular, maintainable codebase for AngularJS and SCSS based single page app",
+      "follow": "with alien theme, optimized interaction flow and a custom widget."
+    }
+  },
+  {
+    "name": "Interactive Theme Design for Edtech Startup",
+    "image": "images/portfolio-items/zinc-imagine.gif",
+    "src": "http://nishants.site/zinc/re-imagine",
+    "tags": [
+      {
+        "name": "design"
+      },
+      {
+        "name": "frontend"
+      },
+      {
+        "name": "scss"
+      }
+    ],
+    "description": {
+      "lead": "Interaction design and theme design",
+      "follow": "with styleguide implementation for Edtech startup."
+    }
+  },
+  {
+    "name": "Mobile App Design for Apparels Renting Startup",
+    "image": "images/portfolio-items/rob-robes.gif",
+    "src": "http://nishants.site/rob-the-robes-mockup.pdf",
+    "tags": [
+      {
+        "name": "design"
+      }
+    ],
+    "description": {
+      "lead": "Minimalist theme design ",
+      "follow": "for rental wears startup."
+    }
+  },
+  {
+    "name": "Chakra",
+    "src": "https://boiling-scrubland-7787.herokuapp.com/",
+    "image": "images/portfolio-items/chakra.png",
+    "tags": [
+      {
+        "name": "tdd"
+      },
+      {
+        "name": "java"
+      },
+      {
+        "name": "backend"
+      },
+      {
+        "name": "development"
+      },
+      {
+        "name": "spring"
+      }
+    ],
+    "description": {
+      "lead": "Java compiler in browser",
+      "follow": "An experimental app that runs Java inside browsers."
+    }
+  },
+  {
+    "name": "RubyLab",
+    "src": "http://amoeba.social/practice-labs/ruby-for-qa/",
+    "tags": [
+      {
+        "name": "design"
+      },
+      {
+        "name": "coaching"
+      },
+      {
+        "name": "agile"
+      },
+      {
+        "name": "tdd"
+      },
+      {
+        "name": "ruby"
+      },
+      {
+        "name": "backend"
+      },
+      {
+        "name": "development"
+      }
+    ],
+    "description": {
+      "lead": "Test Driven Development With Ruby",
+      "follow": "in browser. Needs no machine setup. Create an assignment, create test for it with RSpec and share link. Lifesaver for conducting ruby programing sessions in corporate environments.I can create assignments on demand if you need."
+    }
+  },
+  {
+    "name": "360 deg Panorama View",
+    "src": "http://amoeba.social/dump/lab/scroll-magic.html",
+    "image": "images/portfolio-items/panorama.gif",
+    "tags": [
+      {
+        "name": "frontend"
+      }
+    ],
+    "description": {
+      "lead": "JQuery based",
+      "follow": "example of implementing panorama view by scroll jacking."
+    }
+  },
+  {
+    "name": "Wirestub",
+    "src": "public/pages/wirestub",
+    "tags": [
+      {
+        "name": "java"
+      },
+      {
+        "name": "development"
+      }
+    ],
+    "description": {
+      "lead": "Wrapper over wiremock",
+      "follow": "that transforms wiremock into a stubbing engine, with its own tempating language and session support. Fully compatible with wiremock APIs."
+    }
+  },
+  {
+    "name": "Interactive Theme Design for Designer Furniture Startup",
+    "src": "http://amoeba.social/dump/concepts/treniq/",
+    "image": "images/portfolio-items/treniq.gif",
+    "tags": [
+      {
+        "name": "design"
+      },
+      {
+        "name": "frontend"
+      },
+      {
+        "name": "scss"
+      }
+    ],
+    "description": {
+      "lead": "Hides/Shows/Partially-shows",
+      "follow": "the top bar by predicting user intention. Uses JQuery + AngularJS + SCSS achieve super smooth transitions with scalability. Also a design for navigation bar,search bar, ripple effect implementation."
+    }
+  },
+  {
+    "name": "Desktop App With Electron",
+    "src": "https://github.com/nishants/timedoctor",
+    "tags": [
+      {
+        "name": "javascript"
+      },
+      {
+        "name": "development"
+      },
+      {
+        "name": "electron"
+      }
+    ],
+    "description": {
+      "lead": "An experiment with electron for",
+      "follow": "creating desktop app with javascript."
+    }
+  },
+  {
+    "name": "Toggles",
+    "src": "public/pages/toggles",
+    "tags": [
+      {
+        "name": "development"
+      },
+      {
+        "name": "javascript"
+      }
+    ],
+    "description": {
+      "lead": "Bower component for feature toggling",
+      "follow": "with AngularJS."
+    }
+  },
+  {
+    "name": "Calendar with Angular",
+    "src": "http://amoeba.social/dump/lessons/calendar/index.html",
+    "tags": [
+      {
+        "name": "frontend"
+      }
+    ],
+    "description": {
+      "lead": "Calendar widget with",
+      "follow": "AngularJS and SCSS"
+    }
+  },
+  {
+    "name": "Infield Form",
+    "src": "http://amoeba.social/dump/lab/infield",
+    "tags": [
+      {
+        "name": "frontend"
+      }
+    ],
+    "description": {
+      "lead": "A Form design with infield labels,",
+      "follow": "made with AngularJS and SCSS"
+    }
+  },
+  {
+    "name": "Google Map Search with AngularJS",
+    "src": "http://amoeba.social/dump/google-maps-angular/searchbox.html",
+    "tags": [
+      {
+        "name": "frontend"
+      }
+    ],
+    "description": {
+      "lead": "Using Google Maps Location Search API",
+      "follow": "with Angularjs and SCSS."
+    }
+  },
+  {
+    "name": "CNN Video Transition",
+    "src": "http://amoeba.social/dump/design-fix/cnn",
+    "image": "images/portfolio-items/cnn.gif",
+    "tags": [
+      {
+        "name": "frontend"
+      }
+    ],
+    "description": {
+      "lead": "Fixing the smoothness for CNN Video Player.",
+      "follow": "Sticking a playing video to viewport. CNN removed this interaction from their current website."
+    }
+  },
+  {
+    "name": "Slate Interaction",
+    "src": "http://amoeba.social/dump/concepts/slate/index.html",
+    "image": "images/portfolio-items/slate.gif",
+    "tags": [
+      {
+        "name": "frontend"
+      }
+    ],
+    "description": {
+      "lead": "An interactoin for showing large details for a card, ",
+      "follow": "without changing the view, giving a cohesive user experience."
+    }
+  },
+  {
+    "name": "Scroll Progress",
+    "src": "http://amoeba.social/dump/lab/scroll-progress/index.html",
+    "tags": [
+      {
+        "name": "frontend"
+      }
+    ],
+    "description": {
+      "lead": "Show progress bar,",
+      "follow": "by scroll position."
+    }
+  },
+  {
+    "name": "Filter Menu Design",
+    "src": "http://amoeba.social/dump/lab/xsaas",
+    "tags": [
+      {
+        "name": "frontend"
+      },
+      {
+        "name": "design"
+      }
+    ],
+    "description": {
+      "lead": "Hierarchical data filter, search and navigation design.",
+      "follow": "Useful when data sets are complex and hierarchical in nature. Allows to quickly view,filter and search children of a subset of data to any level."
+    }
+  },
+  {
+    "name": "Tetris Navigation",
+    "src": "http://amoeba.social/dump/concepts/tetris-scroll",
+    "tags": [
+      {
+        "name": "frontend"
+      },
+      {
+        "name": "design"
+      }
+    ],
+    "description": {
+      "lead": "A Navigation design for complex",
+      "follow": "sections and articles. Usefule when there a lots of sections in app, each containing number of sub sections."
+    }
+  },
+  {
+    "name": "Scroll Jacking",
+    "src": "http://amoeba.social/dump/lab/scroll/x-scroll.html",
+    "tags": [
+      {
+        "name": "frontend"
+      }
+    ],
+    "description": {
+      "lead": "Capture Scroll Event",
+      "follow": "and convert to vertical/horizontal movements."
+    }
+  },
+  {
+    "type": "ui",
+    "name": "Theater Booking",
+    "src": "http://amoeba.social/dump/theater-booking.html",
+    "tags": [
+      {
+        "name": "frontend"
+      }
+    ],
+    "description": {
+      "lead": "Show any kind of complex seat arrangement and book seats",
+      "follow": "for a movie theater. Made with angualr and SCSS."
+    }
+  },
+  {
+    "name": "Wizard Design",
+    "src": "http://amoeba.social/dump/tiktik2",
+    "tags": [
+      {
+        "name": "frontend"
+      },
+      {
+        "name": "design"
+      }
+    ],
+    "description": {
+      "lead": "Wizard with SCSS",
+      "follow": "and AngularJs"
+    }
+  },
+  {
+    "name": "Circular Loader",
+    "src": "http://amoeba.social/dump/circular-loader.html",
+    "tags": [
+      {
+        "name": "frontend"
+      }
+    ],
+    "description": {
+      "lead": "Circular Loader",
+      "follow": "with jquery."
+    }
+  },
+  {
+    "name": "Shutter Menu",
+    "src": "http://amoeba.social/dump/concepts/mobile-shutter-menu/index.html",
+    "tags": [
+      {
+        "name": "frontend"
+      },
+      {
+        "name": "design"
+      }
+    ],
+    "description": {
+      "lead": "Design for mobile menu.",
+      "follow": ""
+    }
+  },
+  {
+    "name": "Trigger Loader",
+    "src": "http://amoeba.social/dump/rob-the-robe",
+    "tags": [
+      {
+        "name": "frontend"
+      },
+      {
+        "name": "design"
+      }
+    ],
+    "description": {
+      "lead": "Trigger load animation for splash",
+      "follow": "and logo in top bar."
+    }
+  },
+  {
+    "name": "WhatsApp Theme",
+    "src": "http://amoeba.social/dump/concepts/legally",
+    "image": "images/portfolio-items/legal-app.gif",
+    "tags": [
+      {
+        "name": "frontend"
+      },
+      {
+        "name": "design"
+      }
+    ],
+    "description": {
+      "lead": "WhatsApp Web client styled theme",
+      "follow": ""
+    }
+  },
+  {
+    "name": "Form Design",
+    "src": "http://amoeba.social/dump/client-demo/treniq",
+    "tags": [
+      {
+        "name": "frontend"
+      },
+      {
+        "name": "design"
+      }
+    ],
+    "description": {
+      "lead": "Form design with inline help",
+      "follow": ""
+    }
+  },
+  {
+    "name": "Accordion",
+    "src": "http://amoeba.social/dump/lab/accordian",
+    "tags": [
+      {
+        "name": "frontend"
+      },
+      {
+        "name": "design"
+      }
+    ],
+    "description": {
+      "lead": "With AngularJS and SCSS",
+      "follow": "."
+    }
+  },
+  {
+    "name": "Blinking Owls",
+    "src": "http://amoeba.social/dump/lab/blinking-owls",
+    "tags": [
+      {
+        "name": "frontend"
+      },
+      {
+        "name": "design"
+      }
+    ],
+    "description": {
+      "lead": "Blinking Owls",
+      "follow": "effect with SCSS only."
+    }
+  },
+  {
+    "type": "ui",
+    "name": "Wave Surfer",
+    "src": "http://amoeba.social/dump/lab/music",
+    "tags": [
+      {
+        "name": "design"
+      }
+    ],
+    "description": {
+      "lead": "Music waves",
+      "follow": "and progress bars using wavesurfer."
+    }
+  }
+]

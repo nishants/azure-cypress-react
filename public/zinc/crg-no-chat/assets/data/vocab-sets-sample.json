@@ -1,0 +1,1019 @@
+{
+  "klass_memberships": [
+    {
+      "klass_name": "test123",
+      "total_number_of_students": 1,
+      "rank": 1,
+      "primary_teacher_name": "foo2 foo22",
+      "in_bottom_half": false
+    },
+    {
+      "klass_name": "ABC Class",
+      "total_number_of_students": 6,
+      "rank": 3,
+      "primary_teacher_name": "KB Teacher",
+      "in_bottom_half": false
+    }
+  ],
+  "set_participations": [
+    {
+      "id": 67663,
+      "orientation_complete": true,
+      "latest_bonus_expiry": null,
+      "progress": "learned",
+      "assignment": {
+        "id": 121248,
+        "date_assigned": "Mar 29, 2017",
+        "note": "",
+        "creator_name": "karthik c",
+        "creator_image_url": "http://res-4.cloudinary.com/zll-stg/image/upload/s--OktEV_dq--/c_fit,f_auto,h_130,w_130/v1488807330/uploads/user/image/1/wxc5bf9elrbjoaajug7a.png",
+        "created_at": "2017-03-29T03:48:44.014-04:00",
+        "undertaking_type": "Homework",
+        "mandatory_set_id": null,
+        "vocab_game_mode": "classic",
+        "untimed": false
+      },
+      "set": {
+        "id": 818,
+        "image": {
+          "url": "//d275xfx9m0lf02.cloudfront.net/assets/default_set_image-1659f5c8217744186d3a1008e4073995874354132993fbbca4762db6dc051107.jpg",
+          "thumb": {
+            "url": "//d275xfx9m0lf02.cloudfront.net/assets/default_set_image-1659f5c8217744186d3a1008e4073995874354132993fbbca4762db6dc051107.jpg"
+          },
+          "small": {
+            "url": "//d275xfx9m0lf02.cloudfront.net/assets/default_set_image-1659f5c8217744186d3a1008e4073995874354132993fbbca4762db6dc051107.jpg"
+          }
+        },
+        "title": "testing again",
+        "description": "hello world",
+        "type_option": "targeted_pre_teaching",
+        "quiz_based": false,
+        "class_name": "Vocab::Set",
+        "number_of_decks": 1
+      },
+      "deck_participations": [
+        {
+          "id": 148667,
+          "status": "active",
+          "number_of_completed_exposures": 2,
+          "enable_at": null,
+          "end_bonus_at": null,
+          "bonus_multiplier": null,
+          "deck": {
+            "id": 5205,
+            "number": 1,
+            "title": "testing again - Deck 1"
+          },
+          "exposures": [
+            {
+              "id": 657354,
+              "status": "completed",
+              "number": 1,
+              "is_in_progress": false
+            },
+            {
+              "id": 657355,
+              "status": "completed",
+              "number": 2,
+              "is_in_progress": false
+            },
+            {
+              "id": 657356,
+              "status": "current",
+              "number": 3,
+              "is_in_progress": false
+            },
+            {
+              "id": 657357,
+              "status": "locked",
+              "number": 4,
+              "is_in_progress": false
+            },
+            {
+              "id": 657358,
+              "status": "locked",
+              "number": 5,
+              "is_in_progress": false
+            },
+            {
+              "id": 657359,
+              "status": "locked",
+              "number": 6,
+              "is_in_progress": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 67668,
+      "orientation_complete": true,
+      "latest_bonus_expiry": null,
+      "progress": "learned",
+      "assignment": null,
+      "set": {
+        "id": 814,
+        "image": {
+          "url": "//d275xfx9m0lf02.cloudfront.net/assets/default_set_image-1659f5c8217744186d3a1008e4073995874354132993fbbca4762db6dc051107.jpg",
+          "thumb": {
+            "url": "//d275xfx9m0lf02.cloudfront.net/assets/default_set_image-1659f5c8217744186d3a1008e4073995874354132993fbbca4762db6dc051107.jpg"
+          },
+          "small": {
+            "url": "//d275xfx9m0lf02.cloudfront.net/assets/default_set_image-1659f5c8217744186d3a1008e4073995874354132993fbbca4762db6dc051107.jpg"
+          }
+        },
+        "title": "Sairam Set",
+        "description": "words found no where",
+        "type_option": "targeted_pre_teaching",
+        "quiz_based": false,
+        "class_name": "Vocab::Set",
+        "number_of_decks": 1
+      },
+      "deck_participations": [
+        {
+          "id": 148672,
+          "status": "active",
+          "number_of_completed_exposures": 2,
+          "enable_at": null,
+          "end_bonus_at": null,
+          "bonus_multiplier": null,
+          "deck": {
+            "id": 5196,
+            "number": 1,
+            "title": "Sairam Set - Deck 1"
+          },
+          "exposures": [
+            {
+              "id": 657369,
+              "status": "completed",
+              "number": 1,
+              "is_in_progress": false
+            },
+            {
+              "id": 657370,
+              "status": "completed",
+              "number": 2,
+              "is_in_progress": false
+            },
+            {
+              "id": 657371,
+              "status": "current",
+              "number": 3,
+              "is_in_progress": false
+            },
+            {
+              "id": 657372,
+              "status": "locked",
+              "number": 4,
+              "is_in_progress": false
+            },
+            {
+              "id": 657373,
+              "status": "locked",
+              "number": 5,
+              "is_in_progress": false
+            },
+            {
+              "id": 657374,
+              "status": "locked",
+              "number": 6,
+              "is_in_progress": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 67667,
+      "orientation_complete": true,
+      "latest_bonus_expiry": "2017-04-13T10:54:09.044-04:00",
+      "progress": "learned",
+      "assignment": null,
+      "set": {
+        "id": 825,
+        "image": {
+          "url": "http://res-1.cloudinary.com/zll-stg/image/upload/s--csHDdeis--/f_auto/v1491038871/uploads/vocab/set/image/825/vsit9hwevreyl2scpf5z.png",
+          "thumb": {
+            "url": "http://res-1.cloudinary.com/zll-stg/image/upload/s--7b-iBv8r--/c_fill,f_auto,h_75,w_75/v1491038871/uploads/vocab/set/image/825/vsit9hwevreyl2scpf5z.png"
+          },
+          "small": {
+            "url": "http://res-1.cloudinary.com/zll-stg/image/upload/s--opyaoZyM--/c_fill,f_auto,h_115,w_115/v1491038871/uploads/vocab/set/image/825/vsit9hwevreyl2scpf5z.png"
+          }
+        },
+        "title": "Word Wars",
+        "description": "Evolution of spoken languages.",
+        "type_option": "targeted_pre_teaching",
+        "quiz_based": false,
+        "class_name": "Vocab::Set",
+        "number_of_decks": 1
+      },
+      "deck_participations": [
+        {
+          "id": 148671,
+          "status": "in_bonus",
+          "number_of_completed_exposures": 1,
+          "enable_at": null,
+          "end_bonus_at": "2017-04-13T10:54:09.044-04:00",
+          "bonus_multiplier": 2,
+          "deck": {
+            "id": 5224,
+            "number": 1,
+            "title": "Word Wars - Deck 1"
+          },
+          "exposures": [
+            {
+              "id": 657363,
+              "status": "completed",
+              "number": 1,
+              "is_in_progress": false
+            },
+            {
+              "id": 657364,
+              "status": "current",
+              "number": 2,
+              "is_in_progress": false
+            },
+            {
+              "id": 657365,
+              "status": "locked",
+              "number": 3,
+              "is_in_progress": false
+            },
+            {
+              "id": 657366,
+              "status": "locked",
+              "number": 4,
+              "is_in_progress": false
+            },
+            {
+              "id": 657367,
+              "status": "locked",
+              "number": 5,
+              "is_in_progress": false
+            },
+            {
+              "id": 657368,
+              "status": "locked",
+              "number": 6,
+              "is_in_progress": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 67656,
+      "orientation_complete": true,
+      "latest_bonus_expiry": null,
+      "progress": "learned",
+      "assignment": null,
+      "set": {
+        "id": 819,
+        "image": {
+          "url": "http://res-2.cloudinary.com/zll-stg/image/upload/s--pQAWGyNj--/f_auto/v1488433157/uploads/vocab/set/image/819/dhmnolfhoenxue3473ww.png",
+          "thumb": {
+            "url": "http://res-2.cloudinary.com/zll-stg/image/upload/s--EnDyx3Lj--/c_fill,f_auto,h_75,w_75/v1488433157/uploads/vocab/set/image/819/dhmnolfhoenxue3473ww.png"
+          },
+          "small": {
+            "url": "http://res-2.cloudinary.com/zll-stg/image/upload/s--TzHQBa2Z--/c_fill,f_auto,h_115,w_115/v1488433157/uploads/vocab/set/image/819/dhmnolfhoenxue3473ww.png"
+          }
+        },
+        "title": "newset",
+        "description": "gh",
+        "type_option": "targeted_pre_teaching",
+        "quiz_based": false,
+        "class_name": "Vocab::Set",
+        "number_of_decks": 1
+      },
+      "deck_participations": [
+        {
+          "id": 148660,
+          "status": "disabled",
+          "number_of_completed_exposures": 3,
+          "enable_at": "2017-04-17T11:11:27.159-04:00",
+          "end_bonus_at": null,
+          "bonus_multiplier": null,
+          "deck": {
+            "id": 5211,
+            "number": 1,
+            "title": "newset - Deck 1"
+          },
+          "exposures": [
+            {
+              "id": 657327,
+              "status": "completed",
+              "number": 1,
+              "is_in_progress": false
+            },
+            {
+              "id": 657328,
+              "status": "completed",
+              "number": 2,
+              "is_in_progress": false
+            },
+            {
+              "id": 657329,
+              "status": "completed",
+              "number": 3,
+              "is_in_progress": false
+            },
+            {
+              "id": 657330,
+              "status": "locked",
+              "number": 4,
+              "is_in_progress": false
+            },
+            {
+              "id": 657331,
+              "status": "locked",
+              "number": 5,
+              "is_in_progress": false
+            },
+            {
+              "id": 657332,
+              "status": "locked",
+              "number": 6,
+              "is_in_progress": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 67657,
+      "orientation_complete": true,
+      "latest_bonus_expiry": null,
+      "progress": "not_started",
+      "assignment": null,
+      "set": {
+        "id": 821,
+        "image": {
+          "url": "//d275xfx9m0lf02.cloudfront.net/assets/default_set_image-1659f5c8217744186d3a1008e4073995874354132993fbbca4762db6dc051107.jpg",
+          "thumb": {
+            "url": "//d275xfx9m0lf02.cloudfront.net/assets/default_set_image-1659f5c8217744186d3a1008e4073995874354132993fbbca4762db6dc051107.jpg"
+          },
+          "small": {
+            "url": "//d275xfx9m0lf02.cloudfront.net/assets/default_set_image-1659f5c8217744186d3a1008e4073995874354132993fbbca4762db6dc051107.jpg"
+          }
+        },
+        "title": "test",
+        "description": "Hello",
+        "type_option": "targeted_pre_teaching",
+        "quiz_based": false,
+        "class_name": "Vocab::Set",
+        "number_of_decks": 1
+      },
+      "deck_participations": [
+        {
+          "id": 148661,
+          "status": "active",
+          "number_of_completed_exposures": 0,
+          "enable_at": null,
+          "end_bonus_at": null,
+          "bonus_multiplier": null,
+          "deck": {
+            "id": 5215,
+            "number": 1,
+            "title": "test - Deck 1"
+          },
+          "exposures": [
+            {
+              "id": 657333,
+              "status": "current",
+              "number": 1,
+              "is_in_progress": false
+            },
+            {
+              "id": 657334,
+              "status": "locked",
+              "number": 2,
+              "is_in_progress": false
+            },
+            {
+              "id": 657335,
+              "status": "locked",
+              "number": 3,
+              "is_in_progress": false
+            },
+            {
+              "id": 657336,
+              "status": "locked",
+              "number": 4,
+              "is_in_progress": false
+            },
+            {
+              "id": 657337,
+              "status": "locked",
+              "number": 5,
+              "is_in_progress": false
+            },
+            {
+              "id": 657338,
+              "status": "locked",
+              "number": 6,
+              "is_in_progress": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 67669,
+      "orientation_complete": null,
+      "latest_bonus_expiry": null,
+      "progress": "not_started",
+      "assignment": null,
+      "set": {
+        "id": 826,
+        "image": {
+          "url": "http://res-2.cloudinary.com/zll-stg/image/upload/s--z2lb_PAQ--/f_auto/v1491238562/uploads/vocab/set/image/826/ddgh8qp3qhhu7wwrrnks.jpg",
+          "thumb": {
+            "url": "http://res-2.cloudinary.com/zll-stg/image/upload/s--SxprSS-o--/c_fill,f_auto,h_75,w_75/v1491238562/uploads/vocab/set/image/826/ddgh8qp3qhhu7wwrrnks.jpg"
+          },
+          "small": {
+            "url": "http://res-2.cloudinary.com/zll-stg/image/upload/s--yD0f9pAL--/c_fill,f_auto,h_115,w_115/v1491238562/uploads/vocab/set/image/826/ddgh8qp3qhhu7wwrrnks.jpg"
+          }
+        },
+        "title": "Why we can't see reality ?",
+        "description": "Multi Deck Vocabulary Set Example",
+        "type_option": "targeted_pre_teaching",
+        "quiz_based": false,
+        "class_name": "Vocab::Set",
+        "number_of_decks": 5
+      },
+      "deck_participations": [
+        {
+          "id": 148673,
+          "status": "active",
+          "number_of_completed_exposures": 0,
+          "enable_at": null,
+          "end_bonus_at": null,
+          "bonus_multiplier": null,
+          "deck": {
+            "id": 5230,
+            "number": 1,
+            "title": "Why we can't see reality ? - Deck 1"
+          },
+          "exposures": [
+            {
+              "id": 657375,
+              "status": "current",
+              "number": 1,
+              "is_in_progress": false
+            },
+            {
+              "id": 657376,
+              "status": "locked",
+              "number": 2,
+              "is_in_progress": false
+            },
+            {
+              "id": 657377,
+              "status": "locked",
+              "number": 3,
+              "is_in_progress": false
+            },
+            {
+              "id": 657378,
+              "status": "locked",
+              "number": 4,
+              "is_in_progress": false
+            },
+            {
+              "id": 657379,
+              "status": "locked",
+              "number": 5,
+              "is_in_progress": false
+            },
+            {
+              "id": 657380,
+              "status": "locked",
+              "number": 6,
+              "is_in_progress": false
+            }
+          ]
+        },
+        {
+          "id": 148674,
+          "status": "locked",
+          "number_of_completed_exposures": 0,
+          "enable_at": null,
+          "end_bonus_at": null,
+          "bonus_multiplier": null,
+          "deck": {
+            "id": 5231,
+            "number": 2,
+            "title": "Why we can't see reality ? - Deck 2"
+          },
+          "exposures": [
+            {
+              "id": 657381,
+              "status": "current",
+              "number": 1,
+              "is_in_progress": false
+            },
+            {
+              "id": 657382,
+              "status": "locked",
+              "number": 2,
+              "is_in_progress": false
+            },
+            {
+              "id": 657383,
+              "status": "locked",
+              "number": 3,
+              "is_in_progress": false
+            },
+            {
+              "id": 657384,
+              "status": "locked",
+              "number": 4,
+              "is_in_progress": false
+            },
+            {
+              "id": 657385,
+              "status": "locked",
+              "number": 5,
+              "is_in_progress": false
+            },
+            {
+              "id": 657386,
+              "status": "locked",
+              "number": 6,
+              "is_in_progress": false
+            }
+          ]
+        },
+        {
+          "id": 148675,
+          "status": "locked",
+          "number_of_completed_exposures": 0,
+          "enable_at": null,
+          "end_bonus_at": null,
+          "bonus_multiplier": null,
+          "deck": {
+            "id": 5232,
+            "number": 3,
+            "title": "Why we can't see reality ? - Deck 3"
+          },
+          "exposures": [
+            {
+              "id": 657387,
+              "status": "current",
+              "number": 1,
+              "is_in_progress": false
+            },
+            {
+              "id": 657388,
+              "status": "locked",
+              "number": 2,
+              "is_in_progress": false
+            },
+            {
+              "id": 657389,
+              "status": "locked",
+              "number": 3,
+              "is_in_progress": false
+            },
+            {
+              "id": 657390,
+              "status": "locked",
+              "number": 4,
+              "is_in_progress": false
+            },
+            {
+              "id": 657391,
+              "status": "locked",
+              "number": 5,
+              "is_in_progress": false
+            },
+            {
+              "id": 657392,
+              "status": "locked",
+              "number": 6,
+              "is_in_progress": false
+            }
+          ]
+        },
+        {
+          "id": 148676,
+          "status": "locked",
+          "number_of_completed_exposures": 0,
+          "enable_at": null,
+          "end_bonus_at": null,
+          "bonus_multiplier": null,
+          "deck": {
+            "id": 5233,
+            "number": 4,
+            "title": "Why we can't see reality ? - Deck 4"
+          },
+          "exposures": [
+            {
+              "id": 657393,
+              "status": "current",
+              "number": 1,
+              "is_in_progress": false
+            },
+            {
+              "id": 657394,
+              "status": "locked",
+              "number": 2,
+              "is_in_progress": false
+            },
+            {
+              "id": 657395,
+              "status": "locked",
+              "number": 3,
+              "is_in_progress": false
+            },
+            {
+              "id": 657396,
+              "status": "locked",
+              "number": 4,
+              "is_in_progress": false
+            },
+            {
+              "id": 657397,
+              "status": "locked",
+              "number": 5,
+              "is_in_progress": false
+            },
+            {
+              "id": 657398,
+              "status": "locked",
+              "number": 6,
+              "is_in_progress": false
+            }
+          ]
+        },
+        {
+          "id": 148677,
+          "status": "locked",
+          "number_of_completed_exposures": 0,
+          "enable_at": null,
+          "end_bonus_at": null,
+          "bonus_multiplier": null,
+          "deck": {
+            "id": 5234,
+            "number": 5,
+            "title": "Why we can't see reality ? - Deck 5"
+          },
+          "exposures": [
+            {
+              "id": 657399,
+              "status": "current",
+              "number": 1,
+              "is_in_progress": false
+            },
+            {
+              "id": 657400,
+              "status": "locked",
+              "number": 2,
+              "is_in_progress": false
+            },
+            {
+              "id": 657401,
+              "status": "locked",
+              "number": 3,
+              "is_in_progress": false
+            },
+            {
+              "id": 657402,
+              "status": "locked",
+              "number": 4,
+              "is_in_progress": false
+            },
+            {
+              "id": 657403,
+              "status": "locked",
+              "number": 5,
+              "is_in_progress": false
+            },
+            {
+              "id": 657404,
+              "status": "locked",
+              "number": 6,
+              "is_in_progress": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 67652,
+      "orientation_complete": true,
+      "latest_bonus_expiry": null,
+      "progress": "in_progress",
+      "assignment": null,
+      "set": {
+        "id": 77,
+        "image": {
+          "url": "http://res-1.cloudinary.com/zll-stg/image/upload/s--A61J1_rQ--/f_auto/v1486981318/uploads/vocab/set/image/77/7thgrade.jpg",
+          "thumb": {
+            "url": "http://res-1.cloudinary.com/zll-stg/image/upload/s--uArvUaZ1--/c_fill,f_auto,h_75,w_75/v1486981318/uploads/vocab/set/image/77/7thgrade.jpg"
+          },
+          "small": {
+            "url": "http://res-1.cloudinary.com/zll-stg/image/upload/s--eg_H0-Kz--/c_fill,f_auto,h_115,w_115/v1486981318/uploads/vocab/set/image/77/7thgrade.jpg"
+          }
+        },
+        "title": "Grade 7 - Set 1",
+        "description": "Great words to learn in 7th grade",
+        "type_option": "general_vocabulary_acquisition",
+        "quiz_based": false,
+        "class_name": "Vocab::Set",
+        "number_of_decks": 5
+      },
+      "deck_participations": [
+        {
+          "id": 148652,
+          "status": "active",
+          "number_of_completed_exposures": 0,
+          "enable_at": null,
+          "end_bonus_at": null,
+          "bonus_multiplier": null,
+          "deck": {
+            "id": 479,
+            "number": 1,
+            "title": "Grade 7 - Set 1 - Deck 1"
+          },
+          "exposures": [
+            {
+              "id": 657289,
+              "status": "current",
+              "number": 1,
+              "is_in_progress": false
+            },
+            {
+              "id": 657290,
+              "status": "locked",
+              "number": 2,
+              "is_in_progress": false
+            },
+            {
+              "id": 657291,
+              "status": "locked",
+              "number": 3,
+              "is_in_progress": false
+            },
+            {
+              "id": 657292,
+              "status": "locked",
+              "number": 4,
+              "is_in_progress": false
+            },
+            {
+              "id": 657293,
+              "status": "locked",
+              "number": 5,
+              "is_in_progress": false
+            },
+            {
+              "id": 657294,
+              "status": "locked",
+              "number": 6,
+              "is_in_progress": false
+            }
+          ]
+        },
+        {
+          "id": 148653,
+          "status": "locked",
+          "number_of_completed_exposures": 0,
+          "enable_at": null,
+          "end_bonus_at": null,
+          "bonus_multiplier": null,
+          "deck": {
+            "id": 480,
+            "number": 2,
+            "title": "Grade 7 - Set 1 - Deck 2"
+          },
+          "exposures": [
+            {
+              "id": 657295,
+              "status": "current",
+              "number": 1,
+              "is_in_progress": false
+            },
+            {
+              "id": 657296,
+              "status": "locked",
+              "number": 2,
+              "is_in_progress": false
+            },
+            {
+              "id": 657297,
+              "status": "locked",
+              "number": 3,
+              "is_in_progress": false
+            },
+            {
+              "id": 657298,
+              "status": "locked",
+              "number": 4,
+              "is_in_progress": false
+            },
+            {
+              "id": 657299,
+              "status": "locked",
+              "number": 5,
+              "is_in_progress": false
+            },
+            {
+              "id": 657300,
+              "status": "locked",
+              "number": 6,
+              "is_in_progress": false
+            }
+          ]
+        },
+        {
+          "id": 148654,
+          "status": "locked",
+          "number_of_completed_exposures": 0,
+          "enable_at": null,
+          "end_bonus_at": null,
+          "bonus_multiplier": null,
+          "deck": {
+            "id": 481,
+            "number": 3,
+            "title": "Grade 7 - Set 1 - Deck 3"
+          },
+          "exposures": [
+            {
+              "id": 657301,
+              "status": "current",
+              "number": 1,
+              "is_in_progress": false
+            },
+            {
+              "id": 657302,
+              "status": "locked",
+              "number": 2,
+              "is_in_progress": false
+            },
+            {
+              "id": 657303,
+              "status": "locked",
+              "number": 3,
+              "is_in_progress": false
+            },
+            {
+              "id": 657304,
+              "status": "locked",
+              "number": 4,
+              "is_in_progress": false
+            },
+            {
+              "id": 657305,
+              "status": "locked",
+              "number": 5,
+              "is_in_progress": false
+            },
+            {
+              "id": 657306,
+              "status": "locked",
+              "number": 6,
+              "is_in_progress": false
+            }
+          ]
+        },
+        {
+          "id": 148655,
+          "status": "locked",
+          "number_of_completed_exposures": 0,
+          "enable_at": null,
+          "end_bonus_at": null,
+          "bonus_multiplier": null,
+          "deck": {
+            "id": 482,
+            "number": 4,
+            "title": "Grade 7 - Set 1 - Deck 4"
+          },
+          "exposures": [
+            {
+              "id": 657307,
+              "status": "current",
+              "number": 1,
+              "is_in_progress": false
+            },
+            {
+              "id": 657308,
+              "status": "locked",
+              "number": 2,
+              "is_in_progress": false
+            },
+            {
+              "id": 657309,
+              "status": "locked",
+              "number": 3,
+              "is_in_progress": false
+            },
+            {
+              "id": 657310,
+              "status": "locked",
+              "number": 4,
+              "is_in_progress": false
+            },
+            {
+              "id": 657311,
+              "status": "locked",
+              "number": 5,
+              "is_in_progress": false
+            },
+            {
+              "id": 657312,
+              "status": "locked",
+              "number": 6,
+              "is_in_progress": false
+            }
+          ]
+        },
+        {
+          "id": 148656,
+          "status": "locked",
+          "number_of_completed_exposures": 0,
+          "enable_at": null,
+          "end_bonus_at": null,
+          "bonus_multiplier": null,
+          "deck": {
+            "id": 483,
+            "number": 5,
+            "title": "Grade 7 - Set 1 - Deck 5"
+          },
+          "exposures": [
+            {
+              "id": 657313,
+              "status": "current",
+              "number": 1,
+              "is_in_progress": false
+            },
+            {
+              "id": 657314,
+              "status": "locked",
+              "number": 2,
+              "is_in_progress": false
+            },
+            {
+              "id": 657315,
+              "status": "locked",
+              "number": 3,
+              "is_in_progress": false
+            },
+            {
+              "id": 657316,
+              "status": "locked",
+              "number": 4,
+              "is_in_progress": false
+            },
+            {
+              "id": 657317,
+              "status": "locked",
+              "number": 5,
+              "is_in_progress": false
+            },
+            {
+              "id": 657318,
+              "status": "locked",
+              "number": 6,
+              "is_in_progress": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "learned_words": [
+    {
+      "number_of_times_learned": "1",
+      "number_of_words": 18
+    },
+    {
+      "number_of_times_learned": "2",
+      "number_of_words": 8
+    },
+    {
+      "number_of_times_learned": "3",
+      "number_of_words": 4
+    },
+    {
+      "number_of_times_learned": "4",
+      "number_of_words": 0
+    },
+    {
+      "number_of_times_learned": "5",
+      "number_of_words": 0
+    },
+    {
+      "number_of_times_learned": "6",
+      "number_of_words": 0
+    }
+  ],
+  "user": {
+    "vocab_points": 779,
+    "profile_image_url": "//d275xfx9m0lf02.cloudfront.net/assets/profile_default-3e3646fcc8049a89e5631230a925b9d9f94122bfd985f0ea12776fde7f163d5a.png",
+    "can_cheat": true,
+    "show_dashboard_help": false
+  },
+  "active_games_count": 7,
+  "completed_games_count": 2
+}

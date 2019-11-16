@@ -1,0 +1,137 @@
+$border_radius : 2px;
+
+$small_image_size: $rowHeight;
+$topBarHeight: $profile_pic_size/2;
+
+.top-bar{
+  box-shadow: 0 0 5px 1px rgba(1, 1, 1, 0.3);
+  position: fixed;
+  z-index: $top_bar_index;
+  top: 0px;
+
+  height: $topBarHeight;
+
+  background: white;
+  overflow: hidden;
+
+  @extend .app-layer;
+  @extend .top-bar-transition;
+  .heading{
+    position: relative;
+  }
+  .name{
+    text-align: center;
+    line-height: $rowHeight - $padding;
+    @extend .small-bold-text;
+    @extend .top-bar-transition;
+  }
+  .title{
+    @extend .top-bar-transition;
+    .designation{
+      font-size: small;
+      font-weight: $medium_bold_text;
+      line-height: $rowHeight - $padding;
+    }
+  }
+  .image{
+    padding: $padding/2;
+    > img{
+      display: block;
+      margin: auto;
+      height: $small_image_size;
+      border-radius: $border_radius;
+      @extend .top-bar-transition;
+    }
+  }
+  .contact{
+    position: absolute;
+    bottom: $padding * 1.5;
+    right : 0px;
+    text-align: right;
+    padding: 0px $side_padding;
+    width: 100%;
+    @extend .top-bar-transition;
+    .twitter.link, .linkedin.link{
+      float: left;
+      margin-right: $padding;
+    }
+    .stack-overflow.link, .mailto.link, .github.link{
+      float: right;
+      margin-left: $padding;
+    }
+    > .link{
+      border: 1px solid transparent !important;
+      @extend .small-bold-text;
+      @extend .top-bar-transition;
+    }
+  }
+}
+
+
+#nishants-site:not(.show-top-bar) {
+  .top-bar {
+    pointer-events: none;
+    opacity: 0;
+    @include transform(translateY(-100%));
+    .image{
+      > img{
+        opacity: 0;
+      }
+    }
+  }
+}
+
+#nishants-site:not(.show-top-bar-name) {
+  .top-bar {
+    .name{
+      opacity: 0;
+      @include transform(translateY($topBarHeight));
+    }
+  }
+}
+
+#nishants-site:not(.show-top-bar-title) {
+  .top-bar {
+    .title{
+      opacity: 0;
+      @include transform(translateY($topBarHeight));
+    }
+  }
+}
+
+#nishants-site:not(.show-top-bar-contact) {
+  .top-bar {
+    .contact{
+      opacity: 0;
+      @include transform(translateY($topBarHeight));
+    }
+  }
+}
+
+
+#nishants-site {
+  .overview {
+    @extend .top-bar-transition;
+    .profile-image {
+      img{
+        @extend .top-bar-transition;
+      }
+    }
+  }
+}
+
+#nishants-site.show-top-bar {
+  .cover{
+    .bg-wrapper{
+      img.bg{
+        opacity: 0;
+      }
+    }
+  }
+  .overview {
+    .profile-image > img{
+      opacity: 0;
+      @include transform(translateY(-100%));
+    }
+  }
+}

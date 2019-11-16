@@ -1,0 +1,63 @@
+$title_font_size: 23px;
+$descriptoin_font_size: $small_font;
+$work_card_image_width: 70px;
+$padding: 10px;
+$card_width: calc(100% - #{2 * $padding});
+
+.work-history-card {
+  display: block;
+  padding: 20px;
+  width: $card_width;
+  text-align: left;
+  border: 1px solid $light_border_color;
+  background-color: $theme_light_bg;
+  margin: 0 $padding $padding 0;
+
+  @extend .resize-container;
+
+  .work-history-card-image {
+    display: block;
+    width: $work_card_image_width;
+    float: left;
+  }
+  .work-history-details {
+    float: left;
+    width: calc(100% - #{$work_card_image_width});
+    padding-left: 20px;
+
+    .work-history-position {
+      font-size: $title_font_size;
+      font-weight: $font_weight_bold;
+    }
+
+    .work-history-company {
+      font-size: $medium_font_size;
+      display: block;
+    }
+
+    .work-history-period,
+    .work-history-location {
+      display: block;
+      font-size: $small_font;
+      color: $light_black_text;
+    }
+
+    .work-history-description {
+      padding-top: 10px;
+      ul {
+        padding-left: 20px;
+        list-style-type: disc;
+      }
+    }
+    ul.tags {
+      @extend .undo-list;
+      text-align: right;
+      > li {
+        display: inline-block;
+        color: $blue;
+        cursor: pointer;
+        margin-left: 5px;
+      }
+    }
+  }
+}

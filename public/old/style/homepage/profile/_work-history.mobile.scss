@@ -1,0 +1,34 @@
+.page{
+  ul.work-history{
+    > li {
+      margin: $side_padding auto;
+
+      > .logo{
+        float: none;
+        width: auto;
+        text-align: center;
+        display: block;
+      }
+
+
+     > .detail{
+       margin-top: $side_padding;
+       float: none;
+       max-width: 100%;
+        >label{
+          text-align: center;
+        }
+        >label.period{
+          border-top: 1px solid $border_light;
+          margin-top: $padding;
+          padding-top: $padding;
+        }
+       label.title.link{
+          border-bottom: 1px solid $border_light;
+          margin-bottom: $padding;
+          padding-bottom: $padding;
+        }
+      }
+    }
+  }
+}

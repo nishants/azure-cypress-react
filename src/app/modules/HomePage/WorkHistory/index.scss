@@ -1,0 +1,12 @@
+#work-history-page {
+  ul.search-tab-items {
+    @extend .undo-list;
+    @extend .resize-container;
+
+    > li {
+      display: block;
+      margin: 10px;
+    }
+  }
+}
+@import 'work-history-card';

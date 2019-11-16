@@ -1,0 +1,17 @@
+#homepage {
+  .homepage-content-container {
+    .homepage-content {
+      .tab-view-container {
+        .route-view-container {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@import './Splash/splash.mobile';
+@import './TopBar/top-bar.mobile';
+@import './SideBar/sidebar.mobile';
+@import './WorkHistory/index.mobile';
+@import './AboutMe/about-me.mobile';

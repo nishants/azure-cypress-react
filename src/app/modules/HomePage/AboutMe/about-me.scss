@@ -1,0 +1,35 @@
+#about-me-page {
+  background-color: $theme_light_bg;
+  margin: 10px;
+  padding: 40px;
+  text-align: left;
+  border: 1px solid $light_border_color;
+
+  .connect-with-me {
+    .social-links {
+      margin: 20px auto;
+      @extend .resize-container;
+
+      > li {
+        float: left;
+        padding: 0;
+        margin-right: 10px;
+
+        a {
+          color: inherit;
+          text-decoration: none;
+          line-height: 25px;
+          border: 1px solid $light_border_color;
+          padding: 10px 20px;
+          border-radius: $default_border_radius;
+          /* color: #ffc104; */
+          font-weight: 500;
+          background: #fbfbfb;
+          background: $light_white;
+        }
+      }
+    }
+  }
+}
+
+@import 'about-me.top-bar';

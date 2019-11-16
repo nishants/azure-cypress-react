@@ -1,0 +1,21 @@
+.navigation {
+  .profile-info {
+    .small-profile-image {
+      @include transform(translateX(0) translateY(10px));
+    }
+    .profile-labels {
+      @include transform(
+        translateY(10px) translateX(5px) scale($small_profile_scale)
+      );
+    }
+  }
+}
+.profile-image-container {
+  img {
+    @include transform(translateX(calc(-100% - #{$side_padding + 10px})));
+  }
+}
+
+.work-credits {
+  opacity: 1;
+}

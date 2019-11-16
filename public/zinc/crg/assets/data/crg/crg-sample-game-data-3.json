@@ -1,0 +1,110 @@
+{
+  "passage": {
+    "id"    : 3,
+    "from": "Harlem",
+    "by": "LANGSTON HUGHES",
+    "text": "Does it dry up\nlike a raisin in the sun?\nOr fester like a sore—\nAnd then run?\nDoes it stink like rotten meat?\nOr crust and sugar over—\nlike a syrupy sweet?\nMaybe it just sags\nlike a heavy load.\nOr does it explode?\n"
+  },
+  "agent": {
+    "smallProfilePicture": "assets/images/agents/sara.png",
+    "videoPlaceholder": "assets/images/agents/sara-video-placeholder.png"
+  },
+  "script": {
+    "scenes": [
+      {
+        "name"  : "play-video",
+        "config": {
+          "group" : "intro",
+          "canSkip"  :  true,
+          "autoNext" : true,
+          "sceneLoadVideo" : {
+            "fullscreen" : false,
+            "type" : "no type defined",
+            "url" : "assets/videos/sara/read-passage-first.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Read the passage to on the left."
+          }
+        }
+      },
+      {
+        "group"       : "zincing",
+        "name"  : "find-all-key-images",
+        "config":       {
+          "group"       : "zincing",
+          "transcript" : {"text": "Other than the title, if you know what Harlem looks like, what’s the first image you can picture in the poem?"},
+          "expectedCorrectAnswers" : 1,
+          "keyImages": [
+            {
+              "phrase": {"indices": [2,3,4,5,6,7,8,9,10], "text": "dry up like a raisin in the sun"}
+            }
+          ]
+        }
+      },
+      {
+        "group"       : "zincing",
+        "name"        : "multi-choice",
+        "config"      : {
+          "group"       : "zincing",
+          "phrase": {"indices": [2,3,4,5,6,7,8,9,10], "text": "dry up like a raisin in the sun"},
+          "focus": {"indices" : [], "text"    : ""},
+          "question" : "So, what’s different between a plain raisin and a raisin drying up in the sun?",
+          "answerExplanation" : "Raisin dried up in the sun gets wrinkled, hard and dry. That represents something lifeless.",
+          "correctMessage" : "That was correct. Lets move ahead",
+          "options": [
+            {
+              "label"   : "The one in the sun gets really wrinkled, hard, and dry.",
+              "correct" : true
+            },
+            {
+              "label"   : "I have no idea.",
+              "correct" : false
+            },
+            {
+              "label"   : "The one in the sun gets fat and more like a grape",
+              "correct" : false
+            },
+            {
+              "label"   : "A plain raisin has less nutritional value.",
+              "correct" : false
+            }
+          ]
+        }
+      },
+      {
+        "group"       : "zincing",
+        "name"  : "find-all-key-images",
+        "config":       {
+          "group"       : "zincing",
+          "transcript" : {"text": "Alright, now highlight all the phrases you can picture in the passage."},
+          "expectedCorrectAnswers" : 3,
+          "findMoreMessage" : "Correct. Find <selections-left> more.",
+          "minimumSelectedMessage" : "Very good. But we found <more-options> more.",
+          "keyImages": [
+            {
+              "phrase": {"indices": [2,3,4,5,6,7,8,9,10], "text": "dry up like a raisin in the sun"}
+            },
+            {
+              "phrase": {"indices": [13,14,15,16], "text": "fester like a sore"}
+            },
+            {
+              "phrase": {"indices": [24, 25,26,27], "text": " stink like rotten meat?"}
+            },
+            {
+              "phrase": {"indices": [30,31,32,33,34,35,36,37,38], "text": "crust and sugar over—like a syrupy sweet?"}
+            },
+            {
+              "phrase": {"indices": [43,44,45,46,47,48], "text": "sags like a heavy load."}
+            }
+          ]
+        }
+      },
+
+      {
+        "name"  : "exit",
+        "config": {
+          "group"       : "exit"
+        }
+      }
+    ]
+  }
+}

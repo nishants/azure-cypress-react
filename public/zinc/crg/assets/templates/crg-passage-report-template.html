@@ -1,0 +1,67 @@
+
+<div class="crg-reports container">
+  <h1>{{passage.from}}</h1>
+  <div>
+    <label>- {{passage.by}}</label>
+  </div>
+  <div ng-init="feedback = {ratings: [{name: &quot;love&quot;, percent: 41, inputs: [&quot;loved it&quot;, &quot;could be better&quot;]}, {name: &quot;like&quot;, percent: 29}, {name: &quot;unsure&quot;, percent: 21},{name: &quot;dislike&quot;, percent: 11},{name: &quot;hate&quot;, percent: 5}]}" class="user-feedback report-container">
+    <h3 class="title">User Feedback</h3>
+    <div class="feedback-bar-graph">
+      <ul class="feedback-ratings report-item">
+        <li ng-repeat="rating in feedback.ratings" ng-class="{&quot;show-details&quot; : rating.showFeedbackDetails}" class="bar-analysis {{rating.name}}">
+          <label class="bar-label">{{rating.name}}</label>
+          <div class="bar-value"><span>{{rating.percent}}%</span></div>
+          <div style="transform: scaleX({{rating.percent/100}});" class="bar-level"></div><a ng-click="rating.showFeedbackDetails = !rating.showFeedbackDetails" class="bar-option"><span>feedback</span><span ng-if="!rating.showFeedbackDetails" class="fa fa-chevron-down"></span><span ng-if="rating.showFeedbackDetails" class="fa fa-times"></span></a>
+          <div ng-if="rating.showFeedbackDetails" class="feedback-details">
+            <ul>
+              <li ng-repeat="text in rating.inputs">
+                <label>"{{text}}"</label>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="report-container">
+    <div class="scene-perfomance">
+      <h3 class="title">Scene Performance</h3>
+    </div>
+    <ul class="scene-reports undo-list report-item">
+      <li ng-repeat="sceneReport in passageReport.scenes">
+        <div class="overview"><a ng-click="sceneReport.showScene = previewScene(passage.id, sceneReport.id)" class="scene-label">
+            <div>Scene-{{sceneReport.id}}</div>
+            <div>Video Scene</div>
+            <div ui-sref="crg.gameplay.scene({id: passage.id,select: sceneReport.id})" target="_blank" class="icon fa fa-external-link"></div></a>
+          <div ng-if="sceneReport.showScene" class="preview-scene-modal">
+            <div ng-click="sceneReport.showScene = null" class="backdrop"></div>
+            <div class="preview-container">
+              <iframe src="{{sceneReport.showScene}}"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="summary">
+          <div ng-if="sceneReport.incorrectAnswerPerUser" class="incorrect-answers bar-analysis">
+            <label class="bar-label">Incorrect</label>
+            <div class="bar-value"><span>{{sceneReport.incorrectAnswerPerUser}}  answers per user</span></div>
+          </div>
+          <div class="scene-visitors bar-analysis">
+            <label class="bar-label">Visitors</label>
+            <div class="bar-value"><span>{{sceneReport.timesPlayed}} users</span></div>
+            <div style="transform: scaleX({{sceneReport.relativeTimesPlayed}});" class="bar-level"></div>
+          </div>
+          <div class="average-time bar-analysis">
+            <label class="bar-label">Avg. Time</label>
+            <div class="bar-value"><span>{{sceneReport.averageTimeSpent}} seconds</span></div>
+            <div style="transform: scaleX({{sceneReport.relativeAverageTimeSpent}});" class="bar-level"></div>
+          </div>
+          <div class="bounce-rate bar-analysis">
+            <label class="bar-label">Bounce Rate</label>
+            <div class="bar-value"><span>{{sceneReport.bounceRate * 100}}%</span></div>
+            <div style="transform: scaleX({{sceneReport.bounceRate}});" class="bar-level"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

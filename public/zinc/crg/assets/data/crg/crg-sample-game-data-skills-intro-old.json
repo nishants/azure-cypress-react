@@ -1,0 +1,249 @@
+{
+  "agent": {
+    "smallProfilePicture": "assets/images/agents/thandie-video-placeholder.png",
+    "videoPlaceholder": "assets/images/agents/thandie-video-placeholder.png"
+  },
+  "script": {
+    "scenes": [
+
+
+      {
+        "name": "play-video",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.0-tone",
+          "slide" : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420631/thandie/t_4.0_clip.mov",
+            "type": "video/mp4",
+            "transcript": "One way to find the tone or feeling or mood of a text is to restate it in the most boring possible way. Let’s go back to that original text.Not a whole lot of tone, right? Check out the second version."
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.2-tone-contrast",
+          "slide" : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "options": [{"label": "“cold” and “December”"}, {"label": "“meadow” and “sunshine”"}, {"label": "cold December” and “sunshine", "correct": true}],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420631/thandie/t_4.2_clip.mov",
+            "type": "video/mp4",
+            "transcript": "Other passages will show tone in different ways, but you’ll find a lot of tone in the CONTRASTS between words or phrases. Giving the wind teeth makes it scary, but making those teeth tiny… Okay, tiny teeth are still scary -  but in a different way, right? The other strong contrast in that sentence is between…"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.2-tone-contrast-wrong-answer",
+          "condition": {
+            "expected": false,
+            "sceneId" : "4.2-tone-contrast",
+            "action"  : "multi-choice-result"
+          },
+          "slide" : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420631/thandie/t_4.2a_clip.mov",
+            "type": "video/mp4",
+            "transcript": "No. If anything, those go together, but sunshine is usually warm, not cold.right: "
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.2-tone-contrast-correct-answer",
+          "condition": {
+            "expected": true,
+            "sceneId" : "4.2-tone-contrast",
+            "action"  : "multi-choice-result"
+          },
+          "slide" : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420631/thandie/t_4.2b_clip.mov",
+            "type": "video/mp4",
+            "transcript": "Yup !"
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.2.1-beauty-with-attracted",
+          "slide" : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "options": [{"label": "from poetic to angry and desperate"}, {"label": "from sincere to amusing and low-key", "correct": true}, {"label": "from hopeful to disappointed"}],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420631/thandie/t_4.2.1_clip.mov",
+            "type": "video/mp4",
+            "transcript": "If, in the last line, you replaced “overwhelmed by beauty” with “attracted,” how would the tone change?"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.2.1-beauty-with-attracted-wrong-anwser",
+          "condition": {
+            "expected": false,
+            "sceneId" : "4.2.1-beauty-with-attracted",
+            "action"  : "multi-choice-result"
+          },
+          "slide" : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507083760/thandie/t_4.2.1a_clip.mov",
+            "type": "video/mp4",
+            "transcript": "No. There wouldn’t be anything negative about saying “attracted.” It would just make him sound more casual - maybe less open with his feelings."
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.3-feeling-from-contrast",
+          "slide" : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "showInput": true,
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507083760/thandie/t_4.3_clip.mov",
+            "type": "video/mp4",
+            "transcript": "So, how would you describe the feeling you get from these contrasts - tiny teeth and cold sunshine. Type your thoughts in the chatbox."
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.3.1-passage-tone",
+          "slide" : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "options": [{"label": "growing anxiety"}, {"label": "pleasant tension", "correct": true}, {"label": "approaching danger"}],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420631/thandie/t_4.3.1_clip.mov",
+            "type": "video/mp4",
+            "transcript": "So which of these best describes the tone of the passage?"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.3.1-passage-tone-wrong-anwser",
+          "condition": {
+            "expected": false,
+            "sceneId" : "4.3.1-passage-tone",
+            "action"  : "multi-choice-result"
+          },
+          "slide" : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507083760/thandie/t_4.3.1b_clip.mov",
+            "type": "video/mp4",
+            "transcript": "No. The contrasts create tension but Kareem seems excited."
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.4-tone-recap",
+          "slide" : {
+            "title" : "Tone Recap",
+            "bullets": ["As you’re zincing, look for words and phrases that contrast. "]
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507083760/thandie/t_4.4_clip.mov",
+            "type": "video/mp4",
+            "transcript": "A great way to look for tone is, as you’re zincing, notice words and phrases that CONTRAST; really picture them and then see how that contrast feels. "
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "5.0-feedback",
+          "slide" : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "options": [
+            {"label": "great - gave me lots of new ideas - I’m psyched to try them out on some advanced reading"},
+            {"label": "okay - I can try some of this"},
+            {"label": "somewhat helpful - but I didn’t follow all the details"},
+            {"label": "not helpful cause I already knew this"},
+            {"label": "not helpful cause I couldn’t understand it"},
+            {"label": "not helpful cause I’m not interested in improving my reading"},
+            {"label": "other"}
+          ],
+
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420639/thandie/t_5.0_clip.mov",
+            "type": "video/mp4",
+            "transcript": "You’ll be seeing all of these skills a lot more as you play zinc close reading passages, but how was this first intro?"
+          }
+        }
+      },
+      {
+        "name": "exit",
+        "config": {
+          "group": "exit",
+          "sceneId": "exit-skill-intro"
+        }
+      }
+    ]
+  }
+}

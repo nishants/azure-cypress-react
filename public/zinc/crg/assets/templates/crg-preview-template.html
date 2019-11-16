@@ -1,0 +1,411 @@
+
+<div class="crg-preview-modal">
+  <div ng-controller="CRGPreviewController">
+    <div id="crgameplay" class="viewport-safari-fix">
+      <div class="crg-player body">
+        <div class="left-pane">
+          <div class="header">
+            <div class="logo"><img src="assets/images/zinc-logo-small.png"/></div>
+          </div>
+          <div class="controls">
+            <div class="points">
+              <label class="fa fa-star-o"></label>
+              <div class="value">987</div>
+            </div>
+            <div class="sound">
+              <button class="fa fa-volume-up"></button>
+            </div>
+            <div ng-click="game.player.exit()" class="exit">
+              <button class="fa fa-sign-out"></button>
+            </div>
+          </div>
+        </div>
+        <div class="central-content">
+          <div class="passage-container">
+            <!--.header-->
+            <!--  .crgame-progress-->
+            <!--    include game-progress/game-progress-->
+            <div ng-init="passage = game.player.passage" ng-if="game.player.passage" class="passage">
+              <div class="title"><span>From:&nbsp;</span><span ng-bind="passage.from" class="from"></span></div>
+              <div class="author"><span>by&nbsp;</span><span ng-bind="passage.by" class="by"></span></div>
+              <div on-text-select="onTextSelect($selection.indices)" on-text-select-touch="onTextSelectTouch($selection.indices)" ng-class="{&quot;focusing&quot; : game.player.state.focusPhrase.indices.length || editor.passageSelector.selection.focus.indices.length}" class="text phrase-selector selection-pointer">
+                <div ng-hide="game.player.state.disableState" class="selection-options">
+                  <div ng-show="game.player.state.textSelectedIsClose" class="close-enough-selection">
+                    <label>Almost there. You need to select complete phrase</label>
+                  </div>
+                  <div ng-show="game.player.state.selectingText" class="text-selection">
+                    <button ng-click="game.player.submitText($selection)" class="crg select-phrase">Select</button>
+                    <div class="pointer"></div>
+                  </div>
+                  <div ng-show="game.player.state.drag" class="drag-mask">
+                    <div ng-drag="true" data-allow-transform="true" draggable="true" class="drag-handle">
+                      <button class="crg drag-phrase"><span class="icon fa fa-arrows"></span><span>Hold Here To Drag</span></button>
+                      <div class="pointer"></div><span ng-bind="game.player.state.drag.text" class="text"></span>
+                    </div>
+                  </div>
+                  <div class="passage-selection">
+                    <button ng-click="editor.passageSelector.selection.setFocus($selection.indices)" ng-show="editor.passageSelector.selection.selectingFocus" class="selectFocus">Set Focus</button>
+                    <button ng-click="editor.passageSelector.selection.setPhrase($selection.indices)" ng-show="editor.passageSelector.selection.selectingPhrase" class="selectPhrase">Set Phrase</button>
+                  </div>
+                </div>
+                <div ng-show="game.player.state.dragRelations.length &amp;&amp; !game.player.state.disableState" class="text-drag-mask">
+                  <div ng-drop="true" ng-drop-success="game.player.state.wrongTextDropped(relation)" class="wrong-drop-container"></div>
+                  <div ng-repeat="relation in game.player.state.dragRelations" class="relations">
+                    <div phrase="relation.draggable" ng-drag="true" data-allow-transform="true" draggable="true" ng-drag-start="game.player.state.draggingText(relation)" class="draggable-text mask-phrase"><span ng-bind="relation.draggable.text" class="word highlight focus"></span></div>
+                    <div ng-if="relation.droppable" phrase="relation.droppable" ng-drop="true" ng-drop-success="game.player.state.droppedTextOnRelation(relation)" class="droppable-text mask-phrase"><span ng-bind="relation.droppable.text"></span></div>
+                  </div>
+                  <div ng-if="game.player.state.droppables" phrase="droppable" ng-drop="true" ng-drop-success="game.player.state.droppedTextOnRelation(droppable, $event)" ng-repeat="droppable in game.player.state.droppables" class="droppable-text mask-phrase"><span ng-bind="droppable.text"></span></div>
+                </div>
+                <div ng-show="!game.player.state.findPhrase.disabled" class="selection-options">
+                  <div ng-show="game.player.state.findPhrase.selectionIsClose" class="close-enough-selection">
+                    <label><span class="fa fa-lightbulb-o"></span><span>You are close !</span></label>
+                  </div>
+                  <div ng-class="{&quot;hide-submit&quot; : !game.player.state.findPhrase.showSubmit}" class="text-selection">
+                    <button ng-click="game.player.state.findPhrase.submitText($selection)" class="crg select-phrase">{{game.player.state.findPhrase.submitButtonLabel}}</button>
+                    <div class="pointer"></div>
+                  </div>
+                </div>
+                <div ng-if="game.player.state.dragDropText" ng-init="dragDropText = game.player.state.dragDropText" class="text-drag-mask">
+                  <div ng-drop="true" ng-drop-success="dragDropText.wrongDrop(dragDropText.draggingNow)" class="wrong-drop-container"></div>
+                  <div ng-repeat="draggable in dragDropText.draggables" class="droppable-phrase">
+                    <div ng-repeat="wordIndex in draggable.indices" phrase="{indices: [wordIndex]}" ng-drag="true" data-allow-transform="true" draggable="true" ng-drag-start="dragDropText.dragging(draggable)" class="draggable-text mask-phrase"><span ng-bind="draggable.text" class="word highlight focus"></span></div>
+                  </div>
+                  <div ng-repeat="droppable in dragDropText.droppables" class="droppable-phrase">
+                    <div ng-repeat="wordIndex in droppable.indices" ng-hide="droppable.disable" phrase="{indices: [wordIndex]}" ng-drop="true" ng-drop-success="dragDropText.dropped(dragDropText.draggingNow, droppable)" class="droppable-text mask-phrase"></div>
+                  </div>
+                </div><span ng-repeat="word in passage.words" ng-class="{&quot;line-break&quot; : word.linebreak, &quot;highlight&quot;: word.highlight, &quot;focus&quot;: word.focus, &quot;flash&quot;: word.flash}" data-word-number="{{$index}}" ng-show="word.text.length || word.linebreak" class="word">{{word.text}}</span>
+              </div>
+            </div>
+            <div ng-init="passage = game.player.passage" ng-if="game.player.state.slide" class="state-slide passage">
+              <div class="slide-title">{{game.player.state.slide.title}}</div>
+              <div class="slide-body">
+                <div on-text-select="onTextSelect($selection.indices)" on-text-select-touch="onTextSelectTouch($selection.indices)" ng-class="{&quot;focusing&quot; : game.player.state.focusPhrase.indices.length || editor.passageSelector.selection.focus.indices.length}" class="text phrase-selector selection-pointer">
+                  <div ng-show="!game.player.state.findPhrase.disabled" class="selection-options">
+                    <div ng-show="game.player.state.findPhrase.selectionIsClose" class="close-enough-selection">
+                      <label><span class="fa fa-lightbulb-o"></span><span>You are close !</span></label>
+                    </div>
+                    <div ng-class="{&quot;hide-submit&quot; : !game.player.state.findPhrase.showSubmit}" class="text-selection">
+                      <button ng-click="game.player.state.findPhrase.submitText($selection)" class="crg select-phrase">{{game.player.state.findPhrase.submitButtonLabel}}</button>
+                      <div class="pointer"></div>
+                    </div>
+                  </div>
+                  <div ng-if="game.player.state.dragDropText" ng-init="dragDropText = game.player.state.dragDropText" class="text-drag-mask">
+                    <div ng-drop="true" ng-drop-success="dragDropText.wrongDrop(dragDropText.draggingNow)" class="wrong-drop-container"></div>
+                    <div ng-repeat="draggable in dragDropText.draggables" class="droppable-phrase">
+                      <div ng-repeat="wordIndex in draggable.indices" phrase="{indices: [wordIndex]}" ng-drag="true" data-allow-transform="true" draggable="true" ng-drag-start="dragDropText.dragging(draggable)" class="draggable-text mask-phrase"><span ng-bind="draggable.text" class="word highlight focus"></span></div>
+                    </div>
+                    <div ng-repeat="droppable in dragDropText.droppables" class="droppable-phrase">
+                      <div ng-repeat="wordIndex in droppable.indices" ng-hide="droppable.disable" phrase="{indices: [wordIndex]}" ng-drop="true" ng-drop-success="dragDropText.dropped(dragDropText.draggingNow, droppable)" class="droppable-text mask-phrase"></div>
+                    </div>
+                  </div>
+                  <ul ng-if="game.player.state.slide.bullets" class="bullets">
+                    <li ng-repeat="bullet in game.player.state.slide.bullets"><span ng-repeat="word in bullet.words track by word.index" data-word-number="{{word.index}}" ng-class="{&quot;line-break&quot; : word.linebreak, &quot;highlight&quot;: word.highlight, &quot;focus&quot;: word.focus, &quot;flash&quot;: word.flash}" class="word">{{word.text}}</span></li>
+                  </ul>
+                  <ul ng-if="game.player.state.slide.sections" class="slide-sections undo-list">
+                    <li ng-repeat="section in game.player.state.slide.sections">
+                      <div ng-show="section.title.length &gt; 1" class="section-title"><span ng-repeat="word in section.title" data-word-number="{{word.index}}" class="word focus">{{word.text}}</span></div>
+                      <div class="section-body"><span ng-repeat="word in section.text" data-word-number="{{word.index}}" ng-class="{&quot;line-break&quot; : word.linebreak, &quot;highlight&quot;: word.highlight, &quot;focus&quot;: word.focus, &quot;flash&quot;: word.flash}" class="word">{{word.text}}</span></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div ng-if="game.player.passage" ng-class="{&quot;no-show&quot; : !(game.player.state.group &amp;&amp; game.player.state.subgroup)}" class="skill-indicator-container passage-help">
+              <!--.skill-indicator-->
+              <!--  .skill {{game.player.state.group}}-->
+              <!--  .subskill(ng-click="game.player.playSkillVideo(game.player.state.group,  game.player.state.subgroup)")-->
+              <!--    label {{game.player.state.subgroup}}-->
+              <!--    span.fa.fa-play-->
+              <ul class="progress-indicator">
+                <li class="finished">
+                  <label>{{game.player.state.group}}</label><span class="bg">
+                    <svg width="100%" height="100%" viewbox="0 0 229 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch-->
+                      <desc>Created with Sketch.</desc>
+                      <defs>
+                        <path id="path-1" d="M0,0 L215,0 L225,25 L215,50 L1,50 L1,50 C0.44771525,50 -4.33869274e-17,49.5522847 -1.11022302e-16,49 L0,0 Z"></path>
+                        <filter id="filter-2" x="-1.6%" y="-5.0%" width="103.1%" height="114.0%" filterunits="objectBoundingBox">
+                          <feoffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feoffset>
+                          <fegaussianblur stddeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></fegaussianblur>
+                          <fecolormatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></fecolormatrix>
+                        </filter>
+                      </defs>
+                      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="fillable">
+                        <g id="export-icons" transform="translate(-11.000000, -4.000000)">
+                          <g id="Group-4" transform="translate(13.000000, 5.000000)">
+                            <g id="begin">
+                              <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                              <use fill="#FBFBFB" fill-rule="evenodd" xlink:href="#path-1" class="fillable"></use>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </svg></span>
+                </li>
+                <li ng-click="game.player.playSkillVideo(game.player.state.group,  game.player.state.subgroup)" class="current">
+                  <label><span>{{game.player.state.subgroup}}</span><span class="fa fa-play"></span></label><span class="bg">
+                    <svg width="100%" height="100%" viewbox="0 0 225 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch-->
+                      <title>Rectangle</title>
+                      <desc>Created with Sketch.</desc>
+                      <defs>
+                        <polygon id="path-1" points="225 0 450 0 450 25 450 50 225 50 235.895884 25"></polygon>
+                      </defs>
+                      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="fillable">
+                        <g id="export-icons" transform="translate(-238.000000, -5.000000)">
+                          <g id="Group-4" transform="translate(13.000000, 5.000000)">
+                            <g id="Rectangle">
+                              <use fill="#FBFBFB" fill-rule="evenodd" xlink:href="#path-1"></use>
+                              <path stroke-opacity="0.1" stroke="#000000" stroke-width="1" d="M225.763342,0.5 L236.441308,25 L225.763342,49.5 L449.5,49.5 L449.5,0.5 L225.763342,0.5 Z"></path>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </svg></span>
+                </li>
+              </ul>
+            </div>
+            <div ng-if="game.player.skillGroups.length" class="skill-indicator-container">
+              <ul class="undo-list">
+                <li ng-repeat="skillGroup in game.player.skillGroups">
+                  <ul class="progress-indicator">
+                    <li ng-repeat="skill in skillGroup" ng-class="{&quot;finished&quot;: skill.finished, &quot;current&quot;: skill.current, &quot;current-parent-skill&quot; : skill.currentParent}">
+                      <label><span>{{skill.label}}</span></label><span ng-if="$index == 0" class="bg">
+                        <svg width="100%" height="100%" viewbox="0 0 229 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch-->
+                          <desc>Created with Sketch.</desc>
+                          <defs>
+                            <path id="path-1" d="M0,0 L215,0 L225,25 L215,50 L1,50 L1,50 C0.44771525,50 -4.33869274e-17,49.5522847 -1.11022302e-16,49 L0,0 Z"></path>
+                            <filter id="filter-2" x="-1.6%" y="-5.0%" width="103.1%" height="114.0%" filterunits="objectBoundingBox">
+                              <feoffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feoffset>
+                              <fegaussianblur stddeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></fegaussianblur>
+                              <fecolormatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></fecolormatrix>
+                            </filter>
+                          </defs>
+                          <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="fillable">
+                            <g id="export-icons" transform="translate(-11.000000, -4.000000)">
+                              <g id="Group-4" transform="translate(13.000000, 5.000000)">
+                                <g id="begin">
+                                  <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                  <use fill="#FBFBFB" fill-rule="evenodd" xlink:href="#path-1" class="fillable"></use>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </svg></span><span ng-if="$index &gt; 0 &amp;&amp; $index &lt; skillGroup.length -1" class="bg">
+                        <svg width="100%" height="100%" viewbox="0 0 225 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch-->
+                          <title>middle</title>
+                          <desc>Created with Sketch.</desc>
+                          <defs>
+                            <polygon id="path-1" points="225 0 440.425532 0 450 25 440.425532 50 225 50 235.432229 25"></polygon>
+                          </defs>
+                          <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="fillable">
+                            <g id="export-icons" transform="translate(-238.000000, -5.000000)">
+                              <g id="Group-4" transform="translate(13.000000, 5.000000)">
+                                <g id="middle">
+                                  <use fill="#FBFBFB" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                  <path stroke-opacity="0.1" stroke="#000000" stroke-width="1" d="M225.750431,0.5 L235.974016,25 L225.750431,49.5 L440.081607,49.5 L449.464586,25 L440.081607,0.5 L225.750431,0.5 Z"></path>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </svg></span><span ng-if="$index == skillGroup.length -1 &amp;&amp; $index &gt; 0" class="bg">
+                        <svg width="100%" height="100%" viewbox="0 0 225 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch-->
+                          <title>Rectangle</title>
+                          <desc>Created with Sketch.</desc>
+                          <defs>
+                            <polygon id="path-1" points="225 0 450 0 450 25 450 50 225 50 235.895884 25"></polygon>
+                          </defs>
+                          <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="fillable">
+                            <g id="export-icons" transform="translate(-238.000000, -5.000000)">
+                              <g id="Group-4" transform="translate(13.000000, 5.000000)">
+                                <g id="Rectangle">
+                                  <use fill="#FBFBFB" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                  <path stroke-opacity="0.1" stroke="#000000" stroke-width="1" d="M225.763342,0.5 L236.441308,25 L225.763342,49.5 L449.5,49.5 L449.5,0.5 L225.763342,0.5 Z"></path>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </svg></span>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="right-pane">
+          <div ng-class="{&quot;show-chat&quot; : game.player.mode.chat, &quot;show-full-screen-video&quot; : game.player.video.fullscreen}" class="player-console">
+            <!--.subgroup-indicator(ng-class='{"no-display" : !game.player.subgroups.length || game.player.state.hideSubgroupIndicator}')-->
+            <!--  include console/subgroup-indicator/subgroup-indicator-->
+            <div class="video-player-container">
+              <div id="crg-video-player" ng-class="{&quot;video-ended&quot; : game.player.video.finished}">
+                <div ng-show="game.player.video.finished &amp;&amp; game.player.video.fullscreen" class="video-end-menu">
+                  <button ng-click="game.player.state.skip.onClick()" class="crg">{{game.player.state.nextButtonLabel || "Proceed"}}</button>
+                </div>
+                <div class="player-bar">
+                  <label>{{game.player.video.label}}</label>
+                </div>
+                <ul class="player-controls">
+                  <li ng-click="game.player.video.replay()" class="replay toot-tip-container"><span class="fa fa-undo"></span>
+                    <div class="tool-top-popover">
+                      <label>Replay</label>
+                    </div>
+                  </li>
+                  <li ng-hide="game.player.video.paused" ng-click="game.player.video.pause()" class="pause toot-tip-container"><span class="fa fa-pause"></span>
+                    <div class="tool-top-popover">
+                      <label>Pause</label>
+                    </div>
+                  </li>
+                  <li ng-show="game.player.video.paused" ng-click="game.player.video.resume()" class="resume toot-tip-container"><span class="fa fa-play"></span>
+                    <div class="tool-top-popover">
+                      <label>Play</label>
+                    </div>
+                  </li>
+                  <li ng-class="{&quot;disabled-player-control&quot; : !game.player.video.canSkip}" ng-click="game.player.skipVideo()" class="skip toot-tip-container"><span class="fa fa-reply-all"></span>
+                    <div class="tool-top-popover">
+                      <label>Skip</label>
+                    </div>
+                  </li>
+                </ul>
+                <div style="display: none" class="no-video-place-holder"><img ng-src="{{game.player.chat.agent.videoThumbnail}}"/></div>
+                <div video-player="video-player" video-url="game.player.video.url" video-type="game.player.video.type" after-video="game.player.video.ended()" resize-video="game.player.video.fullscreen" class="video-player"></div>
+                <div class="video-loader-container">
+                  <div ng-class="{&quot;loading&quot; : game.player.video.loading}" class="state-loader"></div>
+                </div>
+              </div>
+              <div ng-hide="mobileUserActionReceived" ng-click="game.player.video.replay(); mobileUserActionReceived = true;" class="mobile-user-action touch-screen-only">
+                <button class="receive-user-action">Start</button>
+              </div>
+            </div>
+            <div class="chat-window">
+              <div class="slider">
+                <!--.toggle-chat-mode(ng-click='game.player.mode.chat = !game.player.mode.chat')-->
+                <!--  include console/chat-toggle-button/chat-toggle-button-->
+                <div scroll-to-bottom-on-resize="scroll-to-bottom-on-resize" class="chat-history">
+                  <ul class="dialogues">
+                    <!--li.dialogue(ng-repeat='dialogue in game.player.chat.dialogues',ng-class='dialogue.sender.type', ng-if='dialogue.text.length')-->
+                    <!--  img.sender(ng-src='{{dialogue.sender.image}}')-->
+                    <!--  .message-->
+                    <!--    .message-text(ng-bind='dialogue.text')-->
+                    <li ng-show="game.player.video.transcript.text &amp;&amp; game.player.video.transcript.text.length" class="agent dialogue"><img ng-src="{{game.player.chat.agent.image}}" class="sender"/>
+                      <div class="message">
+                        <div text="game.player.video.transcript.text" typing-speed="{{game.player.video.transcript.speed}}" class="hard-typewriter message-text"></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div ng-class="{&quot;ready&quot; :(game.player.chat.input.ready || game.player.state.inputFixed) &amp;&amp; !game.player.state.exiting}" class="console-user-input">
+              <div class="chat-input-form">
+                <div class="video-transcript">
+                  <div text="game.player.state.transcript.text" typing-speed="25" class="hard-typewriter message-text"></div>
+                </div>
+                <div ng-if="game.player.state.showPoll" ng-init="state = game.player.state" class="poll-result">
+                  <ul class="undo-list">
+                    <li ng-repeat="result in state.pollResult track by $index" class="poll-score">
+                      <label>{{result.label}} ({{result.score}}%)</label>
+                      <div class="poll-indicator">
+                        <div style="transform: scaleX({{result.score/100}})" class="votes"></div>
+                      </div>
+                    </li>
+                  </ul>
+                  <!--.poll-input-->
+                  <!--  ul.poll-attempts(ng-show='state.pollAttempts.length > 1')-->
+                  <!--    li(ng-repeat='attempt in state.pollAttempts track by $index', ng-class='{"failed" : attempt.failed, "success" : attempt.success}')-->
+                  <!--      span.failed-icon.fa.fa-times-->
+                  <!--      span.correct-icon.fa.fa-check
+                  //div(ng-show='!state.closePolling')
+                  //  textarea(ng-model='state.pollInputValue', placeholder='Type here')
+                  //  button.crg.button-outline.submit(ng-click='state.submitPollInput(state.pollInputValue)', ng-class='{"disabled-input": !state.pollInputValue.length}') Submit
+                  -->
+                </div>
+                <div ng-if="game.player.state.pollResult" class="poll-result">
+                  <ul class="undo-list">
+                    <li ng-repeat="result in game.player.state.pollResult.scores track by $index" class="poll-score">
+                      <label>{{result.label}} ({{result.score}}%)</label>
+                      <div class="poll-indicator">
+                        <div style="transform: scaleX({{result.score/100}})" class="votes"></div>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="poll-input">
+                    <ul ng-show="game.player.state.pollResult.attempts.length &gt; 1" class="poll-attempts">
+                      <li ng-repeat="attempt in game.player.state.pollResult.attempts track by $index" ng-class="{&quot;failed&quot; : attempt.failed, &quot;success&quot; : attempt.success}"><span class="failed-icon fa fa-times"></span><span class="correct-icon fa fa-check"></span></li>
+                    </ul>
+                  </div>
+                </div>
+                <ul ng-if="game.player.state.multiInput.length" class="multi-input">
+                  <li ng-repeat="inputBox in game.player.state.multiInput" ng-class="{&quot;disable-input&quot; : inputBox.disabled, &quot;focused&quot; : inputBox.__focus}" class="inline-input-button">
+                    <input ng-model="inputBox.inputValue" placeholder="{{inputBox.label}}" ng-focus="inputBox.__focus = true" ng-blur="inputBox.__focus = false"/>
+                    <button ng-click="inputBox.submit(inputBox.inputValue)" ng-disabled="!inputBox.inputValue" class="crg submit-input-box">
+                      <div ng-hide="inputBox.buttonLabel" class="fa fa-chevron-right"></div><span>{{inputBox.buttonLabel}}</span>
+                    </button>
+                  </li>
+                </ul>
+                <ul ng-if="game.player.state.showQuotes.length" class="show-quotes">
+                  <li ng-repeat="quote in game.player.state.showQuotes"><span class="fa fa-quote-left"></span><span ng-bind="quote.text"></span><span class="fa fa-quote-right"></span>
+                    <label ng-show="quote.by" class="quote-by">- {{quote.by}}</label>
+                  </li>
+                </ul>
+                <ul ng-if="game.player.state.options.length" ng-class="{'selected-option' : option.selected}" class="select-options">
+                  <li ng-class="{'selected-option' : option.selected}" ng-repeat="option in game.player.state.options" ng-init="option.input=false" ng-click="game.player.state.setOption(option)">
+                    <div class="check-box">
+                      <div class="selected fa fa-check"></div>
+                    </div>
+                    <label>{{option.label}}</label>
+                  </li>
+                </ul>
+                <ul ng-if="game.player.state.multiChoice" ng-class="{'closed' : game.player.state.multiChoice.closed}" class="multi-choice select-options">
+                  <li ng-class="{'selected-option' : option.selected, 'wrong-selection' : option.wrongSelection, 'correct-selection' : option.correctSelection, 'correct-option' : option.correct}" ng-repeat="option in game.player.state.multiChoice.options" ng-click="game.player.state.multiChoice.setOption(option)">
+                    <div class="check-box">
+                      <div class="selected fa fa-check"></div>
+                      <div class="wrong-mark fa fa-times"></div>
+                      <div class="correct-mark fa fa-check"></div>
+                    </div>
+                    <label>{{option.label}}</label>
+                  </li>
+                </ul>
+                <ul ng-show="game.player.state.buttons.length" class="buttons">
+                  <li ng-repeat="button in game.player.state.buttons">
+                    <button ng-class="{'disable-button' : button.disabled}" ng-click="button.onClick()" class="crg">{{button.label}}</button>
+                  </li>
+                </ul>
+                <ul ng-show="game.player.state.dropBoxes.length" class="drop-area">
+                  <li ng-repeat="dropBox in game.player.state.dropBoxes" ng-drop="true" ng-drop-success="dropBox.onDrop()">
+                    <label ng-bind="dropBox.label"></label>
+                  </li>
+                </ul>
+                <div ng-if="game.player.state.showInput" class="user-input">
+                  <textarea ng-model="game.player.input" placeholder="Type here"></textarea>
+                  <button ng-click="game.player.state.submitInput(game.player.input)" ng-class="{&quot;disabled-input&quot;: !game.player.input.length}" class="crg button-outline submit">Save</button>
+                </div>
+                <div ng-if="game.player.state.message" class="text-message">
+                  <textarea disabled="disabled" ,="," ng-bind="game.player.state.message.text"></textarea>
+                  <button ng-click="game.player.state.message.button.onClick()" class="crg button-outline submit">{{game.player.state.message.button.label}}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div ng-show="game.player.state.showTextSelectionHelp" class="text-selection-help">
+            <div class="help-container">
+              <div class="help-image"><img src="assets/images/text-selection-help.gif"/></div>
+              <div class="close-help">
+                <button ng-click="game.player.state.showTextSelectionHelp = false" class="crg help-button">Got It</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="full-screen-video-backdrop"></div>
+      </div>
+    </div>
+    <div class="video-preloader">
+      <!--video(controls, muted, autoplay,onloadedmetadata="this.muted = true", ng-repeat='video in preloader.buffer track by $index')-->
+      <!--  source(src='{{video.url}}', type='{{video.type}}')-->
+      <!---->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1184 @@
+{
+  "passage": {
+    "id"    : "hurston",
+    "from"  : "Their Eyes Were Watching God",
+    "by"    : "Zora Neal Hurston",
+    "text"  : "Ships at a distance have every man's wish on board. For some they come in with the tide. For others they sail forever on the horizon, never out of sight, never landing until the Watcher turns his eyes away in resignation, his dreams mocked to death by Time. That is the life of men. \n Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget. The dream is the truth. Then they act and do things accordingly."
+  },
+  "agent": {
+    "smallProfilePicture": "assets/images/agents/sophia.png",
+    "videoPlaceholder": "assets/images/agents/sophia-video-placeholder.png"
+  },
+  "script": {
+    "scenes": [
+      {
+        "name": "play-video",
+        "config": {
+          "group"     : "intro",
+          "sceneId"   : "1.0-about-shophia",
+          "sceneLoadVideo": {
+            "fullscreen"  : true ,
+            "label"       : "Main Idea",
+            "url"         : "assets/videos/sophia-hurston/s%201.0%20clip.mov",
+            "type"        : "video/mp4",
+            "transcript"  : "Hey! I am Sophia.I am a high scholer in New York.I am interested in Photography, but I really care about my acedemics so I do well in school.Reading has taught me about many aspects of my life, whether it is art,photography or things that I can apply to my everyday life and my classes at school.Zinc has really helped my with that .",
+            "canSkip"     : true
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"     : "intro",
+          "sceneId"   : "1.1-about-passage",
+          "sceneLoadVideo": {
+            "fullscreen"  : true ,
+            "label"       : "Main Idea",
+            "url"         : "assets/videos/sophia-hurston/s%201.1%20clip.mov",
+            "type"        : "video/mp4",
+            "transcript"  : "This passage comes from the opening of Zora Neal Hurston’s book, Their Eyes Were Watching God.",
+            "canSkip"     : true
+          }
+        }
+      },
+      {
+        "name": "pause-and-read",
+        "config": {
+          "group"   : "intro",
+          "sceneId" : "1.3-pause-and-read",
+          "nextButtonLabel"   : "I am done!",
+          "waitForAction"     : {
+            "timeToWait"      : 3,
+            "beforeTimeVideo" : {
+              "url"       : "assets/videos/sophia-hurston/s%201.3.mov",
+              "type"      : "video/mp4",
+              "transcript": "Uh, that’s a little fast. Even if it’s tough, just try reading through the whole thing once."
+            }
+          },
+          "sceneLoadVideo": {
+            "url"       : "assets/videos/sophia-hurston/s%201.2.mov",
+            "type"      : "video/mp4",
+            "transcript": "So, give a first read to these two short paragraphs. Then we’ll talk. "
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group": "intro",
+          "sceneId" : "1.4-makes-sense",
+          "question": "Tell us, honestly, does this passage make sense to you?",
+          "options" : [
+            {"label": "Totally!"},
+            {"label": "More or less"},
+            {"label": "Sort of...maybe?"},
+            {"label": "No"}
+          ],
+          "sceneLoadVideo": {
+            "url"  : "assets/videos/sophia-hurston/s%201.4.mov",
+            "type" : "video/mp4",
+            "transcript": "Tell us, honestly, does this passage make sense to you?"
+          }
+        }
+      },
+      {
+        "name": "text-input",
+        "config": {
+          "group"   : "intro",
+          "sceneId" : "1.9-main-idea-before-game",
+          "sceneLoadVideo": {
+            "url"       : "assets/videos/sophia-hurston/1.9.mov",
+            "type"      : "video/mp4",
+            "transcript": "Ok, so in, like, under 20 words, write down what you think the main idea is. You'll be seeing this answer again later."
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"   : "intro",
+          "sceneId" : "1.10-main-idea-later",
+          "sceneLoadVideo": {
+            "url"         : "assets/videos/sophia-hurston/s1.10.mp4",
+            "type"        : "video/mp4",
+            "transcript"  : "Thanks. We’ll get back to the main idea later."
+          }
+        }
+      },
+      {
+        "name"  : "find-phrase",
+        "config":       {
+          "group"   : "zincing",
+          "subgroup": "visualize",
+          "sceneId" : "2.3-highlight-first",
+          "focus"   : {
+            "indices" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            "text"    : "Ships at a distance have every man's wish on board"
+          },
+          "expectedCorrectAnswers": 1,
+          "wrongAttemptsAllowed"  : 3,
+          "correctOptions"  : [
+            {
+              "phrase"      : {"indices": [0, 1, 2, 3], "text"   : "Ships at a distance"},
+              "successVideo": {
+                "url"       : "assets/videos/sophia-hurston/2.4a-nice-work.mp4",
+                "type"      : "video/mp4",
+                "transcript": "Nice work! Great job noticing that what Hurston wants you to picture is the whole phrase, right? Not just “ships” but “ships at a distance.”"
+              }
+            }
+          ],
+          "partialCorrectOptions": [
+            {
+              "phrase"      : {"indices": [0], "text": "Ships"},
+              "successVideo": {
+                "url"       : "assets/videos/sophia-hurston/2.4b-cool.mp4",
+                "type"      : "video/mp4",
+                "transcript": "Cool. Maybe you’re picturing a sailboat or a cruise ship. That’s a great start. But that’s not what she really means for you to see. Hurston wants you to picture more than just ships. You need to take in the whole phrase — “ships at a distance.” That’s what you’re really meant to imagine."
+              }
+            }
+          ],
+          "wrongAttemptMessages": [
+            {
+              "url"       : "assets/videos/sophia-hurston/try-again.mov",
+              "type"      : "video/mp4",
+              "transcript": "Try again !"
+            },
+            {
+              "url"       : "assets/videos/sophia-hurston/3.13a-nope-try-again.mov",
+              "type"      : "video/mp4",
+              "transcript": "Nope, try again !"
+            },
+            {
+              "url"       : "assets/videos/sophia-hurston/2.4d-look-if-u-try.mov",
+              "type"      : "video/mp4",
+              "transcript": "Look, if you try hard enough, you could probably come up with an image in your brain for any word, but what’s the strongest visual in this sentence? What’s easiest to picture? "
+            }
+          ],
+          "skipAllSelectionOnSuccess" : true,
+          "showAllSelectionsVideo"    : {
+            "url"       : "assets/videos/sophia-hurston/2.4f-well-easiest_20one.mp4",
+            "type"      : "video/mp4",
+            "transcript": "Well, the easiest one we could see was “ships at a distance.”"
+          },
+          "sceneLoadVideo": {
+            "url"         : "assets/videos/sophia-hurston/2.3-highlight-first.mov",
+            "type"        : "video/mp4",
+            "transcript"  : "Take the first sentence. What’s the first thing you can EASILY PICTURE. Highlight it."
+          }
+        }
+      },
+      {
+        "name"  : "generic-scene",
+        "config": {
+          "group"     : "zincing",
+          "sceneId"   : "2.4g-visualize-ships-at-distance",
+          "subgroup"  : "visualize",
+          "highlight" : {"indices" : [0, 1, 2, 3], "text"    : "Ships at a distance"},
+          "focus"     : {"indices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], "text"   : "Ships at a distance have every man's wish on board"},
+          "showInput" : true,
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/2.4b-type-a-short-desc.mp4",
+            "type": "video/mp4",
+            "transcript": "Type a short description of what you are picturing in the chat"
+          }
+        }
+      },
+      {
+        "name"        : "poll-result",
+        "config"      :   {
+          "group"     : "zincing",
+          "subgroup"  : "key-images",
+          "sceneId"   : "poll-ships-at-a-distance",
+          "highlight" : {"indices": [0, 1,2,3], "text": "Ships at a distance"},
+          "focus"     : {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], "text": "Ships at a distance have every man's wish on board"},
+          "attemptsAllowed": 3,
+          "topPollResultCount" : 5,
+          "multiInput" : [
+            {"label" : "", "buttonLabel": "Submit"},
+            {"label" : "", "buttonLabel": "Submit"},
+            {"label" : "", "buttonLabel": "Submit"}
+          ],
+          "pollResult" : [
+            {
+              "value":  "horizon",
+              "score" : 32
+            },
+            {
+              "value":  "far",
+              "score" : 28
+            },            {
+              "value":  "Travel",
+              "score" : 24
+            },
+            {
+              "value":  "business",
+              "score" : 19
+            },
+            {
+              "value":  "cargo",
+              "score" : 17
+            },
+            {
+              "value":  "adventure",
+              "score" : 12
+            }
+          ],
+          "wrongAttemptMessages" : [
+            {
+              "url"          : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/placeholders/12.a-interesting-no-else.mov",
+              "type"         : "video/mp4",
+              "transcript"   : "Interesting. No one else has thought of that before."
+            }
+          ],
+          "correctAttemptMessages" : [
+            {
+              "url"          : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/placeholders/12.b-great-other-students.mov",
+              "type"         : "video/mp4",
+              "transcript"   : "Yeah. Other students had that same association!"
+            }
+          ],
+          "sceneFinishVideo" : {
+            "url"       : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507530207/assets/crg-demo/sophia/top-things-others-said.mp4",
+            "type"      : "video/mp4",
+            "transcript": "Here are the top things others students said."
+          },
+          "sceneLoadVideo" : {
+            "url"          : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/poll-ships-at-a-distance.mov",
+            "type"         : "video/mp4",
+            "transcript"   : "There are so many great images in this first paragraph, but let’s just start with the first one. When a writer gives you a KEY IMAGE, she’s giving you more than just the literal meaning. Picture “ships at a distance,” Really picture them. What do they look like? Are you seeing a whole bunch or just a couple? Now that you’re hopefully really picturing this scene, what does it FEEL like? Hurston could’ve used a different image. She could’ve said, “Trucks on the highway have every man’s wish” or “seeds in the ground.” If she’d said “trucks,” that image would make me think of diesel fumes and heat and highway rest stops. What does “ships at a distance” make you think. Go with whatever comes to mind. Just notice, and type a word or phrase in the chat and hit submit. You’ll do that three times."
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group"   : "zincing",
+          "subgroup": "visualize",
+          "sceneId" : "2.9-picture-mans-wish-onboard",
+          "highlight" : {"indices" : [5,6,7,8,9], "text"    : "every man's wish on board."},
+          "focus"     : {"indices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], "text"   : "Ships at a distance have every man's wish on board"},
+          "options": [
+            {"label": "these are gigantic spaceships that can carry way more than any real ship"},
+            {"label": "they’re not carrying actual wishes - more the idea of them", "correct": true},
+            {"label": "the ships have enormous underwater containers that go all the way to the bottom of the ocean"}],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507454122/assets/crg-demo/sophia/s_2.9.1.mov",
+            "type": "video/mp4",
+            "transcript": "What about “every man’s wish on board” - are you picturing that? Where are these ships carrying all those wishes?"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"    : "zincing",
+          "subgroup" : "visualize",
+          "sceneId"  : "2.9-correct-answer",
+          "condition": {"expected": true, "sceneId" : "2.9-picture-mans-wish-onboard", "action"  : "multi-choice-result"},
+          "highlight" : {"indices" : [5,6,7,8,9], "text"    : "every man's wish on board."},
+          "focus"     : {"indices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], "text"   : "Ships at a distance have every man's wish on board"},
+          "sceneLoadVideo": {
+            "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507454431/assets/crg-demo/sophia/s_3.3.1a_clip.mov",
+            "type"        : "video/mp4",
+            "transcript"  : "Yes !"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"    : "zincing",
+          "subgroup" : "visualize",
+          "sceneId"  : "2.9-wrong-answer",
+          "condition": {"expected": false, "sceneId" : "2.9-picture-mans-wish-onboard", "action"  : "multi-choice-result"},
+          "highlight" : {"indices" : [5,6,7,8,9], "text"    : "every man's wish on board."},
+          "focus"     : {"indices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], "text"   : "Ships at a distance have every man's wish on board"},
+          "nextButtonLabel"   : "Got It",
+          "sceneLoadVideo": {
+            "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507454479/assets/crg-demo/sophia/s_2.9.1a_clip.mov",
+            "type"        : "video/mp4",
+            "transcript"  : "SMH, one of the worst things you can do when you read is make up stuff that’s not at all there. You’re working too hard! The wishes are more like the idea of wishes, right?"
+          }
+        }
+      },
+      {
+        "name"  : "generic-scene",
+        "config": {
+          "group"     : "zincing",
+          "sceneId"   : "2.9.2-what-kind-of-wishes",
+          "subgroup"  : "imagine",
+          "highlight" : {"indices" : [5,6,7,8,9], "text"    : "every man's wish on board."},
+          "focus"     : {"indices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], "text"   : "Ships at a distance have every man's wish on board"},
+          "showInput" : true,
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507455028/assets/crg-demo/sophia/s_2.9.2.mov",
+            "type": "video/mp4",
+            "transcript": "So, to be zincing here, you have to picture what kinds of “wishes” these ships might have. Don’t think too hard about this. Just put something in the chat - what might men wish for?"
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"     : "zincing",
+          "sceneId"   : "2.9.2-whats-others-said",
+          "subgroup"  : "imagine",
+          "highlight" : {"indices" : [5,6,7,8,9], "text"    : "every man's wish on board."},
+          "focus"     : {"indices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], "text"   : "Ships at a distance have every man's wish on board"},
+          "showQuotes" : [
+            {"text": "Like, a shipping container full of cash money.", "by"  : "Aaron"},
+            {"text": "International superstardom plus marriage to Beyonce.", "by"  : "Sophia"},
+            {"text": "A high-paying job doing something that’s actually meaningful.", "by"  : "Cate"}
+          ],
+
+          "buttons" : [{"label": "Proceed"}],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507455701/assets/crg-demo/sophia/s_2.9.2a_clip.mov",
+            "type": "video/mp4",
+            "transcript": "Cool. Here are some popular responses."
+          }
+        }
+      },
+      {
+        "name": "drag-drop-text",
+        "config": {
+          "group": "navigators",
+          "subgroup": "pronouns",
+          "sceneId": "3.5-take-the-word-they",
+          "focus": {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], "text": "they"},
+          "highlight": {"indices": [12, 20], "text": "they"},
+          "relations": [
+            {
+              "draggable": {"indices": [12], "text": "they"},
+              "droppable": {"indices": [0], "text": "Ships"}},
+            {
+              "draggable": {"indices": [20], "text": "they"},
+              "droppable": {"indices": [0], "text": "Ships"}
+            }
+          ],
+          "highlightAtEnd": [{"indices": [5, 6, 7, 8, 9, 12, 13,14,15,16,17,20,21,22], "text": "every man's wish on board"}],
+          "expectedCorrectAnswers": 1,
+          "wrongAttemptsAllowed" : 2,
+          "wrongAttemptMessages": [
+            {
+              "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.6a-nops-try-again.mov",
+              "type": "video/mp4",
+              "transcript": "Nope. Try again."
+            },
+            {
+              "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.6b-still-not-right.mov",
+              "type": "video/mp4",
+              "transcript": "Still not right. Give it another shot."
+            }
+          ],
+          "onFailure" :             {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.7-the-only-thing.mov",
+            "type": "video/mp4",
+            "transcript": "The only thing that’s been mentioned that could come in with the tide or sail forever on the horizon would be the SHIPS, so \"they\" has to mean \"ships\"."
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.5-take-the-word-they.mov",
+            "type": "video/mp4",
+            "transcript": "Take the word \"they” in the second and third sentences. Who’s \"they\"? Drag and drop \"they” onto the word or phrase that \"they” represents."
+          },
+          "onFinish": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.7-the-only-thing.mov",
+            "type": "video/mp4",
+            "transcript": "The only thing that’s been mentioned that could come in with the tide or sail forever on the horizon would be the SHIPS, so \"they\" has to mean \"ships\"."
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group": "navigators",
+          "subgroup"  : "pronouns",
+          "sceneId"   : "3.8-what-about-some",
+          "focus"     : {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], "text": "they"},
+          "highlight" : {"indices": [10,11], "text": "For some"},
+          "multiChoice": {
+            "noOfSelectionsAllowed" : 1,
+            "question"  : "What about “some”? “For some” what?",
+            "options"   : [
+              {"label": "Men", "correct": true},
+              {"label": "Ships"},
+              {"label": "Wishes"}
+            ],
+
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 1,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [],
+              "onFinishByFailure"  :  {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.8a-wrong.mov",
+                "type": "video/mp4",
+                "transcript": "“They” referred to the ships with the wishes, so “for some” has to be the men!"
+              },
+              "onFinishBySuccess"  : {
+                "url"     : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.8b-correct.mov",
+                "type"    : "video/mp4",
+                "transcript": "Nice!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.8-what-about-some.mov",
+            "type"        : "video/mp4",
+            "transcript"  : "What about “some”? “For some” what?"
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group": "navigators",
+          "subgroup"  : "pronouns",
+          "sceneId"   : "3.8-what-about-others",
+          "focus"     : {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], "text": "they"},
+          "highlight" : {"indices": [10,11, 18, 19], "text": "For some For others"},
+          "multiChoice": {
+            "noOfSelectionsAllowed" : 1,
+            "question"  : "So, if “for some” means “for some men,” what does “for others” mean?",
+            "options"   : [
+              {"label": "for other men", "correct": true},
+              {"label": "for other ships"},
+              {"label": "for other soldiers"}
+            ],
+
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 1,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [],
+              "onFinishByFailure"  :  {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507531795/assets/crg-demo/sophia/nope-we-are-still-with-men.mp4",
+                "type": "video/mp4",
+                "transcript": "Nope. We’re still with the men."
+              },
+              "onFinishBySuccess"  : {
+                "url"     : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507531626/assets/crg-demo/sophia/thats_right.mp4",
+                "type"    : "video/mp4",
+                "transcript": "That’s right!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507531475/assets/crg-demo/sophia/s_3.9.mov",
+            "type"        : "video/mp4",
+            "transcript"  : "So, if “for some” means “for some men,” what does “for others” mean?"
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group": "navigators",
+          "subgroup"  : "road-signs",
+          "sceneId"   : "3.8-for-some-for-other-roadsign",
+          "focus"     : {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31], "text": "they"},
+          "highlight" : {"indices": [10,11, 18, 19], "text": "For some For others"},
+          "multiChoice": {
+            "noOfSelectionsAllowed" : 1,
+            "question"  : "“For some” and “For others” work as road signs that show…",
+            "options"   : [
+              {"label": "similarity between one group of men and another"},
+              {"label": "contrast between one group of men and another", "correct": true}
+            ],
+
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 1,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [],
+              "onFinishByFailure"  :  {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507532405/assets/crg-demo/sophia/no.mp4",
+                "type": "video/mp4",
+                "transcript": "No"
+              },
+              "onFinishBySuccess"  : {
+                "url"     : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507531626/assets/crg-demo/sophia/thats_right.mp4",
+                "type"    : "video/mp4",
+                "transcript": "That’s right!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507532086/assets/crg-demo/sophia/roadsigns-that-show.mp4",
+            "type"        : "video/mp4",
+            "transcript"  : "“For some” and “For others” work as road signs that show…"
+          }
+        }
+      },
+      {
+        "name"       : "generic-scene",
+        "config": {
+          "group"    : "navigators",
+          "subgroup" : "explainers",
+          "sceneId"  : "3.12-what-does-never",
+          "focus  "  : {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53], "text": "mocked to death by Time."},
+          "dragDropText"  : {
+            "draggables"  : [{"indices": [26, 27, 28, 29, 30, 31], "text": "never out of sight, never landing"}],
+            "droppables"  : [{"indices": [21, 22, 23, 24, 25]    , "text": "sail forever on the horizon"}],
+            "correct"     : [
+              {
+                "draggable" : {"indices": [26, 27, 28, 29, 30, 31], "text": "never out of sight, never landing"},
+                "droppable" : {"indices": [21, 22, 23, 24, 25]    , "text": "sail forever on the horizon"}
+              }
+            ],
+            "knownIncorrect": [],
+            "highlightAtEnd": {"indices": [21, 22, 23, 24, 25]    , "text": "sail forever on the horizon"},
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 3,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.13a-nope-try-again.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope, try again."
+                },
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.13b-think-about.mov",
+                  "type": "video/mp4",
+                  "transcript": "Think about what that phrase is describing. What in this paragraph acts that way, not getting closer or farther away?"
+                },
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.13c-just-look.mov",
+                  "type": "video/mp4",
+                  "transcript": "Look just at that sentence. See something there that works?"
+                }
+              ],
+              "onFinishByFailure"  :  {
+                "url"          : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507460785/assets/crg-demo/sophia/its_not_clicking_for_you.mp4",
+                "type"         : "video/mp4",
+                "transcript"   : "Hm. It’s not clicking for you."
+              },
+              "onFinishBySuccess"  : {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507462382/assets/crg-demo/sophia/right.mp4",
+                "type": "video/mp4",
+                "transcript": "right!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.12-what-does-never.mov",
+            "type": "video/mp4",
+            "transcript": "What does “never out of sight, never landing” explain? Drag “never out of sight, never landing” to the word or phrase it explains"
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group"     : "zincing",
+          "subgroup"  : "key-images",
+          "sceneId"   : "3.14.1-who-is-watcher",
+          "focus"     : {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40], "text": "they"},
+          "highlight" : {"indices": [33,34], "text": "the Watcher"},
+          "question"  : "What about “the Watcher”? Who’s that?",
+          "options"   : [{"label": "a man who sees a ship with his wishes come closer and closer till it arrives"}, {"label": "a man who waits for a ship that never comes to shore","correct": true}, {"label": "a ship that can steer itself with no crew"}],
+          "sceneLoadVideo": {
+            "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507462895/assets/crg-demo/sophia/s_3.14.1_clip.mov",
+            "type"        : "video/mp4",
+            "transcript"  : "What about “the Watcher”? Who’s that?"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"     : "zincing",
+          "subgroup"  : "key-images",
+          "sceneId"   : "3.14.1-correct-answer",
+          "condition" : {"expected": true, "sceneId" : "3.14.1-who-is-watcher", "action"  : "multi-choice-result"},
+          "focus"     : {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40], "text": "they"},
+          "highlight" : {"indices": [33,34], "text": "the Watcher"},
+          "autoNext"  : true,
+          "sceneLoadVideo": {
+            "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507465051/assets/crg-demo/sophia/s_3.14.1a_clip.mov",
+            "type"        : "video/mp4",
+            "transcript"  : "Nice"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"     : "zincing",
+          "subgroup"  : "key-images",
+          "sceneId"   : "3.14.1-wrong-answer",
+          "condition" : {"expected": false, "sceneId" : "3.14.1-who-is-watcher", "action"  : "multi-choice-result"},
+          "focus"     : {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40], "text": "they"},
+          "highlight" : {"indices": [33,34], "text": "the Watcher"},
+          "sceneLoadVideo": {
+            "url"          : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507460785/assets/crg-demo/sophia/its_not_clicking_for_you.mp4",
+            "type"         : "video/mp4",
+            "transcript"   : "Hm. It’s not clicking for you."
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"     : "navigators",
+          "subgroup"  : "explainers",
+          "sceneId"   : "3.14-what-abt-resign",
+          "focus"     : {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53], "text": "they"},
+          "dragDropText"  : {
+            "draggables"  : [{"indices": [40], "text": "resignation"}],
+            "droppables"  : [
+              {"indices": [21, 22, 23, 24, 25]    ,     "text": "sail forever on the horizon"},
+              {"indices": [26, 27, 28, 29, 30, 31]    , "text": "never out of sight, never landing"},
+              {"indices": [41, 42, 43, 44, 45, 46, 47], "text": "his dreams mocked to death by Time."}
+            ],
+            "correct"     : [
+              {
+                "draggable" : {"indices": [40], "text": "resignation"},
+                "droppable" : {"indices": [41, 42, 43, 44, 45, 46, 47], "text": "his dreams mocked to death by Time."}
+              }
+            ],
+            "knownIncorrect": [
+              {
+                "draggable" : {"indices": [40], "text": "resignation"},
+                "droppable" : {"indices": [26, 27, 28, 29, 30, 31]    , "text": "never out of sight, never landing"},
+                "video"     : {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507467379/assets/crg-demo/sophia/s_3.15a.mov",
+                  "type": "video/mp4",
+                  "transcript": "“True that definitely contributed, but keep reading. Drop “resignation” on the phrase Hurston uses to describe what finally makes the Watcher look away.”"
+                }
+              },
+              {
+                "draggable" : {"indices": [40], "text": "resignation"},
+                "droppable" : {"indices": [21, 22, 23, 24, 25]    ,     "text": "sail forever on the horizon"},
+                "video"     : {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507467379/assets/crg-demo/sophia/s_3.15a.mov",
+                  "type": "video/mp4",
+                  "transcript": "“True that definitely contributed, but keep reading. Drop “resignation” on the phrase Hurston uses to describe what finally makes the Watcher look away.”"
+                }
+              }
+            ],
+            "highlightAtEnd": {"indices": [41, 42, 43, 44, 45, 46, 47], "text": "his dreams mocked to death by Time."},
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 3,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.25b-nope-try-again.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope, try again."
+                },
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.15c-look-for-something.mov",
+                  "type": "video/mp4",
+                  "transcript": "Look for something that explains why the Watcher is resigned. Remember “resignation” means giving up. Try again."
+                }
+              ],
+              "onFinishByFailure"  :  {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.15d-no-it-is-just.mov",
+                "type": "video/mp4",
+                "transcript": "No. It’s just the next part of the sentence: “his dreams mocked to death by Time.”"
+              },
+              "onFinishBySuccess"  : {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507462382/assets/crg-demo/sophia/right.mp4",
+                "type": "video/mp4",
+                "transcript": "right!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.14-what-abt-resign.mp4",
+            "type": "video/mp4",
+            "transcript": "What about the Watcher turning his eyes away in resignation? “Resignation” means “giving up.” So why resignation? Drag the word or phrase that explains why the watcher is giving up on to “resignation.”"
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group": "navigators",
+          "subgroup": "explainers",
+          "sceneId": "3.16-notice-phrase",
+          "highlight": {"indices": [43, 44, 45, 46, 47], "text": "mocked to death by Time."},
+          "focus"    : {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53], "text": "they"},
+
+          "multiChoice": {
+            "question" : "How would the meaning change if Hurston had just said that the Watcher got tired of waiting and turned away?",
+            "noOfSelectionsAllowed" : 1,
+            "options": [
+              {"label": "It would mean the same thing but say it more directly."},
+              {"label": "It would change the reason for the Watcher’s giving up from rage to fear."},
+              {"label": "It would change the Watcher from a real person to an imaginary one."},
+              {"label": "It would change the reason for the Watcher’s giving up from humiliation to impatience.!", "correct" : true}
+            ],
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 2,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.13a-nope-try-again.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope, try again."
+                },
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.13a-nope-try-again.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope, try again."
+                }
+              ],
+              "onFinishByFailure"  :  {
+                "url"          : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507460785/assets/crg-demo/sophia/its_not_clicking_for_you.mp4",
+                "type"         : "video/mp4",
+                "transcript"   : "Hm. It’s not clicking for you."
+              },
+              "onFinishBySuccess"  : {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507462382/assets/crg-demo/sophia/right.mp4",
+                "type": "video/mp4",
+                "transcript": "right!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.16-notice-phrase.mp4",
+            "type"        : "video/mp4",
+            "transcript"  : "Notice the phrase “mocked to death by time.” Picture what that means. How would the meaning change if Hurston had just said that the Watcher got tired of waiting and turned away?"
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId"   : "3.8-what-does-that",
+          "group"     : "navigators",
+          "subgroup"  : "pronouns",
+          "showInput" : true,
+          "buttons"   : [
+            {
+              "label": "I don't know"
+            }
+          ],
+          "focus"     : {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58], "text": "That is the life of men"},
+          "highlight" : {"indices": [48, 49, 50, 51, 52, 53], "text": "That is the life of men"},
+
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.8-lets-try.mov",
+            "type": "video/mp4",
+            "transcript": "Let’s try a harder one. What does “that” refer to in the last sentence of the first paragraph—“That is the life of men”? Write your answer in the chat or select \"I don’t know.\""
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "sceneId": "3.8-what-dont-know",
+          "group": "navigators",
+          "subgroup": "pronouns",
+          "condition": {
+            "expected": true,
+            "sceneId" : "3.8-what-does-that",
+            "action"  : "I don't know"
+          },
+          "focus": {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58], "text": "That is the life of men"},
+          "highlight": {"indices": [48, 49, 50, 51, 52, 53], "text": "That is the life of men"},
+          "canSkip": true,
+          "autoNext": false,
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.9-think-of-this.mov",
+            "type": "video/mp4",
+            "transcript": "Here’s a simple example of what I mean: Remember the time we went camping? THAT was awesome. “That” refers to the time we went camping. Here, “That” is a quick way of referring to something Hurston has been talking about. So, what’s she been talking about? Think about it, and let’s see if the next question helps."
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group": "navigators",
+          "subgroup": "pronouns",
+          "sceneId": "3.10-which-choices",
+          "focus": {"indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58], "text": "That is the life of men"},
+          "highlight": {"indices": [48, 49, 50, 51, 52, 53], "text": "That is the life of men"},
+          "multiChoice": {
+            "question" : "Which of the choices above matches best with your explanation for what “that” means?",
+            "noOfSelectionsAllowed" : 1,
+            "options": [
+              {"label": "Hard work that never leads to any reward"},
+              {"correct": true, "label": "Everything just mentioned about ships either coming in or staying out at sea"},
+              {"label": "Waiting long enough until you finally get what you wanted "},
+              {"label": "Something about the sea and some people going somewhere"}
+            ],
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 3,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.13a-nope-try-again.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope, try again."
+                },
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.13a-nope-try-again.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope, try again."
+                },
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.13a-nope-try-again.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope, try again."
+                }
+              ],
+              "onFinishByFailure"  :  {
+                "url"          : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507460785/assets/crg-demo/sophia/its_not_clicking_for_you.mp4",
+                "type"         : "video/mp4",
+                "transcript"   : "Hm. It’s not clicking for you."
+              },
+              "onFinishBySuccess"  : {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507462382/assets/crg-demo/sophia/right.mp4",
+                "type": "video/mp4",
+                "transcript": "right!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.10-which-choices.mov",
+            "type": "video/mp4",
+            "transcript": "Which of the choices above matches best with your explanation for what “that” means?"
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"     : "navigators",
+          "subgroup"  : "road-signs",
+          "sceneId"   : "3.11-the-main-roadsign",
+          "highlight" : {"indices": [57], "text"   : "Now"},
+          "focus"     : {"indices": [48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76], "text"   : "Now"},
+          "multiChoice": {
+            "question": "The main Road Sign we found in this passage was the word NOW at the beginning of the second paragraph. Why do you think Hurston put “now” in there? What was she trying to say?",
+            "noOfSelectionsAllowed" : 1,
+            "options": [
+              {"label": "You can go ahead and ignore everything you’ve just read…"},
+              {"label": "I’m not interested in what comes next but need to tell you anyway…"},
+              {"label": "But enough about that, let’s talk about something less serious…"},
+              {"correct": true,"label": "Here comes my most important point…"}
+            ],
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 3,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.13a-nope-try-again.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope, try again."
+                },
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.13a-nope-try-again.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope, try again."
+                },
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.13a-nope-try-again.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope, try again."
+                }
+              ],
+              "onFinishByFailure"  :  {
+                "url"          : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507460785/assets/crg-demo/sophia/its_not_clicking_for_you.mp4",
+                "type"         : "video/mp4",
+                "transcript"   : "Hm. It’s not clicking for you."
+              },
+              "onFinishBySuccess"  : {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507462382/assets/crg-demo/sophia/right.mp4",
+                "type": "video/mp4",
+                "transcript": "right!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.3-the-main.mov",
+            "type": "video/mp4",
+            "transcript": "The main Road Sign we found in this passage was the word NOW at the beginning of the second paragraph. Why do you think Hurston put “now” in there? What was she trying to say?"
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"     : "navigators",
+          "subgroup"  : "road-signs",
+          "sceneId"   : "3.11-now-shifts-subject",
+          "highlight" : {"indices": [57], "text"   : "Now"},
+          "focus"     : {"indices": [48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76], "text"   : "Now"},
+          "multiChoice": {
+            "question": "“Now” also shifts the subject…",
+            "noOfSelectionsAllowed" : 1,
+            "options": [
+              {"label": "from ships to trucks",
+                "response": {
+                  "video" : {
+                    "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507528536/assets/crg-demo/sophia/s_3.3.1b_clip.mov",
+                    "type": "video/mp4",
+                    "transcript": "Ships to trucks? Huh? It never mentioned trucks. Try again."
+                  }
+                }
+              },
+              {"correct": true,"label": "from men to women"},
+              {
+                "label": "from wishes to dreams",
+                "response": {
+                  "video" : {
+                    "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507529012/assets/crg-demo/sophia/s_3.3.1c_clip.mov",
+                    "type": "video/mp4",
+                    "transcript": "That’s tempting, but you’re thinking too hard - what’s the obvious shift? Go again."
+                  }
+                }
+              }
+            ],
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 3,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.13a-nope-try-again.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope, try again."
+                },
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.13a-nope-try-again.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope, try again."
+                },
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/3.13a-nope-try-again.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope, try again."
+                }
+              ],
+              "onFinishByFailure"  :  {
+                "url"          : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507460785/assets/crg-demo/sophia/its_not_clicking_for_you.mp4",
+                "type"         : "video/mp4",
+                "transcript"   : "Hm. It’s not clicking for you."
+              },
+              "onFinishBySuccess"  : {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507529260/assets/crg-demo/sophia/s_3.3.1a.mov",
+                "type": "video/mp4",
+                "transcript": "Yes!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507528285/assets/crg-demo/sophia/s_3.3.1_clip.mov",
+            "type": "video/mp4",
+            "transcript": "“Now” also shifts the subject…"
+          }
+        }
+      },
+      {
+        "name": "yes-no",
+        "config": {
+          "group": "zincing",
+          "subgroup": "imagine",
+          "sceneId": "3.12-things-they-dont-want",
+          "focus": {
+            "indices": [57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76],
+            "text": "Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget."
+          },
+          "highlight": {
+            "indices": [63,64,65,66,67,68],
+            "text": "they don't  want to remember"
+          },
+          "question": "Does the author give any specific examples of highlighted phrase",
+          "expectedYes": false,
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/2.8-take-the.mov",
+            "type": "video/mp4",
+            "transcript": "Take the highlighted phrase. Does Hurston give a specific example you can picture of those things women don’t want to remember?"
+          },
+          "correctAnswerMessageVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/2.10-thats-right.mp4",
+            "type": "video/mp4",
+            "transcript": "That’s right. She doesn’t give any specific examples of the kinds of things women might not wanna remember. You turn that phrase into a meaning in your head by IMAGINING— what could she mean? If you read the whole book, you’ll get a better sense for what she had in mind. "
+          },
+          "wrongAnswerMessageVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/2.9-huhh-where.mp4",
+            "type": "video/mp4",
+            "transcript": "Huh??? Where??? Never make stuff up when you’re reading!! She doesn’t give any specific examples of the kinds of things women might not wanna remember. You turn that phrase into a meaning in your head by IMAGINING what she might mean. If you read the whole book, you’ll get a better sense for what she had in mind. "
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId": "4.1-time-for-main-idea",
+          "fetchData": [
+            {
+              "$previous-main-idea-input" : {
+                "sceneId" : "1.9-main-idea-before-game",
+                "action"  : "text-input"
+              }
+            }
+          ],
+          "group": "exit",
+          "message": {
+            "text": "$previous-main-idea-input",
+            "button": {
+              "label": "Proceed"
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/4.1-time-for-main-idea.mov",
+            "type": "video/mp4",
+            "transcript": "Time for the main idea again! What’s the main idea of the paragraph? The last time you said:"
+          }
+        }
+      }
+    ,
+      {
+        "name": "text-input",
+        "config": {
+          "group": "exit",
+          "sceneId": "4.2-what-now",
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/4.2-what-now.mov",
+            "type": "video/mp4",
+            "transcript": "What would you say it is now? Write your answer."
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group": "exit",
+          "sceneId": "4.2-lets-check",
+          "question": "Let's check your thinking on that. Which of these is the main idea?",
+          "options": [
+            {
+              "label": "While men dream and hope, women take on life as it comes at them.",
+              "correct": true
+            },
+            {
+              "label": "Our memories confuse and mislead us, but we have to move forward in life anyway. "
+            },
+            {
+              "label": "Men are better at business, while women are more creative."
+            },
+            {
+              "label": "While men wait patiently, women become impatient with the slow pace of shipping."
+            },
+            {
+              "label": "Successful people take action, because if you spend your life waiting, you’ll never get anywhere."
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/4.3-lets-check.mov",
+            "type": "video/mp4",
+            "transcript": "Let's check your thinking on that. Which of these is the main idea?"
+          }
+        }
+      },
+      {
+        "name": "text-input",
+        "config": {
+          "group": "exit",
+          "sceneId": "4.3-enter-your-response",
+          "condition": {
+            "expected": true,
+            "sceneId" : "4.2-lets-check",
+            "action"  : "multi-choice-result"
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/4.3-enter-your-response.mov",
+            "type": "video/mp4",
+            "transcript": "That’s right! So, what do you think? Is Hurston right about men and women? Maybe you don’t feel like you know enough to say, but if you write your opinion in the chat and hit submit, we’ll show you some interesting responses from other users."
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId"   : "4.3-response-from-others",
+          "group"     : "exit",
+          "condition": {
+            "expected": true,
+            "sceneId" : "4.2-lets-check",
+            "action"  : "multi-choice-result"
+          },
+          "showQuotes" : [
+            {
+              "text": "In a weird way, yeah. By forgetting about stuff, women are able do a better job of dealing with what life brings.",
+              "by"  : "Aaron"
+            },
+            {
+              "text": "So true. Society gives men so much more power, so having more power makes them more passive, whereas women have to work hard for what they want.",
+              "by"  : "Sophia"
+            },
+            {
+              "text": "What does any of this have to do with sex? Does being male or female determine how you hope and dream? No way.",
+              "by"  : "Cate"
+            }
+          ],
+          "buttons" : [
+            {
+              "label": "Proceed"
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507455701/assets/crg-demo/sophia/s_2.9.2a_clip.mov",
+            "type": "video/mp4",
+            "transcript": "Cool. Here are some popular responses."
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group"     : "exit",
+          "sceneId"   : "4.4-how-was-the-experience",
+          "question"  : "How was this experience for you?",
+          "options"   : [
+            {"label": "Helpful - I like it", "correct": true},
+            {"label": "Helpful but boring", "correct": true},
+            {"label": "Not that helpful cause i lost interest", "correct": true},
+            {"label": "Not that helpful cause it took too long", "correct": true},
+            {"label": "Too easy", "correct": true},
+            {"label": "Too hard", "correct": true},
+            {"label": "Other"}
+          ],
+          "sceneLoadVideo": {
+            "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507530382/assets/crg-demo/sophia/s_4.0.1_clip.mov",
+            "type"        : "video/mp4",
+            "transcript"  : "How was this experience for you?"
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"     : "exit",
+          "sceneId"   : "4.5-enter-feedback",
+          "showInput" : true,
+          "condition": {"expected": false, "sceneId" : "4.4-how-was-the-experience", "action"  : "multi-choice-result"},
+          "sceneLoadVideo": {
+            "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1504760641/assets/crg-demo/sophia/empty-video.mp4",
+            "type"        : "video/mp4",
+            "transcript"  : "Type in your feedback."
+          }
+        }
+      },
+      {
+        "name": "exit",
+        "config": {
+          "sceneId": "exit-hurston",
+          "group": "exit"
+        }
+      }
+    ]
+  }
+
+}
+

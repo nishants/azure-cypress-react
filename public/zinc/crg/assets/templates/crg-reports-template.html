@@ -1,0 +1,13 @@
+
+<ui-view>
+  <div class="crg-reports">
+    <h1>Passages</h1>
+    <ul class="list-group">
+      <li ng-repeat="passage in passages" class="list-group-item"><a ui-sref="reports.passages({id: passage.id})">
+          <div class="list-group-item-heading">{{passage.from}}</div>
+          <div class="list-group-item-text">
+            <label>{{passage.by}}</label>
+          </div></a></li>
+    </ul>
+  </div>
+</ui-view>

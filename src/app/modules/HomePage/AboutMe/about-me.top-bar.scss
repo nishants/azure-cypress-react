@@ -1,0 +1,29 @@
+#homepage.about-me-page {
+  #top-bar {
+    .search-and-filter {
+      .search-and-filter-input {
+        opacity: 0;
+      }
+    }
+    .fixed-to-page {
+      .search-and-filter {
+        @include transform(translateY(-$search_and_filter_bar_height + 5px));
+      }
+    }
+    .fixed-to-window {
+      .search-and-filter {
+        @include transform(
+          translateY(-$search_and_filter_bar_height - 20px + 5px)
+        );
+      }
+    }
+  }
+
+  .homepage-content-container
+    .homepage-content
+    .tab-view-container
+    .route-view-container {
+    padding-top: 0;
+    @include transform(translateY(-$search_bar_height - 10px));
+  }
+}

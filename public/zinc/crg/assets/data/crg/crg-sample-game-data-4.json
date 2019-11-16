@@ -1,0 +1,210 @@
+{
+  "passage": {
+    "id"    : 4,
+    "from"  : "Their Eyes Were Watching God",
+    "by"    : "Zora Neal Hurston",
+    "text"  : "Ships at a distance have every man's wish on board. For some they come in with the tide. For others they sail forever on the horizon, never out of sight, never landing until the watcher turn his eyes away in resignation, his dreams mocked to death by time. That is the life of men. \n Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget. The dream is the truth. Then they act and do things accordingly."
+  },
+  "agent": {
+    "smallProfilePicture": "assets/images/agents/diana.png",
+    "videoPlaceholder": "assets/images/agents/diana-video-placeholder.png"
+  },
+  "script": {
+    "scenes": [
+      {
+        "name"  : "play-video",
+        "config": {
+          "group" : "intro",
+          "canSkip"  :  true,
+          "autoNext" : true,
+          "sceneLoadVideo" : {
+            "fullscreen" : false,
+            "url" : "assets/videos/diana/introduction.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Hi there. I’m Diana. I live in Brooklyn. I love to read. My favorite book right now is The Fire Next Time by James Baldwin, but, in general, reading makes me smarter, helps me understand more about the world and other people and opens up tons of opportunities in life. But, here at Zinc, we realize a lot of people—maybe even most people—don’t enjoy reading. For us, that’s like saying you don’t enjoy eating! But, if you couldn’t taste the food and got no nutritional value from it, of course you wouldn’t enjoy it! So our mission here is to help you not only understand what a text says, but also appreciate HOW the writer put the text together, so you can experience more success at advanced reading and get more out of it if you’re already successful. Check it out!"
+          }
+        }
+      },
+      {
+        "name"  : "pause-and-read",
+        "config": {
+          "group"    : "intro",
+          "nextButtonLabel" : "I am done!",
+          "waitForAction" : {
+            "timeToWait"      : 5,
+            "beforeTimeVideo" : {
+              "url"         : "assets/videos/diana/take-time-to-read.mp4",
+              "type"        : "video/mp4",
+              "transcript"  : "Uh… Not possible. Even if it’s tough, you have to actually read the words. Try again."
+            }
+          },
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/read-passage.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Welcome to Zinc. Today we’re gonna work with the opening to Zora Neal Hurston’s book, Their Eyes Were Watching God. So, first off, read these two short paragraphs. Then we’ll talk."
+          }
+        }
+      },
+      {
+        "group"        : "intro",
+        "name"        : "text-input",
+        "config"      :   {
+          "group"        : "intro",
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/after-reading.mp4",
+            "type" : "video/mp4",
+            "transcript" : "What do you notice? What stands out to you? Write down any observations you have in the chat. (Your teacher will be able to see your response, but we won’t publish it online!)"
+          },
+          "transcript": {"text": "What do you notice? What stands out to you? Write down any observations you have in the chat. (Your teacher will be able to see your response, but we won’t publish it online!)"}
+        }
+      },
+      {
+        "group"       : "intro",
+        "name"        : "multi-choice",
+        "config"      : {
+          "group"        : "intro",
+          "question"       : "Tell us, honestly, does this paragraph make sense to you? ",
+          "options": [
+            {
+              "label"   : "Totally!"
+            },
+            {
+              "label"   : "More or less"
+            },
+            {
+              "label"   : "Sort of...maybe?"
+            },
+            {
+              "label"   : "No"
+            }
+          ],
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/does-it-make-sense.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Tell us, honestly, does this paragraph make sense to you?"
+          }
+        }
+      },
+      {
+        "group"        : "intro",
+        "name"        : "text-input",
+        "config"      :   {
+          "group"        : "intro",
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/main-idea.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Let’s give this a shot: in 20 words or fewer, what’s the main idea here? Write down your answer. You’ll be seeing this answer again later."
+          },
+          "transcript": {"text": "Let’s give this a shot: in 20 words or fewer, what’s the main idea here? Write down your answer. You’ll be seeing this answer again later."}
+        }
+      },
+      {
+        "name"  : "play-video",
+        "config": {
+          "group" : "intro",
+          "autoNext" :  true,
+          "sceneLoadVideo" : {
+            "fullscreen" : false,
+            "url" : "assets/videos/diana/lets-do-zincing.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Thanks. We’ll get back to the main idea in a bit, but first, it's time to do some Zincing."
+          }
+        }
+      },
+      {
+        "name"  : "play-video",
+        "config": {
+          "group" : "zincing",
+          "canSkip"  :  true,
+          "autoNext" :  true,
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/about-zincing.mp4",
+            "type" : "video/mp4",
+            "transcript" : "What makes reading so compelling for people who love it and so, uh… BORING for people who don’t? Reading is different from other media. Video puts images directly into our brains through our eyes. But when we read, there’s an extra step. Our brains turn the letters, words and sentences into pictures and meanings. We call that ZINCING—ZINCING is when the words turn into meanings in your head. The process of Zincing—or turning great writing into images and meanings in the brain—FEELS GOOD. If you’re NOT Zincing, the text might as well be a solid rock wall. When that happens, finding words you can picture is like finding handholds that let you climb the wall."
+          }
+        }
+      },
+
+      {
+        "group"       : "zincing",
+        "name"        : "text-input",
+        "config"      :       {
+          "group"       : "zincing",
+          "phrase"    : {"indices": [0, 1,2,3,4], "text": "Ships at a distance"},
+          "focus"     : {"indices": [0, 1,2,3,4,5,6,7,8,9], "text": "Ships at a distance have every man's wish on board"},
+          "transcript": {"text": "What do you imagine when you read \"Ships at a distance\"  in first sentence ?"}
+        }
+      },
+      {
+        "group"        : "zincing",
+        "name"        : "text-input",
+        "config"      :   {
+          "group"        : "zincing",
+          "phrase": {"indices": [34,35,36,37,38,39], "text": "looks aways in resignation"} ,
+          "focus"     :  {"indices": [34,35,36,37,38,39,40,41,42,43], "text": "For others they sail forever on the horizon, never out of sight, never landing until the watcher turn his eyes away in resignation, his dreams mocked to death by time."},
+          "transcript": {"text": "What do you imagine when you read \"looks aways in resignation\"  in first sentence ?"}
+        }
+      },
+      {
+        "group"       : "zincing",
+        "name"        : "yes-no",
+        "config"      : {
+          "group"        : "zincing",
+          "phrase"    : {
+            "indices" : [57, 58, 59, 60, 61, 62, 63, 64, 65],
+            "text"    : "all those things they don't want to remember"
+          },
+          "focus": {
+            "indices" : [57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76],
+            "text"    : "Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget."
+          },
+          "question"  : "Does the author give any specific examples of highlighted phrase",
+          "expectedYes"  : false,
+          "wrongAnswerMessage": "Stop trying too hard. There was no example."
+        }
+      },
+      {
+        "group"       : "zincing",
+        "name"        : "multi-choice",
+        "config"      : {
+          "group"        : "zincing",
+          "phrase"    : {
+            "indices" : [57, 58, 59, 60, 61, 62, 63, 64, 65],
+            "text"    : "all those things they don't want to remember"
+          },
+          "focus": {
+            "indices" : [57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76],
+            "text"    : "Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget."
+          },
+          "answerExplanation" : "A cow eating grass has nothing terrible about it.",
+          "question": "Which one of following is not a good example of \"all those things they don't want to remember\" ?",
+          "correctMessage" : "Good. Sor you understand what the phrase means.",
+          "options": [
+            {
+              "label"   : "A cow eating grass.",
+              "correct" : true
+            },
+            {
+              "label"   : "A baby being dropped.",
+              "correct" : false
+            },
+            {
+              "label"   : "Getting fired from job.",
+              "correct" : false
+            },
+            {
+              "label": "A scary nightmare.",
+              "correct": false
+            }
+          ]
+        }
+      },
+      {
+        "name"  : "exit",
+        "config": {
+          "group"        : "exit"
+        }
+      }
+    ]
+  }
+}

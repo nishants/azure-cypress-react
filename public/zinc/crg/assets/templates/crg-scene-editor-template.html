@@ -1,0 +1,33 @@
+
+<div class="crg-scene-editor">
+  <label>Scene Editor</label>
+  <label>{{editor.editingScene.config.sceneId}}</label>
+  <form class="scene-form">
+    <div ng-repeat="$field in editor.sceneForm.fields" ng-init="scene = editor.sceneForm.scene;" class="form-group col-sm-10">
+      <div ng-if="$field.type == &quot;phrase&quot;" class="set-scene-phrase ng-scope">
+        <label for="scene-{{$field.name}}" ng-bind="$field.label" class="col-sm-2 control-label"></label>
+        <div class="field-input col-sm-10">
+          <input id="scene-{{$field.name}}" type="text" placeholder="{{$field.placeholder}}" ng-model="scene.config[$field.name].indices" ng-focus="fieldEditor.selectPhrase = true" class="form-control"/>
+          <div ng-show="fieldEditor.selectPhrase" class="field-input-mask">
+            <button ng-click="$field.setValue(scene, editor.selection.getSelectedPhrase()); fieldEditor.selectPhrase = false;" class="input-mask-action form-control">Select Phrase</button>
+            <div class="input-mask-content"><span ng-repeat="word in editor.passage.words" ng-class="{&quot;line-break&quot; : word.linebreak, &quot;highlight&quot;: word.highlight, &quot;focus&quot;: word.focus, &quot;flash&quot;: word.flash}" data-word-number="{{$index}}" ng-show="word.text.length || word.linebreak" class="word">{{word.text}}</span></div>
+          </div>
+          <div ng-show="fieldEditor.selectPhrase" ng-click="fieldEditor.selectPhrase = false" class="close-mask"></div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="scene-slider">
+    <div class="scene-scroll-container">
+      <ul class="scenes">
+        <li ng-repeat="scene in editor.scenes" ng-drop="true" ng-drop-success="editor.insertScene($index, $data, $event)" ng-class="{&quot;editing&quot;: scene.editing}">
+          <div ng-drag="true" ng-drag-data="scene" class="scene-card-container">
+            <div ng-click="editor.edit(scene)" class="scene-card"><span> {{scene.config.group}}/</span><span ng-if="scene.config.subgroup"> {{scene.config.subgroup}}/</span>
+              <label>{{scene.config.sceneId}}</label>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

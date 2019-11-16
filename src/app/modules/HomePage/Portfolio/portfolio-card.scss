@@ -1,0 +1,36 @@
+$title_font_size: 23px;
+$descriptoin_font_size: $small_font;
+$padding: 10px;
+$card_width: calc(100% - #{$padding});
+
+.portfolio-card {
+  display: block;
+  padding: 20px;
+  width: $card_width;
+  text-align: left;
+  border: 1px solid $light_border_color;
+  background-color: $theme_light_bg;
+  margin: 0 $padding $padding 0;
+
+  .portfolio-card-title {
+    font-size: $title_font_size;
+    font-weight: $font_weight_bold;
+  }
+  .portfolio-card-image {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .portfolio-car-desc-lead {
+    font-weight: $font_weight_bold;
+  }
+
+  .tag-links {
+    //text-align: right;
+  }
+  .tag-link {
+    color: $blue;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "passage": {
+    "id"    : 1,
+    "from"  : "Their Eyes Were Watching God",
+    "by"    : "Zora Neal Hurston",
+    "text"  : "Ships at a distance have every man's wish on board. For some they come in with the tide. For others they sail forever on the horizon, never out of sight, never landing until the Watcher turns his eyes away in resignation, his dreams mocked to death by Time. That is the life of men. \n Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget. The dream is the truth. Then they act and do things accordingly."
+  },
+  "agent": {
+    "smallProfilePicture": "assets/images/agents/sophia.png",
+    "videoPlaceholder": "assets/images/agents/sophia-video-placeholder.png"
+  },
+  "script": {
+    "scenes": [
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId": "3.8-lets-try",
+          "group": "navigators",
+          "subgroup": "pronouns",
+          "showInput": true,
+          "buttons": [
+            {
+              "label": "I don't know"
+            }
+          ],
+          "highlight": {
+            "indices": [
+              48,
+              49,
+              50,
+              51,
+              52,
+              53
+            ],
+            "text": "That is the life of men"
+          },
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "autoNext": true,
+            "canSkip": true,
+            "url": "assets/videos/sophia/3.8-lets-try.mov",
+            "type": "video/mp4",
+            "transcript": "Let’s try a harder one. What does “that” refer to in the last sentence of the first paragraph—“That is the life of men”? Write your answer in the chat or select \"I don’t know.\""
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "sceneId": "3.9-pronoun-first-dont-know",
+          "group": "navigators",
+          "subgroup": "pronouns",
+          "condition": {
+            "expected": true,
+            "sceneId": "3.8-lets-try",
+            "action": "I don't know"
+          },
+          "highlight": {
+            "indices": [
+              48,
+              49,
+              50,
+              51,
+              52,
+              53
+            ],
+            "text": "That is the life of men"
+          },
+          "canSkip": true,
+          "autoNext": true,
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "assets/videos/sophia/3.9-think-of-this.mov",
+            "type": "video/mp4",
+            "transcript": "Here’s a simple example of what I mean: Remember the time we went camping? THAT was awesome. “That” refers to the time we went camping. Here, “That” is a quick way of referring to something Hurston has been talking about. So, what’s she been talking about? Think about it, and let’s see if the next question helps."
+          }
+        }
+      }
+    ]
+  }
+}

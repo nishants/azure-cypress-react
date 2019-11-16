@@ -1,0 +1,1051 @@
+{
+  "agent": {
+    "smallProfilePicture": "assets/images/agents/thandie-video-placeholder.png",
+    "videoPlaceholder": "assets/images/agents/thandie-video-placeholder.png"
+  },
+  "script": {
+    "scenes": [
+      {
+        "name": "play-video",
+        "config": {
+          "group": "intro",
+          "sceneId": "1.1.about-thandie",
+          "nextButtonLabel": "Next",
+          "autoNext" : true,
+          "sceneLoadVideo": {
+            "fullscreen": true ,
+            "label"     : "Intro",
+            "url"       : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507729812/assets/crg-demo/thandie2/rev_t_1.1_clip.mp4",
+            "type"      : "video/mp4",
+            "transcript": "Hi I’m Thandie. I go to high school in… I like reading… Before you play Zinc’s close reading passages, I’m gonna introduce three skills you’ll be using to get more out of reading: Zincing, Navigators and Tone.",
+            "canSkip"   : true
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group": "zincing",
+          "sceneId": "2.0.about-zincing",
+          "slide" : {
+            "title" : "Zincing",
+            "bullets": [
+              "Turning words and phrases into pictures and meanings"
+            ]
+          },
+          "autoNext" : true,
+          "sceneLoadVideo": {
+            "fullscreen": true ,
+            "label"     : "Zincing",
+            "canSkip"   : true,
+            "url"       : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507547728/assets/crg-demo/thandie2/t_2.0_clip.mov",
+            "type"      : "video/mp4",
+            "transcript": "Video puts images directly into your brain. Reading is different. The writer puts words down like a set of instructions for you to build the meaning in your head. Zincing means turning words and phrases into pictures and meanings. If you’re not zincing when you read, nothing is happening in your head - which, of course, feels very boring. When you’re zincing, you’re getting it! That’s why zincing should always be your first move. Let’s see how this works."
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"  : "zincing",
+          "subgroup"  : "visualize",
+          "sceneId": "2.1.when-you-read",
+          "slide" : {
+            "title" : "Zincing / Visualize",
+            "sections" : [
+              {"title": "Version 1", "text": "It was a chilly New York City morning. He walked across Central Park."}
+            ]
+          },
+          "nextButtonLabel": "Good",
+          "sceneLoadVideo": {
+            "canSkip"   : true,
+            "url"       : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507724170/assets/crg-demo/thandie2/rev_t_2.2.1_clip.mov",
+            "type"      : "video/mp4",
+            "transcript": "You can always start by finding the words that are easiest to visualize."
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"     : "zincing",
+          "subgroup"  : "visualize",
+          "sceneId": "2.1.a-are-these-easy-to-picture",
+          "slide" : {
+            "title" : "Zincing / Visualize",
+            "sections" : [
+              {"title": "Version 1", "text": "It was a chilly New York City morning. He walked across Central Park."},
+              {"title": "Version 2", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine."}
+            ]
+          },
+          "renderDelay" : 10000,
+          "sceneLoadVideo": {
+            "canSkip"   : false,
+            "url"       : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507549170/assets/crg-demo/thandie2/t_2.1_clip.mp4",
+            "type"      : "video/mp4",
+            "transcript": "Are these words easy to picture? If you have some idea what New York City and Central Park look like, you’re probably able to see something, but this writer’s not giving us much to work with. What if they said it this way"
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"   : "zincing",
+          "subgroup": "visualize",
+          "sceneId": "2.2.highlight",
+          "slide" : {
+            "title" : "Zincing / Visualize",
+            "sections" : [
+              {"title": "Version 1", "text": "It was a chilly New York City morning. He walked across Central Park."},
+              {"title": "Version 2", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine."}
+            ]
+          },
+          "focus": {
+            "indices": [15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34],
+            "text"   : ""
+          },
+          "sceneLoadVideo": {
+            "url"       : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507724175/assets/crg-demo/thandie2/rev_t_2.2_clip.mov",
+            "type"      : "video/mp4",
+            "transcript": "To really picture this, you’d have to know that Sheep’s Meadow is this big field in Central Park in New York City, but I see three other phrases that make me picture stuff. Can you highlight one?"
+          },
+          "findPhrase" : {
+            "proceedWithoutConfirm": true,
+            "correct": [
+              {
+                "phrase": {"indices": [28, 29], "text": "Sheep's Meadow"},
+                "then": {
+                  "showInput": true,
+                  "video": {
+                    "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507724209/assets/crg-demo/thandie2/rev_t_2.2a_clip.mov",
+                    "type": "video/mp4",
+                    "transcript": "Cool! What does that look like to you? Put a few words in the chat box to describe what you’re seeing."
+                  }
+                }
+              },
+              {
+                "phrase": {"indices": [17, 18, 19, 20, 21], "text"   : "the wind’s tiny teeth nipped"},
+                "then": {
+                  "showInput": true,
+                  "video": {
+                    "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420448/thandie/t_2.2d_clip.mov",
+                    "type": "video/mp4",
+                    "transcript": "Yeah - nice! Really picture that. Where are they biting him? Type your answer in the box."
+                  }
+                }
+              },
+              {
+                "phrase": {"indices": [32,33,34], "text"   : "cold December sunshine"},
+                "then"  : {"showInput" : true, "video" : {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507724164/assets/crg-demo/thandie2/rev_t_2.2e_clip.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nice! That might be tough to picture if you’ve never been to this part of the world, but, what do you picture ? Type your answer in the chat box."
+                }}
+              }
+            ],
+
+            "knownIncorrect": [
+              {
+                "phrase": {"indices": [23,24], "text"   : "Kareem Mariner"},
+                "video" : {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507724160/assets/crg-demo/thandie2/rev_t_2.2.f_clip.mov", "type": "video/mp4", "transcript": "Interesting that you chose that. I noticed that too. Not quite sure what to picture with this one, but names - even if it’s just “Dave Smith” - make you think of something. “Kareem Mariner” feels different and adventurous to me. "}
+              }
+            ],
+            "skipHighlightingCorrectEnd" : true,
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 3,
+              "onCorrectMessages"  : [
+                {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420316/assets/crg-demo/thandie/t_2.2a_clip.mov", "type": "video/mp4", "transcript": "Yeah, what else? Highlight a different phrase."}
+              ],
+              "onInCorrectMessages": [
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420351/assets/crg-demo/thandie/t_2.2c_clip.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope. Try again."
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"  : "zincing",
+          "subgroup"  : "visualize",
+          "sceneId"  : "2.2.1-you-can-always",
+          "highlight": {
+            "indices": [23,24,17, 18, 19, 20, 21, 32,33,34],
+            "text": ""
+          },
+          "slide" : {
+            "title" : "Zincing / Visualize",
+            "sections" : [
+              {"title": "Version 1", "text": "It was a chilly New York City morning. He walked across Central Park."},
+              {"title": "Version 2", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine."}
+            ]
+          },
+          "nextButtonLabel": "Good",
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507724170/assets/crg-demo/thandie2/rev_t_2.2.1_clip.mov",
+            "type": "video/mp4",
+            "transcript": "Cool! So you can always start figuring out any text by finding words that are easy to visualize - good?",
+            "canSkip"   : true
+          }
+        }
+      },
+
+
+
+
+
+      {
+        "name": "play-video",
+        "config": {
+          "group"    : "zincing",
+          "subgroup" : "key-images",
+          "sceneId"  : "2.3.key-images",
+          "highlight": {
+            "indices": [23,24,17, 18, 19, 20, 21, 32,33,34],
+            "text": ""
+          },
+          "slide" : {
+            "title" : "Zincing / Key Images",
+            "sections" : [
+              {"title": "Version 1", "text": "It was a chilly New York City morning. He walked across Central Park."},
+              {"title": "Version 2", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine."}
+            ]
+          },
+          "autoNext" : true,
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507730982/rev_t_2.3_clip.mp4",
+            "type": "video/mp4",
+            "transcript": "Great, specific images like “the wind’s tiny teeth” or “cold December sunshine” or even an unusual name like Kareem Mariner act like keys. If you imagine them and notice where they take your mind, you unlock the writer’s meaning.",
+            "fullscreen": true ,
+            "canSkip"   : true ,
+            "label"     : "Key Images"
+          }
+        }
+      },
+      {
+        "name"        : "generic-scene",
+        "config"      : {
+          "group"     : "zincing",
+          "subgroup"  : "key-images",
+          "sceneId"   : "2.3.1.key-images",
+          "highlight" : {
+            "indices" : [32,33,34],
+            "text"    : ""
+          },
+          "slide" : {
+            "title" : "Zincing / Key Images",
+            "sections" : [
+              {"title": "Version 1", "text": "It was a chilly New York City morning. He walked across Central Park."},
+              {"title": "Version 2", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine."}
+            ]
+          },
+          "pollResult" : {
+            "attemptsAllowed": 1,
+            "topPollResultCount" : 5,
+            "multiInput" : [],
+            "scores" : [
+              {"value":  "christmas", "score" : 17},
+              {"value":  "nervous",   "score" : 11},
+              {"value":  "scared",    "score" : 9},
+              {"value":  "motivated", "score" : 8},
+              {"value":  "excited",   "score" : 1}],
+            "correctAttemptMessages": [],
+            "wrongAttemptMessages"  : [],
+            "endVideo" : {
+              "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507547744/assets/crg-demo/thandie2/t_2.2e1_clip.mov",
+              "type": "video/mp4",
+              "transcript": "Cool! Here are some popular responses."
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507724199/assets/crg-demo/thandie2/rev_t_2.3.1_clip.mov",
+            "type": "video/mp4",
+            "transcript": "Take a moment with “cold December sunshine.” If you really picture that, what does it make you think of? What does it make you feel? Type your answer in the chat box.",
+            "canSkip"   : true
+          }
+        }
+      },
+
+
+
+      {
+        "name": "play-video",
+        "config": {
+          "group"    : "zincing",
+          "subgroup" : "imagine",
+          "sceneId"  : "2.4.0-imagine",
+          "slide" : {
+            "title" : "Zincing / Imagine",
+            "sections" : [
+              {"title": "", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind."}
+            ]
+          },
+          "autoNext" : true,
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507729814/assets/crg-demo/thandie2/rev_t_2.4.0_clip.mp4",
+            "type": "video/mp4",
+            "transcript": "Hopefully you’re starting to see how looking for words to visualize helps and how focusing on key images makes the writer’s words come to life. But what about words that aren’t so easy to picture? Sometimes you have to IMAGINE what the writer could mean and then keep reading to find out if you were right. ",
+            "fullscreen": true ,
+            "canSkip"   : true ,
+            "label"     : "Imagine"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"  : "zincing",
+          "subgroup"  : "imagine",
+          "sceneId"  : "2.4.imagine",
+          "renderDelay" : 2000,
+          "slide" : {
+            "title" : "Zincing / Imagine",
+            "sections" : [
+              {"title": "", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind."}
+            ]
+          },
+          "highlight": {
+            "indices": [19,20,21,22,23,24,25,26,27,28,29,30,31],
+            "text": ""
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507609494/assets/crg-demo/thandie2/2.4-2.4a.mp4",
+            "type": "video/mp4",
+            "transcript": "What if the text goes on like this. Do we know what Kareem is thinking about? Not yet. When you read that sentence, zincing just means you’re IMAGINING something and waiting for the writer to explain.",
+            "canSkip"   : false
+          }
+        }
+      },
+
+      {
+        "name": "play-video",
+        "config": {
+          "group"  : "zincing",
+          "subgroup"  : "imagine",
+          "sceneId"  : "2.4b.imagine",
+          "focus": {
+            "indices": [19,20,21,22,23,24,25,26,27,28,29,30,31, 32,33,34,35,36,37,38,39,40],
+            "text": ""
+          },
+
+          "highlight": {
+            "indices": [32,33,34,35,36,37,38,39,40],
+            "text": ""
+          },
+          "nextButtonLabel": "Got it",
+          "slide" : {
+            "title" : "Zincing / Imagine",
+            "sections" : [
+              {"title": "", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507547717/assets/crg-demo/thandie2/t_2.4b_clip.mov",
+            "type": "video/mp4",
+            "transcript": "How do you picture that? There’s nothing to specifically visualize here, but turn these words into meanings. Really imagine being in love.Really imagine feeling overwhelmed by beauty. Even if you’ve never experienced either of these things, use your imagination. Did he just meet someone? Is he in a relationship with a celebrity…? We don’t know yet. Don’t go too crazy but turn those ideas into meanings in your head so you understand the text.",
+            "canSkip"   : false
+          }
+        }
+      },
+
+      {
+        "name": "play-video",
+        "config": {
+          "group"  : "zincing",
+          "sceneId"  : "2.5-end-of-zincing",
+          "slide" : {
+            "title" : "Zincing Recap",
+            "bullets": [
+              "Zincing means turning words into pictures and meanings in your head.",
+              "Tackle a new text by looking for words and phrases to visualize.",
+              "Key images give you a flavor of what the writer means.",
+              "When you have to, use your imagination to make sure you’re following the meaning."
+            ]},
+          "nextButtonLabel": "Yeap!",
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420481/thandie/t_2.5_clip.mov",
+            "type": "video/mp4",
+            "transcript": "Just to re-cap - zincing means turning words into pictures and meanings in your head. Always tackle a new text by looking for words and phrases to visualize, keep an eye out for key images that give you more of the flavor of what the writer means and, when you have to, use your imagination to make sure you’re following the meaning. Make sense?",
+            "canSkip"   : true
+          }
+        }
+      },
+
+      {
+        "name": "play-video",
+        "config": {
+          "group"  : "navigators",
+          "sceneId"  : "3-about-navigators",
+          "slide" : {
+            "title": "Road signs / Transition Words",
+            "sections": [
+              {
+                "title": "",
+                "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"
+              }
+            ]
+          },
+          "autoNext" : true,
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420548/thandie/t_3.0_clip.mov",
+            "type": "video/mp4",
+            "transcript": "When you’re driving, everything from the signs to the other cars’ taillights to the paint on the highway tells you how to navigate. When reading, look for three types of navigation clues.",
+            "fullscreen": true ,
+            "label"     : "Navigators",
+            "canSkip"   : false
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group": "navigators",
+          "subgroup": "road-signs",
+          "sceneId": "3.1-road-signs",
+          "slide": {
+            "title": "Road signs / Transition Words",
+            "sections": [
+              {
+                "title": "",
+                "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"
+              }
+            ]
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420566/thandie/t_3.1_clip.mov",
+            "type": "video/mp4",
+            "transcript": "We call the first one road signs - road signs in a text include TRANSITION WORDS, like HOWEVER, IN ADDITION, THEREFORE - they usually mean, “keep going” or “go in a new direction.” What’s the transition word in this text?"
+          },
+          "findPhrase" : {
+            "correct": [{"phrase": {"indices": [19], "text": "but"}}],
+            "knownIncorrect": [],
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 3,
+              "onCorrectMessages"  : [                {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506603154/assets/crg-demo/thandie/consolidated-thats-right.mp4",
+                "type": "video/mp4",
+                "transcript": "That’s right!"
+              }
+              ],
+              "onInCorrectMessages": [
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420351/assets/crg-demo/thandie/t_2.2c_clip.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope. Try again."
+                },
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420547/thandie/t_3.1b_clip.mov",
+                  "type": "video/mp4",
+                  "transcript": "No. Look for a word that signals a shift."
+                },
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420351/assets/crg-demo/thandie/t_2.2c_clip.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope. Try again."
+                }
+              ],
+              "onFinishByFailure"  :                 {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506613655/the-transition-word-is-but.mp4",
+                "type": "video/mp4",
+                "transcript": "Nah. The transition word is “but”"
+              },
+              "onFinishBySuccess"  : {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506603154/assets/crg-demo/thandie/consolidated-thats-right.mp4",
+                "type": "video/mp4",
+                "transcript": "That’s right!"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"   : "navigators",
+          "subgroup": "road-signs",
+          "sceneId" : "3.12-whats-the-shift",
+          "highlight" : {"indices" : [19], "text"    : "But"},
+          "slide"   : {
+            "title" : "Road signs / Transition Words",
+            "sections": [
+              {
+                "title": "",
+                "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"
+              }
+            ]
+          },
+          "multiChoice": {
+            "noOfSelectionsAllowed" : 1,
+            "question"  : "So, if “for some” means “for some men,” what does “for others” mean?",
+            "options": [
+              {"label": "from the harsh weather to his excited state of mind", "correct": true},
+              {"label": "from playing in the park to visiting a friend"},
+              {"label": "from relaxing to facing a difficult decision"}],
+
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 1,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420351/assets/crg-demo/thandie/t_2.2c_clip.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope. Try again."
+                }
+              ],
+              "onFinishByFailure"  :  {
+                "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507547743/assets/crg-demo/thandie2/t_3.1f_clip.mov",
+                "type"        : "video/mp4",
+                "transcript"  : "Huh? Making stuff up that’s not there = NOT NECESSARY! Before the “but” it was talking about the cold weather. Then it shifts to what’s on Kareem’s mind."
+              },
+              "onFinishBySuccess"  : {
+                "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507547732/assets/crg-demo/thandie2/t_3.1e_clip.mov",
+                "type"        : "video/mp4",
+                "transcript"  : "Nice !"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507020158/thandie/3.1d-whats-the-shift.mp4",
+            "type": "video/mp4",
+            "transcript": "So, what’s the shift?"
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"   : "navigators",
+          "subgroup": "road-signs",
+          "sceneId" : "3.2-punctuation",
+          "slide"   : {
+            "title" : "Road signs / Punctuation",
+            "sections": [
+              {
+                "title": "",
+                "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"
+              }
+            ]
+          },
+          "multiChoice": {
+            "noOfSelectionsAllowed" : 1,
+            "options": [
+              {"label": "why Kareem left home without a proper coat on"},
+              {"label": "why the cold didn’t bother Kareem", "correct": true},
+              {"label": "what the person Kareem was thinking about looked like"}],
+
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 1,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [
+                {
+                  "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507547743/assets/crg-demo/thandie2/t_3.1f_clip.mov",
+                  "type"        : "video/mp4",
+                  "transcript"  : "Huh? Making stuff up that’s not there = NOT NECESSARY! Before the “but” it was talking about the cold weather. Then it shifts to what’s on Kareem’s mind."
+                },
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420351/assets/crg-demo/thandie/t_2.2c_clip.mov",
+                  "type": "video/mp4",
+                  "transcript": "Nope. Try again."
+                }
+              ],
+              "onFinishByFailure"  :  {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507547749/assets/crg-demo/thandie2/t_3.2b_clip.mov",
+                "type": "video/mp4",
+                "transcript": "Nah. You don’t need to make anything up. It didn’t talk about that. It’s just explaining why the cold didn’t bother him. "
+              },
+              "onFinishBySuccess"  : {
+                "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507547739/assets/crg-demo/thandie2/t_3.2a_clip.mov",
+                "type"        : "video/mp4",
+                "transcript"  : "Thats right !"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420566/thandie/t_3.2_clip.mov",
+            "type": "video/mp4",
+            "transcript": "The other road sign to look out for is punctuation. Commas, dashes, colons, semicolons and even periods often introduce an explanation. Take a look at the second sentence. What’s being explained after the comma?"
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"   : "navigators",
+          "subgroup": "pronouns",
+          "sceneId" : "3.3-pronouns",
+          "slide"   : {
+            "title" : "Road signs / Pronouns",
+            "sections": [
+              {
+                "title": "",
+                "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"
+              }
+            ]
+          },
+          "dragDropText"  : {
+            "draggables"  : [
+              {"indices": [10]  , "text": "he"},
+              {"indices": [33]  , "text": "he"}
+            ],
+            "droppables"  : [{"indices": [7,8], "text"   : "Kareem Mariner"}, {"indices": [23], "text"   : "Kareem"}],
+            "correct"    : [
+              {
+                "draggable" : {"indices": [10]  , "text": "he"},
+                "droppable" : {"indices": [7,8], "text"   : "Kareem Mariner"}
+              },
+              {
+                "draggable" : {"indices": [33]  , "text": "he"},
+                "droppable" : {"indices": [7,8], "text"   : "Kareem Mariner"}
+              },
+              {
+                "draggable" : {"indices": [10]  , "text": "he"},
+                "droppable" : {"indices": [23], "text"   : "Kareem"}
+              },
+              {
+                "draggable" : {"indices": [33]  , "text": "he"},
+                "droppable" : {"indices": [23], "text"   : "Kareem"}
+              }
+            ],
+            "knownIncorrect": [],
+            "highlightAtEnd": {"indices": [7,8, 23], "text"   : "Kareem Mariner"},
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 3,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [
+                {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420565/thandie/t_3.3b_clip.mov", "type": "video/mp4", "transcript": "No. Who’s “he”? Try again."},
+                {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420351/assets/crg-demo/thandie/t_2.2c_clip.mov", "type": "video/mp4", "transcript": "Nope. Try again."}
+              ],
+              "onFinishByFailure"  :             {
+                "url"          : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420575/thandie/t_3.3c_clip.mov",
+                "type"         : "video/mp4",
+                "transcript"   : "uh, uh. The only possible “he” here is Kareem Mariner, right?"
+              },
+              "onFinishBySuccess"  : {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420559/thandie/t_3.3a_clip.mov",
+                "type": "video/mp4",
+                "transcript": "Yup!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420575/thandie/t_3.3_clip.mov",
+            "type": "video/mp4",
+            "transcript": "Next navigator - pronouns. These are those words like, he, she, it, this, that - they replace other words that usually have just been mentioned or are about to be mentioned. To navigate a text, always connect any pronouns back to whatever they represent. Drag “he” onto whatever “he” represents."
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"   : "navigators",
+          "subgroup": "pronouns",
+          "sceneId" : "3.4-what-is-this",
+          "highlight": {"indices": [20], "text": "this"},
+          "slide"   : {
+            "title" : "Road signs / Pronouns",
+            "sections": [
+              {
+                "title": "",
+                "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"
+              }
+            ]
+          },
+          "multiChoice": {
+            "noOfSelectionsAllowed" : 1,
+            "options": [
+              {"label": "the fact that Christmas was coming up"},
+              {"label": "the sheep poop in the field"},
+              {"label": "the bite of the cold wind", "correct": true}],
+
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 2,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [
+                {
+                  "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507547769/assets/crg-demo/thandie2/t_3.4a_clip.mov",
+                  "type"        : "video/mp4",
+                  "transcript"  : "No. It says, “this didn’t bother Kareem” - think about it - what didn’t bother him?"
+                }
+              ],
+              "onFinishByFailure"  :  {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420576/thandie/t_3.4b_clip.mov",
+                "type": "video/mp4",
+                "transcript": "Nah - it didn’t say anything about that. The only thing that could be bothering him would be the cold wind."
+              },
+              "onFinishBySuccess"  : {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420576/thandie/t_3.4c_clip.mov",
+                "type": "video/mp4",
+                "transcript": "nice!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420575/thandie/t_3.4_clip.mov",
+            "type": "video/mp4",
+            "transcript": "Let’s try another. What does “this” represent?"
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"   : "navigators",
+          "subgroup": "explainers",
+          "sceneId" : "3.5-explainers",
+          "slide"   : {
+            "title" : "Navigators / Explanations",
+            "sections": [
+              {
+                "title": "",
+                "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"
+              }
+            ]
+          },
+          "dragDropText"  : {
+            "draggables"  : [
+              {"indices": [26,27,28,29,30,31]  , "text": "trying to make up his mind"}
+            ],
+            "droppables"  : [{"indices": [32,33,34,35,36, 37,38,39,40], "text"   : "love or just overwhelmed by beauty?"}],
+            "correct"    : [
+              {
+                "draggable" : {"indices": [26,27,28,29,30,31]  , "text": "trying to make up his mind"},
+                "droppable" : {"indices": [32, 33,34,35,36, 37,38,39,40], "text"   : "love or just overwhelmed by beauty?"}
+              }
+            ],
+            "knownIncorrect": [],
+            "highlightAtEnd" : {"indices": [35,36, 37,38,39,40], "text"   : "love or just overwhelmed by beauty?"},
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 3,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [
+                {"url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420351/assets/crg-demo/thandie/t_2.2c_clip.mov", "type": "video/mp4", "transcript": "Nope. Try again."}
+              ],
+              "onFinishByFailure"  : {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420585/thandie/t_3.5b_clip.mov",
+                "type": "video/mp4",
+                "transcript": "No. See the last sentence? He’s trying to make up his mind about his feelings "
+              },
+              "onFinishBySuccess"  : {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420585/thandie/t_3.5a_clip.mov",
+                "type": "video/mp4",
+                "transcript": "Nice!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420594/thandie/t_3.5_clip.mov",
+            "type": "video/mp4",
+            "transcript": "We already mentioned how commas and dashes and other punctuation announces that an explanation’s coming up. In general, if a writer says something unclear, you should expect an explanation. Like, “trying to make up his mind” - about what? Drag that phrase onto the sentence that explains it."
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"   : "navigators",
+          "sceneId" : "3.6-navigators-recap",
+          "slide" : {
+            "title" : "Navigators Recap",
+            "bullets": [
+              "Navigators to look for: road signs - including transition words and punctuation; pronouns and explanations."
+            ]},
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420601/thandie/t_3.6_clip.mov",
+            "type": "video/mp4",
+            "transcript": "Navigators to look for: road signs - including transition words and punctuation; pronouns and explanations.",
+            "canSkip"   : true
+          }
+        }
+      },
+
+      {
+        "name": "play-video",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.0-about-tone",
+          "slide" : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "Version 1", "text": "It was a chilly New York City morning. He walked across Central Park."}
+            ]
+          },
+          "autoNext" : true,
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507730692/rev_t_4.0.0_clip.mp4",
+            "type": "video/mp4",
+            "transcript": "Writers use words to get across more than just literal meanings. They can say, “The car was purple,” but they can also choose words that convey mood, feelings - tone. To get the tone, you want to pick up on the feelings around the words and the meanings between them. ",
+            "fullscreen" : true,
+            "label"     : "Tone"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.0.1-compare-tone",
+          "renderDelay" : 11000,
+          "slide" : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "Version 1", "text": "It was a chilly New York City morning. He walked across Central Park."},
+              {"title": "Version 2", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507725859/assets/crg-demo/thandie2/rev_4.0-4.1.mp4",
+            "type": "video/mp4",
+            "transcript": "One way to find the tone or feeling or mood of a text is to restate it in the most boring possible way. Let’s go back to that original text.Not a whole lot of tone, right? Check out the second version."
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.2-tone-contrast",
+          "focus" : {"indices" : [17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56], "text"    : ""},
+          "slide"   : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "Version 1", "text": "It was a chilly New York City morning. He walked across Central Park."},
+              {"title": "Version 2", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "multiChoice": {
+            "noOfSelectionsAllowed" : 1,
+            "options": [
+              {"label": "“cold” and “December”"},
+              {"label": "“meadow” and “sunshine”"},
+              {"label": "”cold December” and “sunshine", "correct": true}],
+
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 1,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [],
+              "onFinishByFailure"  :  {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420631/thandie/t_4.2a_clip.mov",
+                "type": "video/mp4",
+                "transcript": "No. If anything, those go together, but sunshine is usually warm, not cold.right: "
+              },
+              "onFinishBySuccess"  : {
+                "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507547732/assets/crg-demo/thandie2/t_3.1e_clip.mov",
+                "type"        : "video/mp4",
+                "transcript"  : "Nice !"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420631/thandie/t_4.2_clip.mov",
+            "type": "video/mp4",
+            "transcript": "Other passages will show tone in different ways, but you’ll find a lot of tone in the CONTRASTS between words or phrases. Giving the wind teeth makes it scary, but making those teeth tiny… Okay, tiny teeth are still scary -  but in a different way, right? The other strong contrast in that sentence is between…"
+          }
+        }
+      },
+
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.2.1-beauty-with-attracted",
+          "focus" : {"indices" : [17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56], "text"    : ""},
+          "slide"   : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "Version 1", "text": "It was a chilly New York City morning. He walked across Central Park."},
+              {"title": "Version 2", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "multiChoice": {
+            "noOfSelectionsAllowed" : 1,
+            "options": [
+              {"label": "from poetic to angry and desperate"},
+              {"label": "from sincere to amusing and low-key", "correct": true},
+              {"label": "from hopeful to disappointed"}],
+
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 1,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [],
+              "onFinishByFailure"  :  {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507083760/thandie/t_4.2.1a_clip.mov",
+                "type": "video/mp4",
+                "transcript": "No. There wouldn’t be anything negative about saying “attracted.” It would just make him sound more casual - maybe less open with his feelings."
+              },
+              "onFinishBySuccess"  : {
+                "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507547732/assets/crg-demo/thandie2/t_3.1e_clip.mov",
+                "type"        : "video/mp4",
+                "transcript"  : "Nice !"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420631/thandie/t_4.2.1_clip.mov",
+            "type": "video/mp4",
+            "transcript": "If, in the last line, you replaced “overwhelmed by beauty” with “attracted,” how would the tone change?"
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.3-feeling-from-contrast",
+          "focus" : {"indices" : [17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56], "text"    : ""},
+          "slide" : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "Version 1", "text": "It was a chilly New York City morning. He walked across Central Park."},
+              {"title": "Version 2", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "showInput": true,
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507083760/thandie/t_4.3_clip.mov",
+            "type": "video/mp4",
+            "transcript": "So, how would you describe the feeling you get from these contrasts - tiny teeth and cold sunshine. Type your thoughts in the chatbox."
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.3.1-passage-tone",
+          "focus" : {"indices" : [17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56], "text"    : ""},
+          "highlight" : {"indices" : [54,55,56], "text"    : ""},
+
+          "slide"   : {
+            "title" : "Tone",
+            "sections" : [
+              {"title": "Version 1", "text": "It was a chilly New York City morning. He walked across Central Park."},
+              {"title": "Version 2", "text": "The wind's tiny teeth nipped at Kareem Mariner as he crossed Sheep's Meadow in the cold December sunshine. But this didn’t bother Kareem, who was trying to make up his mind. Was he in love or just overwhelmed by beauty?"}
+            ]
+          },
+          "multiChoice": {
+            "noOfSelectionsAllowed" : 1,
+            "options": [
+              {"label": "growing anxiety"},
+              {"label": "pleasant tension", "correct": true},
+              {"label": "approaching danger"}],
+
+            "attempts"             : {
+              "correctExpected"    : 1,
+              "incorrectAllowed"   : 2,
+              "onCorrectMessages"  : [],
+              "onInCorrectMessages": [
+                {
+                  "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507547796/assets/crg-demo/thandie2/t_4.3.1a_clip.mov",
+                  "type": "video/mp4",
+                  "transcript": "Hmmm… Where do you see that in the text? Think about the contrasts we discussed - what feeling do they convey?"
+                }
+              ],
+              "onFinishByFailure"  :  {
+                "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507083760/thandie/t_4.3.1b_clip.mov",
+                "type": "video/mp4",
+                "transcript": "No. The contrasts create tension but Kareem seems excited."
+              },
+              "onFinishBySuccess"  : {
+                "url"         : "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507547732/assets/crg-demo/thandie2/t_3.1e_clip.mov",
+                "type"        : "video/mp4",
+                "transcript"  : "Nice !"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420631/thandie/t_4.3.1_clip.mov",
+            "type": "video/mp4",
+            "transcript": "So which of these best describes the tone of the passage?"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group"   : "tone",
+          "sceneId" : "4.4-tone-recap",
+          "slide" : {
+            "title" : "Tone Recap",
+            "bullets": [
+              "As you’re zincing, look for words and phrases that contrast. ",
+              "Picture and see how the contrast feels."]
+          },
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507083760/thandie/t_4.4_clip.mov",
+            "type": "video/mp4",
+            "transcript": "A great way to look for tone is, as you’re zincing, notice words and phrases that CONTRAST; really picture them and then see how that contrast feels. "
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group"   : "exit",
+          "sceneId" : "5.0-feedback",
+          "slide" : {
+            "title" : "Feedback"
+          },
+          "options": [
+            {"label": "great - gave me lots of new ideas - I’m psyched to try them out on some advanced reading"},
+            {"label": "okay - I can try some of this"},
+            {"label": "somewhat helpful - but I didn’t follow all the details"},
+            {"label": "not helpful cause I already knew this"},
+            {"label": "not helpful cause I couldn’t understand it"},
+            {"label": "not helpful cause I’m not interested in improving my reading"},
+            {"label": "other", "correct": true}
+          ],
+
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1506420639/thandie/t_5.0_clip.mov",
+            "type": "video/mp4",
+            "transcript": "You’ll be seeing all of these skills a lot more as you play zinc close reading passages, but how was this first intro?"
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"   : "exit",
+          "sceneId" : "5.0-feedback-others",
+          "focus" : {"indices" : [17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56], "text"    : ""},
+          "condition": {"expected": true, "sceneId" : "5.0-feedback", "action"  : "multi-choice-result"},
+          "slide" : {
+            "title" : "Feedback"
+          },
+          "showInput": true,
+          "sceneLoadVideo": {
+            "url": "http://res.cloudinary.com/zinc-learning-labs/video/upload/v1507618928/assets/crg-demo/thandie2/type-your-thoughts.mp4",
+            "type": "video/mp4",
+            "transcript": "Type your thoughts in the chatbox."
+          }
+        }
+      },
+
+      {
+        "name": "exit",
+        "config": {
+          "group": "exit",
+          "sceneId": "exit-skill-intro"
+        }
+      }
+    ]
+  }
+}

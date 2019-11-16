@@ -1,0 +1,84 @@
+{
+  "list": [
+    {
+      "id" :1,
+      "title": "Fun Words",
+      "by": "Zinc",
+      "description": "An assigned vocabulary set with single deck.",
+      "status": "bonus",
+      "time": 1212,
+      "assigned" : {
+        "by": "Tamara Oslon",
+        "date": "02 April 2017",
+        "message": "Study these words before Tuesday class."
+      }
+    },
+    {
+      "id" :2,
+      "title": "Fun Words",
+      "by": "Zinc",
+      "description": "Non-assigned vocabulary set with two decks.",
+      "status": "bonus",
+      "time": 1212
+    },
+    {
+      "id" :3,
+      "title": "Fun Words",
+      "by": "Zinc",
+      "description": "Non-assigned reader mode vocabulary set with lots of decks.",
+      "status": "bonus",
+      "time": 1212
+    },
+    {
+      "id" :1,
+      "title": "Fun Words",
+      "by": "Zinc",
+      "description": "A assigned vocabulary set with single deck.",
+      "status": "bonus",
+      "time": 1212,
+      "assigned" : {
+        "by": "Tamara Oslon",
+        "date": "02 April 2017",
+        "message": "Study these words before Tuesday class."
+      }
+    },
+    {
+      "id" :2,
+      "title": "Fun Words",
+      "by": "Zinc",
+      "description": "Non-assigned vocabulary set with two decks.",
+      "status": "bonus",
+      "time": 1212
+    },
+    {
+      "id" :3,
+      "title": "Fun Words",
+      "by": "Zinc",
+      "description": "Non-assigned reader mode vocabulary set with lots of decks.",
+      "words": "one, two, three, four",
+      "status": "bonus",
+      "time": 1212
+    },
+    {
+      "id" :2,
+      "title": "Fun Words",
+      "by": "Zinc",
+      "description": "Non-assigned vocabulary set with two decks.",
+      "status": "bonus",
+      "time": 1212
+    },
+    {
+      "id" :1,
+      "title": "Fun Words",
+      "by": "Zinc",
+      "description": "A assigned vocabulary set with single deck.",
+      "status": "bonus",
+      "time": 1212,
+      "assigned" : {
+        "by": "Tamara Oslon",
+        "date": "02 April 2017",
+        "message": "Study these words before Tuesday class."
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "passage": {
+    "from": "Frankenstein",
+    "by": "Mary Shelley",
+    "text": "How can I describe my emotions at this catastrophe, or how delineate the wretch whom with such infinite pains and care I had endeavoured to form? His limbs were in proportion, and I had selected his features as beautiful. Beautiful! Great God! His yellow skin scarcely covered the work of muscles and arteries beneath; his hair was of a lustrous black, and flowing; his teeth of a pearly whiteness; but these luxuriances only formed a more horrid contrast with his watery eyes, that seemed almost of the same colour as the dun-white sockets in which they were set, his shrivelled complexion and straight black lips."
+  },
+  "script": {
+    "scenes": [
+      {
+        "name"  : "intro",
+        "config": {}
+      },
+      {
+        "group"       : "zincing",
+        "name"        : "find-all-key-images",
+        "config":       {
+          "transcript" : {"text": "Alright, there’s a lot to work with here. Highlight everything you can picture. And remember: when you’re Zincing and handles appear on your highlight, that means there’s more than just that word for you to picture. Picturing that word is great, but check it out: it’s part of a longer phrase. See if you can highlight the whole phrase and picture it"},
+          "expectedCorrectAnswers" : 3,
+          "keyImages": [
+            {
+              "phrase": {"indices": [27,28,29,30], "text": "limbs were in proportion"}
+            },
+            {
+              "phrase": {"indices": [35,36,37,38], "text": "his features as beautiful"}
+            },
+            {
+              "phrase": {"indices": [42,43,44], "text": "His yellow skin"}
+            },
+            {
+              "phrase": {"indices": [43,44,45,46,47,48,49,50,51,52,53], "text": "yellow skin scarcely covered the work of muscles and arteries beneath"}
+            },
+            {
+              "phrase": {"indices": [55,56,57,58,59,60,61,62], "text": "hair was of a lustrous black, and flowing"}
+            },
+            {
+              "phrase": {"indices": [64,65,66,67,68], "text": "his teeth of a pearly whiteness"}
+            },
+            {
+              "phrase": {"indices": [80,81], "text": "watery eyes"}
+            },
+            {
+              "phrase": {"indices": [91,92,93], "text": "dun-white sockets"}
+            },
+            {
+              "phrase": {"indices": [98,99,100], "text": "his shrivelled complexion"}
+            },
+            {
+              "phrase": {"indices": [102,103,104], "text": "straight black lips"}
+            }
+          ]
+        }
+      },
+
+      {
+        "name"  : "exit",
+        "config": {}
+      }
+    ]
+  }
+}

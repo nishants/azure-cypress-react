@@ -1,0 +1,13 @@
+.work-history-card {
+  padding-left: 40px;
+  .work-history-card-image {
+    width: 50px;
+  }
+  .work-history-details {
+    width: 100%;
+    padding: 0;
+    .work-history-description {
+      text-align: left;
+    }
+  }
+}

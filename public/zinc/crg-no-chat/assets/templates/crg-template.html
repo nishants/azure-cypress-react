@@ -1,0 +1,80 @@
+
+<ui-view>
+  <h3>Sample Passages</h3>
+  <ul class="crg-options">
+    <li>
+      <label>From their eyes were watching Gods</label><a ui-sref="crg.gameplay({id: 1})">Play</a><a ui-sref="crg.editor({id: 1})">Edit</a><a href="assets/data/crg/crg-sample-game-data-1.json">Data</a>
+    </li>
+    <li>
+      <label>Frankenstein</label><a ui-sref="crg.gameplay({id: 2})">Play</a><a ui-sref="crg.editor({id: 2})">Edit</a><a href="assets/data/crg/crg-sample-game-data-2.json">Data</a>
+    </li>
+    <li>
+      <label>Harlem</label><a ui-sref="crg.gameplay({id: 3})">Play</a><a ui-sref="crg.editor({id: 3})">Edit</a><a href="assets/data/crg/crg-sample-game-data-3.json">Data</a>
+    </li>
+  </ul>
+  <div class="about-crg">
+    <h3>About It</h3>
+    <ul>
+      <li>A simple version of Close Reading Game.</li>
+      <li>It can create a new game, edit a game and play a game.</li>
+      <li>Code for this implementation is production quality and reusable in the Zinc Learning Lab platform.</li>
+    </ul>
+    <h3>About the Design</h3>
+    <p>In this context, design includes</p>
+    <ul>
+      <li>Data structures and models to support any complexity of scenes and interactions</li>
+      <li>Modeling data on web-server and database</li>
+      <li>Capturing user actions and saving it on a web-server</li>
+      <li>Frontend code for CRG implementation</li>
+    </ul>
+    <p><b>Design here does not include the visual design. The styling is only placeholder and has to be redone based on mockups.</b></p>
+    <h3>Model and Data Structure</h3>
+    <h5>Player</h5>
+    <ul>
+      <li>has state</li>
+      <li>runs script</li>
+    </ul>
+    <p>
+      <h5>Script</h5>
+      <ul>
+        <li>uses data to generate a sequence of scenes</li>
+      </ul>
+    </p>
+    <p>
+      <h5>Scene</h5>
+      <ul>
+        <li>collection of states</li>
+      </ul>
+    </p>
+    <p>
+      <h5>State</h5>
+      <ul>
+        <li>defines what get rendered in a scene</li>
+        <li>a scene can have one or more state</li>
+        <li>if a scene needs different elements to be rendered, its better to put them in different states to keep them small and testable.</li>
+      </ul>
+    </p>
+    <p>
+      <h5>UI Template</h5>
+      <ul>
+        <li>uses player state to render user interface</li>
+        <li>highlight text</li>
+        <li>focus on text</li>
+        <li>transcript dialog</li>
+        <li>buttons and actions</li>
+        <li>input box</li>
+        <li>action on text select</li>
+        <li>multi choice questions</li>
+      </ul>
+    </p>
+    <h5>Scenes as State Machine</h5>
+    <ul>
+      <li>Each scene can have one or more states</li>
+      <li>UI is rendered based on current scene and its state</li>
+      <li>Player moves from one state to another based on user actions</li>
+      <li>A state can be easily added, changed or removed without affecting any other state</li>
+      <li>Breaking a scene into states is recommended to keep it modular and testable</li>
+      <li>For example multi choice question scene has ask-question and show-result states</li>
+    </ul>
+  </div>
+</ui-view>

@@ -1,0 +1,35 @@
+{
+  "passage": {
+    "id"    : 1,
+    "from"  : "Their Eyes Were Watching God",
+    "by"    : "Zora Neal Hurston",
+    "text"  : "Ships at a distance have every man's wish on board. For some they come in with the tide. For others they sail forever on the horizon, never out of sight, never landing until the Watcher turns his eyes away in resignation, his dreams mocked to death by Time. That is the life of men. \n Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget. The dream is the truth. Then they act and do things accordingly."
+  },
+  "agent": {
+    "smallProfilePicture": "assets/images/agents/sophia.png",
+    "videoPlaceholder": "assets/images/agents/sophia-video-placeholder.png"
+  },
+  "script": {
+    "scenes": [
+      {
+        "name": "play-video",
+        "config": {
+          "group"   : "intro",
+          "sceneId" : "sample-white-bg",
+          "sceneLoadVideo": {
+            "url"       : "assets/videos/sample-white-bg.mp4",
+            "type"      : "video/mp4",
+            "transcript": ""
+          }
+        }
+      },
+      {
+        "name": "exit",
+        "config"    : {
+          "group"   : "exit",
+          "sceneId" : "28"
+        }
+      }
+    ]
+  }
+}

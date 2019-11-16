@@ -1,0 +1,69 @@
+
+<div id="profile-bar" ng-class="{&quot;expand&quot;: profile.expand}">
+  <div class="heading">
+    <div class="picture"><img src="assets/images/user.jpg"/></div>
+    <div class="title">Nishant Singh</div>
+    <div ng-click="profile.expand = !profile.expand" class="show-score mobile-only">
+      <div class="fa fa-ellipsis-h"></div>
+    </div>
+  </div>
+  <ul class="score-card key-value-list">
+    <li>
+      <div class="value"> #2</div>
+      <div class="label"> Tamara Oslon's Class</div>
+    </li>
+    <li>
+      <div class="value"> #12</div>
+      <div class="label"> Serverus Snape's Class</div>
+    </li>
+    <li>
+      <div class="value"> 178</div>
+      <div class="label"> Vocabulary Points</div>
+    </li>
+    <li>
+      <div class="value"> 9</div>
+      <div class="label"> Words Learned</div>
+    </li>
+  </ul>
+</div>
+<div id="section">
+  <div id="vocabulary">
+    <div ui-view="">
+      <ul class="tab-buttons">
+        <li class="active selected">
+          <div class="label">My Sets</div>
+        </li>
+        <li class="completed">
+          <div class="label">All Sets</div>
+        </li>
+      </ul>
+      <div class="tab-body">
+        <div class="tab-filters">
+          <ul class="undo-list">
+            <li>
+              <div name="Status" reset="All" value="" options="[{value: &quot;Bonus&quot;}, {value: &quot;Locked&quot;}, {value: &quot;Completed&quot;}, {value: &quot;Not Opened&quot;}]" class="status drop-down"></div>
+            </li>
+            <li>
+              <div name="Assigned" reset="All" value="" options="[{value: &quot;Assigned&quot;}, {value: &quot;Not Assigned&quot;}]" class="assigned drop-down"></div>
+            </li>
+            <li>
+              <div name="Type" reset="&quot;All&quot;" value="" options="[{value: &quot;Pre Reading&quot;}, {value: &quot;Not Pre Reading&quot;}]" class="pre-reading drop-down"></div>
+            </li>
+            <li>
+              <div name="Sort" reset="Clear" value="" options="[{value: &quot;Date Started&quot;}, {value: &quot;Last Played&quot;}]" class="sort drop-down"></div>
+            </li>
+          </ul>
+        </div>
+        <ul class="deck">
+          <li ng-repeat="game in games"><a ui-sref="vocab.view({id: game.id})" class="game card">
+              <div ng-if="game.assigned" class="rubber_stamp">Assigned</div>
+              <div class="picture"><img src="assets/images/vocab.eg.jpg"/></div>
+              <div ng-bind="game.title" class="title"></div>
+              <div class="by"><span>By &nbsp;</span><span ng-bind="game.by"></span></div>
+              <div ng-bind="game.description" class="description"></div>
+              <button class="open">Open</button></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

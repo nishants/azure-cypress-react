@@ -1,0 +1,53 @@
+{
+  "vocabset" : {
+    "title": "Dak Prescott believes his racial background brings cowboys together.",
+    "by": "Zinc",
+    "description": "An assigned vocabulary set with single deck.",
+    "status": "bonus",
+    "time": 1212,
+    "image": "assets/images/article-cover.jpg",
+    "assigned" : {
+      "by": {"name": "Serverus Snape","picture":"assets/images/teacher.jpg"},
+      "date": "02 April 2017",
+      "message": "Study these words before Tuesday class."
+    },
+    "decks" : [
+      {
+        "id"       : 148671,
+        "title"    : "Word Wars - Deck 1",
+        "status"   : "in_bonus",
+        "enable_at": null,
+        "end_bonus_at": "2017-04-13T10:54:09.044-04:00",
+        "words": "one, two, three, four",
+
+        "exposures": [
+          {
+            "id": 1,
+            "status": "completed", "completed": true
+          },
+          {
+            "id": 2,
+            "status": "completed", "completed": true
+          },
+          {
+            "id": 3,
+            "status": "current",
+            "playable" : true,
+            "end_bonus_at": "2017-04-13T10:54:09.044-04:00"
+          },
+          {
+            "id": 4,
+            "status": "locked", "pending": true
+          },
+          {
+            "id": 5,
+            "status": "locked", "pending": true
+          },
+          {
+            "id": 6,
+            "status": "locked", "pending": true
+          }
+        ]
+      }
+    ]  }
+}

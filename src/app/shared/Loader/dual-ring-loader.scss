@@ -1,0 +1,29 @@
+$ring_stroke: 7px;
+$ring_size: 50px;
+
+.dual-ring-loader {
+  display: inline-block;
+  width: $ring_size + 4 * $ring_stroke;
+  height: $ring_size + 4 * $ring_stroke;
+
+  &:after {
+    content: ' ';
+    display: block;
+    width: $ring_size;
+    height: $ring_size;
+    margin: 1px;
+    border-radius: 50%;
+    border: $ring_stroke solid $theme_dark_color;
+    border-color: $theme_dark_color transparent $theme_dark_color transparent;
+    animation: dual-ring-loader 1.2s linear infinite;
+  }
+}
+
+@keyframes dual-ring-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,60 @@
+$github_color: rgba(0, 0, 0, 0.65);
+$linked_color: #1a84bc;
+$stack_overflow_color: #f48024;
+$twitter: #1da1f2;
+$mail_color: #1a84bc;
+
+
+@mixin hover_link( $color) {
+  color: white;
+  background-color: $color;
+  border: 1px solid $color;
+}
+
+@mixin social_link( $color) {
+  color: $color;
+}
+
+.social.contact{
+
+  .mailto:hover{
+    @include  hover_link($mail_color);
+  }
+
+  .mailto{
+    @include social_link($mail_color);
+  }
+
+  .twitter:hover{
+    @include  hover_link($twitter);
+  }
+
+  .twitter{
+    @include social_link($twitter);
+
+  }
+
+  .stack-overflow:hover{
+    @include  hover_link($stack_overflow_color);
+  }
+
+  .stack-overflow{
+    @include social_link($stack_overflow_color);
+  }
+
+  .linkedin:hover{
+    @include  hover_link($linked_color);
+  }
+
+  .linkedin{
+    @include social_link($linked_color);
+  }
+
+  .github:hover{
+    @include  hover_link($github_color);
+  }
+
+  .github{
+    @include social_link($github_color);
+  }
+}

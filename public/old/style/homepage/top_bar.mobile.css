@@ -1,0 +1,71 @@
+/*
+Error: Undefined variable: "$top_bar_index".
+        on line 5 of top_bar.mobile.scss
+
+1: 
+2: .top-bar{
+3:   box-shadow: 0 0 5px 1px rgba(1, 1, 1, 0.3);
+4:   position: fixed;
+5:   z-index: $top_bar_index;
+6:   top: 0px;
+7:   margin: 0px $side_padding;
+8: 
+9:   height: $topBarHeight;
+10:   width: calc(100% - #{2 * $side_padding});
+
+Backtrace:
+top_bar.mobile.scss:5
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/script/tree/variable.rb:49:in `_perform'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:397:in `visit_prop'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `map'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:159:in `visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin.rb:82:in `update_stylesheets'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/exec/base.rb:52:in `parse'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/exec/base.rb:19:in `parse!'
+/Users/dawn/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/bin/scss:13:in `<top (required)>'
+/Users/dawn/.rvm/gems/ruby-2.3.0/bin/scss:23:in `load'
+/Users/dawn/.rvm/gems/ruby-2.3.0/bin/scss:23:in `<main>'
+/Users/dawn/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/dawn/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$top_bar_index\".\A         on line 5 of top_bar.mobile.scss\A \A 1: \A 2: .top-bar{\A 3:   box-shadow: 0 0 5px 1px rgba(1, 1, 1, 0.3);\A 4:   position: fixed;\A 5:   z-index: $top_bar_index;\A 6:   top: 0px;\A 7:   margin: 0px $side_padding;\A 8: \A 9:   height: $topBarHeight;\A 10:   width: calc(100% - #{2 * $side_padding});"; }

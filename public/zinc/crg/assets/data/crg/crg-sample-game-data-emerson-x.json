@@ -1,0 +1,175 @@
+{
+  "passage": {
+    "id"    : "emerson",
+    "from"  : "Self-Reliance, 1841",
+    "by"    : "Ralph Waldo Emerson",
+    "text"  : "Man is timid and apologetic; he is no longer upright; he dares not say 'I think,' 'I am,' but quotes some saint or sage. He is ashamed before the blade of grass or the blowing rose. These roses under my window make no reference to former roses or to better ones; they are for what they are; they exist with God to-day. There is no time to them. There is simply the rose; it is perfect in every moment of its existence. Before a leaf-bud has burst, its whole life acts; in the full-blown flower there is no more; in the leafless root there is no less. Its nature is satisfied, and it satisfies nature, in all moments alike. But man postpones or remembers; he does not live in the present, but with reverted eye laments the past, or, heedless of the riches that surround him, stands on tiptoe to foresee the future. He cannot be happy and strong until he too lives with nature in the present, above time."
+  },
+  "agent": {
+    "smallProfilePicture": "assets/images/agents/emerson.png",
+    "videoPlaceholder": "assets/images/agents/emerson-video-placeholder.png"
+  },
+  "script": {
+    "scenes": [
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId"   : "1.5-main-idea",
+          "group"     : "intro",
+          "showInput" : true,
+          "sceneLoadVideo": {
+            "url": "assets/videos/emerson/1.5-main-idea.mov",
+            "type": "video/mp4",
+            "transcript": "Let’s try this. In 20 words or fewer, what’s the main idea here? Write your answer in the chat. You’ll be seeing it again later."
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "group"     : "zincing",
+          "subgroup"  : "visualize",
+          "sceneId"   : "2.1-first-key-images",
+          "focus"     : {"indices": [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23], "text": ""},
+          "findPhrase" : {
+            "correct": [
+              {"phrase"  : {"indices": [0,1,2,3,4], "text": "Man is timid and apologetic"}, "video"   : {"url": "assets/videos/emerson/2.1-first-image-found.mov", "type": "video/mp4", "transcript": "Yeah, that works. Good job picturing the whole phrase - not just some guy, but also how he’s acting."}},
+              {"phrase"  : {"indices": [5, 6,7,8,9], "text": "he is no longer upright"}},
+              {"phrase"  : {"indices": [21, 22, 23], "text": "saint or sage"}}
+            ],
+            "knownIncorrect": [
+              {"phrase": {"indices": [0], "text": "Man"}, "video": {"url": "assets/videos/emerson/2.1-i-can-picuture-a-guy.mov", "type": "video/mp4", "transcript": "Yeah. I can picture a guy here, but what about him? Highlight the whole phrase."}},
+              {"phrase": {"indices": [5], "text": "he"}, "video": {"url": "assets/videos/emerson/2.1-i-can-picuture-a-guy.mov", "type": "video/mp4", "transcript": "Yeah. I can picture a guy here, but what about him? Highlight the whole phrase."}}
+            ],
+            "attempts"             : {
+              "correctExpected"    : 3,
+              "incorrectAllowed"   : 4,
+              "onCorrectMessages"  : [
+                {"url": "assets/videos/emerson/2.1-two-more-images.mov", "type": "video/mp4", "transcript": "Cool. Now highlight two more things you can easily picture."},
+                { "url": "assets/videos/emerson/2.1-yeah-that-works.mov", "type": "video/mp4", "transcript": "Yup - that works!"},
+                { "url": "assets/videos/emerson/2.1-yeah-that-works.mov", "type": "video/mp4", "transcript": "Yup - that works!"}
+              ],
+              "onInCorrectMessages": [
+                {"url": "assets/videos/emerson/2.1-we-didnt-think.mov", "type": "video/mp4", "transcript": "Hm...we didn’t think that was easy to picture. Try again."}
+              ],
+              "onFinishByFailure"  :                 {
+                "url": "assets/videos/emerson/2.1-great-everything-we-pictured.mov",
+                "type": "video/mp4",
+                "transcript": "Great. Here’s everything we pictured."
+              },
+              "onFinishBySuccess"  : {
+                "url": "assets/videos/emerson/3.13-great-you-got-all-three.mov",
+                "type": "video/mp4",
+                "transcript": "Great! You got all three!"
+              }
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "assets/videos/emerson/2.1-zincing.visualize.mov",
+            "type": "video/mp4",
+            "transcript": "Plenty to visualize here! Highlight something in the first sentence you can easily picture. Remember to picture the whole phrase. "
+          },
+          "skipAllSelectionOnSuccess" : true,
+          "showAllSelectionsVideo": {
+            "url": "assets/videos/emerson/2.1-great-everything-we-pictured.mov",
+            "type": "video/mp4",
+            "transcript": "Great. Here’s everything we pictured."
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId": "4.1-time-for-main-idea-again",
+          "fetchData": [
+            {
+              "$previous-main-idea-input" : {
+                "sceneId" : "1.5-main-idea",
+                "action"  : "text-input"
+              }
+            }
+          ],
+          "group": "exit",
+          "message": {
+            "text": "$previous-main-idea-input",
+            "button": {
+              "label": "Proceed"
+            }
+          },
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "assets/videos/sophia/4.1-time-for-main-idea.mov",
+            "type": "video/mp4",
+            "transcript": "Time for the main idea again! What’s the main idea of the paragraph? The last time you said:"
+          }
+        }
+      },
+      {
+        "name": "find-phrase",
+        "config": {
+          "group"     : "zincing",
+          "subgroup"  : "visualize",
+          "sceneId"   : "2.1-zincing.visualize",
+          "expectedCorrectAnswers": 2,
+          "wrongAttemptsAllowed": 2,
+          "focus"     : {"indices": [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23], "text": ""},
+          "correctOptions": [
+            {
+              "phrase"      : {"indices": [0,1,2,3,4], "text": "Man is timid and apologetic"},
+              "successVideo": {"url": "assets/videos/emerson/2.1-first-image-found.mov", "type": "video/mp4", "transcript": "Yeah, that works. Good job picturing the whole phrase - not just some guy, but also how he’s acting."}
+            },
+            {
+              "phrase"      : {"indices": [5, 6,7,8,9], "text": "he is no longer upright"},
+              "successVideo": { "url": "assets/videos/emerson/2.1-yeah-that-works.mov", "type": "video/mp4", "transcript": "Yup - that works!"}
+            },
+            {
+              "phrase"      : {"indices": [21, 22, 23], "text": "saint or sage"},
+              "successVideo": {"url": "assets/videos/emerson/2.1-yeah-that-works.mov", "type": "video/mp4", "transcript": "Yup - that works!"}
+            }
+          ],
+          "partialCorrectOptions": [
+            {
+              "phrase": {"indices": [0], "text": "Man"},
+              "successVideo": {
+                "url": "assets/videos/emerson/2.1-i-can-picuture-a-guy.mov",
+                "type": "video/mp4",
+                "transcript": "Yeah. I can picture a guy here, but what about him? Highlight the whole phrase."
+              }
+            },
+            {
+              "phrase": {"indices": [5], "text": "he"},
+              "successVideo": {
+                "url": "assets/videos/emerson/2.1-i-can-picuture-a-guy.mov",
+                "type": "video/mp4",
+                "transcript": "Yeah. I can picture a guy here, but what about him? Highlight the whole phrase."
+              }
+            }
+          ],
+          "wrongAttemptMessages": [
+            {
+              "url": "assets/videos/emerson/2.1-okay-i-am-sure.mov",
+              "type": "video/mp4",
+              "transcript": "Okay, I’m sure you could find a way to visualize that, but choose something easier to picture."
+            },
+            {
+              "url": "assets/videos/emerson/2.1-we-didnt-think.mov",
+              "type": "video/mp4",
+              "transcript": "Hm...we didn’t think that was easy to picture. Try again."
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "assets/videos/emerson/2.1-zincing.visualize.mov",
+            "type": "video/mp4",
+            "transcript": "Plenty to visualize here! Highlight something in the first sentence you can easily picture. Remember to picture the whole phrase. "
+          },
+          "skipAllSelectionOnSuccess" : true,
+          "showAllSelectionsVideo": {
+            "url": "assets/videos/emerson/2.1-great-everything-we-pictured.mov",
+            "type": "video/mp4",
+            "transcript": "Great. Here’s everything we pictured."
+          }
+        }
+      }
+    ]
+  }
+}

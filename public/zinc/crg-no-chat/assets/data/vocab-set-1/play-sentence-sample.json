@@ -1,0 +1,233 @@
+{
+  "deck_participation": {
+    "id": 148661,
+    "status": "active",
+    "word_bank_intro_complete": null,
+    "exposure_count": 6,
+    "attempting_to_complete_set": false,
+    "is_next_deck_participation_locked": null,
+    "next_deck_participation_id": null,
+    "next_deck_number": null,
+    "is_fast_vocab": false,
+    "is_timed": true,
+    "deck": {
+      "id": 5215,
+      "set_image_url": "//d275xfx9m0lf02.cloudfront.net/assets/default_set_image-1659f5c8217744186d3a1008e4073995874354132993fbbca4762db6dc051107.jpg",
+      "set_id": 821,
+      "set_title": "test",
+      "number": 1,
+      "title": "test - Deck 1",
+      "quiz_id": null,
+      "quiz_title": null,
+      "words": [
+        {
+          "example_sentence": "Kareem's gift for ____s really came out when he got to argue a case in front of a jury. ",
+          "id": 182,
+          "priority": 1,
+          "meaning": "relating to debate or public discourse",
+          "part_of_speech_names": "adjective",
+          "pronunciation": "foar-EN-zik",
+          "sentence_form": "forensic",
+          "word": "forensic",
+          "all_synonyms": "dialectic, juridical, juristic",
+          "correct_synonym": "rhetorical",
+          "synonym_option_names": [
+            "irritating",
+            "querulous",
+            "rhetorical",
+            "flippant"
+          ],
+          "image_options": [
+            {
+              "word": "invective",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--tpd6BPQx--/c_limit,f_auto,h_400,w_600/v1486982170/uploads/word/image/871/3afbd8e7bb0d5a8449fe5d32e58eb56f.jpg"
+            },
+            {
+              "word": "redoubtable",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--k_v0wI0y--/c_limit,f_auto,h_400,w_600/v1486982009/uploads/word/image/765/a35774b6bd6be3a4055187f44f950e49.jpg"
+            },
+            {
+              "word": "forensic",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--qlY5VX1U--/c_limit,f_auto,h_400,w_600/v1486981689/uploads/word/image/182/ea4b9c5c51d6da96953f397426ad074b.jpg"
+            },
+            {
+              "word": "equanimity",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--ebXWfsxk--/c_limit,f_auto,h_400,w_600/v1486981688/uploads/word/image/526/30f86084384c8bf62f839c617864f067.jpg"
+            }
+          ],
+          "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--qlY5VX1U--/c_limit,f_auto,h_400,w_600/v1486981689/uploads/word/image/182/ea4b9c5c51d6da96953f397426ad074b.jpg",
+          "pronunciation_audio": {
+            "url": "//d275xfx9m0lf02.cloudfront.net/uploads/word/pronunciation_audio/182/forensic.mp3"
+          },
+          "valid_word_forms": []
+        },
+        {
+          "example_sentence": "Only ____ measures could save the patient, but the doctors hesitated to use such extreme treatments.",
+          "id": 325,
+          "priority": 2,
+          "meaning": "extreme",
+          "part_of_speech_names": "adjective",
+          "pronunciation": "DRAS-tik",
+          "sentence_form": "drastic",
+          "word": "drastic",
+          "all_synonyms": "desperate, radical, severe",
+          "correct_synonym": "extreme",
+          "synonym_option_names": [
+            "unreliable",
+            "extreme",
+            "flexible",
+            "meaningful"
+          ],
+          "image_options": [
+            {
+              "word": "drastic",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--gdqyBAPH--/c_limit,f_auto,h_400,w_600/v1486982438/uploads/word/image/325/6ba635e02b82e4b0511f27378ce4bf78.jpg"
+            },
+            {
+              "word": "coven",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--cI9jT0KS--/c_limit,f_auto,h_400,w_600/v1486982115/uploads/word/image/1588/3adc2f530741139d5f6b7ff29549b8fd.jpg"
+            },
+            {
+              "word": "combustible",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--fwfqfVuv--/c_limit,f_auto,h_400,w_600/v1486981965/uploads/word/image/1579/4cf128fca9151d069198e773a5ae260f.jpg"
+            },
+            {
+              "word": "unfettered",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--zumaSm2N--/c_limit,f_auto,h_400,w_600/v1486981449/uploads/word/image/579/9f5aa1b4aedf1b5fae2d3c02d0a27c8d.jpg"
+            }
+          ],
+          "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--gdqyBAPH--/c_limit,f_auto,h_400,w_600/v1486982438/uploads/word/image/325/6ba635e02b82e4b0511f27378ce4bf78.jpg",
+          "pronunciation_audio": {
+            "url": "//d275xfx9m0lf02.cloudfront.net/uploads/word/pronunciation_audio/325/drastic.mp3"
+          },
+          "valid_word_forms": []
+        },
+        {
+          "example_sentence": "The theory of heredity began as a ____ posited by the monk Gregor Mendel and has since been borne out by scientific experiments.",
+          "id": 720,
+          "priority": 3,
+          "meaning": "a theory, guess",
+          "part_of_speech_names": "noun",
+          "pronunciation": "hi-POTH-eh-sis",
+          "sentence_form": "hypothesis",
+          "word": "hypothesis",
+          "all_synonyms": "conjecture, postulation, proposition",
+          "correct_synonym": "theory",
+          "synonym_option_names": [
+            "conviction",
+            "theory",
+            "portrait",
+            "arrest"
+          ],
+          "image_options": [
+            {
+              "word": "symbiotic",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--GvamPZU7--/c_limit,f_auto,h_400,w_600/v1486982173/uploads/word/image/1130/3eec34195ed6a917d2e20f3d254924c9.jpg"
+            },
+            {
+              "word": "surfeit",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--q08dpQL_--/c_limit,f_auto,h_400,w_600/v1486982109/uploads/word/image/569/6374dbd10cb6267ad7b218a7259012e2.jpg"
+            },
+            {
+              "word": "miscreant",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--Ml9t6wN_--/c_limit,f_auto,h_400,w_600/v1486982209/uploads/word/image/1621/b99d79a740d93a4f70119edd8450355b.jpg"
+            },
+            {
+              "word": "hypothesis",
+              "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--mK3bgbKm--/c_limit,f_auto,h_400,w_600/v1486982576/uploads/word/image/720/769ad67037a45b5e56580aee01823362.jpg"
+            }
+          ],
+          "image_medium_url": "http://d275xfx9m0lf02.cloudfront.net/zll-stg/image/upload/s--mK3bgbKm--/c_limit,f_auto,h_400,w_600/v1486982576/uploads/word/image/720/769ad67037a45b5e56580aee01823362.jpg",
+          "pronunciation_audio": {
+            "url": "//d275xfx9m0lf02.cloudfront.net/uploads/word/pronunciation_audio/720/hypothesis.mp3"
+          },
+          "valid_word_forms": []
+        }
+      ]
+    },
+    "current_exposure": {
+      "id": 657333,
+      "status": "current",
+      "number": 1,
+      "restartOnError": true,
+      "requireCorrectAnswerStreak": false,
+      "replayWrongAnswers": false,
+      "games": [
+        {
+          "id": 1353548,
+          "locked": false,
+          "bonus_multiplier": 1,
+          "disable_next_stage_for": 0,
+          "game_plan_name": "Study Time",
+          "correctly_answered_word_ids": [
+            182,
+            325,
+            720
+          ],
+          "game_modes": [
+            {
+              "name": "study",
+              "display_name": "Study",
+              "points_per_word": 0,
+              "time_limit_in_seconds": 0
+            }
+          ]
+        },
+        {
+          "id": 1353549,
+          "locked": false,
+          "bonus_multiplier": 1,
+          "disable_next_stage_for": 0,
+          "game_plan_name": "Sentence Game",
+          "correctly_answered_word_ids": [],
+          "game_modes": [
+            {
+              "name": "sentence",
+              "display_name": "Sentence",
+              "points_per_word": 5,
+              "time_limit_in_seconds": 30
+            }
+          ]
+        },
+        {
+          "id": 1353550,
+          "locked": true,
+          "bonus_multiplier": 1,
+          "disable_next_stage_for": 0,
+          "game_plan_name": "Synonym Game",
+          "correctly_answered_word_ids": [],
+          "game_modes": [
+            {
+              "name": "synonym",
+              "display_name": "Synonym",
+              "points_per_word": 3,
+              "time_limit_in_seconds": 20
+            }
+          ]
+        },
+        {
+          "id": 1353551,
+          "locked": true,
+          "bonus_multiplier": 2,
+          "disable_next_stage_for": 24,
+          "game_plan_name": "Obstacle Course",
+          "correctly_answered_word_ids": [],
+          "game_modes": [
+            {
+              "name": "sentence",
+              "display_name": "Sentence",
+              "points_per_word": 5,
+              "time_limit_in_seconds": 30
+            },
+            {
+              "name": "synonym",
+              "display_name": "Synonym",
+              "points_per_word": 3,
+              "time_limit_in_seconds": 20
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

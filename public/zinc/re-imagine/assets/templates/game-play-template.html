@@ -1,0 +1,79 @@
+
+<div class="gameplay">
+  <div class="game-header">
+    <div class="vocabset">
+      <div class="picture"><img ng-src="{{gamePlay.vocabset.image}}"/></div>
+      <div ng-bind="gamePlay.vocabset.title" class="title"></div>
+    </div>
+    <button class="outline exit-game"><a ui-sref="vocab.view({id: gamePlay.vocabset.id})" class="undo-link">Exit
+        <div class="fa fa-sign-out"></div></a></button>
+  </div>
+  <div class="game-progress">
+    <ul>
+      <li ng-repeat="challenge in gamePlay.challenges" ng-class="{&quot;current&quot; : $index == gamePlay._current_index, &quot;done&quot; : $index &lt; gamePlay._current_index, &quot;skipped&quot; : challenge.skipped}" style="width: calc({{100/gamePlay.challenges.length}}% - 3px); margin-right: 3px;">
+        <div style="animation-duration: {{timer.timeLimit}}" class="progress"></div>
+      </li>
+    </ul>
+  </div>
+  <div class="game-controls">
+    <ul class="labels key-value-list">
+      <li class="timer">
+        <div ng-bind="user.timer" class="value"></div>
+        <div class="key">Timer</div>
+      </li>
+      <li class="points">
+        <div ng-bind="user.points" class="value"></div>
+        <div class="key">Points</div>
+      </li>
+      <li ng-click="volume.off = !volume.off" class="sound">
+        <div class="value">
+          <div ng-show="!volume.off" class="fa fa-volume-up"></div>
+          <div ng-show="volume.off" class="fa fa-volume-off"></div>
+        </div>
+        <div class="key"><span ng-show="!volume.off">Sound On&nbsp;</span><span ng-show="volume.off">Sound Off</span></div>
+      </li>
+    </ul>
+  </div>
+  <div class="game-body">
+    <ul style="width: {{gamePlay.challenges.length*100}}%; transform: translateX(-{{gamePlay._current_index * 100/gamePlay.challenges.length}}%)" class="challenges">
+      <li ng-class="{&quot;current&quot;: gamePlay._current_index == $index }" ng-repeat="challenge in gamePlay.challenges" style="width: {{100/gamePlay.challenges.length}}%">
+        <div ng-if="challenge.mode.sentence" class="game-mode sentence">
+          <h1>Sentence Game</h1>
+        </div>
+        <div ng-if="challenge.mode.definition" class="game-mode definition">
+          <h1>Definition Game</h1>
+        </div>
+        <div ng-controller="DropSquaresController" ng-if="challenge.mode.synonym" class="game-mode synonym-game drop-squares">
+          <div class="targets">
+            <div ng-repeat="target in gamePlay.current.word.synonym.options.slice(0,2)" ng-drop="true" ng-drop-success="onDrop(target)" class="target">
+              <label>{{target.name}}</label>
+            </div>
+          </div>
+          <div class="word">
+            <label ng-drag="true" data-allow-transform="true" draggable="true"><span class="moving fa fa-arrows"></span><span class="can-drop fa fa-thumb-tack"></span><span>{{gamePlay.current.word.name}}</span></label>
+          </div>
+          <div class="targets">
+            <div ng-repeat="target in gamePlay.current.word.synonym.options.slice(2,4)" ng-drop="true" ng-drop-success="onDrop(target)" class="target">
+              <label>{{target.name}}</label>
+            </div>
+          </div>
+        </div>
+        <div ng-controller="DropSquaresController" ng-if="challenge.mode.image" class="game-mode image-game drop-squares">
+          <div class="targets">
+            <div ng-repeat="target in gamePlay.current.word.image.options.slice(0,2)" ng-drop="true" ng-drop-success="onDrop(target)" class="target"><img ng-src="{{target.url}}"/></div>
+          </div>
+          <div class="word">
+            <label ng-drag="true" data-allow-transform="true" draggable="true"><span class="moving fa fa-arrows"></span><span class="can-drop fa fa-thumb-tack"></span><span>{{gamePlay.current.word.name}}</span></label>
+          </div>
+          <div class="targets">
+            <div ng-repeat="target in gamePlay.current.word.image.options.slice(2,4)" ng-drop="true" ng-drop-success="onDrop(target)" class="target"><img ng-src="{{target.url}}"/></div>
+          </div>
+        </div>
+        <div class="skip">
+          <button ng-click="gamePlay.skip()" class="outline"><a><span>Skip</span>
+              <div class="icon fa fa-reply"></div></a></button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

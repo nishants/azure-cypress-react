@@ -1,0 +1,322 @@
+{
+  "cards" : [
+    {
+      "type": "ui",
+      "name": "Smart and Sleek Top Bar",
+      "src": "http://amoeba.social/dump/concepts/treniq/",
+      "no-mobile" : "true",
+      "tags": [{"name": "studio"}, {"name": "lab"}, {"name": "home"},{"name": "jquery"}, {"name": "scss"}],
+      "description": {
+        "lead": "Hides/Shows/Partially-shows",
+        "follow" : "the top bar by predicting user intention. Uses JQuery + AngularJS + SCSS achieve super smooth transitions with scalability. Also a design for navigation bar,search bar, ripple effect implementation."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Jeyson",
+      "src": "https://github.com/nishants/jeyson",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "angular"}, {"name": "scss"}],
+      "description": {
+        "lead": "A JSON Template Language",
+        "follow" : " allows executing expressions in json, include another json, render a list element ,render values conditionally, inbuilt and custom directives. Any json is a syntatically valid template, and any template is syntatically valida json. allows executing expressions in json, include another json, render a list element ,render values conditionally, inbuilt and custom directives. Any json is a syntatically valid template, and any template is syntatically valida json."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Gaming Experience with Alien Theme",
+      "src": "http://nishants.site/lab/star-wars/",
+      "tags": [{"name": "studio"}, {"name": "home"},{"name": "angular"}, {"name": "scss"}],
+      "desktop-first": true,
+      "description": {
+        "lead": "AngularJS and SCSS based single page app",
+        "follow" : "with alien theme, optimized interaction flow and a custom widget."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Android KitKat UI with Swipe Gesture",
+      "mobile-only" : "true",
+      "src": "http://amoeba.social/dump/concepts/kitkat",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "angular"}, {"name": "scss"}],
+      "description": {
+        "lead": "JQuery, SCSS and Fontawesome only",
+        "follow" : "implementation of android kitkat home screen. A pure JQuery implementation of swipe gesture inside google play menu. Custom router for allowing mobile back button for navigation."
+      }
+    },    {
+      "type": "ui",
+      "name": "look_like",
+      "no-mobile" : "true",
+      "src": "http://amoeba.social/lab/look-like/",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "ruby"}, {"name": "scss"}],
+      "description": {
+        "lead": "Ruby Gem, for wireframe testing.",
+        "follow" : "Provides RSpec based visual pattern matchers. Reuse end to end tests for wireframe testing and vice-versa."
+      }
+    },  {
+      "type": "ui",
+      "name": "Smart and Sleek Top Bar",
+      "src": "http://amoeba.social/dump/concepts/treniq/",
+      "no-mobile" : "true",
+      "tags": [{"name": "studio"}, {"name": "lab"}, {"name": "home"},{"name": "jquery"}, {"name": "scss"}],
+      "description": {
+        "lead": "Hides/Shows/Partially-shows",
+        "follow" : "the top bar by predicting user intention. Uses JQuery + AngularJS + SCSS achieve super smooth transitions with scalability. Also a design for navigation bar,search bar, ripple effect implementation."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Jeyson",
+      "src": "https://github.com/nishants/jeyson",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "angular"}, {"name": "scss"}],
+      "description": {
+        "lead": "A JSON Template Language",
+        "follow" : " allows executing expressions in json, include another json, render a list element ,render values conditionally, inbuilt and custom directives. Any json is a syntatically valid template, and any template is syntatically valida json. allows executing expressions in json, include another json, render a list element ,render values conditionally, inbuilt and custom directives. Any json is a syntatically valid template, and any template is syntatically valida json."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Gaming Experience with Alien Theme",
+      "src": "http://nishants.site/lab/star-wars/",
+      "tags": [{"name": "studio"}, {"name": "home"},{"name": "angular"}, {"name": "scss"}],
+      "desktop-first": true,
+      "description": {
+        "lead": "AngularJS and SCSS based single page app",
+        "follow" : "with alien theme, optimized interaction flow and a custom widget."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Android KitKat UI with Swipe Gesture",
+      "mobile-only" : "true",
+      "src": "http://amoeba.social/dump/concepts/kitkat",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "angular"}, {"name": "scss"}],
+      "description": {
+        "lead": "JQuery, SCSS and Fontawesome only",
+        "follow" : "implementation of android kitkat home screen. A pure JQuery implementation of swipe gesture inside google play menu. Custom router for allowing mobile back button for navigation."
+      }
+    },    {
+      "type": "ui",
+      "name": "look_like",
+      "no-mobile" : "true",
+      "src": "http://amoeba.social/lab/look-like/",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "ruby"}, {"name": "scss"}],
+      "description": {
+        "lead": "Ruby Gem, for wireframe testing.",
+        "follow" : "Provides RSpec based visual pattern matchers. Reuse end to end tests for wireframe testing and vice-versa."
+      }
+    },  {
+      "type": "ui",
+      "name": "Jeyson",
+      "src": "https://github.com/nishants/jeyson",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "angular"}, {"name": "scss"}],
+      "description": {
+        "lead": "A JSON Template Language",
+        "follow" : " allows executing expressions in json, include another json, render a list element ,render values conditionally, inbuilt and custom directives. Any json is a syntatically valid template, and any template is syntatically valida json."
+      }
+    },  {
+      "type": "ui",
+      "name": "Smart and Sleek Top Bar",
+      "src": "http://amoeba.social/dump/concepts/treniq/",
+      "no-mobile" : "true",
+      "tags": [{"name": "studio"}, {"name": "lab"}, {"name": "home"},{"name": "jquery"}, {"name": "scss"}],
+      "description": {
+        "lead": "Hides/Shows/Partially-shows",
+        "follow" : "the top bar by predicting user intention. Uses JQuery + AngularJS + SCSS achieve super smooth transitions with scalability. Also a design for navigation bar,search bar, ripple effect implementation."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Gaming Experience with Alien Theme",
+      "src": "http://nishants.site/lab/star-wars/",
+      "tags": [{"name": "studio"}, {"name": "home"},{"name": "angular"}, {"name": "scss"}],
+      "desktop-first": true,
+      "description": {
+        "lead": "AngularJS and SCSS based single page app",
+        "follow" : "with alien theme, optimized interaction flow and a custom widget."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Android KitKat UI with Swipe Gesture",
+      "mobile-only" : "true",
+      "src": "http://amoeba.social/dump/concepts/kitkat",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "angular"}, {"name": "scss"}],
+      "description": {
+        "lead": "JQuery, SCSS and Fontawesome only",
+        "follow" : "implementation of android kitkat home screen. A pure JQuery implementation of swipe gesture inside google play menu. Custom router for allowing mobile back button for navigation."
+      }
+    },    {
+      "type": "ui",
+      "name": "look_like",
+      "no-mobile" : "true",
+      "src": "http://amoeba.social/lab/look-like/",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "ruby"}, {"name": "scss"}],
+      "description": {
+        "lead": "Ruby Gem, for wireframe testing.",
+        "follow" : "Provides RSpec based visual pattern matchers. Reuse end to end tests for wireframe testing and vice-versa."
+      }
+    },  {
+      "type": "ui",
+      "name": "Jeyson",
+      "src": "https://github.com/nishants/jeyson",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "angular"}, {"name": "scss"}],
+      "description": {
+        "lead": "A JSON Template Language",
+        "follow" : " allows executing expressions in json, include another json, render a list element ,render values conditionally, inbuilt and custom directives. Any json is a syntatically valid template, and any template is syntatically valida json."
+      }
+    },  {
+      "type": "ui",
+      "name": "Smart and Sleek Top Bar",
+      "src": "http://amoeba.social/dump/concepts/treniq/",
+      "no-mobile" : "true",
+      "tags": [{"name": "studio"}, {"name": "lab"}, {"name": "home"},{"name": "jquery"}, {"name": "scss"}],
+      "description": {
+        "lead": "Hides/Shows/Partially-shows",
+        "follow" : "the top bar by predicting user intention. Uses JQuery + AngularJS + SCSS achieve super smooth transitions with scalability. Also a design for navigation bar,search bar, ripple effect implementation."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Gaming Experience with Alien Theme",
+      "src": "http://nishants.site/lab/star-wars/",
+      "tags": [{"name": "studio"}, {"name": "home"},{"name": "angular"}, {"name": "scss"}],
+      "desktop-first": true,
+      "description": {
+        "lead": "AngularJS and SCSS based single page app",
+        "follow" : "with alien theme, optimized interaction flow and a custom widget."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Android KitKat UI with Swipe Gesture",
+      "mobile-only" : "true",
+      "src": "http://amoeba.social/dump/concepts/kitkat",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "angular"}, {"name": "scss"}],
+      "description": {
+        "lead": "JQuery, SCSS and Fontawesome only",
+        "follow" : "implementation of android kitkat home screen. A pure JQuery implementation of swipe gesture inside google play menu. Custom router for allowing mobile back button for navigation."
+      }
+    },    {
+      "type": "ui",
+      "name": "look_like",
+      "no-mobile" : "true",
+      "src": "http://amoeba.social/lab/look-like/",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "ruby"}, {"name": "scss"}],
+      "description": {
+        "lead": "Ruby Gem, for wireframe testing.",
+        "follow" : "Provides RSpec based visual pattern matchers. Reuse end to end tests for wireframe testing and vice-versa."
+      }
+    },  {
+      "type": "ui",
+      "name": "Jeyson",
+      "src": "https://github.com/nishants/jeyson",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "angular"}, {"name": "scss"}],
+      "description": {
+        "lead": "A JSON Template Language",
+        "follow" : " allows executing expressions in json, include another json, render a list element ,render values conditionally, inbuilt and custom directives. Any json is a syntatically valid template, and any template is syntatically valida json."
+      }
+    },  {
+      "type": "ui",
+      "name": "Smart and Sleek Top Bar",
+      "src": "http://amoeba.social/dump/concepts/treniq/",
+      "no-mobile" : "true",
+      "tags": [{"name": "studio"}, {"name": "lab"}, {"name": "home"},{"name": "jquery"}, {"name": "scss"}],
+      "description": {
+        "lead": "Hides/Shows/Partially-shows",
+        "follow" : "the top bar by predicting user intention. Uses JQuery + AngularJS + SCSS achieve super smooth transitions with scalability. Also a design for navigation bar,search bar, ripple effect implementation."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Gaming Experience with Alien Theme",
+      "src": "http://nishants.site/lab/star-wars/",
+      "tags": [{"name": "studio"}, {"name": "home"},{"name": "angular"}, {"name": "scss"}],
+      "desktop-first": true,
+      "description": {
+        "lead": "AngularJS and SCSS based single page app",
+        "follow" : "with alien theme, optimized interaction flow and a custom widget."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Android KitKat UI with Swipe Gesture",
+      "mobile-only" : "true",
+      "src": "http://amoeba.social/dump/concepts/kitkat",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "angular"}, {"name": "scss"}],
+      "description": {
+        "lead": "JQuery, SCSS and Fontawesome only",
+        "follow" : "implementation of android kitkat home screen. A pure JQuery implementation of swipe gesture inside google play menu. Custom router for allowing mobile back button for navigation."
+      }
+    },    {
+      "type": "ui",
+      "name": "look_like",
+      "no-mobile" : "true",
+      "src": "http://amoeba.social/lab/look-like/",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "ruby"}, {"name": "scss"}],
+      "description": {
+        "lead": "Ruby Gem, for wireframe testing.",
+        "follow" : "Provides RSpec based visual pattern matchers. Reuse end to end tests for wireframe testing and vice-versa."
+      }
+    },  {
+      "type": "ui",
+      "name": "Jeyson",
+      "src": "https://github.com/nishants/jeyson",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "angular"}, {"name": "scss"}],
+      "description": {
+        "lead": "A JSON Template Language",
+        "follow" : " allows executing expressions in json, include another json, render a list element ,render values conditionally, inbuilt and custom directives. Any json is a syntatically valid template, and any template is syntatically valida json."
+      }
+    },  {
+      "type": "ui",
+      "name": "Smart and Sleek Top Bar",
+      "src": "http://amoeba.social/dump/concepts/treniq/",
+      "no-mobile" : "true",
+      "tags": [{"name": "studio"}, {"name": "lab"}, {"name": "home"},{"name": "jquery"}, {"name": "scss"}],
+      "description": {
+        "lead": "Hides/Shows/Partially-shows",
+        "follow" : "the top bar by predicting user intention. Uses JQuery + AngularJS + SCSS achieve super smooth transitions with scalability. Also a design for navigation bar,search bar, ripple effect implementation."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Gaming Experience with Alien Theme",
+      "src": "http://nishants.site/lab/star-wars/",
+      "tags": [{"name": "studio"}, {"name": "home"},{"name": "angular"}, {"name": "scss"}],
+      "desktop-first": true,
+      "description": {
+        "lead": "AngularJS and SCSS based single page app",
+        "follow" : "with alien theme, optimized interaction flow and a custom widget."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Android KitKat UI with Swipe Gesture",
+      "mobile-only" : "true",
+      "src": "http://amoeba.social/dump/concepts/kitkat",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "angular"}, {"name": "scss"}],
+      "description": {
+        "lead": "JQuery, SCSS and Fontawesome only",
+        "follow" : "implementation of android kitkat home screen. A pure JQuery implementation of swipe gesture inside google play menu. Custom router for allowing mobile back button for navigation."
+      }
+    },    {
+      "type": "ui",
+      "name": "look_like",
+      "no-mobile" : "true",
+      "src": "http://amoeba.social/lab/look-like/",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "ruby"}, {"name": "scss"}],
+      "description": {
+        "lead": "Ruby Gem, for wireframe testing.",
+        "follow" : "Provides RSpec based visual pattern matchers. Reuse end to end tests for wireframe testing and vice-versa."
+      }
+    },  {
+      "type": "ui",
+      "name": "Jeyson",
+      "src": "https://github.com/nishants/jeyson",
+      "tags": [{"name": "lab"}, {"name": "home"}, {"name": "angular"}, {"name": "scss"}],
+      "description": {
+        "lead": "A JSON Template Language",
+        "follow" : " allows executing expressions in json, include another json, render a list element ,render values conditionally, inbuilt and custom directives. Any json is a syntatically valid template, and any template is syntatically valida json. allows executing expressions in json, include another json, render a list element ,render values conditionally, inbuilt and custom directives. Any json is a syntatically valid template, and any template is syntatically valida json."
+      }
+    }
+  ]
+}

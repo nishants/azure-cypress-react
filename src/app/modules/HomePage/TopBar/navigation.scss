@@ -1,0 +1,87 @@
+$link_width: 150px;
+$navigation_links_height: 45px;
+
+.navigation {
+  @extend .resize-container;
+
+  .profile-info {
+    position: relative;
+    width: $homepage_side_bar_width;
+    padding-left: $side_padding;
+    overflow: hidden;
+    float: left;
+    background-color: $theme_light_bg;
+    padding-bottom: 30px;
+
+    .small-profile-image {
+      display: block;
+      float: left;
+      height: $small_profile_img_height;
+      @include transition($transition);
+      @include transformOrigin(0 50%);
+      @include transform(
+        scale(calc(1 /#{$small_profile_scale}))
+          translateX(-$small_profile_img_width - $side_padding)
+      );
+    }
+    .profile-labels {
+      width: calc(100% - #{$small_profile_img_width});
+      @include transition($transition);
+      @include transformOrigin(0 0);
+      @include transform(translateX(-$small_profile_img_width));
+
+      text-align: left;
+      float: left;
+      .profile-name,
+      .profile-title {
+        display: block;
+      }
+
+      .profile-name {
+        font-weight: $font_weight_bold;
+        font-size: $large_font;
+      }
+
+      .profile-title {
+        font-size: $very_small_font;
+      }
+    }
+  }
+
+  .navigation-links {
+    position: relative;
+    float: left;
+    line-height: $navigation_links_height;
+    width: calc(100% - #{$homepage_side_bar_width});
+
+    > ul {
+      position: relative;
+      z-index: 1;
+      background-color: $theme_light_bg;
+      @extend .undo-list;
+      @extend .resize-container;
+      > li {
+        float: left;
+        width: $link_width;
+        color: $light_black_text;
+        cursor: pointer;
+        a {
+          display: block;
+          color: inherit;
+          text-decoration: none;
+          @include transition($transition);
+        }
+
+        &.selected-link {
+          background-color: $theme_dark_color;
+          color: $theme_light_bg;
+          font-weight: $font_weight_bold;
+          box-shadow: $tab_button_shadow;
+        }
+      }
+    }
+  }
+  @import 'navigation.search-and-filter';
+}
+
+@import './navigation.pointer';

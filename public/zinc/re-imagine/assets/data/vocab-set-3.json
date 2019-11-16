@@ -1,0 +1,292 @@
+{
+  "vocabset" : {
+    "title": "Fun Words",
+    "by": "Zinc",
+    "description": "Non-assigned reader mode vocabulary set with lots of decks.",
+    "status": "bonus",
+    "time": 1212,
+    "image": "assets/images/article-cover.jpg",
+    "reader": {
+      "headline": "Dak Prescott believes his racial background brings cowboys together.",
+      "text"    : "Vocabulary words for Dak Prescott believes his racial background brings cowboys together."
+    },
+    "decks" : [
+      {
+        "id"       : 148671,
+        "title"    : "Word Wars - Deck 1",
+        "status"   : "in_bonus",
+        "enable_at": null,
+        "end_bonus_at": "2017-04-13T10:54:09.044-04:00",
+        "words": "one, two, three, four",
+        "bonus" : true,
+
+        "exposures": [
+          {
+            "id": 1,
+            "status": "completed", "completed": true
+          },
+          {
+            "id": 2,
+            "status": "completed", "completed": true
+          },
+          {
+            "id": 3,
+            "status": "current",
+            "playable" : true,
+            "end_bonus_at": "2017-04-13T10:54:09.044-04:00"
+          },
+          {
+            "id": 4,
+            "status": "locked", "pending": true
+          },
+          {
+            "id": 5,
+            "status": "locked", "pending": true
+          },
+          {
+            "id": 6,
+            "status": "locked", "pending": true
+          }
+        ]
+      },
+      {
+        "id"       : 148671,
+        "title"    : "Word Wars - Deck 1",
+        "status"   : "in_bonus",
+        "enable_at": null,
+        "end_bonus_at": "2017-04-13T10:54:09.044-04:00",
+        "bonus" : true,
+        "words": "five, six, seven, eight",
+
+        "exposures": [
+          {
+            "id": 1,
+            "status": "completed", "completed": true
+          },
+          {
+            "id": 2,
+            "playable" : true,
+            "end_bonus_at": "2017-04-13T10:54:09.044-04:00"
+          },
+          {
+            "id": 3,
+            "status": "locked", "pending": true
+          },
+          {
+            "id": 4,
+            "status": "locked", "pending": true
+          },
+          {
+            "id": 5,
+            "status": "locked", "pending": true
+          },
+          {
+            "id": 6,
+            "status": "locked", "pending": true
+          }
+        ]
+      },
+      {
+        "id"       : 148672,
+        "title"    : "Word Wars - Deck 2",
+        "status"   : "in_bonus",
+        "enable_at": null,
+        "words": "nine, ten, eleven, twelve",
+
+        "exposures": [
+          {
+            "id": 2,
+            "status": "current",
+            "playable" : true,
+            "end_bonus_at": "2017-04-13T10:54:09.044-04:00"
+          },
+          {
+            "id": 3,
+            "status": "locked", "pending": true
+          },
+          {
+            "id": 4,
+            "status": "locked", "pending": true
+          },
+          {
+            "id": 5,
+            "status": "locked", "pending": true
+          },
+          {
+            "id": 6,
+            "status": "locked", "pending": true
+          },
+          {
+            "id": 7,
+            "status": "locked", "pending": true
+          }
+
+        ]
+      },
+      {
+        "id"       : 148671,
+        "title"    : "Word Wars - Deck 1",
+        "status"   : "in_bonus",
+        "enable_at": null,
+        "words": "one, two, three, four",
+
+        "exposures": [
+          {
+            "id": 1,
+            "status": "completed", "completed": true
+          },
+          {
+            "id": 2,
+            "status": "completed", "completed": true
+          },
+          {
+            "id": 3,
+            "status": "current",
+            "playable" : true
+          },
+          {
+            "id": 4,
+            "status": "locked", "pending": true
+          },
+          {
+            "id": 5,
+            "status": "locked", "pending": true
+          },
+          {
+            "id": 6,
+            "status": "locked", "pending": true
+          }
+        ]
+      },
+      {
+        "id"       : 148672,
+        "title"    : "Word Wars - Deck 2",
+        "status"   : "in_bonus",
+        "enable_at": "2017-04-17T11:11:27.159-04:00",
+        "locked": true,
+
+        "end_bonus_at": null,
+        "words": "nine, ten, eleven, twelve",
+
+        "exposures": [
+          {
+            "id": 7,
+            "status": "completed",
+            "completed": true
+          },
+          {
+            "id": 8,
+            "status": "completed",
+            "completed": true
+          },
+          {
+            "id": 10,
+            "status": "completed",
+            "completed": true
+          },
+          {
+            "id": 11,
+            "status": "completed",
+            "completed": true
+          },
+          {
+            "id": 12,
+            "status": "completed",
+            "completed": true
+          },
+          {
+            "id": 9,
+            "status": "locked",
+            "enable_at": "2017-04-17T11:11:27.159-04:00",
+            "waiting" : true
+          }
+
+        ]
+      },
+      {
+        "id"       : 148672,
+        "title"    : "Word Wars - Deck 2",
+        "status"   : "in_bonus",
+        "enable_at": "2017-04-17T11:11:27.159-04:00",
+        "locked": true,
+        "end_bonus_at": null,
+        "words": "one, two, three, four",
+        "exposures": [
+          {
+            "id": 7,
+            "status": "completed",
+            "completed": true
+          },
+          {
+            "id": 8,
+            "status": "completed",
+            "completed": true
+          },
+          {
+            "id": 10,
+            "status": "completed",
+            "completed": true
+          },
+          {
+            "id": 11,
+            "status": "completed",
+            "completed": true
+          },
+          {
+            "id": 12,
+            "enable_at": "2017-04-17T11:11:27.159-04:00",
+            "waiting" : true
+          },
+          {
+            "id": 9,
+            "status": "locked", "pending" : true
+          }
+
+        ]
+      },
+      {
+        "id"       : 148672,
+        "title"    : "Word Wars - Deck 2",
+        "status"   : "in_bonus",
+        "enable_at": "2017-04-17T11:11:27.159-04:00",
+        "locked": true,
+        "words": "one, two, three, four",
+        "end_bonus_at": null,
+        "exposures": [
+          {
+            "id": 7,
+            "status": "completed",
+            "completed": true
+          },
+          {
+            "id": 8,
+            "status": "completed",
+            "completed": true
+          },
+          {
+            "id": 10,
+            "status": "completed",
+            "completed": true
+          },
+          {
+            "id": 11,
+            "enable_at": "2017-04-17T11:11:27.159-04:00",
+            "waiting" : true
+          },
+          {
+            "id": 12,
+            "status": "locked", "pending" : true
+          },
+          {
+            "id": 9,
+            "status": "locked", "pending" : true
+          }
+
+        ]
+      }
+
+
+
+    ]
+  }
+}

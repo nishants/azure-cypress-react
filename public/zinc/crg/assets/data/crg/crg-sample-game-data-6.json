@@ -1,0 +1,834 @@
+{
+  "passage": {
+    "id"    : 6,
+    "from"  : "Their Eyes Were Watching God",
+    "by"    : "Zora Neal Hurston",
+    "text"  : "Ships at a distance have every man's wish on board. For some they come in with the tide. For others they sail forever on the horizon, never out of sight, never landing until the watcher turn his eyes away in resignation, his dreams mocked to death by time. That is the life of men. \n Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget. The dream is the truth. Then they act and do things accordingly."
+  },
+  "agent": {
+    "smallProfilePicture": "assets/images/agents/diana.png",
+    "videoPlaceholder": "assets/images/agents/diana-video-placeholder.png"
+  },
+  "script": {
+    "scenes": [
+      {
+        "name"  : "play-video",
+        "config": {
+          "group" : "intro",
+          "autoNext" : true,
+          "sceneLoadVideo" : {
+            "fullscreen" : false,
+            "canSkip"  :  true,
+            "url" : "assets/videos/diana/introduction.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Hi there. I’m Diana. I live in Brooklyn. I love to read. My favorite book right now is The Fire Next Time by James Baldwin, but, in general, reading makes me smarter, helps me understand more about the world and other people and opens up tons of opportunities in life. But, here at Zinc, we realize a lot of people—maybe even most people—don’t enjoy reading. For us, that’s like saying you don’t enjoy eating! But, if you couldn’t taste the food and got no nutritional value from it, of course you wouldn’t enjoy it! So our mission here is to help you not only understand what a text says, but also appreciate HOW the writer put the text together, so you can experience more success at advanced reading and get more out of it if you’re already successful. Check it out!"
+          }
+        }
+      },
+      {
+        "name"  : "pause-and-read",
+        "config": {
+          "group"    : "intro",
+          "nextButtonLabel" : "I am done!",
+          "waitForAction" : {
+            "timeToWait"      : 5,
+            "beforeTimeVideo" : {
+              "url"         : "assets/videos/diana/take-time-to-read.mp4",
+              "type"        : "video/mp4",
+              "transcript"  : "Uh… Not possible. Even if it’s tough, you have to actually read the words. Try again."
+            }
+          },
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/read-passage.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Welcome to Zinc. Today we’re gonna work with the opening to Zora Neal Hurston’s book, Their Eyes Were Watching God. So, first off, read these two short paragraphs. Then we’ll talk."
+          }
+        }
+      },
+      {
+        "name"        : "text-input",
+        "config"      :   {
+          "group"        : "intro",
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/after-reading.mp4",
+            "type" : "video/mp4",
+            "transcript" : "What do you notice? What stands out to you? Write down any observations you have in the chat. (Your teacher will be able to see your response, but we won’t publish it online!)"
+          },
+          "transcript": {"text": "What do you notice? What stands out to you? Write down any observations you have in the chat. (Your teacher will be able to see your response, but we won’t publish it online!)"}
+        }
+      },
+      {
+        "name"        : "multi-choice",
+        "config"      : {
+          "group"        : "intro",
+          "question"       : "Tell us, honestly, does this paragraph make sense to you? ",
+          "options": [
+            {
+              "label"   : "Totally!"
+            },
+            {
+              "label"   : "More or less"
+            },
+            {
+              "label"   : "Sort of...maybe?"
+            },
+            {
+              "label"   : "No"
+            }
+          ],
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/does-it-make-sense.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Tell us, honestly, does this paragraph make sense to you?"
+          }
+        }
+      },
+      {
+        "name"        : "text-input",
+        "config"      :   {
+          "group"        : "intro",
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/main-idea.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Let’s give this a shot: in 20 words or fewer, what’s the main idea here? Write down your answer. You’ll be seeing this answer again later."
+          },
+          "transcript": {"text": "Let’s give this a shot: in 20 words or fewer, what’s the main idea here? Write down your answer. You’ll be seeing this answer again later."}
+        }
+      },
+      {
+        "name"  : "play-video",
+        "config": {
+          "group" : "intro",
+          "autoNext" :  true,
+          "sceneLoadVideo" : {
+            "fullscreen" : false,
+            "url" : "assets/videos/diana/lets-do-zincing.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Thanks. We’ll get back to the main idea in a bit, but first, it's time to do some Zincing."
+          }
+        }
+      },
+      {
+        "name"  : "play-video",
+        "config": {
+          "group"       : "zincing",
+          "subgroup"    : "visualize",
+          "canSkip"  :  true,
+          "autoNext" :  true,
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/about-zincing.mp4",
+            "type" : "video/mp4",
+            "transcript" : "What makes reading so compelling for people who love it and so, uh… BORING for people who don’t? Reading is different from other media. Video puts images directly into our brains through our eyes. But when we read, there’s an extra step. Our brains turn the letters, words and sentences into pictures and meanings. We call that ZINCING—ZINCING is when the words turn into meanings in your head. The process of Zincing—or turning great writing into images and meanings in the brain—FEELS GOOD. If you’re NOT Zincing, the text might as well be a solid rock wall. When that happens, finding words you can picture is like finding handholds that let you climb the wall."
+          }
+        }
+      },
+
+      {
+        "name"        : "find-phrase",
+        "config":       {
+          "group"       : "zincing",
+          "subgroup"    : "visualize",
+
+          "focus"     : {"indices": [0, 1,2,3,4,5,6,7,8,9], "text": "Ships at a distance have every man's wish on board"},
+          "expectedCorrectAnswers" : 1,
+          "wrongAttemptsAllowed" : 3,
+          "correctOptions": [
+            {
+              "phrase": {
+                "indices": [0, 1,2,3],
+                "text": "Ships at a distance"
+              },
+              "successVideo" : {
+                "url" : "assets/videos/diana/ships-at-distance-is-correct.mp4",
+                "type" : "video/mp4",
+                "transcript" : "Nice work! Great job noticing that what Hurston wants you to picture is the whole phrase, right? Not just “ships” but “ships at a distance."
+              }
+
+            }
+          ],
+          "partialCorrectOptions": [
+            {
+              "phrase": {
+                "indices": [0],
+                "text": "Ships"
+              },
+              "successVideo" : {
+                "url" : "assets/videos/diana/full-phrase-ships-at-distance.mp4",
+                "type" : "video/mp4",
+                "transcript" : "Cool. Maybe you’re picturing a sailboat or a cruise ship. That’s a great start. Now take it all the way. Hurston wants you to picture more than just ships. You need to take in the whole phrase — “ships at a distance."
+              }
+            },
+            {
+              "phrase": {
+                "indices": [1,2,3],
+                "text": "at a distance"
+              },
+              "successVideo" : {
+                "url" : "assets/videos/diana/what-at-a-distance.mp4",
+                "type" : "video/mp4",
+                "transcript" : "What’s at a distance? Highlight the whole phrase "
+              }
+            }
+          ],
+          "wrongAttemptMessages" : [
+            {
+              "url" : "assets/videos/diana/wrong-attempt-1.mp4",
+              "type" : "video/mp4",
+              "transcript" : "Look, if you try hard enough, you could probably come up with an image in your brain for any word, but what’s the strongest visual in this sentence? What’s easiest to picture? "
+            },
+            {
+              "url" : "assets/videos/diana/try-again.mp4",
+              "type" : "video/mp4",
+              "transcript" : "Try again !"
+            },
+            {
+              "url" : "assets/videos/diana/easiest-one-was.mp4",
+              "type" : "video/mp4",
+              "transcript" : "Well, the easiest one we could see was “ships at a distance.”"
+            }
+          ],
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/visualize-from-first-sentence.mp4",
+            "type" : "video/mp4",
+            "transcript" : "So, highlight a word or phrase you can easily picture from the first sentence."
+          }
+        }
+      },
+      {
+        "name"        : "text-input",
+        "config"      :   {
+          "group"     : "zincing",
+          "subgroup"  : "imagine",
+          "phrase"  : {"indices": [0, 1,2,3], "text": "Ships at a distance"},
+          "focus"     : {"indices": [0, 1,2,3,4,5,6,7,8,9], "text": "Ships at a distance have every man's wish on board"},
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/describe-ships-at-distance.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Type a short description of what you’re picturing in the chat."
+          },
+          "transcript": {"text": "Type a short description of what you’re picturing in the chat. "}
+        }
+      },
+      {
+        "name"        : "find-phrase",
+        "config" :{
+          "group"       : "zincing",
+          "subgroup"    : "visualize",
+          "expectedCorrectAnswers" : 2,
+          "wrongAttemptsAllowed" : 3,
+          "phrase": {
+            "indices": [0, 1,2,3],
+            "text": "Ships at a distance"
+          },
+          "correctOptions": [
+            {
+              "phrase": {
+                "indices": [5, 6,7,8, 9],
+                "text": "every man's wish on board"
+              },
+              "successVideo" : {
+                "url" : "assets/videos/diana/nice.mp4",
+                "type" : "video/mp4",
+                "transcript" : "Nice!"
+              }
+            },
+            {
+              "phrase": {
+                "indices": [12,13,14,15,16,17],
+                "text": "they come in with the tide"
+              },
+              "successVideo" : {
+                "url" : "assets/videos/diana/nice.mp4",
+                "type" : "video/mp4",
+                "transcript" : "Nice!"
+              }
+            }
+          ,
+            {
+              "phrase": {
+                "indices": [20,21,22,23,24,25],
+                "text": "they sail forever on the horizon"
+              },
+              "successVideo" : {
+                "url" : "assets/videos/diana/nice.mp4",
+                "type" : "video/mp4",
+                "transcript" : "Nice!"
+              }
+            },
+            {
+              "phrase": {
+                "indices": [26,27,28,29,30,31],
+                "text": "never out of sight, never landing"
+              },
+              "successVideo" : {
+                "url" : "assets/videos/diana/nice.mp4",
+                "type" : "video/mp4",
+                "transcript" : "Nice!"
+              }
+            },
+            {
+              "phrase": {
+                "indices": [33,34,35,36,37,38,39,40],
+                "text": "the watcher turns his eyes away in resignation"
+              },
+              "successVideo" : {
+                "url" : "assets/videos/diana/nice.mp4",
+                "type" : "video/mp4",
+                "transcript" : "Nice!"
+              }
+            },
+            {
+              "phrase": {
+                "indices": [51,52,53],
+                "text": "life of men"
+              },
+              "successVideo" : {
+                "url" : "assets/videos/diana/nice.mp4",
+                "type" : "video/mp4",
+                "transcript" : "Nice!"
+              }
+            },
+            {
+              "phrase": {
+                "indices": [58],
+                "text": "women"
+              },
+              "successVideo" : {
+                "url" : "assets/videos/diana/nice.mp4",
+                "type" : "video/mp4",
+                "transcript" : "Nice!"
+              }
+            }
+          ],
+          "partialCorrectOptions": [
+            {
+              "phrase": {
+                "indices": [42,43,44,45,46,47],
+                "text": "dreams mocked to death by Time"
+              },
+              "successVideo" : {
+                "url" : "assets/videos/diana/find-easier-to-imagine.mp4",
+                "type" : "video/mp4",
+                "transcript" : "Yeah. Okay, but can you choose something that’s easier to imagine?"
+              }
+            },
+            {
+              "phrase": {
+                "indices": [78],
+                "text": "dream"
+              },
+              "successVideo" : {
+                "url" : "assets/videos/diana/find-easier-to-imagine.mp4",
+                "type" : "video/mp4",
+                "transcript" : "Yeah. Okay, but can you choose something that’s easier to imagine?"
+              }
+            },
+            {
+              "phrase": {
+                "indices": [84],
+                "text": "act"
+              },
+              "successVideo" : {
+                "url" : "assets/videos/diana/find-easier-to-imagine.mp4",
+                "type" : "video/mp4",
+                "transcript" : "Yeah. Okay, but can you choose something that’s easier to imagine?"
+              }
+            }
+          ],
+          "wrongAttemptMessages" : [
+            {
+              "url" : "assets/videos/diana/cant-picture-that.mp4",
+              "type" : "video/mp4",
+              "transcript" : "Huh… I don’t get how you picture that exactly. Try something else."
+            },
+            {
+              "url" : "assets/videos/diana/try-again.mp4",
+              "type" : "video/mp4",
+              "transcript" : "Try again !"
+            },
+            {
+              "url" : "assets/videos/diana/try-again.mp4",
+              "type" : "video/mp4",
+              "transcript" : "Try again !"
+            }
+          ],
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/highlight-from-rest.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Highlight two more words or phrases from the rest of the passage. Make sure to choose stuff that’s easy to picture!"
+          },
+          "showAllSelectionsVideo" : {
+            "url" : "assets/videos/diana/all-we-pictured.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Here’s everything that we easily pictured."
+          }
+        }
+      },
+      {
+        "name"  : "play-video",
+        "config": {
+          "group" : "zincing",
+          "subgroup" : "imagine",
+          "autoNext" :  true,
+          "canSkip"  :  true,
+          "sceneLoadVideo" : {
+            "fullscreen" : false,
+            "url" : "assets/videos/diana/about-imagine.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Sometimes a writer refers to something where you can’t know for sure exactly what to picture. When that happens, Zincing means you imagine something, and you then read on to see how your imagination compares with the writer’s story. "
+          }
+        }
+      },
+      {
+        "name"        : "yes-no",
+        "config"      : {
+          "group"         : "zincing",
+          "subgroup"      : "imagine",
+          "focus": {
+            "indices" : [57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76],
+            "text"    : "Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget."
+          },
+          "question"  : "Does the author give any specific examples of highlighted phrase",
+          "expectedYes"  : false,
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/specific-example-of.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Take the highlighted phrase. Does Hurston give a specific example you can picture of those things women don’t want to remember?"
+          },
+          "correctAnswerMessageVideo": {
+            "url" : "assets/videos/diana/correct-no-example-is-given.mp4",
+            "type" : "video/mp4",
+            "transcript" : "That’s right. She doesn’t give any specific examples of the kinds of things women might not wanna remember. You turn that phrase into a meaning in your head by IMAGINING— what could she mean? If you read the whole book, you’ll get a better sense for what she had in mind. "
+          },
+          "wrongAnswerMessageVideo": {
+            "url" : "assets/videos/diana/dont-make-up-stuff.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Huh??? Where??? Never make stuff up when you’re reading!! She doesn’t give any specific examples of the kinds of things women might not wanna remember. You turn that phrase into a meaning in your head by IMAGINING what she might mean. If you read the whole book, you’ll get a better sense for what she had in mind. "
+          }
+        }
+      },
+      {
+        "name"        : "text-input",
+        "config"      :   {
+          "group"         : "zincing",
+          "subgroup"      : "imagine",
+          "focus": {
+            "indices" : [57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76],
+            "text"    : "Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget."
+          },
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/three-examples-of.mp4",
+            "type" : "video/mp4",
+            "transcript" : "For right now, type three quick examples off the top of your head of what she might mean."
+          },
+          "transcript": {"text": "For right now, type three quick examples off the top of your head of what she might mean."}
+        }
+      },
+      {
+        "name"  : "play-video",
+        "config": {
+          "group"       : "zincing",
+          "subgroup"    : "key-images",
+          "canSkip"  :  true,
+          "autoNext" :  true,
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/about-key-images.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Great writing uses words and phrases in original ways that connect a lot more meanings to whatever the writer wants to express. As you’re reading, always look for the STRONGEST IMAGES. Your insights about these KEY IMAGES give you a deeper understanding of the text. "
+          }
+        }
+      },
+      {
+        "name"        : "text-input",
+        "config"      :   {
+          "group"     : "zincing",
+          "subgroup"  : "key-images",
+          "phrase"    : {"indices": [0, 1,2,3], "text": "Ships at a distance"},
+          "focus"     : {"indices": [0, 1,2,3,4,5,6,7,8,9], "text": "Ships at a distance have every man's wish on board"},
+
+          "sceneLoadVideo" : {
+            "url"          : "assets/videos/diana/type-your-association.mp4",
+            "type"         : "video/mp4",
+            "transcript"   : "There are so many great images in this first paragraph, but let’s start with just the first one. When a writer gives you a KEY IMAGE, really picture it in your mind and notice what ideas and associations come to mind. When you picture “ships at a distance,” what comes to mind? Type your insights "
+          },
+          "transcript"     : {"text": "There are so many great images in this first paragraph, but let’s start with just the first one. When a writer gives you a KEY IMAGE, really picture it in your mind and notice what ideas and associations come to mind. When you picture “ships at a distance,” what comes to mind? Type your insights "}
+        }
+      },
+      {
+        "name"        : "poll-result",
+        "config"      :   {
+          "group"     : "zincing",
+          "subgroup"  : "key-images",
+          "phrase"    : {"indices": [0, 1,2,3], "text": "Ships at a distance"},
+          "focus"     : {"indices": [0, 1,2,3,4,5,6,7,8,9], "text": "Ships at a distance have every man's wish on board"},
+          "pollResult" : [
+            {
+              "label":  "Adventure",
+              "score" : 32
+            },
+            {
+              "label":  "Travel",
+              "score" : 22
+            },
+            {
+              "label":  "boats",
+              "score" : 9
+            },
+            {
+              "label":  "sea",
+              "score" : 7
+            }
+          ],
+          "sceneLoadVideo" : {
+            "url"          : "assets/videos/diana/key-image-poll-result.mp4",
+            "type"         : "video/mp4",
+            "transcript"   : "Interesting ! Here are the popular associations users made with the same phrase."
+          },
+          "transcript"     : {"text": "Interesting ! Here are the popular associations users made with the same phrase"}
+        }
+      },
+      {
+        "name"        : "multi-choice",
+        "config"      : {
+          "group"     : "zincing",
+          "subgroup"  : "key-images",
+          "question"       : "Before we move on, tell us: did Zincing help you understand this paragraph better?",
+          "options": [
+            {
+              "label"   : "Yes!"
+            },
+            {
+              "label"   : "Sorta"
+            },
+            {
+              "label"   : "Not really"
+            },
+            {
+              "label"   : "No"
+            }
+          ],
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/zincing-feedback.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Before we move on, tell us: did Zincing help you understand this paragraph better?"
+          }
+        }
+      },
+      {
+        "name"  : "play-video",
+        "config": {
+          "group" : "navigators",
+          "canSkip"  :  true,
+          "autoNext" : true,
+          "sceneLoadVideo" : {
+            "fullscreen" : false,
+            "url" : "assets/videos/diana/about-navigators.mp4",
+            "type" : "video/mp4",
+            "transcript" : "A big part of what writers do is explain. They say something—often something you don’t fully understand—and then they explain by adding details, giving examples or about a million other things that help you get what they mean."
+          }
+        }
+      }, {
+        "name"  : "play-video",
+        "config": {
+          "group" : "navigators",
+          "subgroup" : "road-signs",
+          "canSkip"  :  true,
+          "autoNext" : true,
+          "sceneLoadVideo" : {
+            "fullscreen" : false,
+            "url" : "assets/videos/diana/about-navigator-roadsigns.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Words like, however, because, indeed, also, in addition—these words act like road signs. They direct your reading or call out a shift. Usually, they’re either saying, “Keep going” or “Go in a new direction.”"
+          }
+        }
+      },
+      {
+        "name"         : "text-input",
+        "config"       :   {
+          "group"     : "navigators",
+          "subgroup"  : "road-signs",
+          "phrase"    : {"indices": [57], "text": "Now"},
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/road-sign-now-input.mp4",
+            "type" : "video/mp4",
+            "transcript" : "The main Road Sign we found in this passage was the word NOW at the beginning of the second paragraph. Why do you think Hurston put “now” in there? What was she trying to say?"
+          },
+          "transcript": {"text": "The main Road Sign we found in this passage was the word NOW at the beginning of the second paragraph. Why do you think Hurston put “now” in there? What was she trying to say?"}
+        }
+      },
+      {
+        "name"  : "play-video",
+        "config": {
+          "group" : "navigators",
+          "subgroup" : "pronouns",
+          "canSkip"  :  true,
+          "autoNext" : true,
+          "sceneLoadVideo" : {
+            "fullscreen" : false,
+            "url" : "assets/videos/diana/about-navigator-pronouns.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Pronouns are those words like “he,” “she,” “it,” “this,” and “those”—they’re words that act as placeholders for something that’s just been mentioned or is about to be mentioned. Whenever you see a pronoun, you have to connect it to whatever it means."
+          }
+        }
+      },
+      {
+        "name"        : "drag-drop-text",
+        "config"      :   {
+          "group"     : "navigators",
+          "subgroup"  : "pronouns",
+          "phrase"    : {
+            "indices": [12, 20],
+            "text": "they"
+          },
+          "relations" : [
+            {
+              "draggable": {
+                "indices": [12],
+                "text": "they"
+              },
+              "droppable": {
+                "indices": [0],
+                "text": "Ships"
+              }
+            },
+            {
+              "draggable": {
+                "indices": [20],
+                "text": "they"
+              },
+              "droppable": {
+                "indices": [0],
+                "text": "Ships"
+              }
+            }
+          ],
+          "expectedCorrectAnswers" : 1,
+          "wrongAttemptMessages" : [
+            {
+              "url" : "assets/videos/diana/wrong-attempt-1.mp4",
+              "type" : "video/mp4",
+              "transcript" : "Look, if you try hard enough, you could probably come up with an image in your brain for any word, but what’s the strongest visual in this sentence? What’s easiest to picture? "
+            },
+            {
+              "url" : "assets/videos/diana/try-again.mp4",
+              "type" : "video/mp4",
+              "transcript" : "Try again !"
+            },
+            {
+              "url" : "assets/videos/diana/easiest-one-was.mp4",
+              "type" : "video/mp4",
+              "transcript" : "Well, the easiest one we could see was “ships at a distance.”"
+            }
+          ],
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/pronoun-first-sentence.mp4",
+            "type" : "video/mp4",
+            "transcript" : "Take the word \"they” in the second and third sentences. Who’s \"they”? Drag and drop \"they” onto the word or phrase that \"they” represents."
+          },
+          "onFinish" : {
+            "url" : "assets/videos/diana/they-refers-ships.mp4",
+            "type" : "video/mp4",
+            "transcript" : "The only thing that’s been mentioned that could come in with the tide or sail forever on the horizon would be the SHIPS, so \"they\" has to mean \"ships\"."
+          },
+          "transcript": {"text": "Take the word \"they\" in the second and third sentences. Who’s \"they\"? Drag and drop \"they\" onto the word or phrase that \"they\" represents."}
+        }
+      },
+      {
+        "name"  : "generic-scene",
+        "config": {
+          "sceneId"     : "pronoun-first-question",
+          "group"       : "navigators",
+          "subgroup"    : "pronouns",
+          "showInput"   :  true,
+          "buttons"     :  [{"label" : "I don't know"}],
+          "phrase"      :  {"indices": [48, 49,50,51,52,53],"text": "That is the life of men"},
+          "sceneLoadVideo" : {
+            "fullscreen" : false,
+            "autoNext"   : true,
+            "canSkip"    : true,
+            "url"        : "assets/videos/diana/that-in-life-of-man.mp4",
+            "type"       : "video/mp4",
+            "transcript" : "Let’s try a harder one. What does “that” refer to in the last sentence of the first paragraph—“That is the life of men”? Write your answer in the chat or select \"I don’t know.\""
+          }
+        }
+      },
+      {
+        "name"  : "play-video",
+        "config": {
+          "sceneId"     : "pronoun-first-dont-know",
+          "group"       : "navigators",
+          "subgroup"    : "pronouns",
+          "condition"      :  {"expected": true, "sceneId": "pronoun-first-question", "action": "I don't know"},
+          "canSkip"     :  true,
+          "autoNext"    :  true,
+          "sceneLoadVideo" : {
+            "fullscreen" : false,
+            "url"        : "assets/videos/diana/dont-know-that.mp4",
+            "type"       : "video/mp4",
+            "transcript" : "Think of this: “Remember the time we went camping? THAT was awesome. “That” refers to the time we went. Here, “That” is a quick way of referring to something Hurston has been talking about. So, what’s she been talking about? Think about it, and let’s see if the next question helps."
+          }
+        }
+      },      {
+        "name"  : "multi-choice",
+        "config": {
+          "sceneId"     : "pronoun-first-what-that-means",
+          "group"       : "navigators",
+          "subgroup"    : "pronouns",
+          "condition"      :  {"expected": false, "sceneId": "pronoun-first-question", "action": "I don't know"},
+          "question"       : "Which of the choices above matches best with your explanation for what “that” means?",
+          "options": [
+            {
+              "label"   : "Everything just mentioned about ships either coming in or staying out at sea",
+              "correct" : true
+            },
+            {
+              "label"   : "Hard work that never leads to any reward"
+            },
+            {
+              "label"   : "Waiting long enough until you finally get what you wanted "
+            },
+            {
+              "label"   : "Something about the sea and some people going somewhere"
+            }
+          ],
+          "sceneLoadVideo" : {
+            "fullscreen" : false,
+            "url"        : "assets/videos/diana/what-that-means.mp4",
+            "type"       : "video/mp4",
+            "transcript" : "Which of the choices above matches best with your explanation for what “that” means?"
+          }
+        }
+      },
+      {
+        "name"    : "play-video",
+        "config": {
+          "sceneId"     : "about-explainers",
+          "group"       : "navigators",
+          "subgroup"    : "explainers",
+          "canSkip"     :  true,
+          "autoNext"    :  true,
+          "sceneLoadVideo" : {
+            "fullscreen" : false,
+            "url"        : "assets/videos/diana/about-navigator-explainers.mp4",
+            "type"       : "video/mp4",
+            "transcript" : "A big part of what writers do is explain. They say something—often something you don’t fully understand—and then they explain by adding details, giving examples or about a million other things that help you get what they mean. Punctuation, like commas, dashes, semicolons or even periods, often show up right before an explanation or clarification. But sometimes an author will just drop an explanation in with no notice. In order to understand, connect the explanation back to the word or phrase."
+          }
+        }
+      },
+      {
+        "name"        : "drag-drop-text",
+        "config"      :   {
+          "group"     : "navigators",
+          "subgroup"  : "explainers",
+          "phrase"    : {
+            "indices": [26,27,28,29,30,31],
+            "text": "never out of sight, never landing"
+          },
+          "relations" : [
+            {
+              "draggable": {
+                "indices": [21],
+                "text": "never out of sight, never landing"
+              },
+              "droppable": {
+                "indices": [21,22, 23,24,25],
+                "text": "never out of sight, never landing"
+              }
+            },
+            {
+              "draggable": {
+                "indices": [26,27,28,29,30,31],
+                "text": "never out of sight, never landing"
+              },
+              "droppable": {
+                "indices": [21,22, 23,24,25],
+                "text": "sail forever on the horizon"
+              }
+            }
+          ],
+          "expectedCorrectAnswers" : 1,
+          "wrongAttemptMessages" : [
+            {
+              "url" : "assets/videos/diana/wrong-attempt-1.mp4",
+              "type" : "video/mp4",
+              "transcript" : "Look, if you try hard enough, you could probably come up with an image in your brain for any word, but what’s the strongest visual in this sentence? What’s easiest to picture? "
+            },
+            {
+              "url" : "assets/videos/diana/try-again.mp4",
+              "type" : "video/mp4",
+              "transcript" : "Try again !"
+            }],
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/never-out-of-sight.mp4",
+            "type" : "video/mp4",
+            "transcript" : "What does “never out of sight, never landing” explain? Drag “never out of sight, never landing” to the word or phrase it explains ?"
+          },
+          "transcript": {"text": "What does “never out of sight, never landing” explain? Drag “never out of sight, never landing” to the word or phrase it explains ?"}
+        }
+      },
+      {
+        "name"        : "drag-drop-text",
+        "config"      :   {
+          "group"     : "navigators",
+          "subgroup"  : "explainers",
+          "phrase"    : {
+            "indices": [40],
+            "text": "resignation"
+          },
+          "relations" : [
+            {
+              "draggable": {
+                "indices": [41,42,43,44,45,46,47],
+                "text": "his dreams mocked to death by Time."
+              },
+              "droppable": {
+                "indices": [41,42,43,44,45,46,47],
+                "text": "his dreams mocked to death by Time."
+              }
+            },
+            {
+              "draggable": {
+                "indices": [40],
+                "text": "resignation"
+              },
+              "droppable": {
+                "indices": [41,42,43,44,45,46,47],
+                "text": "his dreams mocked to death by Time."
+              }
+            }
+          ],
+          "expectedCorrectAnswers" : 1,
+          "wrongAttemptMessages" : [
+            {
+              "url" : "assets/videos/diana/wrong-attempt-1.mp4",
+              "type" : "video/mp4",
+              "transcript" : "Look, if you try hard enough, you could probably come up with an image in your brain for any word, but what’s the strongest visual in this sentence? What’s easiest to picture? "
+            },
+            {
+              "url" : "assets/videos/diana/try-again.mp4",
+              "type" : "video/mp4",
+              "transcript" : "Try again !"
+            }
+          ],
+          "onFinish" : {
+            "url" : "assets/videos/diana/right.mp4",
+            "type" : "video/mp4",
+            "transcript" : "right!"
+          },
+          "sceneLoadVideo" : {
+            "url" : "assets/videos/diana/why-the-resignation.mp4",
+            "type" : "video/mp4",
+            "transcript" : "What about the Watcher turning his eyes away in resignation? Why the resignation? Drag the word or phrase that explains it to “resignation.”"
+          },
+          "transcript": {"text": "What about the Watcher turning his eyes away in resignation? Why the resignation? Drag the word or phrase that explains it to “resignation.”"}
+        }
+      },
+      {
+        "name"  : "exit",
+        "config": {
+          "group"        : "exit"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,1432 @@
+{
+  "passage": {
+    "id"    : 1,
+    "from"  : "Their Eyes Were Watching God",
+    "by"    : "Zora Neal Hurston",
+    "text"  : "Ships at a distance have every man's wish on board. For some they come in with the tide. For others they sail forever on the horizon, never out of sight, never landing until the Watcher turns his eyes away in resignation, his dreams mocked to death by Time. That is the life of men. \n Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget. The dream is the truth. Then they act and do things accordingly."
+  },
+  "agent": {
+    "smallProfilePicture": "assets/images/agents/sophia.png",
+    "videoPlaceholder": "assets/images/agents/sophia-video-placeholder.png"
+  },
+  "script": {
+    "scenes": [
+      {
+        "name": "play-video",
+        "config": {
+          "group": "intro",
+          "autoNext": true,
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "label": "Main Idea",
+            "url": "assets/videos/sophia-lite/1.2.Welcome.mov",
+            "type": "video/mp4",
+            "transcript": "Welcome back to Zinc. Today we’re going to work with the opening to Zora Neal Hurston’s book, Their Eyes Were Watching God.",
+            "canSkip": true
+          },
+          "sceneId": "1.2.Welcome"
+        }
+      },
+      {
+        "name": "pause-and-read",
+        "config": {
+          "group": "intro",
+          "nextButtonLabel": "I am done!",
+          "waitForAction": {
+            "timeToWait": 3,
+            "beforeTimeVideo": {
+              "url": "assets/videos/sophia-lite/1.4.read-first.mov",
+              "type": "video/mp4",
+              "transcript": "Uh… Not possible. Even if it’s tough, you have to actually read the words. Try again."
+            }
+          },
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/1.3.So-first.mov",
+            "type": "video/mp4",
+            "transcript": "So, give a first read to these two short paragraphs. Then we’ll talk. "
+          },
+          "sceneId": "1.3.So-first"
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group": "intro",
+          "question": "Tell us, honestly, does this paragraph make sense to you? ",
+          "options": [
+            {
+              "label": "Totally!"
+            },
+            {
+              "label": "More or less"
+            },
+            {
+              "label": "Sort of...maybe?"
+            },
+            {
+              "label": "No"
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/1.8.makes-sense.mov",
+            "type": "video/mp4",
+            "transcript": "Tell us, honestly, does this passage make sense to you?"
+          },
+          "sceneId": "4"
+        }
+      },
+      {
+        "name": "text-input",
+        "config": {
+          "group": "intro",
+          "sceneId": "main-idea-before-game",
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/1.9-main-idea.mov",
+            "type": "video/mp4",
+            "transcript": "Let’s give this a shot: in 20 words or fewer, what’s the main idea here? Write down your answer. You’ll be seeing this answer again later."
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group": "intro",
+          "autoNext": true,
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "assets/videos/sophia-lite/1.10-lets-zinc.mov",
+            "type": "video/mp4",
+            "transcript": "Thanks. We’ll get back to the main idea in a bit, but first, it's time to do some Zincing."
+          },
+          "sceneId": "6"
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group": "zincing",
+          "autoNext": true,
+          "sceneId": "2.1-about-zincing",
+          "sceneLoadVideo": {
+            "canSkip": true,
+            "fullscreen": false,
+            "label": "Zincing",
+            "url": "assets/videos/sophia-lite/2.1-about-zincing.mov",
+            "type": "video/mp4",
+            "transcript": "What makes reading so compelling for people who love it and so, uh… BORING for people who don’t? Reading is different from other media. Video puts images directly into our brains through our eyes. But when we read, there’s an extra step. Our brains turn the letters, words and sentences into pictures and meanings. We call that ZINCING—ZINCING is when the words turn into meanings in your head. The process of Zincing—or turning great writing into images and meanings in the brain—FEELS GOOD. If you’re NOT Zincing, the text might as well be a solid rock wall. When that happens, finding words you can picture is like finding handholds that let you climb the wall."
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group": "zincing",
+          "subgroup": "visualize",
+          "autoNext": true,
+          "sceneId": "2.2-about-zinc-visualize",
+          "sceneLoadVideo": {
+            "canSkip": true,
+            "label": "Visualize",
+            "fullscreen": false,
+            "url": "assets/videos/sophia-lite/2.2-about-zinc-visualize.mov",
+            "type": "video/mp4",
+            "transcript": "Your first Zincing move is always to look for words or phrases you can easily picture in your mind. Good writers give you stuff you can visualize. No matter how hard a text is, you can always start by finding something to visualize."
+          }
+        }
+      },
+      {
+        "name": "find-phrase",
+        "config": {
+          "group": "zincing",
+          "subgroup": "visualize",
+          "sceneId": "2.3-highlight-first",
+          "focus": {
+            "indices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "text": "Ships at a distance have every man's wish on board"
+          },
+          "expectedCorrectAnswers": 1,
+          "wrongAttemptsAllowed": 3,
+          "correctOptions": [
+            {
+              "phrase": {
+                "indices": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "text": "Ships at a distance"
+              },
+              "successVideo": {
+                "url": "assets/videos/sophia-lite/2.4a-nice-work.mov",
+                "type": "video/mp4",
+                "transcript": "Nice work! Great job noticing that what Hurston wants you to picture is the whole phrase, right? Not just “ships” but “ships at a distance.”"
+              }
+            }
+          ],
+          "partialCorrectOptions": [
+            {
+              "phrase": {
+                "indices": [
+                  0
+                ],
+                "text": "Ships"
+              },
+              "successVideo": {
+                "url": "assets/videos/sophia-lite/2.4b-cool.mov",
+                "type": "video/mp4",
+                "transcript": "Cool. Maybe you’re picturing a sailboat or a cruise ship. That’s a great start. Now take it all the way. Hurston wants you to picture more than just ships. You need to take in the whole phrase — “ships at a distance."
+              }
+            },
+            {
+              "phrase": {
+                "indices": [
+                  1,
+                  2,
+                  3
+                ],
+                "text": "at a distance"
+              },
+              "successVideo": {
+                "url": "assets/videos/sophia-lite/placeholders/2.4c-whats-at-distance.mov",
+                "type": "video/mp4",
+                "transcript": "What’s at a distance? Highlight the whole phrase "
+              }
+            }
+          ],
+          "wrongAttemptMessages": [
+            {
+              "url": "assets/videos/sophia-lite/2.4d-look-if-u-try.mov",
+              "type": "video/mp4",
+              "transcript": "Look, if you try hard enough, you could probably come up with an image in your brain for any word, but what’s the strongest visual in this sentence? What’s easiest to picture? "
+            },
+            {
+              "url": "assets/videos/sophia-lite/3.13a-nope-try-again.mov",
+              "type": "video/mp4",
+              "transcript": "Try again !"
+            },
+            {
+              "url": "assets/videos/sophia-lite/2.4e-try-again.mov",
+              "type": "video/mp4",
+              "transcript": "Try again !"
+            }
+          ],
+          "skipAllSelectionOnSuccess" : true,
+          "showAllSelectionsVideo": {
+            "url": "assets/videos/sophia-lite/2.4f-well-easiest one.mov",
+            "type": "video/mp4",
+            "transcript": "Well, the easiest one we could see was “ships at a distance.”"
+          },
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/2.3-highlight-first.mov",
+            "type": "video/mp4",
+            "transcript": "Take the first sentence. What’s the first thing you can EASILY PICTURE. Highlight it."
+          }
+        }
+      },
+      {
+        "name"  : "text-input",
+        "config": {
+          "group"     : "zincing",
+          "subgroup"  : "visualize",
+          "highlight" : {
+            "indices" : [
+              0,
+              1,
+              2,
+              3
+            ],
+            "text": "Ships at a distance"
+          },
+          "focus": {
+            "indices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "text": "Ships at a distance have every man's wish on board"
+          },
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/2.4b-type-a-short-desc.mov",
+            "type": "video/mp4",
+            "transcript": "Type a short description of what you are picturing in the chat"
+          },
+          "transcript": {
+            "text": "Type a short description of what you are picturing in the chat"
+          },
+          "sceneId": "9.5"
+        }
+      },
+      {
+        "name": "find-phrase",
+        "config": {
+          "group": "zincing",
+          "subgroup": "visualize",
+          "sceneId": "2.5-highlight-two-or-more",
+          "expectedCorrectAnswers": 2,
+          "wrongAttemptsAllowed": 3,
+          "highlight": {
+            "indices": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "text": "Ships at a distance"
+          },
+          "correctOptions": [
+            {
+              "phrase": {
+                "indices": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "text": "every man's wish on board"
+              },
+              "successVideo": {
+                "url": "assets/videos/sophia-lite/2.5a-nice.mov",
+                "type": "video/mp4",
+                "transcript": "Nice!"
+              }
+            },
+            {
+              "phrase": {
+                "indices": [
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17
+                ],
+                "text": "they come in with the tide"
+              },
+              "successVideo": {
+                "url": "assets/videos/sophia-lite/2.5a-nice.mov",
+                "type": "video/mp4",
+                "transcript": "Nice!"
+              }
+            },
+            {
+              "phrase": {
+                "indices": [
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25
+                ],
+                "text": "they sail forever on the horizon"
+              },
+              "successVideo": {
+                "url": "assets/videos/sophia-lite/2.5a-nice.mov",
+                "type": "video/mp4",
+                "transcript": "Nice!"
+              }
+            },
+            {
+              "phrase": {
+                "indices": [
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31
+                ],
+                "text": "never out of sight, never landing"
+              },
+              "successVideo": {
+                "url": "assets/videos/sophia-lite/2.5a-nice.mov",
+                "type": "video/mp4",
+                "transcript": "Nice!"
+              }
+            },
+            {
+              "phrase": {
+                "indices": [
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40
+                ],
+                "text": "the watcher turns his eyes away in resignation"
+              },
+              "successVideo": {
+                "url": "assets/videos/sophia-lite/2.5a-nice.mov",
+                "type": "video/mp4",
+                "transcript": "Nice!"
+              }
+            },
+            {
+              "phrase": {
+                "indices": [
+                  58
+                ],
+                "text": "women"
+              },
+              "successVideo": {
+                "url": "assets/videos/sophia-lite/2.5a-nice.mov",
+                "type": "video/mp4",
+                "transcript": "Nice!"
+              }
+            }
+          ],
+          "partialCorrectOptions": [
+            {
+              "phrase": {
+                "indices": [
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47
+                ],
+                "text": "dreams mocked to death by Time"
+              },
+              "successVideo": {
+                "url": "assets/videos/sophia-lite/2.5d-yeah-okay-easier-to-imagine.mov",
+                "type": "video/mp4",
+                "transcript": "Yeah. Okay, but can you choose something that’s easier to imagine?"
+              }
+            },
+            {
+              "phrase": {
+                "indices": [
+                  78
+                ],
+                "text": "dream"
+              },
+              "successVideo": {
+                "url": "assets/videos/sophia-lite/2.5d-yeah-okay-easier-to-imagine.mov",
+                "type": "video/mp4",
+                "transcript": "Yeah. Okay, but can you choose something that’s easier to imagine?"
+              }
+            },
+            {
+              "phrase": {
+                "indices": [
+                  84
+                ],
+                "text": "act"
+              },
+              "successVideo": {
+                "url": "assets/videos/sophia-lite/2.5d-yeah-okay-easier-to-imagine.mov",
+                "type": "video/mp4",
+                "transcript": "Yeah. Okay, but can you choose something that’s easier to imagine?"
+              }
+            }
+          ],
+          "wrongAttemptMessages": [
+            {
+              "url": "assets/videos/sophia-lite/2.5c-huhh-idont-get.mov",
+              "type": "video/mp4",
+              "transcript": "Huh… I don’t get how you picture that exactly. Try something else."
+            },
+            {
+              "url": "assets/videos/sophia-lite/2.5c-huhh-idont-get.mov",
+              "type": "video/mp4",
+              "transcript": "Huh… I don’t get how you picture that exactly. Try something else."
+            },
+            {
+              "url": "assets/videos/sophia-lite/2.5c-huhh-idont-get.mov",
+              "type": "video/mp4",
+              "transcript": "Huh… I don’t get how you picture that exactly. Try something else."
+            },
+            {
+              "url": "assets/videos/sophia-lite/2.5c-huhh-idont-get.mov",
+              "type": "video/mp4",
+              "transcript": "Huh… I don’t get how you picture that exactly. Try something else."
+            },
+            {
+              "url": "assets/videos/sophia-lite/2.5c-huhh-idont-get.mov",
+              "type": "video/mp4",
+              "transcript": "Huh… I don’t get how you picture that exactly. Try something else."
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/2.5-highlight-two-or-more.mov",
+            "type": "video/mp4",
+            "transcript": "Highlight two more words or phrases from the rest of the passage. Make sure to choose stuff that’s easy to picture!"
+          },
+          "showAllSelectionsVideo": {
+            "url": "assets/videos/sophia-lite/2.6-everyting-we-easily-pictured.mov",
+            "type": "video/mp4",
+            "transcript": "Here’s everything that we easily pictured."
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group": "zincing",
+          "subgroup": "key-images",
+          "sceneId": "2.11-about-zinc-key-images",
+          "autoNext": true,
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "label": "Key Images",
+            "url": "assets/videos/sophia-lite/2.11-about-zinc-key-images.mov",
+            "type": "video/mp4",
+            "canSkip": true,
+            "transcript": "Hopefully you’re seeing how it helps to visualize stuff. Now let’s go deeper. Great writing uses key images to let you understand the writer’s point on a deeper level. If you tune them in, that’s when you’re really getting it. As you’re reading, keep looking for the STRONGEST IMAGES. Your insights about these KEY IMAGES make the text come to life and give you your deepest understanding."
+          }
+        }
+      },
+      {
+        "name"        : "poll-result",
+        "config"      :   {
+          "group"     : "zincing",
+          "subgroup"  : "key-images",
+          "sceneId"   : "poll-ships-at-a-distance",
+          "highlight" : {"indices": [0, 1,2,3], "text": "Ships at a distance"},
+          "focus"     : {"indices": [0, 1,2,3,4,5,6,7,8,9], "text": "Ships at a distance have every man's wish on board"},
+          "attemptsAllowed": 3,
+          "topPollResultCount" : 5,
+          "pollResult" : [
+            {
+              "value":  "horizon",
+              "score" : 32
+            },
+            {
+              "value":  "far",
+              "score" : 28
+            },            {
+              "value":  "Travel",
+              "score" : 24
+            },
+            {
+              "value":  "business",
+              "score" : 19
+            },
+            {
+              "value":  "cargo",
+              "score" : 17
+            },
+            {
+              "value":  "adventure",
+              "score" : 12
+            }
+          ],
+          "wrongAttemptMessages" : [
+            {
+              "url"          : "assets/videos/sophia-lite/placeholders/12.a-interesting-no-else.mov",
+              "type"         : "video/mp4",
+              "transcript"   : "Interesting. No one else has thought of that before."
+            }
+          ],
+          "correctAttemptMessages" : [
+            {
+              "url"          : "assets/videos/sophia-lite/placeholders/12.b-great-other-students.mov",
+              "type"         : "video/mp4",
+              "transcript"   : "Yeah. Other students had that same association!"
+            }
+          ],
+          "sceneFinishVideo" : {
+            "url"          : "assets/videos/sophia-lite/placeholders/12.c-here-are-top.mov",
+            "type"         : "video/mp4",
+            "transcript"   : "Here are the top five things others students said."
+          },
+          "sceneLoadVideo" : {
+            "url"          : "assets/videos/sophia-lite/poll-ships-at-a-distance.mov",
+            "type"         : "video/mp4",
+            "transcript"   : "There are so many great images in this first paragraph, but let’s just start with the first one. When a writer gives you a KEY IMAGE, she’s giving you more than just the literal meaning. Picture “ships at a distance,” Really picture them. What do they look like? Are you seeing a whole bunch or just a couple? Now that you’re hopefully really picturing this scene, what does it FEEL like? Hurston could’ve used a different image. She could’ve said, “Trucks on the highway have every man’s wish” or “seeds in the ground.” If she’d said “trucks,” that image would make me think of diesel fumes and heat and highway rest stops. What does “ships at a distance” make you think. Go with whatever comes to mind. Just notice, and type a word or phrase in the chat and hit submit. You’ll do that three times."
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group": "zincing",
+          "subgroup": "imagine",
+          "sceneId": "2.5-about-zinc-imagine",
+          "autoNext": true,
+          "canSkip": true,
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "label": "Imagine",
+            "url": "assets/videos/sophia-lite/2.5-about-zinc-imagine.mov",
+            "type": "video/mp4",
+            "transcript": "Sometimes a writer mentions something without giving a specific visual: “She was competitive and clever.” What does that look like? You’ll probably get a clearer picture about that character as you read on, but, to understand what you’re reading, use your imagination. Don’t make up crazy stuff. “Competitive and clever” does not mean the character is a secret agent. Come up with something that makes sense and keep reading to find out more."
+          }
+        }
+      },
+      {
+        "name": "yes-no",
+        "config": {
+          "group": "zincing",
+          "subgroup": "imagine",
+          "sceneId": "eg-for-things",
+          "focus": {
+            "indices": [
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76
+            ],
+            "text": "Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget."
+          },
+          "question": "Does the author give any specific examples of highlighted phrase",
+          "expectedYes": false,
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/2.8-take-the.mov",
+            "type": "video/mp4",
+            "transcript": "Take the highlighted phrase. Does Hurston give a specific example you can picture of those things women don’t want to remember?"
+          },
+          "correctAnswerMessageVideo": {
+            "url": "assets/videos/sophia-lite/2.10-thats-right.mov",
+            "type": "video/mp4",
+            "transcript": "That’s right. She doesn’t give any specific examples of the kinds of things women might not wanna remember. You turn that phrase into a meaning in your head by IMAGINING— what could she mean? If you read the whole book, you’ll get a better sense for what she had in mind. "
+          },
+          "wrongAnswerMessageVideo": {
+            "url": "assets/videos/sophia-lite/2.9-huhh-where.mov",
+            "type": "video/mp4",
+            "transcript": "Huh??? Where??? Never make stuff up when you’re reading!! She doesn’t give any specific examples of the kinds of things women might not wanna remember. You turn that phrase into a meaning in your head by IMAGINING what she might mean. If you read the whole book, you’ll get a better sense for what she had in mind. "
+          }
+        }
+      },
+      {
+        "name": "text-input",
+        "config": {
+          "group": "zincing",
+          "subgroup": "imagine",
+          "sceneId": "2.1a-for-now",
+          "focus": {
+            "indices": [
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76
+            ],
+            "text": "Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget."
+          },
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/2.1a-for-now.mov",
+            "type": "video/mp4",
+            "transcript": "For right now, type three quick examples off the top of your head of what she might mean."
+          },
+          "transcript": {
+            "text": "For right now, type three quick examples off the top of your head of what she might mean."
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group": "zincing",
+          "sceneId": "2.13.Before-we",
+          "question": "Before we move on, tell us: did Zincing help you understand this paragraph better?",
+          "options": [
+            {
+              "label": "Yes!"
+            },
+            {
+              "label": "Sorta"
+            },
+            {
+              "label": "Not really"
+            },
+            {
+              "label": "No"
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/2.13.Before-we.mov",
+            "type": "video/mp4",
+            "transcript": "Before we move on, tell us: did Zincing help you understand this paragraph better?"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group": "navigators",
+          "sceneId": "3.1-about-navigators",
+          "autoNext": true,
+          "sceneLoadVideo": {
+            "canSkip": true,
+            "fullscreen": false,
+            "label": "Navigators",
+            "url": "assets/videos/sophia-lite/3.1-about-navigators.mov",
+            "type": "video/mp4",
+            "transcript": "When you’re driving, everything from stop lights to brake lights to the paint on the street tells you how to navigate. Ignoring these could cause a dangerous crash. No one gets physically hurt when you miss navigation signals in a text, but your comprehension gets run over. "
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group": "navigators",
+          "subgroup": "road-signs",
+          "sceneId": "3.2-about-roadsigns",
+          "autoNext": true,
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "label": "Road Signs",
+            "canSkip": true,
+            "url": "assets/videos/sophia-lite/3.2-about-roadsigns.mov",
+            "type": "video/mp4",
+            "transcript": "Words like, however, because, although, also, in addition—these words act like ROAD SIGNS. They direct your reading or call out a shift. Usually, they’re either saying, “Keep going” or “Go in a new direction."
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group": "navigators",
+          "subgroup": "road-signs",
+          "sceneId": "3.3-the-main",
+          "highlight": {
+            "indices": [
+              57
+            ],
+            "text": "Now"
+          },
+          "question": "The main Road Sign we found in this passage was the word NOW at the beginning of the second paragraph. Why do you think Hurston put “now” in there? What was she trying to say?",
+          "options": [
+            {
+              "label": "Here comes my most important point…",
+              "correct": true
+            },
+            {
+              "label": "You can go ahead and ignore everything you’ve just read…"
+            },
+            {
+              "label": "I’m not interested in what comes next but need to tell you anyway…"
+            },
+            {
+              "label": "But enough about that, let’s talk about something less serious…"
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/3.3-the-main.mov",
+            "type": "video/mp4",
+            "transcript": "The main Road Sign we found in this passage was the word NOW at the beginning of the second paragraph. Why do you think Hurston put “now” in there? What was she trying to say?"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group": "navigators",
+          "sceneId": "3.4-pronouns-are",
+          "subgroup": "pronouns",
+          "autoNext": true,
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "label": "Pronouns",
+            "canSkip": true,
+            "url": "assets/videos/sophia-lite/3.4-pronouns-are.mov",
+            "type": "video/mp4",
+            "transcript": "Pronouns are those words like “he,” “she,” “it,” “this,” “which,” “those”—they’re words that represent something that’s just been mentioned or is about to be mentioned. Whenever you see a pronoun, you have to connect it to the word or phrase it represents."
+          }
+        }
+      },
+      {
+        "name": "drag-drop-text",
+        "config": {
+          "group": "navigators",
+          "subgroup": "pronouns",
+          "sceneId": "3.5-take-the-word-they",
+          "highlight": {
+            "indices": [
+              12,
+              20
+            ],
+            "text": "they"
+          },
+          "relations": [
+            {
+              "draggable": {
+                "indices": [
+                  12
+                ],
+                "text": "they"
+              },
+              "droppable": {
+                "indices": [
+                  0
+                ],
+                "text": "Ships"
+              }
+            },
+            {
+              "draggable": {
+                "indices": [
+                  20
+                ],
+                "text": "they"
+              },
+              "droppable": {
+                "indices": [
+                  0
+                ],
+                "text": "Ships"
+              }
+            }
+          ],
+          "highlightAtEnd": [
+            {
+              "indices": [
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "text": "every man's wish on board"
+            }
+          ],
+          "expectedCorrectAnswers": 1,
+          "wrongAttemptsAllowed" : 2,
+          "wrongAttemptMessages": [
+            {
+              "url": "assets/videos/sophia-lite/3.6a-nops-try-again.mov",
+              "type": "video/mp4",
+              "transcript": "Nope. Try again."
+            },
+            {
+              "url": "assets/videos/sophia-lite/3.6b-still-not-right.mov",
+              "type": "video/mp4",
+              "transcript": "Still not right. Give it another shot."
+            }
+          ],
+          "onFailure" :             {
+            "url": "assets/videos/sophia-lite/3.6c-not-clicking.mov",
+            "type": "video/mp4",
+            "transcript": "Hm. It’s not clicking for you. Here’s what we mean. "
+          },
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/3.5-take-the-word-they.mov",
+            "type": "video/mp4",
+            "transcript": "Take the word \"they” in the second and third sentences. Who’s \"they”? Drag and drop \"they” onto the word or phrase that \"they” represents."
+          },
+          "onFinish": {
+            "url": "assets/videos/sophia-lite/3.7-the-only-thing.mov",
+            "type": "video/mp4",
+            "transcript": "The only thing that’s been mentioned that could come in with the tide or sail forever on the horizon would be the SHIPS, so \"they\" has to mean \"ships\"."
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group": "navigators",
+          "subgroup": "pronouns",
+          "sceneId": "3.8-what-about-some",
+          "highlight": {
+            "indices": [10,11],
+            "text": "For some"
+          },
+          "question": "What about “some”? “For some” what?",
+          "options": [
+            {
+              "label": "Men",
+              "correct": true
+            },
+            {
+              "label": "Ships"
+            },
+            {
+              "label": "Wishes"
+            }
+          ],
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "assets/videos/sophia-lite/3.8-what-about-some.mov",
+            "type": "video/mp4",
+            "transcript": "What about “some”? “For some” what?"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "sceneId": "3.8a-what-about-some-wrong",
+          "group": "navigators",
+          "subgroup": "pronouns",
+          "condition": {
+            "expected": false,
+            "sceneId" : "3.8-what-about-some",
+            "action"  : "multi-choice-result"
+          },
+          "highlight": {
+            "indices": [10,11,6, 53],
+            "text": "For some"
+          },
+          "canSkip": true,
+          "autoNext": true,
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "assets/videos/sophia-lite/3.8a-wrong.mov",
+            "type": "video/mp4",
+            "transcript": "huh? “They” referred to the ships with the wishes, so “for some” has to be the men!"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "sceneId": "3.8a-what-about-some-correct",
+          "group": "navigators",
+          "subgroup": "pronouns",
+          "condition": {
+            "expected": true,
+            "sceneId" : "3.8-what-about-some",
+            "action"  : "multi-choice-result"
+          },
+          "highlight": {
+            "indices": [10,11,6, 53],
+            "text": "For some"
+          },
+          "canSkip": true,
+          "autoNext": true,
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "assets/videos/sophia-lite/3.8b-correct.mov",
+            "type": "video/mp4",
+            "transcript": "Right: Nice!"
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId": "3.8-lets-try",
+          "group": "navigators",
+          "subgroup": "pronouns",
+          "showInput": true,
+          "buttons": [
+            {
+              "label": "I don't know"
+            }
+          ],
+          "highlight": {
+            "indices": [
+              48,
+              49,
+              50,
+              51,
+              52,
+              53
+            ],
+            "text": "That is the life of men"
+          },
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "autoNext": true,
+            "canSkip": true,
+            "url": "assets/videos/sophia-lite/3.8-lets-try.mov",
+            "type": "video/mp4",
+            "transcript": "Let’s try a harder one. What does “that” refer to in the last sentence of the first paragraph—“That is the life of men”? Write your answer in the chat or select \"I don’t know.\""
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "sceneId": "3.9-pronoun-first-dont-know",
+          "group": "navigators",
+          "subgroup": "pronouns",
+          "condition": {
+            "expected": true,
+            "sceneId": "3.8-lets-try",
+            "action": "I don't know"
+          },
+          "highlight": {
+            "indices": [
+              48,
+              49,
+              50,
+              51,
+              52,
+              53
+            ],
+            "text": "That is the life of men"
+          },
+          "canSkip": true,
+          "autoNext": true,
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "assets/videos/sophia-lite/3.9-think-of-this.mov",
+            "type": "video/mp4",
+            "transcript": "Here’s a simple example of what I mean: Remember the time we went camping? THAT was awesome. “That” refers to the time we went camping. Here, “That” is a quick way of referring to something Hurston has been talking about. So, what’s she been talking about? Think about it, and let’s see if the next question helps."
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group": "navigators",
+          "subgroup": "pronouns",
+          "sceneId": "3.10-which-choices",
+          "highlight": {
+            "indices": [
+              48,
+              49,
+              50,
+              51,
+              52,
+              53
+            ],
+            "text": "That is the life of men"
+          },
+          "condition": {
+            "expected": true,
+            "sceneId": "3.8-lets-try",
+            "action": "text-input"
+          },
+          "question": "Which of the choices above matches best with your explanation for what “that” means?",
+          "options": [
+            {
+              "label": "Everything just mentioned about ships either coming in or staying out at sea",
+              "correct": true
+            },
+            {
+              "label": "Hard work that never leads to any reward"
+            },
+            {
+              "label": "Waiting long enough until you finally get what you wanted "
+            },
+            {
+              "label": "Something about the sea and some people going somewhere"
+            }
+          ],
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "assets/videos/sophia-lite/3.10-which-choices.mov",
+            "type": "video/mp4",
+            "transcript": "Which of the choices above matches best with your explanation for what “that” means?"
+          }
+        }
+      },
+      {
+        "name": "play-video",
+        "config": {
+          "group": "navigators",
+          "subgroup": "explainers",
+          "sceneId": "about-explainers",
+          "autoNext": true,
+          "sceneLoadVideo": {
+            "canSkip": true,
+            "fullscreen": false,
+            "label": "Explainers",
+            "url": "assets/videos/sophia-lite/placeholders/3.11-about-navigator-explainer.mov",
+            "type": "video/mp4",
+            "transcript": "A big part of what writers do is explain. They say something—often something you don’t fully understand—and then they explain by adding details, giving examples or about a million other things that help you get what they mean. Punctuation, like commas, dashes, semicolons or even periods, often show up right before an explanation or clarification. But sometimes an author will just drop an explanation in with no notice. In order to understand, connect the explanation back to the word or phrase."
+          }
+        }
+      },
+      {
+        "name": "drag-drop-text",
+        "config": {
+          "group": "navigators",
+          "subgroup": "explainers",
+          "sceneId": "3.12-what-does-never",
+          "highlight": {
+            "indices": [
+              26,
+              27,
+              28,
+              29,
+              30,
+              31
+            ],
+            "text": "never out of sight, never landing"
+          },
+          "relations": [
+            {
+              "draggable": {
+                "indices": [
+                  21
+                ],
+                "text": "never out of sight, never landing"
+              },
+              "droppable": {
+                "indices": [
+                  21,
+                  22,
+                  23,
+                  24,
+                  25
+                ],
+                "text": "never out of sight, never landing"
+              }
+            },
+            {
+              "draggable": {
+                "indices": [
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31
+                ],
+                "text": "never out of sight, never landing"
+              },
+              "droppable": {
+                "indices": [
+                  21,
+                  22,
+                  23,
+                  24,
+                  25
+                ],
+                "text": "sail forever on the horizon"
+              }
+            }
+          ],
+          "expectedCorrectAnswers": 1,
+          "wrongAttemptsAllowed" : 3,
+          "wrongAttemptMessages": [
+            {
+              "url": "assets/videos/sophia-lite/3.13a-nope-try-again.mov",
+              "type": "video/mp4",
+              "transcript": "Nope, try again."
+            },
+            {
+              "url": "assets/videos/sophia-lite/3.13b-think-about.mov",
+              "type": "video/mp4",
+              "transcript": "Think about what that phrase is describing. What in this paragraph acts that way, not getting closer or farther away?"
+            },
+            {
+              "url": "assets/videos/sophia-lite/3.13c-just-look.mov",
+              "type": "video/mp4",
+              "transcript": "Look just at that sentence. See something there that works?"
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/3.12-what-does-never.mov",
+            "type": "video/mp4",
+            "transcript": "What does “never out of sight, never landing” explain? Drag “never out of sight, never landing” to the word or phrase it explains"
+          }
+        }
+      },
+      {
+        "name": "drag-drop-text",
+        "config": {
+          "group": "navigators",
+          "subgroup": "explainers",
+          "sceneId": "3.14-what-abt-resign",
+          "highlight": {
+            "indices": [
+              40
+            ],
+            "text": "resignation"
+          },
+          "relations": [
+            {
+              "draggable": {
+                "indices": [
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47
+                ],
+                "text": "his dreams mocked to death by Time."
+              },
+              "droppable": {
+                "indices": [
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47
+                ],
+                "text": "his dreams mocked to death by Time."
+              }
+            },
+            {
+              "draggable": {
+                "indices": [
+                  40
+                ],
+                "text": "resignation"
+              },
+              "droppable": {
+                "indices": [
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47
+                ],
+                "text": "his dreams mocked to death by Time."
+              }
+            }
+          ],
+          "expectedCorrectAnswers": 1,
+          "wrongAttemptsAllowed" : 2,
+          "wrongAttemptMessages": [
+            {
+              "url": "assets/videos/sophia-lite/3.25b-nope-try-again.mov",
+              "type": "video/mp4",
+              "transcript": "Nope, try again."
+            },
+            {
+              "url": "assets/videos/sophia-lite/3.15c-look-for-something.mov",
+              "type": "video/mp4",
+              "transcript": "Look for something that explains why the Watcher is resigned. Remember “resignation” means giving up. Try again."
+            }
+          ],
+          "onFailure": {
+            "url": "assets/videos/sophia-lite/3.15d-no-it-is-just.mov",
+            "type": "video/mp4",
+            "transcript": "No. It’s just the next part of the sentence: “his dreams mocked to death by Time.”"
+          },
+          "onFinish": {
+            "url": "assets/videos/sophia-lite/3.15a-right.mov",
+            "type": "video/mp4",
+            "transcript": "right!"
+          },
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/3.14-what-abt-resign.mov",
+            "type": "video/mp4",
+            "transcript": "What about the Watcher turning his eyes away in resignation? “Resignation” means “giving up.” So why resignation? Drag the word or phrase that explains why the watcher is giving up on to “resignation.”"
+          }
+        }
+      },
+      {
+        "name": "text-input",
+        "config": {
+          "group": "navigators",
+          "subgroup": "explainers",
+          "sceneId": "3.16-notice-phrase",
+          "highlight": {
+            "indices": [
+              43,
+              44,
+              45,
+              46,
+              47
+            ],
+            "text": "mocked to death by Time."
+          },
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/3.16-notice-phrase.mov",
+            "type": "video/mp4",
+            "transcript": "Notice the phrase “mocked to death by time.” Picture what that means. How would the meaning change if Hurston had just said that the Watcher got tired of waiting and turned away?"
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "sceneId": "3.17-did-navigators-help",
+          "group": "navigators",
+          "options": [
+            {
+              "label": "Totally!"
+            },
+            {
+              "label": "Some"
+            },
+            {
+              "label": "Not sure"
+            },
+            {
+              "label": "No way."
+            }
+          ],
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "assets/videos/sophia-lite/3.17-did-navigators-help.mov",
+            "type": "video/mp4",
+            "transcript": "Did Navigators help you understand this passage better?"
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId": "4.1-time-for-main-idea",
+          "fetchData": [
+            {
+              "$previous-main-idea-input" : {
+                  "sceneId" : "main-idea-before-game",
+                  "action"  : "text-input"
+              }
+            }
+          ],
+          "group": "exit",
+          "message": {
+            "text": "$previous-main-idea-input",
+            "button": {
+              "label": "Proceed"
+            }
+          },
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "assets/videos/sophia-lite/4.1-time-for-main-idea.mov",
+            "type": "video/mp4",
+            "transcript": "Time for the main idea again! What’s the main idea of the paragraph? The last time you said:"
+          }
+        }
+      },
+      {
+        "name": "text-input",
+        "config": {
+          "group": "exit",
+          "sceneId": "4.2-what-now",
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/4.2-what-now.mov",
+            "type": "video/mp4",
+            "transcript": "What would you say it is now? Write your answer."
+          }
+        }
+      },
+      {
+        "name": "multi-choice",
+        "config": {
+          "group": "exit",
+          "sceneId": "4.2-lets-check",
+          "question": "Let's check your thinking on that. Which of these is the main idea?",
+          "options": [
+            {
+              "label": "While men dream and hope, women take on life as it comes at them.",
+              "correct": true
+            },
+            {
+              "label": "Our memories confuse and mislead us, but we have to move forward in life anyway. "
+            },
+            {
+              "label": "Men are better at business, while women are more creative."
+            },
+            {
+              "label": "While men wait patiently, women become impatient with the slow pace of shipping."
+            },
+            {
+              "label": "Successful people take action, because if you spend your life waiting, you’ll never get anywhere."
+            }
+          ],
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/4.3-lets-check.mov",
+            "type": "video/mp4",
+            "transcript": "Let's check your thinking on that. Which of these is the main idea?"
+          }
+        }
+      },
+      {
+        "name": "text-input",
+        "config": {
+          "group": "exit",
+          "sceneId": "4.3-enter-your-response",
+          "condition": {
+            "expected": true,
+            "sceneId" : "4.2-lets-check",
+            "action"  : "multi-choice-result"
+          },
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia-lite/4.3-enter-your-response.mov",
+            "type": "video/mp4",
+            "transcript": "That’s right! So, what do you think? Is Hurston right about men and women? Maybe you don’t feel like you know enough to say, but if you write your opinion in the chat and hit submit, we’ll show you some interesting responses from other users."
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId"   : "4.3-response-from-others",
+          "group"     : "exit",
+          "condition": {
+            "expected": true,
+            "sceneId" : "4.2-lets-check",
+            "action"  : "multi-choice-result"
+          },
+          "showQuotes" : [
+            {"text": "In a weird way, yeah. By forgetting about stuff, women are able do a better job of dealing with what life brings."},
+            {"text": "So true. Society gives men so much more power, so having more power makes them more passive, whereas women have to work hard for what they want."},
+            {"text": "What does any of this have to do with sex? Does being male or female determine how you hope and dream? No way."}
+          ],
+          "buttons" : [
+            {
+              "label": "Proceed"
+            }
+          ],
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "autoNext": true,
+            "canSkip": true,
+            "url": "assets/videos/sophia-lite/empty-video.mov",
+            "type": "video/mp4",
+            "transcript": "Responses from other users:"
+          }
+        }
+      },
+      {
+        "name": "exit",
+        "config": {
+          "group": "exit",
+          "sceneId": "28"
+        }
+      }
+    ]
+  }
+}

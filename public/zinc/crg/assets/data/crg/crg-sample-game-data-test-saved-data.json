@@ -1,0 +1,62 @@
+{
+  "passage": {
+    "id"    : 1,
+    "from"  : "Their Eyes Were Watching God",
+    "by"    : "Zora Neal Hurston",
+    "text"  : "Ships at a distance have every man's wish on board. For some they come in with the tide. For others they sail forever on the horizon, never out of sight, never landing until the Watcher turns his eyes away in resignation, his dreams mocked to death by Time. That is the life of men. \n Now, women forget all those things they don't  want to remember, and remember everything they don't want to forget. The dream is the truth. Then they act and do things accordingly."
+  },
+  "agent": {
+    "smallProfilePicture": "assets/images/agents/sophia.png",
+    "videoPlaceholder": "assets/images/agents/sophia-video-placeholder.png"
+  },
+  "script": {
+    "scenes": [
+      {
+        "name": "text-input",
+        "config": {
+          "group": "intro",
+          "sceneId": "main-idea-before-game",
+          "sceneLoadVideo": {
+            "url": "assets/videos/sophia/1.9-main-idea.mov",
+            "type": "video/mp4",
+            "transcript": "Let’s give this a shot: in 20 words or fewer, what’s the main idea here? Write down your answer. You’ll be seeing this answer again later."
+          }
+        }
+      },
+      {
+        "name": "generic-scene",
+        "config": {
+          "sceneId": "4.1-time-for-main-idea",
+          "fetchData": [
+            {
+              "$previous-main-idea-input" : {
+                "sceneId" : "main-idea-before-game",
+                "action"  : "text-input"
+              }
+            }
+          ],
+          "group": "exit",
+          "message": {
+            "text": "$previous-main-idea-input",
+            "button": {
+              "label": "Proceed"
+            }
+          },
+          "sceneLoadVideo": {
+            "fullscreen": false,
+            "url": "assets/videos/sophia/4.1-time-for-main-idea.mov",
+            "type": "video/mp4",
+            "transcript": "Time for the main idea again! What’s the main idea of the paragraph? The last time you said:"
+          }
+        }
+      },
+      {
+        "name": "exit",
+        "config": {
+          "group": "exit",
+          "sceneId": "28"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,339 @@
+{
+  "cards" : [
+    {
+      "type": "ui",
+      "name": "Gaming Experience with Alien Theme",
+      "src": "http://nishants.site/lab/star-wars/",
+      "tags": [{"name": "design"},{"name": "studio"}],
+      "desktop-first": true,
+      "description": {
+        "lead": "AngularJS and SCSS based single page app",
+        "follow" : "with alien theme, optimized interaction flow and a custom widget."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "LookLike Playground",
+      "no-mobile" : "true",
+      "src": "http://amoeba.social/lab/look-like/",
+      "tags": [{"name": "design"}],
+      "description": {
+        "lead": "Online playground look like matchers.",
+        "follow" : "See how to use matchers, also an example with data tables."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Chakra",
+      "no-mobile" : "true",
+      "src": "https://boiling-scrubland-7787.herokuapp.com/",
+      "tags": [{"name": "design"},{"name": "coaching"}],
+      "description": {
+        "lead": "Java compiler in browser",
+        "follow" : "An experimental app that runs Java inside browsers."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "RubyLab",
+      "no-mobile" : "true",
+      "src": "http://amoeba.social/practice-labs/ruby-for-qa/",
+      "tags": [{"name": "design"}],
+      "description": {
+        "lead": "Test Driven Development With Ruby",
+        "follow" : "in browser. Needs no machine setup. Create an assignment, create test for it with RSpec and share link. Lifesaver for conducting ruby programing sessions in corporate environments.I can create assignments on demand if you need."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Jeyson",
+      "src": "public/pages/jeyson",
+      "tags": [{"name": "development"}],
+      "description": {
+        "lead": "A JSON Template Language",
+        "follow" : " allows executing expressions in json, include another json, render a list element ,render values conditionally, inbuilt and custom directives. Any json is a syntatically valid template, and any template is syntatically valida json. allows executing expressions in json, include another json, render a list element ,render values conditionally, inbuilt and custom directives. Any json is a syntatically valid template, and any template is syntatically valida json."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "LookLike Matchers",
+      "no-mobile" : "true",
+      "src": "public/pages/look_like",
+      "tags": [{"name": "development"}],
+      "description": {
+        "lead": "A collection of Rspec matchers, for writing wireframe tests.",
+        "follow" : "Useful for writting data independent tests based on visual pattern matching."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Toggles",
+      "no-mobile" : "true",
+      "src": "public/pages/toggles",
+      "tags": [{"name": "development"}],
+      "description": {
+        "lead": "Bower component for feature toggling",
+        "follow" : "with AngularJS."
+      }
+    },
+
+    {
+      "type": "ui",
+      "name": "360 deg Panorama View",
+      "src": "http://amoeba.social/dump/lab/scroll-magic.html",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "JQuery based",
+        "follow" : "example of implementing panorama view by scroll jacking."
+      }
+    },
+
+    {
+      "type": "ui",
+      "name": "Wirestub",
+      "src": "public/pages/wirestub",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Wrapper over wiremock",
+        "follow" : "that transforms wiremock into a stubbing engine, with its own tempating language and session support. Fully compatible with wiremock APIs."
+      }
+    },
+
+    {
+      "type": "ui",
+      "name": "Spring VCR",
+      "src": "public/pages/springvcr",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Records and Playbacks http interactions.",
+        "follow" : "JUNIT Plugin that provides a VCR.py like record and play http requests for Spring (3.1+)"
+      }
+    },
+
+    {
+      "type": "ui",
+      "name": "Extab",
+      "src": "public/pages/extab",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "An API to map tables in excel files to java objects.",
+        "follow" : "It uses Apache POI to parse the excel files and provide a JPA styled annotation based mapping of objects to table rows."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Topbar with Search",
+      "src": "http://amoeba.social/dump/concepts/treniq/",
+      "no-mobile" : "true",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Hides/Shows/Partially-shows",
+        "follow" : "the top bar by predicting user intention. Uses JQuery + AngularJS + SCSS achieve super smooth transitions with scalability. Also a design for navigation bar,search bar, ripple effect implementation."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Calendar with Angular",
+      "src": "http://amoeba.social/dump/lessons/calendar/index.html",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Calendar widget with",
+        "follow" : "AngularJS and SCSS"
+      }
+    },    {
+      "type": "ui",
+      "name": "Infield Form",
+      "src": "http://amoeba.social/dump/lab/infield",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "A Form design with infield labels,",
+        "follow" : "made with AngularJS and SCSS"
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Google Map Search with AngularJS",
+      "src": "http://amoeba.social/dump/google-maps-angular/searchbox.html",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Using Google Maps Location Search API" ,
+        "follow" : "with Angularjs and SCSS."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "CNN Video Transition",
+      "src": "http://amoeba.social/dump/design-fix/cnn",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Fixing the smoothness for CNN Video Player." ,
+        "follow" : "Sticking a playing video to viewport. CNN removed this interaction from their current website, probably because they never got it right."
+      }
+    },    {
+      "type": "ui",
+      "name": "Slate Interaction",
+      "src": "http://amoeba.social/dump/concepts/slate/index.html",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "An interactoin for showing large details for a card, " ,
+        "follow" : "without changing the view, giving a cohesive user experience."
+      }
+    }, {
+      "type": "ui",
+      "name": "Scroll Progress",
+      "src": "http://amoeba.social/dump/lab/scroll-progress/index.html",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Show progress bar," ,
+        "follow" : "by scroll position."
+      }
+    },{
+      "type": "ui",
+      "name": "Filter Menu Design",
+      "src": "http://amoeba.social/dump/lab/xsaas",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Hierarchical data filter, search and navigation design." ,
+        "follow" : "Useful when data sets are complex and hierarchical in nature. Allows to quickly view,filter and search children of a subset of data to any level."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Tetris Navigation",
+      "src": "http://amoeba.social/dump/concepts/tetris-scroll",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "A Navigation design for complex" ,
+        "follow" : "sections and articles. Usefule when there a lots of sections in app, each containing number of sub sections."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Scroll Jacking",
+      "src": "http://amoeba.social/dump/lab/scroll/x-scroll.html",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Capture Scroll Event" ,
+        "follow" : "and convert to vertical/horizontal movements."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Theater Booking",
+      "src": "http://amoeba.social/dump/theater-booking.html",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Show any kind of complex seat arrangement and book seats" ,
+        "follow" : "for a movie theater. Made with angualr and SCSS."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Wizard Design",
+      "src": "http://amoeba.social/dump/tiktik2",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Wizard with SCSS" ,
+        "follow" : "and AngularJs"
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Circular Loader",
+      "src": "http://amoeba.social/dump/circular-loader.html",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Circular Loader" ,
+        "follow" : "with jquery."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Shutter Menu",
+      "src": "http://amoeba.social/dump/concepts/mobile-shutter-menu/index.html",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Design for mobile menu." ,
+        "follow" : ""
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Trigger Loader",
+      "src": "http://amoeba.social/dump/rob-the-robe",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Trigger load animation for splash" ,
+        "follow" : "and logo in top bar."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "WhatsApp Theme",
+      "src": "http://amoeba.social/dump/concepts/legally",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "WhatsApp Web client styled theme" ,
+        "follow" : ""
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Form Design",
+      "src": "http://amoeba.social/dump/client-demo/treniq",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Form design with inline help" ,
+        "follow" : ""
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Accordion",
+      "src": "http://amoeba.social/dump/lab/accordian",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "With AngularJS and SCSS" ,
+        "follow" : "."
+      }
+    },    {
+      "type": "ui",
+      "name": "Blinking Owls",
+      "src": "http://amoeba.social/dump/lab/blinking-owls",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Blinking Owls" ,
+        "follow" : "effect with SCSS only."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Blast Button",
+      "src": "http://amoeba.social/dump/lab/blast-button",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Button blast effect" ,
+        "follow" : "using SCSS."
+      }
+    },
+    {
+      "type": "ui",
+      "name": "Tiktik Loader",
+      "src": "http://amoeba.social/dump/lab/branded-loader",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Brand logo" ,
+        "follow" : "converted to a loader. Made with SCSs only."
+      }
+    },    {
+      "type": "ui",
+      "name": "Wave Surfer",
+      "src": "http://amoeba.social/dump/lab/music",
+      "tags": [{"name": "coaching"}],
+      "description": {
+        "lead": "Music waves" ,
+        "follow" : "and progress bars using wavesurfer."
+      }
+    }
+  ]
+}

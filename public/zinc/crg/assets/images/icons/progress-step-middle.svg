@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="225px" height="50px" viewBox="0 0 225 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>middle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="225 0 440.425532 0 450 25 440.425532 50 225 50 235.432229 25"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="export-icons" transform="translate(-238.000000, -5.000000)">
+            <g id="Group-4" transform="translate(13.000000, 5.000000)">
+                <g id="middle">
+                    <use fill="#FBFBFB" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <path stroke-opacity="0.1" stroke="#000000" stroke-width="1" d="M225.750431,0.5 L235.974016,25 L225.750431,49.5 L440.081607,49.5 L449.464586,25 L440.081607,0.5 L225.750431,0.5 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

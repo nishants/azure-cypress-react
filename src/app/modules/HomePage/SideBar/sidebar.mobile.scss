@@ -1,0 +1,11 @@
+$side_bar_top_position: $search_bar_height + 10px;
+
+.side-bar {
+  display: none;
+}
+
+.fixed-to-window {
+  .side-bar {
+    display: none;
+  }
+}

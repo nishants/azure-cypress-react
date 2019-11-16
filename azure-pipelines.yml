@@ -18,6 +18,10 @@ steps:
     npm run build
   displayName: 'Running webpack build'
 
+- script: |
+    npm run cypress:ci
+  displayName: 'Running cypress tests'
+
 # Save artifacts to refer them in release builds
 - task: PublishPipelineArtifact@1
   inputs:

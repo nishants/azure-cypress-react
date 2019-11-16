@@ -103,4 +103,44 @@ In this step, we will setup cypress tests for the project. As part of this we wi
       "cypress:ci": "npm-run-all -p --race start cypress:run",
   ```
 
-- 
+- Now add a build step to `` 
+
+  ```yaml
+  - script: npm run cypress:ci
+    displayName: 'Running cypress tests'
+  ```
+
+- So our file looks like 
+
+- ```yaml
+  # This sets trigger to any update in master  
+  # trigger:
+  # - master
+  
+  #  Defines the host for agent (MS hosted)
+  pool:
+    vmImage: 'ubuntu-latest'
+  
+  #  Build steps for the pipeline
+  steps:
+  - script: npm ci
+    displayName: 'Installing node modules'
+  
+  - script: npm run lint
+    displayName: 'Checking for lint errors'
+  
+  - script: npm run build
+    displayName: 'Running webpack build'
+  
+  - script: npm run cypress:ci
+    displayName: 'Running cypress tests'
+  
+  # Save artifacts to refer them in release builds
+  - task: PublishPipelineArtifact@1
+    inputs:
+      path: $(Agent.BuildDirectory)/s/build
+      artifact: react-static-website-build-artifacts
+  ```
+
+
+

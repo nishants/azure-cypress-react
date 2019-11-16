@@ -94,4 +94,13 @@ In this step, we will setup cypress tests for the project. As part of this we wi
   - execute `cypress:run`
   - and stop node server when cypress tests have finished
 
-- so
+- Now lets add a cypress command that can start the node server and run tests 
+
+  ```json
+    "scripts": {
+      "cypress:open": "cypress open",
+      "cypress:run": "cypress run",
+      "cypress:ci": "npm-run-all -p --race start cypress:run",
+  ```
+
+- 

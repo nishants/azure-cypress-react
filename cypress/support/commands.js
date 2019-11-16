@@ -1,3 +1,4 @@
+/* eslint-disable no-undef,no-console */
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -23,3 +24,22 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+const timings = {};
+const shouldIgnore = cmd => !['visit', 'url'].includes(cmd.attributes.name);
+
+Cypress.on('command:start', cmd => {
+  if (shouldIgnore(cmd)) return;
+  const { chainerId } = cmd.attributes;
+  timings[chainerId] = { start: performance.now() };
+});
+
+Cypress.on('command:end', cmd => {
+  if (shouldIgnore(cmd)) return;
+
+  const { chainerId, name, args } = cmd.attributes;
+  if (timings[chainerId]) {
+    const timeToRun = performance.now() - timings[chainerId].start;
+    cy.task('performanceLog', { name, args, timeToRun });
+  }
+});

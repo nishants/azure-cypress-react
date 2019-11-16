@@ -18,32 +18,38 @@ const performanceLogs = {
 
 const performLogsFilePath = './performanceLogs.json';
 
-const syncPerformanceLogs = () => {
-  // eslint-disable-next-line no-console,global-require
-  require('fs').writeFile(
-    performLogsFilePath,
-    JSON.stringify(performanceLogs),
-    'utf8',
-    // eslint-disable-next-line no-console
-    error => error && console.error('Faild to write performance logs', error)
-  );
-};
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+
+const adapter = new FileSync(performLogsFilePath);
+const db = low(adapter);
+// Set some defaults (required if your JSON file is empty)
+db.defaults({
+  commands: [],
+  tests: []
+}).write();
 
 module.exports = (on /* ,config */) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
   on('task', {
-    performanceLog(message) {
+    performanceLog(log) {
       // eslint-disable-next-line no-console
-      console.log(JSON.stringify(message));
-      performanceLogs.commands.push(message);
+      console.log(JSON.stringify(log));
+      // Add a post
+      db.get('commands')
+        .push(log)
+        .write();
+
       return null;
     },
     setTestRunTime(info) {
       performanceLogs.tests.push(info);
       // eslint-disable-next-line no-console
       console.log('test finished', JSON.stringify(info));
-      syncPerformanceLogs();
+      db.get('commands')
+        .push(info)
+        .write();
       return null;
     }
   });

@@ -11,6 +11,24 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
+const performanceLogs = {
+  commands: [],
+  tests: []
+};
+
+const performLogsFilePath = './performanceLogs.json';
+
+const syncPerformanceLogs = () => {
+  // eslint-disable-next-line no-console,global-require
+  require('fs').writeFile(
+    performLogsFilePath,
+    JSON.stringify(performanceLogs),
+    'utf8',
+    // eslint-disable-next-line no-console
+    error => error && console.error('Faild to write performance logs', error)
+  );
+};
+
 module.exports = (on /* ,config */) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
@@ -18,6 +36,14 @@ module.exports = (on /* ,config */) => {
     performanceLog(message) {
       // eslint-disable-next-line no-console
       console.log(JSON.stringify(message));
+      performanceLogs.commands.push(message);
+      return null;
+    },
+    setTestRunTime(info) {
+      performanceLogs.tests.push(info);
+      // eslint-disable-next-line no-console
+      console.log('test finished', JSON.stringify(info));
+      syncPerformanceLogs();
       return null;
     }
   });

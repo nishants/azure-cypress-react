@@ -1,5 +1,7 @@
-describe('My First Test', function() {
-  it('Does not do much!', function() {
-    expect(true).to.equal(true);
+describe('Homepage', () => {
+  it('Check if page loads', () => {
+    cy.visit('http://localhost:3000/');
+
+    cy.url().should('include', '#/portfolio');
   });
 });

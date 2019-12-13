@@ -8,7 +8,7 @@ const testTime = {
 
 let shouldSaveTestTime = false;
 
-Cypress.on('command:start', cmd => {
+const commandStarted = cmd => {
   if (shouldIgnore(cmd)) return;
   if (shouldSaveTestTime) {
     cy.task('setTestRunTime', { testTime: lastTestTime });
@@ -16,9 +16,9 @@ Cypress.on('command:start', cmd => {
   }
   const { chainerId } = cmd.attributes;
   timings[chainerId] = { start: performance.now() };
-});
+};
 
-Cypress.on('command:end', cmd => {
+const commandEnded = cmd => {
   if (shouldIgnore(cmd)) return;
 
   const { chainerId, name, args } = cmd.attributes;
@@ -26,17 +26,22 @@ Cypress.on('command:end', cmd => {
     const timeToRun = performance.now() - timings[chainerId].start;
     cy.task('performanceLog', { name, args, timeToRun });
   }
-});
+};
 
-Cypress.on('test:before:run', test => {
+const testStarted = test => {
   testTime.title = test.title;
   testTime.time = performance.now();
-});
+};
 
-Cypress.on('test:after:run', () => {
+const testEnded = () => {
   testTime.time = performance.now() - testTime.time;
   // eslint-disable-next-line no-console
   console.log(testTime);
   shouldSaveTestTime = true;
   lastTestTime = { ...testTime };
-});
+};
+
+Cypress.on('command:start', commandStarted);
+Cypress.on('command:end', commandEnded);
+Cypress.on('test:before:run', testStarted);
+Cypress.on('test:after:run', testEnded);

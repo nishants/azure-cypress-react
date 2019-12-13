@@ -47,5 +47,6 @@ module.exports = {
     console.log('******************************');
   },
 
-  getTasksHandlers: () => taskHandlers
+  getTasksHandlers: () => taskHandlers,
+  getHooks: () => ({})
 };

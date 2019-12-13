@@ -38,6 +38,8 @@ const testPath = runner => {
     path.push(node.title);
     node = node.parent;
   }
+  path.push(Cypress.spec.name);
+
   return path.reverse().join('/');
 };
 

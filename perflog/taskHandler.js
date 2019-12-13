@@ -28,7 +28,14 @@ const taskHandlers = {
     return null;
   }
 };
-const load = ({ output = './performanceLogs.json' }) => {
+const enable = ({
+  output = './performanceLogs.json',
+  enabled = process.env.perflog
+}) => {
+  if (!enabled) {
+    return;
+  }
+
   const performLogsFilePath = output;
   // eslint-disable-next-line global-require
   const { ensurePathExists } = require('./utils/fileHelper');
@@ -49,6 +56,6 @@ const load = ({ output = './performanceLogs.json' }) => {
 };
 
 module.exports = {
-  load,
+  enable,
   taskHandlers
 };

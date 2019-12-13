@@ -5,7 +5,8 @@
   "scripts": {
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "cypress:ci": "npm-run-all -p --race start cypress:run",
+    "cypress:run:perflog": "perflog=true cypress run",
+    "cypress:ci": "npm-run-all -p --race start cypress:run:perflog",
     "start": "NODE_PATH=. react-scripts start",
     "build": "NODE_PATH=. react-scripts build",
     "test": "NODE_PATH=. react-scripts test",

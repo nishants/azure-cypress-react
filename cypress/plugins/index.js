@@ -11,9 +11,10 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-const { getTasksHandlers, load } = require('perflog');
+const { getTasksHandlers, enable } = require('perflog');
 
-load({ output: './build/logs/perfLog.json' });
+enable({ output: './build/logs/perfLog.json', enabled: process.env.perflog });
+
 module.exports = (on /* ,config */) => {
   on('task', { ...getTasksHandlers() });
 };

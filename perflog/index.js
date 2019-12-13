@@ -1,8 +1,8 @@
-const { taskHandlers, load } = require('./taskHandler');
+const { taskHandlers, enable } = require('./taskHandler');
 const taskCreators = require('./taskCreator');
 
 module.exports = {
-  load,
+  enable,
   getTasksHandlers: () => taskHandlers,
   events: taskCreators
 };

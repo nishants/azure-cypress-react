@@ -22,7 +22,7 @@ const taskHandlers = {
     performanceLogs.tests.push(info);
     // eslint-disable-next-line no-console
     console.log('test finished', JSON.stringify(info));
-    db.get('commands')
+    db.get('tests')
       .push(info)
       .write();
     return null;

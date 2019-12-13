@@ -2,6 +2,7 @@
 
 - fix null time for test in logs
 - add api to ignore commands/tests/testfiles
+- capture no of times command was retried
 - fix inline requires in db
 - publish as node module
 - create API for performance log formatter

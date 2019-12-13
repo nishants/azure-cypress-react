@@ -24,4 +24,5 @@ yarn-error.log*
 
 .idea
 cypress/videos
+cypress/screenshots
 performanceLogs.json

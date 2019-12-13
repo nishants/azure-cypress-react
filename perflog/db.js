@@ -14,14 +14,14 @@ const initialize = performLogsFilePath => {
 
 module.exports = {
   initialize,
-  addCommand: log =>
+  addCommand: commandData =>
     db
       .get('commands')
-      .push(log)
+      .push(commandData)
       .write(),
-  addTest: log =>
+  addTest: testData =>
     db
       .get('tests')
-      .push(log)
+      .push(testData)
       .write()
 };

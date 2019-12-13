@@ -1,42 +1,46 @@
-const timings = {};
-const testTime = { title: null, time: 0 };
+const commandTimings = {};
 
-let lastTestTime;
-let shouldSaveTestTime = false;
+let runningTest;
+let testEndTime;
+let aTestEnded = false;
 
 const shouldIgnore = cmd => !['visit', 'url'].includes(cmd.attributes.name);
 
 const commandStarted = cmd => {
-  if (shouldIgnore(cmd)) return;
-  if (shouldSaveTestTime) {
-    cy.task('setTestRunTime', { testTime: lastTestTime });
-    lastTestTime = null;
+  if (!shouldIgnore(cmd)) {
+    if (!aTestEnded) {
+      cy.task('setRunningTest', runningTest);
+    } else if (aTestEnded) {
+      cy.task('testEnded', testEndTime);
+      aTestEnded = false;
+      testEndTime = null;
+    }
+
+    const { chainerId } = cmd.attributes;
+    commandTimings[chainerId] = { start: performance.now() };
   }
-  const { chainerId } = cmd.attributes;
-  timings[chainerId] = { start: performance.now() };
 };
 
 const commandEnded = cmd => {
   if (shouldIgnore(cmd)) return;
 
   const { chainerId, name, args } = cmd.attributes;
-  if (timings[chainerId]) {
-    const timeToRun = performance.now() - timings[chainerId].start;
-    cy.task('performanceLog', { name, args, timeToRun });
+  if (commandTimings[chainerId]) {
+    const timeToRun = performance.now() - commandTimings[chainerId].start;
+    cy.task('addCommandLog', { name, args, timeToRun });
   }
 };
 
 const testStarted = test => {
-  testTime.title = test.title;
-  testTime.time = performance.now();
+  runningTest = {
+    title: test.title,
+    startTime: performance.now()
+  };
 };
 
 const testEnded = () => {
-  testTime.time = performance.now() - testTime.time;
-  // eslint-disable-next-line no-console
-  console.log(testTime);
-  shouldSaveTestTime = true;
-  lastTestTime = { ...testTime };
+  aTestEnded = true;
+  testEndTime = performance.now();
 };
 
 module.exports = { commandStarted, commandEnded, testStarted, testEnded };

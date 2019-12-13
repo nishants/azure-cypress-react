@@ -1,23 +1,33 @@
-/* eslint-disable no-console */
 // eslint-disable-next-line global-require
 const database = () => require('./db');
 
 let disabled = false;
+let currentTest;
 
-const taskHandlers = {
-  performanceLog(log) {
-    if (disabled) return null;
-    console.log(JSON.stringify(log));
-    database().addCommand(log);
-    return null;
-  },
-  setTestRunTime(info) {
-    if (disabled) return null;
-    console.log('test finished', JSON.stringify(info));
-    database().addTest(info);
-    return null;
-  }
+const setRunningTest = test => {
+  currentTest = test;
+  return null;
 };
+
+const testEnded = timeEnded => {
+  if (disabled) return null;
+  if (!currentTest) return null; // when first command runs before no test are there to save
+
+  database().addTest({
+    title: currentTest.title,
+    time: timeEnded - currentTest.startTime
+  });
+
+  currentTest = null;
+  return null;
+};
+
+const addCommandLog = log => {
+  if (disabled) return null;
+  database().addCommand(log);
+  return null;
+};
+
 const enable = ({
   output = './performanceLogs.json',
   enabled = process.env.perflog
@@ -31,5 +41,9 @@ const enable = ({
 
 module.exports = {
   enable,
-  taskHandlers
+  taskHandlers: {
+    setRunningTest,
+    testEnded,
+    addCommandLog
+  }
 };

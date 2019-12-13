@@ -1,0 +1,7 @@
+{
+  "name": "perflog",
+  "version": "0.1.0",
+  "dependencies": {
+    "lowdb": "^1.0.0"
+  }
+}

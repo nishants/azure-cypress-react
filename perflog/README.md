@@ -1,5 +1,8 @@
 ### TODO
 
+- fix null time for test in logs
+- fix inline requires in db
+- publish as node module
 - create API for performance log formatter
 - create CLI for combining performance logs
 - create UI for viewing performance logs

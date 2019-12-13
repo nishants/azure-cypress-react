@@ -2,11 +2,8 @@ const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
 const { ensurePathExists } = require('./utils/fileHelper');
 
+const EMPTY_DATA = { commands: [], tests: [] };
 let db;
-const EMPTY_DATA = {
-  commands: [],
-  tests: []
-};
 
 const initialize = performLogsFilePath => {
   ensurePathExists(performLogsFilePath);

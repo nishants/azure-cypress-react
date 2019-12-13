@@ -1,12 +1,10 @@
 const timings = {};
-const shouldIgnore = cmd => !['visit', 'url'].includes(cmd.attributes.name);
-let lastTestTime;
-const testTime = {
-  title: null,
-  time: 0
-};
+const testTime = { title: null, time: 0 };
 
+let lastTestTime;
 let shouldSaveTestTime = false;
+
+const shouldIgnore = cmd => !['visit', 'url'].includes(cmd.attributes.name);
 
 const commandStarted = cmd => {
   if (shouldIgnore(cmd)) return;

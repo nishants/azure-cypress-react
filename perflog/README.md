@@ -1,6 +1,7 @@
 ### TODO
 
 - fix null time for test in logs
+- add api to ignore commands/tests/testfiles
 - fix inline requires in db
 - publish as node module
 - create API for performance log formatter

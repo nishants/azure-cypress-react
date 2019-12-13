@@ -13,7 +13,7 @@
 
 const { getTasksHandlers, load } = require('perflog');
 
-load();
+load({ output: './build/logs/perfLog.json' });
 module.exports = (on /* ,config */) => {
   on('task', { ...getTasksHandlers() });
 };

@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/SaxoUniversity/azure-cypress-react/_apis/build/status/nishants.azure-cypress-react?branchName=master)](https://dev.azure.com/SaxoUniversity/azure-cypress-react/_build/latest?definitionId=6&branchName=master)
 **To setup basic pipleine : [here](./01-setup-react-website.md)**
 
 ### Adding Cypress tests to CI/CD pipeline
@@ -62,13 +63,11 @@ In this step, we will setup cypress tests for the project. As part of this we wi
   npm run cypress:run
   ```
 
-
-
 ## Preparing run script for ci
 
 - In ci if we run a command the build waits for the command to finish.
 
-- We need to accomplish 
+- We need to accomplish
 
   - run node node server
   - run cypress tests
@@ -80,21 +79,19 @@ In this step, we will setup cypress tests for the project. As part of this we wi
   npm install npm-run-all --save
   ```
 
-  
-
-- we will use following command : 
+* we will use following command :
 
   ```bash
   npm-run-all -p --race start cypress:run
   ```
 
-  this command will : 
+  this command will :
 
   - execute `npm start`
   - execute `cypress:run`
   - and stop node server when cypress tests have finished
 
-- Now lets add a cypress command that can start the node server and run tests 
+* Now lets add a cypress command that can start the node server and run tests
 
   ```json
     "scripts": {
@@ -103,44 +100,41 @@ In this step, we will setup cypress tests for the project. As part of this we wi
       "cypress:ci": "npm-run-all -p --race start cypress:run",
   ```
 
-- Now add a build step to `` 
+* Now add a build step to ``
 
   ```yaml
   - script: npm run cypress:ci
     displayName: 'Running cypress tests'
   ```
 
-- So our file looks like 
+* So our file looks like
 
-- ```yaml
-  # This sets trigger to any update in master  
+* ```yaml
+  # This sets trigger to any update in master
   # trigger:
   # - master
-  
+
   #  Defines the host for agent (MS hosted)
   pool:
     vmImage: 'ubuntu-latest'
-  
+
   #  Build steps for the pipeline
   steps:
-  - script: npm ci
-    displayName: 'Installing node modules'
-  
-  - script: npm run lint
-    displayName: 'Checking for lint errors'
-  
-  - script: npm run build
-    displayName: 'Running webpack build'
-  
-  - script: npm run cypress:ci
-    displayName: 'Running cypress tests'
-  
-  # Save artifacts to refer them in release builds
-  - task: PublishPipelineArtifact@1
-    inputs:
-      path: $(Agent.BuildDirectory)/s/build
-      artifact: react-static-website-build-artifacts
+    - script: npm ci
+      displayName: 'Installing node modules'
+
+    - script: npm run lint
+      displayName: 'Checking for lint errors'
+
+    - script: npm run build
+      displayName: 'Running webpack build'
+
+    - script: npm run cypress:ci
+      displayName: 'Running cypress tests'
+
+    # Save artifacts to refer them in release builds
+    - task: PublishPipelineArtifact@1
+      inputs:
+        path: $(Agent.BuildDirectory)/s/build
+        artifact: react-static-website-build-artifacts
   ```
-
-
-

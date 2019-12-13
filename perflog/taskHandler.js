@@ -28,8 +28,11 @@ const taskHandlers = {
     return null;
   }
 };
-const load = () => {
-  const performLogsFilePath = './performanceLogs.json';
+const load = ({ output = './performanceLogs.json' }) => {
+  const performLogsFilePath = output;
+  // eslint-disable-next-line global-require
+  const { ensurePathExists } = require('./utils/fileHelper');
+  ensurePathExists(performLogsFilePath);
 
   // eslint-disable-next-line global-require
   const low = require('lowdb');

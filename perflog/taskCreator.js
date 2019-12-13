@@ -31,9 +31,19 @@ const commandEnded = cmd => {
   }
 };
 
-const testStarted = test => {
+const testPath = runner => {
+  const path = [];
+  let node = runner;
+  while (node) {
+    path.push(node.title);
+    node = node.parent;
+  }
+  return path.reverse().join('/');
+};
+
+const testStarted = (/* test */) => {
   runningTest = {
-    title: test.title,
+    title: testPath(Cypress.mocha.getRunner().currentRunnable),
     startTime: performance.now()
   };
 };

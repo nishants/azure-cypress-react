@@ -1,14 +1,15 @@
 /* eslint-disable no-console */
 
+let db;
+let disabled = false;
 const performanceLogs = {
   commands: [],
   tests: []
 };
 
-let db;
-
 const taskHandlers = {
   performanceLog(log) {
+    if (disabled) return null;
     // eslint-disable-next-line no-console
     console.log(JSON.stringify(log));
     // Add a post
@@ -19,6 +20,7 @@ const taskHandlers = {
     return null;
   },
   setTestRunTime(info) {
+    if (disabled) return null;
     performanceLogs.tests.push(info);
     // eslint-disable-next-line no-console
     console.log('test finished', JSON.stringify(info));
@@ -33,6 +35,7 @@ const enable = ({
   enabled = process.env.perflog
 }) => {
   if (!enabled) {
+    disabled = true;
     return;
   }
 

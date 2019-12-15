@@ -1,6 +1,10 @@
 ### TODO
 
-- fix null time for test in logs
+- API
+    - format groups for tests 
+    - ignore commands/include commands
+    -  
+
 - add api to ignore commands/tests/testfiles
 - capture no of times command was retried
 - fix inline requires in db
@@ -15,3 +19,4 @@
 
 - do not runt anything at all if not initialized
 - rename load to enable (so that it can be disable by env)
+- fix null time for test in logs

@@ -1,0 +1,8 @@
+{
+  "name": "perflog",
+  "version": "0.1.0",
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "lowdb": "^1.0.0"
+  }
+}

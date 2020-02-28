@@ -39,7 +39,9 @@
     "alert": true,
     "MutationObserver": true,
     "DOMException": true,
-    "cy": true
+    "cy": true,
+    "Cypress": true,
+    "performance": true,
   },
   "parser": "babel-eslint"
 }
